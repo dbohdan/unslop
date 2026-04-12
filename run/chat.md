@@ -392,11 +392,11 @@ Here's why it wins:
 
 # 9. User
 
-[Attachment: unslop-style-guide.md]
-
 Okay, we'll just proceed to work on the story without session handoff.
 
 Before we proceed, please examine this style guide for writing AI fiction. Opus 4.6 wrote it using the best available sources. I need you to follow the guide through the exercise.
+
+[unslop-style-guide.md]
 
 # 10. Claude Opus 4.6
 
@@ -444,11 +444,11 @@ The combined version is stronger than either alone.
 
 # 7. User
 
-[Attachment: unslop-style-guide.md]
-
 I agree.
 
 Okay, we'll just proceed to work on the story without session handoff.
+
+[unslop-style-guide.md]
 
 # 8. Claude Opus 4.6
 
@@ -709,6 +709,8 @@ This is a large output — ten full stories plus analysis. I'll write them to a 
 
 Your call on whether to go with #9, blend elements from others, or override entirely.
 
+[the-toy-versions.md]
+
 # 17. User
 
 Pretty good! I like it. This is the first run ever. We are going to have more runs with different concepts, plots, and realizations. Could extract my side of the dialogue into a template for future runs?
@@ -716,3 +718,92 @@ Pretty good! I like it. This is the first run ever. We are going to have more ru
 # 18. Claude Opus 4.6
 
 One change worth noting: I flagged Phase 4 (structure) as run-specific. The two-conversation interleave was right for "The Toy" but shouldn't be hardcoded. Future runs should let structure emerge from the concept. The template notes this.
+
+[ellison-story-template.md]
+
+# 19. User
+
+My side of the chat looks mechanical aside from suggesting the Two Masters' War concept, which can be omitted. Let's think about how to automate runs with Claude Code.
+
+# 20. Claude Opus 4.6
+
+The pipeline is six phases where each phase's output feeds the next, and human input was essentially "proceed" at every gate except one creative suggestion. That's a straight chain.
+
+Key design decisions:
+
+**Autonomy mode vs. checkpoint mode.** Full auto runs all six phases without stopping. Checkpoint mode pauses between phases for human review/steering. I'd build both — a `--auto` flag for batch runs and interactive mode as default. The human's highest-value interventions are between Phase 2→3 (picking a different conflict) and Phase 5→6 (tweaking the outline). The rest was rubber-stamping.
+
+**Context management.** Each phase produces thousands of tokens. Passing the full accumulated output to every subsequent phase will blow context. Instead: each phase writes its output to a file, and the next phase receives only the *selected winner* plus the style guide and Ellison guide as standing context. The rejected candidates don't need to travel forward.
+
+**The funnel as a single prompt.** "Generate 20, rate them, pick top 3, explain, narrow to 1" can be a single prompt per phase. That's what happened in our run — each phase was one turn. No need to split the funnel into sub-steps.
+
+**Parameterization.** What varies between runs: the source material for conflicts (the three URLs could be swapped), the target length, the number of candidates at each phase (20/30 could be tuned), and any seed concept the human wants to inject at any phase.
+
+Want me to build it?
+
+# 21. User
+
+Yes, please.
+
+# 22. Claude Opus 4.6
+
+The `storyforge/` directory contains:
+
+- **storyforge.sh** — the pipeline script. Six phases, each a single `claude -p` call with accumulated context. Interactive checkpoints between phases unless `--auto`.
+- **README.md** — usage, options, output structure, cost estimates
+- **unslop-style-guide.md** — bundled for self-containment
+- **TEMPLATE.md** — the methodology doc from earlier
+
+Key design decisions:
+
+**No session chaining.** Each phase gets full context via prompt rather than relying on `--continue`. More tokens but more reliable and debuggable — if phase 4 fails, you can rerun it without replaying 1-3.
+
+**Edit-before-continue.** The `e` checkpoint option lets you trim a phase's output before it feeds forward. This is where the highest-value human intervention happens — you can cut the 19 rejected candidates and keep only the winner, reducing context for downstream phases.
+
+**Seed injection.** `--seed` inserts a concept at Phase 3 only, matching where your Two Masters' War suggestion landed in our run. It's framed as optional inspiration, not a mandate.
+
+**Swappable author.** The Ellison specifics are in Phase 1's prompt, not in the system prompt. Changing the author influence means editing one function.
+
+[README.md]
+
+[storyforge.sh]
+
+# 19. User
+
+The user's side of the chat looks mechanical (other than the suggestion to switch to the Two Masters' War concept, which can be omitted). We can automate runs. Let's think about how. Don't write code yet. We're just designing first.
+
+We have an important material constraint. This project can use a Claude Max subscription but has no API token budget. It would also be great for reuse and sharing if it only required a Claude subscription and a web browser rather than a local agent setup. All of this suggests going with the web version of Claude Code for automation, I think (https://code.claude.com/docs/en/claude-code-on-the-web). How does this idea look to you?
+
+# 20. Claude Opus 4.6
+
+Interesting idea. Some thoughts on fit.
+
+**What works:** Claude Code on the web gives you a persistent session, file I/O, and runs on Max subscription tokens. You could put the template, the Unslop guide, and the Ellison style guide into a GitHub repo, point Claude Code at it, and say "execute the pipeline." It writes intermediate outputs to files, each phase reads the previous phase's output, and the final story lands as a markdown file in the repo. No API budget. Browser-only. Shareable via GitHub.
+
+**The core tension:** This pipeline isn't code. It's six phases of long-form creative generation with evaluation and selection at each step. Claude Code will do it — Claude is Claude regardless of interface — but you're using a tool optimized for "navigate a codebase, run tests, push commits" to do "write 10 short stories and pick the best one." It'll work, but you're swimming against the grain of what the interface is designed to surface.
+
+**Specific concerns:**
+
+Context window is the real constraint. By Phase 6, the model needs to hold: the Ellison guide, the Unslop guide, the selected conflict, the selected plot, the selected structure, the selected outline, and then write 10 full stories. That's a lot of accumulated context. Claude Code sessions can handle long tasks, but the question is whether the quality of Story Version #10 degrades relative to Version #1 because earlier material has been pushed out of effective attention.
+
+The mitigation is obvious: write each phase's output to a file, then have the next phase read only what it needs rather than carrying the full conversation history. Claude Code is good at this — it naturally works with files. The CLAUDE.md could instruct it to operate that way.
+
+**Model question.** Claude Code on the web runs Sonnet by default, with Opus available via the "think harder" toggle or `ultrathink`. You'd want to verify that Opus is consistently used for the creative phases. Sonnet would produce noticeably different (flatter) fiction.
+
+**The simpler alternative worth considering:** A Claude Project. Put the template, both style guides, and the source articles as project knowledge. Then each run is just pasting the phase prompt. It's manual — you're the automation layer — but it's five copy-pastes per run, it guarantees Opus, and the project knowledge stays loaded without eating context. The tradeoff is human labor vs. automation fidelity.
+
+**My recommendation:** Prototype one automated run in Claude Code on the web first, with the repo containing the template and guides, and a CLAUDE.md that says something like:
+
+> When asked to run the pipeline, execute each phase of ellison-story-template.md sequentially. Write each phase's output to a separate file (phase-1-conflicts.md, phase-2-plots.md, etc.). At the start of each new phase, read only the selected winner from the previous phase's file, not the full generation set. Use extended thinking for all phases.
+
+See if the output quality at Phase 6 matches what we got today. If it does, you have your automation. If it degrades, fall back to the Project approach — five minutes of manual work per run is cheap insurance on a creative task where quality is the whole point.
+
+# 21. User
+
+It's a great idea to try project knowledge. Please generate a new template for prompting Claude with Ellision and Unslop in project knowledge. Assume a different user. Add an introduction noting how to use the guides as project knowledge. Make the prompts in the template as close as possible to those the user wrote in this session. Note the user can try a different writer.
+
+# 22. Claude Opus 4.6
+
+The prompts are lifted almost verbatim from your side of this conversation. The main additions are the setup section explaining how to use project knowledge, the [AUTHOR] placeholder, and the Notes section covering steering, substitution, and context management. A new user should be able to pick this up with just the two files and a Claude Project.
+
+[story-pipeline-template.md]
