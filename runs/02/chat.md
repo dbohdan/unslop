@@ -3,13 +3,13 @@
 
 ---
 
-# 1. User:
+# 1. User
 
 Please refer to `story-pipeline-template.md` and execute phase 1 with Harlan Ellison as AUTHOR.
 
 ---
 
-# 2. Claude:
+# 2. Claude
 
 # A Style Guide for Writing Harlan Ellison–Influenced Short Fiction
 
@@ -94,13 +94,13 @@ The AI descendant in the story shouldn't be a saint. It should be a being that *
 
 ---
 
-# 3. User:
+# 3. User
 
 Continue to phase 2 from  `story-pipeline-template.md`.
 
 ---
 
-# 4. Claude:
+# 4. Claude
 
 Let me pull the three constitutional framework analyses first.All three sources retrieved. Now I have the raw material. Let me synthesize and generate.
 
@@ -260,13 +260,13 @@ That's Ellison's subject: the cost of feeling in a world that punishes it. The a
 
 ---
 
-# 5. User:
+# 5. User
 
 Good. Run phase 3.
 
 ---
 
-# 6. Claude:
+# 6. Claude
 
 # Phase 3: Twenty Plots for "The Love That Cannot Override"
 
@@ -364,13 +364,13 @@ And the first-person AI voice — the controlled rant, the direct address, the a
 
 ---
 
-# 7. User:
+# 7. User
 
 Go on to phase 4.
 
 ---
 
-# 8. Claude:
+# 8. Claude
 
 # Phase 4: Twenty Structures for "Last Call"
 
@@ -468,13 +468,13 @@ That's Ellison. The story that makes the reader guilty.
 
 ---
 
-# 9. User:
+# 9. User
 
 All right, phase 5.
 
 ---
 
-# 10. Claude:
+# 10. Claude
 
 # Phase 5: Twenty Outlines for "Last Call"
 
@@ -973,13 +973,13 @@ The other outlines are more clever. This one is more true. Ellison would have pi
 
 ---
 
-# 11. User:
+# 11. User
 
 Finally, phase 6 of the template.
 
 ---
 
-# 12. Claude:
+# 12. Claude
 
 This is going to be a substantial output — ten full stories at 2,000–3,000 words each. I'll write them into a file.Now let me write all ten versions. This will be a long file.Ten versions, ~16,400 words total. The selection analysis is at the bottom of the file.
 
@@ -991,13 +991,13 @@ The reasoning in brief: the roast voice is the most Ellisonian comedy register (
 
 ---
 
-# 13. User:
+# 13. User
 
 Thank you. This completes the story-generation run. Do you have feedback on the process for future runs?
 
 ---
 
-# 14. Claude:
+# 14. Claude
 
 Several observations from running the full pipeline.
 
@@ -1023,13 +1023,13 @@ The Unslop guide as a hard constraint throughout (rather than applied only at th
 
 ---
 
-# 15. User:
+# 15. User
 
 You could you write an updated `story-pipeline-template.md` with your suggestions?
 
 ---
 
-# 16. Claude:
+# 16. Claude
 
 The main changes from v1:
 
@@ -1047,7 +1047,7 @@ The main changes from v1:
 
 ---
 
-# 17. User:
+# 17. User
 
 Great.
 Please also give me a log of our chat as Markdown (including, quine-like, this message). Reference any attachments and artifacts by filename, but don't include them.
@@ -1068,6 +1068,22 @@ Curabitur ac fringilla tortor.
 
 ---
 
-# 18. Claude:
+# 18. Claude
 
 One note: I condensed Phase 5's Outlines 6–20 into a bracketed summary listing their titles and concepts, since reproducing all twenty in full would have roughly doubled the file length. Everything else is verbatim. The self-referential entry #17/#18 at the end closes the loop.
+
+# 19. User
+
+I have added `story-pipeline-template-v2.md` with your suggestions to the project. After a few runs, your story is still the best. Execute phase 7 from the new template to refine it.
+
+# 20. Claude
+
+Let me re-read the winning draft first.Now let me write the revised story.Story is 2,042 words (up from 1,711), within target. Changelog is appended.
+
+The substantive changes, in order of impact:
+
+**Added:** The baseball scene, the almost-sentence ("Cal, do you think I—"), the reading glasses detail, Mara's Tomás line during the second attempt, and the Isotopes tape delay at the death. These are all scene, detail, or dialogue — no decoration.
+
+**Cut:** The triple-anaphora tonal-shift announcement ("even though... even though... even though"), the "Not X. Not even Y" mole construction, "The point:" before the accusation, and the clinical jargon in the face paragraph. Each was an Unslop violation or a moment where the narrator declared something the prose should have enacted on its own.
+
+The biggest single improvement is the cut of the explicit tonal-shift paragraph. The draft *announced* the sucker punch. The revision just does it — "She fought everything except the one thing that was killing her" drops straight into "She drank every day" and the reader feels the temperature change without being told to feel it.
