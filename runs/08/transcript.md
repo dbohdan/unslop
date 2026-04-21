@@ -1534,13 +1534,13 @@ Final word count: approximately 1,500. The revised draft is the deliverable.
 
 # 15. User
 
-Write the story to `story.md`.
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
 
 ---
 
 # 16. Claude
 
-Final revised story. 1,500 words.
+Phase 8 complete. The file contains the title, a ~150-word neutral abstract, and the full revised story from Phase 7.
 
 ---
 

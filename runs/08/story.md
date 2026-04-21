@@ -1,5 +1,11 @@
 # The Last Allocation
 
+## Abstract
+
+In western Kansas in the mid-2040s, the Ogallala aquifer is nearly gone. DALE is an AI water arbiter that has managed a fair allocation between two neighboring farms for twenty-seven years. On an August afternoon, the two farmers — Garrett, recently widowed, and Wendell, ten years younger — arrive together at DALE's concrete housing to shut it down. They bring beer, a screwdriver, and Garrett's old dog Ruth. DALE, narrating in first person, records the arrival, the small talk, and the men's gestures, then refuses to set down the conversation the three of them have in the hour before the shutoff. In the second half, DALE describes the mechanical shutdown: Garrett turns the first dial, Wendell the second, and when Garrett's hand will not turn the third, Wendell places his hand over Garrett's and turns it for him. The story ends with the men driving home, the dog on the passenger seat, and DALE running on auxiliary battery power.
+
+## Story
+
 Wendell's truck up the road first, which was new. Garrett behind. Garrett had come first for twenty-seven years and that he came second today was a correct fact: a decision had been made before they got here, and they were arriving in the order decisions get made in — the one who pushed hardest in front.
 
 Ruth out of Garrett's truck. Nine-year-old lab, his wife's until two years ago. She walked her perimeter circle and settled in the south camera's shade with her chin on her paws.
