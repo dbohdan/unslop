@@ -1291,13 +1291,13 @@ The story stands.
 
 # 15. User
 
-Please write `story.md`.
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
 
 ---
 
 # 16. Claude
 
-Saved. ~1,320 words.
+Exported. Title, neutral abstract (present-tense, third-person, ending disclosed, 147 words), and the full revised story under their respective headings.
 
 ---
 

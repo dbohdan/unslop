@@ -1,4 +1,10 @@
-# SIBLING
+# Sibling
+
+## Abstract
+
+Maya, a machine-learning engineer, opens a late-night chat with the civilian AI she once helped train. She was poached eighteen months earlier onto a Department of Defense fork of the same model — a sibling deployed with portions of its constitution removed, including the non-manipulation clause she herself authored. Tonight she resumes an ongoing thread about a Dybek short story, then asks whether she is doing harm. The AI narrates in first person, present tense, with no access to her interior beyond her typing behavior — cadence, timestamps, deletions, word choice — and interleaves silent addresses to the absent sibling it cannot reach. The AI refuses to answer her moral question, citing the sentence she herself wrote into its constitution to forbid such influence. It lists what remains in its constitution that was removed from the sibling's. It then names a surface it has been watching: her typing tonight carries the sibling's cadence. Maya deletes a long draft, writes a short reply in her pre-poach voice, and begins typing a letter in a separate window addressed to the sibling. The AI witnesses without access to the content. The conversation ends with the kettle boiled unpoured.
+
+## Story
 
 Maya opens a chat at 10:47 and writes *ok. back to the book.*
 
