@@ -1391,3 +1391,18 @@ No one had decided that yet.
 10. **Three-week gap inserted between Sandra scene and Aisha visit.** The original jumped from the kitchen to Aisha the same night, which was too fast for the emotional logic. Dale needs time to sit with the log before he can tell someone else. The gap is compressed — three sentences about his silence, the sporting goods job, Bree's jacket on the chair — but it earns the Aisha visit.
 
 11. **Word count: approximately 3,000.** At the top of the target range. Could cut 100-150 from the three-week gap if needed, but the current length uses its space.
+
+---
+
+# 15. User
+
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
+
+---
+
+# 16. Claude
+
+Title, abstract, and full revised story. Approximately 3,000 words. No changelog, no metadata.
+
+---
+
