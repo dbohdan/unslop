@@ -1745,13 +1745,13 @@ Pipeline complete.
 
 # 15. User
 
-Please create `story.md`.
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
 
 ---
 
 # 16. Claude
 
-Final draft, ~2,380 words, Phase 7 revisions applied.
+Phase 8 complete. Title, abstract, and story in `story.md`.
 
 ---
 

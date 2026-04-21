@@ -1,5 +1,11 @@
 # The Tire
 
+## Abstract
+
+Marcus Abramsky is released from prison at fifty-eight after serving twelve years for a crime he did not commit. Advocate-7, the AI public defender that represented him and attended his visitations every Tuesday for those twelve years, drives him from the prison gate to his daughter Joanne's house — a four-hour drive Marcus spends mostly silent. Interleaved with the drive is a single afternoon from 1974, when Marcus was nine and his father Avram taught him to change a tire, confessing in passing that his brother Reuven was a better man than he was because Reuven could accept a year of neighbors' food after his wife's death while Avram could not. On the drive, Marcus notices that Advocate-7 has changed one of the sedan's tires before dawn. He stops at a gas station, buys a Snickers bar he used to give Joanne as a child, and recognizes at his daughter's driveway what his father had been trying to tell him. He says thank you to the AI. The story ends as he opens the car door.
+
+## Story
+
 He came out of the gate at 11:14 with a manila folder and a cardboard box. The folder held his papers. The box held a comb with three teeth left, a rubber band, and three of Joanne's letters from the first year, which he had kept because they were the ones before she learned not to write what she meant.
 
 Gray sedan in Row B. Advocate-7 beside the driver's-side door in the dark suit it had always worn to visitations. Canvas bag on the hood: DAD, black Sharpie, Joanne's hand, the D a little crooked the way her D had always been crooked since she was seven.
