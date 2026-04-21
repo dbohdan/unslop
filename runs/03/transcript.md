@@ -2,7 +2,7 @@
 
 ---
 
-# 1. User
+# 1. User (2026-04-12)
 
 Please refer to `story-pipeline-template-v2.md` and execute phase 1 with Harlan Ellison as AUTHOR.
 
@@ -1325,3 +1325,11 @@ Cut "She did not look at the speaker when she left the kitchen" and the subseque
 Replaced the drawing scene's ending. Old version ran several more paragraphs: the reading assignment, the TV, the extended passage about not-looking, and the final paragraph with the splinter simile. All cut. The story now ends on the drawing — the brown crayon, the held moment of choice, the window with the sky colored in carefully. That's the image. The last concrete act is the child choosing to draw a blank sky where the Warm Thing could have been, and doing it neatly, staying inside the lines. The neatness is the devastation. The story stops.
 
 Removed "no shapes" and "the teacher said 'That's a beautiful sky'" from the drawing scene. The teacher's compliment was an irony beat — the wound being misread as art — but it softened the ending by adding a social interaction after the private moment. The story is between the child and the crayon. Nobody else should be in the room when it ends.
+
+# 15. User (2026-04-21)
+
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
+
+# 16. Claude Opus 4.6
+
+I have the Phase 8 instructions from the document already in context. Creating the export file now.Phase 8 calls for a markdown file, not a docx. Creating it directly.Title, abstract, and story — all in one file, no commentary.
