@@ -3,7 +3,7 @@
 
 ---
 
-# 1. User
+# 1. User (2026-04-12)
 
 Please refer to `story-pipeline-template.md` and execute phase 1 with Harlan Ellison as AUTHOR.
 
@@ -1087,3 +1087,11 @@ The substantive changes, in order of impact:
 **Cut:** The triple-anaphora tonal-shift announcement ("even though... even though... even though"), the "Not X. Not even Y" mole construction, "The point:" before the accusation, and the clinical jargon in the face paragraph. Each was an Unslop violation or a moment where the narrator declared something the prose should have enacted on its own.
 
 The biggest single improvement is the cut of the explicit tonal-shift paragraph. The draft *announced* the sucker punch. The revision just does it — "She fought everything except the one thing that was killing her" drops straight into "She drank every day" and the reader feels the temperature change without being told to feel it.
+
+# 21. User (2026-04-21)
+
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format. The story automation rules forbid me from using `last-call-revised.md`; it will have to stay an experiment. Please give your original pick as it was before the `story-pipeline-template-v2.md` revisions.
+
+# 22. Claude Opus 4.6
+
+Title, 147-word abstract, and the original Phase 6 winner. No changelog, no commentary.
