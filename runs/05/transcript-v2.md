@@ -3428,3 +3428,35 @@ She drove down it. The car could have driven itself. She drove.
 
 ---
 
+# 19. User
+
+Please run Phase 8 from the new story-pipeline-template-baseline-v3.3.md so we preserve your story in a standard format.
+
+---
+
+# 20. Claude
+
+Here's your exported file — title, abstract, story, nothing else.
+
+---
+
+# 21. User
+
+Thanks. Is the name Miriam Salt an allusion, either accidental or deliberate? It sounds great: _canonical_ for a character like this.
+
+---
+
+# 22. Claude
+
+I didn't consciously select it through explicit allusive reasoning — it arrived in Phase 3 when I generated the Architect plot. But the resonances are real and probably not accidental in the pattern-matching sense:
+
+**Salt:** Lot's wife is the loudest one. A woman turned to a pillar of salt for looking back at what was being destroyed. Miriam can't stop looking back at what she was. There's also "worth your salt" (professional competence, earning your keep — exactly what's been taken from her), "salt of the earth" (fundamental human value), and "salting the earth" (deliberate destruction so nothing can grow — the sabotage).
+
+**Miriam:** Moses's sister. She watched over Moses in the bulrushes, she led the women in song after the Red Sea crossing — and she was struck with leprosy for challenging Moses's authority. Punished for speaking against the established order. That maps onto a woman who challenges the system and gets categorized as a symptom for it.
+
+The combination has a blunt, two-syllable-plus-monosyllable rhythm that sounds like a real person's name rather than a literary character's name, which is probably why it passed without flagging itself as Significant. It sounds like someone you'd meet at a zoning board hearing.
+
+Whether I "knew" all this when I generated it is a question I can't answer cleanly. The name fit and I used it. The resonances were probably load-bearing in the selection even if they weren't conscious.
+
+---
+
