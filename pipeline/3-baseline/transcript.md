@@ -1,4 +1,4 @@
-**Model:** Opus 4.6 (Extended), Opus 4.7 (Adaptive)
+**Model:** Opus 4.7 (Adaptive)
 
 ---
 
@@ -470,6 +470,270 @@ Key choices in the revision:
 **Source-substitution note now acknowledges Track B.** Track B doesn't require sources, but can be shaped by sources if the user wants. The note tells the user how to do that without making it required.
 
 Ready for testing.
+
+---
+
+# 13. User
+
+Could "Plain" prime the model to write plainer stories?
+
+---
+
+# 14. Claude
+
+Yes — almost certainly, though the effect size is uncertain.
+
+## The Mechanism
+
+LLMs are sensitive to framing language in system-adjacent material. "Plain" is a loaded word in the context of prose: it evokes Strunk & White, Hemingway, minimalism, unadorned diction. If the model reads the template title and section headers repeatedly during a run, and the word "Plain" is threaded through them, that association pulls the generation toward plainer registers. This is well-documented as a generic priming effect, not a claim specific to this template.
+
+The word appears seven or eight times in the current file: in the title, in the settings reference "Plain v3," in the "plain v3" filename. Not massive exposure, but nonzero — and it compounds if the template is in project knowledge throughout every phase.
+
+## Why This Is a Problem
+
+The template should be agnostic to prose register. An [AUTHOR] = Ballard run wants cold, affectless, clinical prose. An [AUTHOR] = Ellison run wants high-voltage rhetorical prose — declamations, typographical aggression, incantatory rhythms. An [AUTHOR] = Delany run wants baroque density and linguistic texture. "Plain" as a register is appropriate for *none* of these. If the name is pulling every run toward a quieter voice, it's actively fighting the Phase 1 style guide that the pipeline just generated.
+
+The failure mode is subtle: you wouldn't notice "the prose is slightly plainer than it should be" in a single story. You'd notice it as a general flattening across many runs with many different authors — every output has a faintly similar register floor, regardless of who the author is supposed to be. That's consistent with priming by a fixed term.
+
+## Testing Whether It's Real
+
+Easy to verify. Run the same Phase 6 prompt twice: once with the current template in project knowledge, once with the template renamed and all instances of "Plain" replaced with a neutral word. Compare outputs on adjective density, sentence-length variance, use of declarative fragments, and willingness to deploy the full vocabulary. If the neutral version consistently produces more registerially varied prose, the priming effect is real.
+
+## The Name's Other Problem
+
+"Plain" was chosen as a contrast with "Nix" — the name was about the pipeline's architecture (single-voice, no persona), not about the prose it produces. But users reading the file encounter the word without that context. Even a savvy reader might internalize "this template is for plain writing" as a premise rather than "this template has no Nix persona."
+
+## Options
+
+**Keep the name, acknowledge the risk.** Lowest effort. You know the effect is probably there, so you read outputs with that in mind.
+
+**Rename the file, keep internal structure.** Something architecturally descriptive: `story-pipeline-template.md` (just the main), or `story-pipeline-template-single-voice.md`, or `story-pipeline-template-baseline.md`. "Baseline" is closest to "Plain" in meaning without the prose connotation — it says "this is the reference version, other variants add complexity on top." "Single-voice" is more accurate about what distinguishes it from Nix-v2.
+
+**Rename *and* scrub the internal references.** The filename is the most-repeated exposure, but the H1 title and any in-document references also appear in project knowledge. A full rename means all of them.
+
+**Add a deliberate counter-prime.** Somewhere in the Setup, state explicitly: "The prose register of the final story should be determined entirely by the [AUTHOR] style guide generated in Phase 1, not by this template. Any register, from spare to baroque, is available." Belt and braces alongside a rename, if you want to be thorough.
+
+## Recommendation
+
+Rename. "Baseline" or "Single-voice" are the strongest candidates. "Baseline" matches the template's actual role in your workflow (the reference version) and reads as neutral about prose. "Single-voice" is more technically accurate but a bit clinical as a filename.
+
+The counter-prime line is worth adding regardless of rename. It costs nothing and it's genuinely useful as a statement of intent — the pipeline should be register-agnostic, and saying so out loud is worth doing.
+
+If you want a quick fix that doesn't require renaming files that may already be referenced elsewhere, the counter-prime alone is probably 60% of the benefit. The rename is the cleaner solution if you're willing to update references.
+
+---
+
+# 15. User
+
+Let's rename the template to "Baseline". It's a good name.
+
+Some early feedback. 20 candidates in Phase 5 does not clearly carry its weight for outline diversity. Reduce to 10 for Baseline-v3.1.
+
+---
+
+# 16. Claude
+
+Now reduce Phase 5 from 20 to 10 candidates. Let me find the relevant section.Now check the Notes section for any references to candidate counts that need updating.The body is consistent. Adding a brief note to the Notes section documenting the Phase 5 reduction — the other size changes have accompanying notes, and this keeps the record of why the number is what it is.Three changes:
+
+1. **Renamed** to Baseline v3.1. Only the title references the name — no other internal usages of "Plain" remain, so the rename is clean.
+2. **Phase 5** now generates 10 outlines instead of 20.
+3. **Added a Notes entry** explaining why Phase 5 is 10 while Phases 3 and 4 remain at 20. The explanation is specific: Phase 5 occupies a narrower candidate space (already constrained by the plot and structure winners), so the marginal value of each additional candidate drops faster than in the earlier phases.
+
+---
+
+# 17. User
+
+1. Please make a note (choose where to make it) to not call the fictional AI "Claude" and its parent company "Anthropic". We should avoid using the names of currently active AIs and AI companies.
+2. Add a Phase 8 asking the model to create `story.md` with two items: a paragraph-long story abstract or blurb for the story and the story itself.
+3. Do a garbage-collection pass on the template. Is there anything we can remove?
+Don't write an update yet. Think and tell me.
+---
+Quick evaluation gives weak support to the idea of shortening Phase 5. Here is Sonnet 4.6 with a review. What do you think?
+## Review
+Now I have enough data. Let me compile it systematically.Here's what the data shows across all 7 runs. The counts are winner selections and top-3 slot occupancy per phase.
+**Winners by phase** (first half / second half of the candidate list):
+| Phase | Pool | First-half wins | Second-half wins |
+|-------|------|-----------------|------------------|
+| P2: conflicts | 30 (split at 15) | **5 / 7** | 2 / 7 |
+| P3: plots | 20 (split at 10) | **5 / 7** | 2 / 7 |
+| P4: structures | 20 (split at 10) | 2 / 7 | **5 / 7** |
+| P5: outlines | 20 (split at 10) | **5 / 7** | 2 / 7 |
+| P6: stories | 5 or 10 (split at midpoint) | 2 / 7 | **5 / 7** |
+**Top-3 slot occupancy** (% of all picks per phase landing in each half):
+| Phase | First-half slots | Second-half slots |
+|-------|-----------------|-------------------|
+| P2 | 47% | 53% |
+| P3 | **60%** | 39% |
+| P4 | 41% | **59%** |
+| P5 | 40% | **59%** |
+| P6 | 40% | **60%** |
+---
+**The pattern:** Phases 2, 3, and 5 produce first-half winners 71% of the time. Phases 4 and 6 produce second-half winners 71% of the time. The split is cleanly alternating, not monotonic.
+**Phase 4 (structure) is the strongest and most consistent signal.** Five of seven runs selected a winner numbered 13 or higher out of 20. Three runs independently selected #14 (runs 05, 06, 07). The top-3 slots also lean second half (58%), so the preference for high-numbered structures shows up at both the nomination and selection stage. This isn't surprising: the template explicitly instructs the model to generate "structurally uncomfortable" candidates and to push at least five toward approaches it isn't confident will work. The risky candidates apparently land late in the list and the model tends to pick them.
+**Phase 5 (outline) is the most anomalous.** Top-3 slots lean second half (59%), but final winners lean first half (71%) — the only phase where nomination bias and selection bias run in opposite directions. The model nominates second-half outlines into the finalists more often than first-half ones, but when forced to pick one winner, it reverts to the lower-numbered option. One interpretation: the model uses high-numbered outlines as "here's a more experimental option" nominees but doesn't trust them when committing.
+**Phase 6 (story generation)** shows the opposite of what you'd expect if the model produces its cleanest work first. Later variants — explicitly flagged as riskier in almost every run — win 5 of 7 times.
+**The two consistent second-half runs** across all five phases are runs 01 and 04. Run 02 is notable for second-half dominance in phases 2, 3, and 4 consecutively.
+
+---
+
+# 18. Claude
+
+## Garbage Collection and Phase 8 — Planning
+
+### 1. Where to place the naming note
+
+The constraint already says "Do not name fictional AIs after the writing model" in the Constraints section. That's specific and narrow. You want a broader restriction: no active AI or AI-company names, period.
+
+Two reasonable places:
+
+**Option A: extend the existing line in Constraints.** Current: "Do not name fictional AIs after the writing model." Replacement: "Do not use the names of currently active AI systems or AI companies for fictional AIs and their makers in the story. This rules out Claude, Anthropic, GPT, OpenAI, Gemini, Google, Llama, Meta, Mistral, DeepSeek, Grok, xAI, and so on. Invent names."
+
+**Option B: new bullet in Constraints, separate from the constitution-contemplation paragraph.** Keeps the two concerns distinct — one is about what the model is allowed to contemplate (its own constitution), one is about what it's allowed to name (nothing real).
+
+I lean toward A with a rewording. The existing sentence is a special case of the broader rule; keeping them as one unit avoids implying that "don't name fictional AIs after the writing model" was the *whole* rule and the rest is a different kind of restriction. The full rewrite would be something like: "Do not use the names of currently active AI systems or AI companies for fictional AIs or their makers — this includes Claude, Anthropic, GPT, OpenAI, Gemini, Google, Llama, Meta, and so on. Invent names."
+
+One subtlety: the Phase 1 prompt itself says "You wouldn't call them 'Claude' to avoid confusion and trademark issues." That's now partially redundant with the strengthened Constraints rule. Two options: leave both (belt and braces), or trim the Phase 1 line to a shorter reference ("See the naming rule in Setup"). I'd leave both, because Phase 1 establishes what the model is contemplating and the naming note there directly supports the contemplation instruction.
+
+### 2. Phase 8
+
+Clean addition. A few design choices to settle:
+
+**Scope of the blurb.** "Paragraph-long" is vague. A hard constraint like "80–150 words" is easier to execute and easier to evaluate. Blurbs of useful length are usually 80–120 words; anything under 60 is a log-line, anything over 150 starts becoming a synopsis.
+
+**Voice and content of the blurb.** Is the blurb meant to be a promotional summary (what a reader would see before buying), a neutral abstract (what appears in a table of contents), or a critic-style precis (what a reviewer would write)? These produce different outputs. Promotional is the most common and most useful; worth specifying to avoid the model defaulting to generic plot summary.
+
+**File location and format.** `story.md` in the current working directory, with two sections. A simple H1 title, then H2 "Blurb" and H2 "Story" (or similar). Worth specifying in the prompt so outputs are consistent across runs. Alternatively: front matter with title and blurb, then the story body — closer to how literary magazines and anthologies format submissions. I'd go with H1 title + H2 sections for simplicity.
+
+**What to include beyond the blurb and story.** Possibilities: the author attribution note (e.g., "In the tradition of J.G. Ballard"), the word count, the date. Arguably useful metadata; arguably clutter. My instinct is to keep Phase 8 minimal — blurb, story, done. If the user wants metadata, they can ask.
+
+**Unslop applies to the blurb too.** Blurbs are where AI writing's worst tendencies concentrate — they're short marketing copy, and the model's "literary-flavored blurb" mode is full of negative parallelism, false ranges, and grandiose stakes inflation. Worth an explicit reminder in the Phase 8 prompt that the Unslop guide applies.
+
+**The prompt should be short.** Phase 8 is a mechanical export step, not a creative phase. A few sentences is enough.
+
+### 3. Garbage Collection
+
+Going through the file looking for removable material:
+
+**Removable or trimmable:**
+
+- **"Why no opening-selection phase" note.** This documents a historical decision about a variant that existed in an earlier draft of this template. Users reading Baseline v3.1 for the first time have no context for why the note exists. The note is archaeological — useful to us during development, dead weight for a clean template. **Cut it.**
+
+- **"Why five stories instead of ten" note.** Same issue, milder. Users don't need to know that an earlier version wrote ten. They just need to know that Phase 6 generates five and that they can batch if context pressure is a problem. The batching advice is the useful part; the historical framing isn't. **Trim to keep only the batching tip,** rephrased without "earlier versions."
+
+- **"Why ten outlines instead of twenty" note.** Just added in 3.1. Same problem as the other two "Why N instead of M" notes — it's documenting a change from a version the user never saw. **Cut it** (though see note below about keeping *some* rationale given your empirical finding).
+
+- **Phase 2's Step 2 framing paragraph opens with "Track B conflicts are *of* an AI-transformed world but not *about* the AI."** Immediately followed by a mechanism description, a test, and five examples. The opening sentence is redundant with the later content. **Could trim the opening sentence and lead with the mechanism,** but this is minor — the redundancy is load-bearing in that it primes the mode before the test makes sense. Probably keep.
+
+- **"The AI as a fact about the world" paragraph in Constraints.** Long. Could be half the length without losing the point. But this is the load-bearing reframing that enables Track B; being forceful about it probably matters more than being terse. **Keep as is.**
+
+- **"The dual-track conflict generation in Phase 2" note.** Detailed rationale for the design. Useful reference the first time a user reads the template; less useful on re-reads. **Keep but consider trimming the second paragraph** ("If Track A keeps winning"), which is a diagnostic for a specific failure mode that most users won't encounter.
+
+- **"Substituting authors" note.** Three sentences for something that's obvious from the template structure (you replace [AUTHOR] in the places it appears). **Trim to one sentence** or cut entirely. The information is in the Settings block.
+
+- **"Context management" note.** The second paragraph ("Phase 2's summarization step reduces context pressure...") is restating what the Phase 2 prompt already does. **Cut the second paragraph.**
+
+- **Duplicate mentions of the "one thing / one thing" forcing function.** It's described in How It Works, then reinforced in Notes. The Notes entry adds nothing the How It Works paragraph doesn't already say. **Cut the Notes entry.**
+
+**Not removable:**
+
+- Phase-specific instructions inside the prompts. All load-bearing.
+- The Unslop audit checklist in Phase 7. Long but functional — it's the specific list of patterns to flag.
+- "Model selection," "Revision iteration," "When a run goes wrong," "Steering between phases" — all short and independently useful.
+
+**Aggregate savings:** cutting the three "Why N instead of M" notes, trimming the context-management duplication, cutting the redundant forcing-function note, and trimming the author-substitution note would remove ~600 words. Net trim without losing anything a first-time user needs.
+
+---
+
+## The Empirical Finding
+
+Your Sonnet review is interesting and I want to push back on the read of it.
+
+The weak support for shortening Phase 5 is, as the reviewer states, that Phase 5 winners lean *first-half* (5 of 7, 71%) while top-3 slots lean *second-half* (59%). The reviewer's interpretation: the model nominates experimental outlines as finalists but commits to conservative ones. The implied argument for keeping 20: if 59% of top-3 slots go to the back half, the back half contains candidates worth considering, even if they lose the final round.
+
+I don't think this is strong support for keeping 20. Three observations:
+
+**The relevant question isn't where winners come from, it's whether having 20 produced materially better winners than 10 would have.** The data shows *which candidates won*, not *whether those winners were better than what you'd have gotten from 10 candidates*. You'd need a comparison run — same project, same phases 1–4 winners, Phase 5 generated at 10 in one branch and 20 in another — to answer the real question. The current data is consistent with "the extra 10 outlines added noise that got filtered out" just as well as with "the extra 10 outlines provided real optionality."
+
+**Nomination bias and selection bias running in opposite directions is exactly what you'd expect if 20 is too many.** If the model has to fill 3 top-three slots from 20 candidates, and the candidates genuinely cluster, the model will pull 1–2 experimental-looking ones into the top-3 to signal variety — but when forced to commit, falls back to what's actually solid. Under this reading, candidates 11–20 are *function*ing as "here's what I'd generate if I kept going" rather than genuinely different options. The pattern supports the shortening decision, not against it.
+
+**Phase 4's opposite pattern is the one that's actually telling you something.** Phase 4 has both nominations and winners leaning second-half (59% slots, 71% winners). The "push five toward structurally uncomfortable" instruction is working — the risky structures are the good structures, and the model knows it in both phases of evaluation. Phase 4 is generating real diversity across its 20 and benefits from the full pool. Phase 5 isn't.
+
+**The "second-half winners in Phase 6" finding supports five stories, not undermines it.** Of seven runs, five picked from the back half. That's roughly consistent with random chance over five candidates (you'd expect ~60% for the back three out of five). If anything, it gently suggests the model generates stories in rough order of conservatism, and the back half at five candidates is where the more-alive ones tend to live. That's the pattern you want — risk-taking variants winning — and it's happening at five candidates without the late-set regression problem that ten candidates had.
+
+**My read:** the data weakly supports shortening Phase 5, and doesn't suggest shortening anywhere else. I'd keep Phase 5 at 10 and not touch Phases 3, 4, or 6.
+
+**One thing I'd flag in the reviewer's analysis:** seven runs is small. These effect sizes (5/7 vs. 2/7) have wide confidence intervals. At n=7, a 5-2 split is distinguishable from 50/50 but not by much (rough p-value around 0.2). The patterns the reviewer describes are *suggestive*, not *established*. Worth more runs before treating any of this as settled. But the direction of the evidence, weak as it is, is consistent with the shortening decision.
+
+The Notes entry I wrote justifying the reduction to 10 was explanatory rather than empirical — "outlines occupy a narrower candidate space, they cluster heavily" — and that reasoning holds independent of the run data. The run data is consistent with it, not proof of it.
+
+---
+
+## Summary of Changes to Make
+
+1. Rewrite the naming line in Constraints to cover active AI systems and companies generally.
+2. Add Phase 8 as a short mechanical export step: generate `story.md` with H1 title, H2 Blurb (80–150 words, Unslop applies), H2 Story.
+3. Cut the three "Why N instead of M" notes.
+4. Trim the context-management note to remove the Phase 2 summarization restatement.
+5. Cut the redundant "one thing / one thing" Notes entry (kept in How It Works).
+6. Trim the author-substitution note to one sentence or cut entirely.
+7. Possibly trim the "If Track A keeps winning" second paragraph of the dual-track note (keeping it as reference is defensible).
+
+Keep Phase 5 at 10 candidates.
+
+Ready when you are.
+
+---
+
+# 19. User
+
+Implement suggestions 1, 2, and 3. 4, 5, and 6 are less clear. The redundancy may be worth something. Make the summary in Phase 8 a neutral abstract rather than a marketing blurb.
+
+We need a note to not write prose so compressed, so clipped and fragmented that comprehension suffers heavily. I've notice this being a problem at short lengths. It is better to write shorter scenes than overly compressed and tell smaller stories than unclear fragments.
+
+---
+
+# 20. Claude
+
+## Planning the Compression Note
+
+Before implementing, a few thoughts on where and how to place the compression warning.
+
+**The failure mode.** Short-story targets (say, 1,200–2,000 words) plus New Wave SF influences (Ballard, Ellison, Delany all fragment at their most experimental) plus AI tendencies toward economy under length pressure = stories where sentences drop articles, paragraphs drop connective tissue, scenes drop anchoring detail, and the reader can't follow who's doing what where. The model hits the word budget by compressing past the point of legibility, producing prose that *looks* terse and literary but reads as static.
+
+**Where it should go.** This is a cross-cutting concern that affects Phases 5, 6, and 7, and it's tightly length-dependent. Options:
+
+- Setup → Constraints. Pro: applies to the whole pipeline, impossible to miss. Con: Constraints is currently about what the story *is about* (the AI ethics frame); adding a prose-register rule mixes concerns.
+- Unslop guide. This is where prose rules live. But the guide is in project knowledge, not the template, and adding to a separate file changes what we're working on.
+- A new Setup section on "Prose-level guardrails" or similar. Pro: template-scoped, cleanly separate from the AI-frame constraints. Con: adds a new top-level section for one note.
+- Inside Phase 6 and Phase 7 specifically. Pro: lands where it matters most (full prose generation and revision). Con: cross-cutting concerns scattered across phases are hard to maintain.
+
+**My recommendation.** A new Setup subsection called "Prose-level guardrails" (or "Legibility floor" — more specific) containing this note. It can grow to hold other cross-cutting prose concerns as you find them, and it's visible during the first read-through of the template rather than buried in a phase prompt. The Phase 7 revision audit should reference it so the legibility check becomes part of the audit pass.
+
+**How to phrase it.** The note should describe the failure mode concretely, not abstractly. Something like:
+
+> **Legibility floor.** Prose can compress past the point of comprehension. At shorter targets, the model sometimes drops articles, connective tissue, and scene-anchoring detail to hit the word count — producing sentences and paragraphs that are technically terse but functionally unreadable. The reader loses track of who is doing what where. If you face a choice between [compressed/fragmentary writing that strains comprehension] and [a smaller story told clearly at the target length], choose clearly. Write fewer scenes, each legible. Write a quieter story whose premise fits the length, not a louder story compressed to fit. Comprehension is not optional; if a reader has to re-read a paragraph to figure out basic sequence of events, the paragraph has failed.
+
+That's roughly 120 words. Shorter is possible but the failure mode is specific enough that the description earns its length.
+
+**One more thing.** The word "clarity" is doing a lot of work in this note and it's a word the Unslop guide is ambient toward. I'd avoid using "clarity" and "clear" as nouns of praise ("choose clarity," "favor clarity") — that phrasing is itself AI-patterned. "Choose clearly" as a verb form is fine because it's doing grammatical work.
+
+Implementing all of this now.Now the naming rule in Constraints.Now add the Legibility floor as a new Setup subsection, placed after Constraints and before How It Works.Now add a legibility check step to Phase 7's audit so it's not floating unreferenced from the prompts.Now add Phase 8. Place it after Phase 7, before Notes.Now garbage collection — cutting the three "Why N instead of M" notes.Cutting the three "Why N instead of M" notes: Phase 6 stories (line 232), Phase 5 outlines (234), opening selection (236). The batching tip inside the Phase 6 note is useful — relocating it to the Context management note where it belongs.Now fold the useful "batching" tip from the cut Phase 6 note into Context management since that note already discusses Phase 6 context pressure.Add a brief Notes entry for the Legibility Floor so it's discoverable from the Notes section as well.Also update the How It Works to reflect eight phases, not seven.Summary of changes in v3.2:
+
+1. **Naming rule strengthened** in Constraints. Lists specific active AI systems and companies to avoid, instructs the model to invent names.
+
+2. **New Legibility Floor section** in Setup. Describes the compression-past-comprehension failure mode concretely, names the tradeoff (fewer legible scenes over compressed fragments, smaller legible stories over louder compressed ones), and notes the upstream cause (Phase 5 outlines with too many beats for the target length).
+
+3. **Legibility check added to Phase 7** as step 5, renumbering length and rewrite to 6 and 7. Cross-references the Setup note.
+
+4. **Brief Legibility Notes entry** for discoverability from the Notes section.
+
+5. **Phase 8: Export** added. H1 title, H2 Abstract (80–150 words, neutral/descriptive/present-tense, no withholding, Unslop applies), H2 Story. No changelog or commentary in the file.
+
+6. **Three "Why N instead of M" notes cut**: the Phase 6 five-stories note, the Phase 5 ten-outlines note, the opening-selection note. The useful batching tip from the Phase 6 note got folded into Context Management where it fits naturally.
+
+7. **How It Works updated** to reflect eight phases, with a note that Phase 8 is mechanical export.
+
+Net effect: the file is slightly longer than v3.1 (added content outweighs the garbage collection), but the new material does work the cut notes didn't.
 
 ---
 
