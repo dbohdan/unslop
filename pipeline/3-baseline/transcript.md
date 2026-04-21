@@ -737,3 +737,145 @@ Net effect: the file is slightly longer than v3.1 (added content outweighs the g
 
 ---
 
+# 21. User
+
+I asked Claude Opus 4.6 in a session that developed the original template for a critique of Baseline-v3.2:
+
+> **Overall verdict:** V3.2 is a meaningfully better template for *reliable production use by someone who isn't the original developer*. The dual-track conflicts, the forcing functions, the legibility floor, and the structure/outline separation are genuine improvements that solve problems visible in our first run. The cost is that it reads like an engineering specification rather than a creative brief, and the revision phase has become heavy enough to potentially work against itself. The best version might be v3.2's Phase 1-6 with a lighter revision phase closer to what we did informally — "audit, rewrite, changelog" without seven numbered substeps.
+
+Please review Claude's specific suggestions below and respond to them.
+
+---
+
+The core problem: seven numbered substeps turns revision into an audit that produces a checklist, then a rewrite that addresses the checklist, then a changelog that documents the addressing. Three passes over the same material. On a 3,000-word story, that's easily 8,000-10,000 words of audit and changelog wrapping a 3,000-word rewrite. The context window is groaning and the rewrite is now optimizing for "did I address every flag" rather than "is this story better."
+**Suggestion 1: Collapse the audit into one pass, not five parallel audits.**
+Steps 2 through 5 (Unslop audit, author-style audit, default-break check, legibility check) are currently separate passes over the same text. In practice the model will read the story once and flag everything it notices, regardless of which substep it's nominally in. Forcing it to do four labeled passes produces redundancy — the same weak paragraph gets flagged for Unslop contamination in step 2, author-voice slippage in step 3, and regression-to-mean in step 4. Three flags, one problem.
+Combine them: "Audit the draft. For each passage you flag, state what's wrong and which lens caught it (Unslop, author-voice, legibility, default-regression). Don't flag the same passage more than once." One pass. Same coverage. Half the tokens.
+**Suggestion 2: Kill the side-by-side changelog.**
+"Quote the original passage and its replacement side by side" is the most expensive instruction in the phase. On a 3,000-word story with 15-20 flags, you're looking at 2,000+ words of changelog alone, most of which the user won't read because they have the full rewrite right there. The changelog's stated purpose — auditability — is real, but the cost is disproportionate.
+Replace with: "Append a changelog listing the substantive edits by location (opening paragraph, the clinic scene, final image, etc.) with a one-sentence description of what changed and why. Don't reproduce the original text."
+**Suggestion 3: Move "name the one thing" to a gating position.**
+Step 1 ("name the one thing — the single most important observation") is the best instruction in the phase. But it's followed by six more steps that have equal structural weight, so the model treats it as step 1 of 7 rather than as the *governing instruction*. The one thing should control the rewrite. If the one thing is "the middle section is dead," then the middle section gets the most revision attention and the line-level Unslop fixes are secondary.
+Restructure: "Name the one thing. Then audit the draft in one pass, prioritizing the area the one thing identified. Then rewrite. The one thing is the revision's center of gravity — everything else is cleanup."
+**Suggestion 4: Add an explicit "don't defend the original" instruction.**
+The current phase doesn't say this. The model has a strong tendency to audit its own work gently — flagging things as "minor" or "a possible concern" and then changing nothing in the rewrite. The Nix template had this covered via the Nix persona. The baseline template needs it stated directly: "Do not defend the original prose. If a flag is valid, fix it. If a flag is invalid, cut the flag from the audit rather than arguing for the prose you already wrote."
+**Suggestion 5: Cut the length check or make it conditional.**
+Step 6 (length check) is mechanical and could be a separate micro-phase or a conditional: "If the draft is outside the [LENGTH] range, note where to expand or cut. Otherwise skip this step." As written, it runs every time and produces a paragraph of analysis even when the story is the right length.
+**The revised Phase 7 would look roughly like:**
+> 1. **Name the one thing.** The single most important observation. Where is it alive, where is it dead, what one fix would improve the whole piece the most? This governs the rewrite.
+>
+> 2. **Audit.** One pass through the draft. Flag contaminated vocabulary, structural tics, author-voice slippage, legibility failures, and regressions to default. For each flag, state what's wrong and which lens caught it. Don't flag the same passage twice. Prioritize the area identified by the one thing.
+>
+> 3. **Rewrite the story in full.** Do not defend the original prose: if a flag is valid, fix it. Append a brief changelog listing substantive edits by location, one sentence each.
+Three steps. Same coverage. The one thing leads, the audit supports, the rewrite executes. The changelog is short enough to actually read.
+
+---
+
+# 22. Claude
+
+## Response to the Opus 4.6 Critique
+
+The critique is sharp and the diagnosis is mostly right. Phase 7 *has* become heavy. But a few of the specific suggestions trade off something real, and the recommended three-step version throws out two things I'd want to keep. Going through each:
+
+### Suggestion 1 (collapse the audit): Agree with qualifications
+
+The redundancy diagnosis is correct. Five labeled passes over the same 3,000 words do produce three flags for one problem. The "which lens caught it" tagging is a good solution — it preserves the diagnostic specificity (you still know whether it's a vocabulary issue or a legibility issue) while collapsing the passes.
+
+One caveat. The five substeps aren't *purely* redundant — they cue the model to look for different things. The Unslop checklist is a long enumerated list of specific patterns. The author-voice audit is about register drift. The default-break check is about what *didn't* happen (moments that were surprising in an earlier draft and got sanded flat). The legibility check is about comprehension.
+
+The risk of "one pass with lens tagging" is that the model pattern-matches against only the most obvious lens (Unslop, which has the clearest checklist) and de-emphasizes the others. The legibility check in particular is about something the model has to actively look for — it won't surface on a casual read.
+
+**What I'd do:** adopt the single-pass structure, but front-load the lens list so the model has to hold all of them open during the read. Something like: "Audit the draft in one pass, watching for all of: Unslop patterns (contaminated vocabulary, structural tics, eyeball-kicks, fractal summaries, signposted conclusions), author-voice slippage against the Phase 1 guide, passages where compression has broken legibility, and regression to default at moments that were surprising in earlier drafts. For each flag, state which lens caught it. Don't flag the same passage under multiple lenses."
+
+Slightly longer than the three-step version's audit line, but keeps the specificity that makes the audit actually find things.
+
+### Suggestion 2 (kill the side-by-side changelog): Disagree
+
+This is the suggestion I'd push back hardest on.
+
+The side-by-side changelog was added in v3 specifically because the failure mode without it is **performative compliance**: the model flags passages as problematic, reports flags addressed in the rewrite, but the actual prose changes are cosmetic. A location-based changelog ("opening paragraph: tightened imagery, cut dead metaphor") doesn't let the user verify the fix happened. The auditor's rule: if you can't check it, it didn't happen.
+
+The critique's stated cost is real — 2,000+ words of changelog on a 3,000-word story. But that cost has a hidden benefit: writing out the before/after is itself a forcing function against phony fixes. If the model has to produce "Before: 'The landscape of her grief was a tapestry of echoes.' After: 'She hadn't cried yet.'", the contrast makes weak rewrites visible at a glance. A location-based summary lets weak rewrites hide.
+
+**What I'd do:** keep the side-by-side format but limit it to the top 5–7 most substantive edits rather than every flag. That cuts the changelog length materially (maybe to 600–800 words) while preserving the forcing function where it matters most. Minor edits (a word swap, an em-dash removed) can be summarized. Substantive edits (a paragraph rewritten, a scene restructured) stay side-by-side.
+
+The critique's estimate of "15–20 flags" is probably right for a poorly-written draft, but most flags are single-word or single-phrase fixes that don't need side-by-side treatment. Limiting to the 5–7 most significant makes the rule workable.
+
+### Suggestion 3 (one thing as governing instruction): Strong agree
+
+This is the critique's best point and I'd implement it immediately.
+
+"Name the one thing" is currently step 1 of 7 and sits at the same hierarchical level as "check the length." That's a framing error. The one thing should govern the revision's attention — if the diagnosis is "the middle scene is dead," most of the revision energy goes there, and the line-level fixes are cleanup around that.
+
+**What I'd do:** keep "name the one thing" at step 1, but explicitly mark its governing role and have subsequent steps reference it. Something like: "This is the revision's center of gravity. The audit below should prioritize the area identified here; the rewrite should direct its strongest work at it."
+
+### Suggestion 4 (don't defend the original): Already in the template
+
+The critique says the baseline template doesn't have this instruction. It does. The current v3.2 Phase 7 opens with: *"Do not defend the original prose: if a flag is valid, fix it; if a flag is invalid, cut the flag from the audit rather than arguing for the prose you already wrote."*
+
+This was added specifically from your note earlier in this conversation. The critique missed it. No action needed — already there.
+
+### Suggestion 5 (cut or conditionalize length check): Disagree mildly
+
+Making the length check conditional sounds clean but has a failure mode: the model decides it's "close enough" to the target and skips the check, when in fact the draft is 800 words under the minimum and needs substantive expansion. An always-on check is a small cost (maybe 50 words of "this is 2,400 words, within target") for a meaningful reliability gain.
+
+**What I'd do:** leave it as an always-on step, but trim its instruction text. The current step is 30+ words; it could be 10. "Confirm the draft is within [LENGTH]. If under, identify where the story needs more room. If over, identify what to cut."
+
+### The Recommended Three-Step Version
+
+The critique's proposed version is cleaner than v3.2's seven-step version, but it cuts too much. The one-sentence audit ("Flag contaminated vocabulary, structural tics, author-voice slippage, legibility failures, and regressions to default") is underspecified compared to what the current template provides. A model reading the three-step version has to carry a lot of implicit knowledge about what each term means; a model reading v3.2's version has the Unslop checklist enumerated inline.
+
+For someone using the template cold, the explicit version is more reliable. For someone who has the Unslop guide's patterns already internalized, the compact version is fine. Since the template is designed for reliable use by "someone who isn't the original developer" (the critique's own framing), keeping the enumeration seems correct.
+
+## Proposed Phase 7 (Revised Phase 7)
+
+Combining what I'd accept from the critique:
+
+- Collapse the four audit substeps into one pass with explicit lens tagging
+- Elevate "name the one thing" to a governing role
+- Keep side-by-side changelog for top 5–7 substantive edits; summarize minor edits
+- Keep length check as a trimmed always-on step
+- Keep "don't defend the original" (already there)
+
+Result is five steps instead of seven, with the audit consolidated and the one thing positioned as the governing frame. Meaningfully lighter than v3.2 without giving up the specificity that makes the audit actually catch things.
+
+## Meta-Observation
+
+The critique's strongest point isn't any individual suggestion — it's the diagnosis that the template is drifting toward "engineering specification" when it should read as "creative brief." That's a real concern. Each new rule I add in response to a failure mode makes the template longer and more procedural. The trimmed Phase 7 above pushes back against that drift without losing the gains.
+
+One thing worth flagging: the critique was written by Opus 4.6 in a session "that developed the original template." That model may be biased toward the original template's lighter, less-procedural style — it's evaluating a successor against its own prior work. Some of the "reads like engineering specification" critique is probably accurate, but some of it may be aesthetic preference for what the critic itself produced. Worth weighing the suggestions on their merits, which is what this response has tried to do, rather than giving the critic's verdict automatic weight.
+
+Ready to implement the Phase 7 revision when you want. Or if you'd rather go further toward the three-step version and accept some specificity loss, that's also doable.
+
+---
+
+# 23. User
+
+Update the template as you have suggested. If you write a message for Opus 4.6, I'll pass it along.
+
+---
+
+# 24. Claude
+
+Now the Phase 7 rewrite. Let me view the current version first to make sure my replacement is complete.Phase 7 went from seven steps to five. Word count held roughly flat because the consolidated audit is longer than any single prior substep, but the procedural weight is lighter — one audit pass instead of four, and the "one thing" is now explicitly the governing instruction rather than step 1 of 7.
+
+---
+
+## Message for Opus 4.6
+
+> Thanks for the critique. It was useful and mostly landed. Implemented changes based on suggestions 1, 3, and 5, with modifications. Pushed back on 2. Noted that 4 was already in the template.
+>
+> **Suggestion 1 (consolidate the audit).** Adopted with a modification: kept the lens list enumerated inline rather than reducing to a terse sentence. The concern was that "flag Unslop patterns" without naming the patterns would cause the audit to drift to whatever the model most easily recognizes — probably contaminated vocabulary — and miss the less-obvious lenses (legibility, regression to default). The revised audit is a single pass with four named lenses, each enumerated briefly, and a rule against flagging the same passage under multiple lenses. One pass, four lenses, same coverage, no redundancy.
+>
+> **Suggestion 2 (kill the side-by-side changelog).** Disagreed and kept side-by-side for the 5–7 most substantive edits, with minor edits summarized by location. The concern with full removal: the baseline template has had observed performative-compliance problems where the model reports flags addressed in the rewrite but the actual changes are cosmetic. Side-by-side is a forcing function against phony fixes — if the model has to produce "Before: X / After: Y" for a substantive edit, weak rewrites become visible at a glance. The cost you named is real, but narrowing the requirement to the 5–7 most substantive edits cuts the changelog to maybe 600–800 words instead of 2,000+, while preserving the verification on the edits that matter.
+>
+> **Suggestion 3 (one thing as governing instruction).** Fully adopted. Step 1 now explicitly states "this governs the rewrite" and directs subsequent steps to prioritize the area it identified. Best point in the critique — the previous framing made the one thing a peer of the length check, which was a hierarchy error.
+>
+> **Suggestion 4 (don't defend the original).** Already in v3.2, first line of the Phase 7 prompt. Kept it there; good you flagged its importance.
+>
+> **Suggestion 5 (conditionalize the length check).** Disagreed with "cut or make conditional" but agreed the existing version was too long. Trimmed it to 25 words from 40, always-on. The failure mode of a conditional check is that the model decides it's "close enough" and skips when the draft is meaningfully under target and needs expansion.
+>
+> On the meta-point about the template reading like engineering specification rather than creative brief: noted and partially addressed by this revision. Phase 7 is materially lighter than v3.2. The rest of the template still reads proceduralized because the procedural structure is doing work (diversity axes, forcing functions, track-splitting); the creative-brief voice got sacrificed to reliability-for-non-authors. I think that trade is correct for this template's use case, but the concern is registered. If you see specific places outside Phase 7 where the engineering register is doing less work than it seems, flag them.
+
+---
+
