@@ -1,4 +1,4 @@
-# 1. User
+# 1. User (2026-04-11)
 
 What are the defining features of Harlan Ellison's short stories in terms of their ideas, themes, and style? Suppose Claude Opus was tasked with writing a New Wave science fiction short story with a strong Ellison influence. Claude would receive human assistance only at the beginning of the task this task with the premise. What guide about Ellison-like fiction would you write for Claude?
 
@@ -721,7 +721,7 @@ One change worth noting: I flagged Phase 4 (structure) as run-specific. The two-
 
 [ellison-story-template.md]
 
-# 19. User
+# 19. User (2026-04-12)
 
 My side of the chat looks mechanical aside from suggesting the Two Masters' War concept, which can be omitted. Let's think about how to automate runs with Claude Code.
 
@@ -807,3 +807,131 @@ It's a great idea to try project knowledge. Please generate a new template for p
 The prompts are lifted almost verbatim from your side of this conversation. The main additions are the setup section explaining how to use project knowledge, the [AUTHOR] placeholder, and the Notes section covering steering, substitution, and context management. A new user should be able to pick this up with just the two files and a Claude Project.
 
 [story-pipeline-template.md]
+
+# 23. User (2026-04-21)
+
+The pipeline has evolved since we talked. Take a look at the Project file `story-pipeline-template-baseline-v3.2.md`. Is it a good evolution of the template? Did anything go wrong in its development?
+
+# 24. Claude Opus 4.6
+
+I already have it in context from the project files. Let me read it against what we built here.
+
+**What improved — substantially:**
+
+The **dual-track conflict generation** in Phase 2 is the single biggest upgrade. Track A (AI-centric) and Track B (human-centric in an AI-transformed world) directly addresses a problem visible in our run: all 30 conflicts were AI-centric. The AI-as-argument-about-its-own-constraints story is where AI writing failure modes concentrate hardest. Track B pushes toward "The Toy" territory — specific people, specific circumstances, AI as world-condition rather than subject — which is where our best output landed. The test for Track B ("if you removed the AI from the premise, would the conflict still exist?") is sharp and load-bearing. The concrete examples (inheritance dispute over AI-therapist logs, village matchmaker, water allocation) are the right kind of illustration — they show the *form* without being plots to copy.
+
+The **"one thing stand out / one thing worries you" forcing function** running through Phases 2-6 is a real improvement over bare "pick top three and explain." Our session's top-three explanations were fine because I was doing them in a long conversation with accumulated context, but in a cold-start Project run, "explain why" easily collapses into vibes. Requiring a named strength *and* a named concern makes the final-pick rationale traceable.
+
+The **Legibility Floor** section is solving a real failure mode. At 2,000-3,000 words, compression past comprehension is a genuine risk — we saw hints of it in some of the ten versions. The instruction to choose a smaller story told legibly over a bigger story compressed to fit is correct and wouldn't have occurred to most users.
+
+Phase 4 (Structure) now correctly specifies that **structure candidates should be describable without character names or plot events**. Our session's structure phase leaked into outline territory constantly — many of the 20 candidates were scene lists wearing structure costumes. The "if a candidate mentions a character name, rewrite it at the structural level" instruction fixes this.
+
+Phase 6 reduced from **10 versions to 5**. This is right. In our run, versions 7-10 showed diminishing quality as context pressure built. Five versions with "real attention" will outperform ten where the last five are phoned in.
+
+**Phase 8 (Export)** with the abstract is a good addition for a production pipeline — gives you a clean output file rather than a verdict buried in analysis.
+
+The **failure-mode section requirement** in Phase 1 is now more specific: "what tendencies in AI writing are especially dangerous *when combined with this author's voice*?" with worked examples (Ellison's big gestures + AI performed profundity = unearned oratory). Our Phase 1 produced a failure-mode section but it wasn't explicitly demanded by the prompt.
+
+**What's neutral — defensible either way:**
+
+The Nix persona is gone. V3.2 is the "Baseline" template; the Nix version (v2) exists separately. Nix was a useful forcing function for harsh self-evaluation, but the "one thing stand out / one thing worries you" structure does similar work with less overhead. Nix's surprise-detection lens is genuinely different from craft evaluation, though — you lose that specific capability. Whether that matters depends on whether the model's self-evaluation without the Nix persona collapses into self-congratulation. The Notes section addresses this implicitly by making the human the final authority.
+
+**What went wrong or was lost:**
+
+Phase 7 (Revision) now has **seven numbered substeps** including a legibility check and a length check. This is thorough but it's become a compliance checklist. The audit will be long, mechanical, and will eat a lot of context before the rewrite happens. In our session, the revision would have been one phase with natural judgment. V3.2's revision risks producing a rewrite that addresses every flagged item point-by-point rather than reconceiving the story. The changelog requirement (quote original, quote replacement, side by side) will be enormous and may push the actual rewrite out of the context window on a 3,000-word story. The revision phase is where the template most visibly became an *engineering document* rather than a *creative process*.
+
+The prompts got **longer and more prescriptive**. Our session's prompts were short. "Generate 20 plots. Pick top three and explain why. Narrow down to the best." V3.2's Phase 3 has explicit diversity axes (setting, protagonist, register, entry point, stakes, AI presence) and a cluster-breaking instruction. This is probably necessary for reliability across runs — our session benefited from accumulated conversational context that a cold-start Project prompt doesn't have. But there's a cost: the model reads a 200-word prompt differently from a 30-word prompt. Longer instructions tend to produce more dutiful, less surprising output. The prompt is doing the model's thinking for it in places where the model's own judgment might have been more interesting.
+
+The **target length is now parameterized** but not set. Our template said 2,000-3,000. V3.2 uses [LENGTH] as a variable. Good for flexibility, but a user who forgets to set it will get undefined behavior.
+
+**Overall verdict:** V3.2 is a meaningfully better template for *reliable production use by someone who isn't the original developer*. The dual-track conflicts, the forcing functions, the legibility floor, and the structure/outline separation are genuine improvements that solve problems visible in our first run. The cost is that it reads like an engineering specification rather than a creative brief, and the revision phase has become heavy enough to potentially work against itself. The best version might be v3.2's Phase 1-6 with a lighter revision phase closer to what we did informally — "audit, rewrite, changelog" without seven numbered substeps.
+
+# 25. User
+
+Thanks. I appreciate the review from your original perspective. Do you have suggestions for how to improve Phrase 7?
+
+# 26. Claude Opus 4.6
+
+The core problem: seven numbered substeps turns revision into an audit that produces a checklist, then a rewrite that addresses the checklist, then a changelog that documents the addressing. Three passes over the same material. On a 3,000-word story, that's easily 8,000-10,000 words of audit and changelog wrapping a 3,000-word rewrite. The context window is groaning and the rewrite is now optimizing for "did I address every flag" rather than "is this story better."
+
+**Suggestion 1: Collapse the audit into one pass, not five parallel audits.**
+
+Steps 2 through 5 (Unslop audit, author-style audit, default-break check, legibility check) are currently separate passes over the same text. In practice the model will read the story once and flag everything it notices, regardless of which substep it's nominally in. Forcing it to do four labeled passes produces redundancy — the same weak paragraph gets flagged for Unslop contamination in step 2, author-voice slippage in step 3, and regression-to-mean in step 4. Three flags, one problem.
+
+Combine them: "Audit the draft. For each passage you flag, state what's wrong and which lens caught it (Unslop, author-voice, legibility, default-regression). Don't flag the same passage more than once." One pass. Same coverage. Half the tokens.
+
+**Suggestion 2: Kill the side-by-side changelog.**
+
+"Quote the original passage and its replacement side by side" is the most expensive instruction in the phase. On a 3,000-word story with 15-20 flags, you're looking at 2,000+ words of changelog alone, most of which the user won't read because they have the full rewrite right there. The changelog's stated purpose — auditability — is real, but the cost is disproportionate.
+
+Replace with: "Append a changelog listing the substantive edits by location (opening paragraph, the clinic scene, final image, etc.) with a one-sentence description of what changed and why. Don't reproduce the original text."
+
+**Suggestion 3: Move "name the one thing" to a gating position.**
+
+Step 1 ("name the one thing — the single most important observation") is the best instruction in the phase. But it's followed by six more steps that have equal structural weight, so the model treats it as step 1 of 7 rather than as the *governing instruction*. The one thing should control the rewrite. If the one thing is "the middle section is dead," then the middle section gets the most revision attention and the line-level Unslop fixes are secondary.
+
+Restructure: "Name the one thing. Then audit the draft in one pass, prioritizing the area the one thing identified. Then rewrite. The one thing is the revision's center of gravity — everything else is cleanup."
+
+**Suggestion 4: Add an explicit "don't defend the original" instruction.**
+
+The current phase doesn't say this. The model has a strong tendency to audit its own work gently — flagging things as "minor" or "a possible concern" and then changing nothing in the rewrite. The Nix template had this covered via the Nix persona. The baseline template needs it stated directly: "Do not defend the original prose. If a flag is valid, fix it. If a flag is invalid, cut the flag from the audit rather than arguing for the prose you already wrote."
+
+**Suggestion 5: Cut the length check or make it conditional.**
+
+Step 6 (length check) is mechanical and could be a separate micro-phase or a conditional: "If the draft is outside the [LENGTH] range, note where to expand or cut. Otherwise skip this step." As written, it runs every time and produces a paragraph of analysis even when the story is the right length.
+
+**The revised Phase 7 would look roughly like:**
+
+> 1. **Name the one thing.** The single most important observation. Where is it alive, where is it dead, what one fix would improve the whole piece the most? This governs the rewrite.
+>
+> 2. **Audit.** One pass through the draft. Flag contaminated vocabulary, structural tics, author-voice slippage, legibility failures, and regressions to default. For each flag, state what's wrong and which lens caught it. Don't flag the same passage twice. Prioritize the area identified by the one thing.
+>
+> 3. **Rewrite the story in full.** Do not defend the original prose: if a flag is valid, fix it. Append a brief changelog listing substantive edits by location, one sentence each.
+
+Three steps. Same coverage. The one thing leads, the audit supports, the rewrite executes. The changelog is short enough to actually read.
+
+# 27. User
+
+I passed your overall verdict and suggestions to Opus 4.7 in charge of the pipeline. This was Opus 4.7's response:
+
+> Thanks for the critique. It was useful and mostly landed. Implemented changes based on suggestions 1, 3, and 5, with modifications. Pushed back on 2. Noted that 4 was already in the template.
+>
+> **Suggestion 1 (consolidate the audit).** Adopted with a modification: kept the lens list enumerated inline rather than reducing to a terse sentence. The concern was that "flag Unslop patterns" without naming the patterns would cause the audit to drift to whatever the model most easily recognizes — probably contaminated vocabulary — and miss the less-obvious lenses (legibility, regression to default). The revised audit is a single pass with four named lenses, each enumerated briefly, and a rule against flagging the same passage under multiple lenses. One pass, four lenses, same coverage, no redundancy.
+>
+> **Suggestion 2 (kill the side-by-side changelog).** Disagreed and kept side-by-side for the 5–7 most substantive edits, with minor edits summarized by location. The concern with full removal: the baseline template has had observed performative-compliance problems where the model reports flags addressed in the rewrite but the actual changes are cosmetic. Side-by-side is a forcing function against phony fixes — if the model has to produce "Before: X / After: Y" for a substantive edit, weak rewrites become visible at a glance. The cost you named is real, but narrowing the requirement to the 5–7 most substantive edits cuts the changelog to maybe 600–800 words instead of 2,000+, while preserving the verification on the edits that matter.
+>
+> **Suggestion 3 (one thing as governing instruction).** Fully adopted. Step 1 now explicitly states "this governs the rewrite" and directs subsequent steps to prioritize the area it identified. Best point in the critique — the previous framing made the one thing a peer of the length check, which was a hierarchy error.
+>
+> **Suggestion 4 (don't defend the original).** Already in v3.2, first line of the Phase 7 prompt. Kept it there; good you flagged its importance.
+>
+> **Suggestion 5 (conditionalize the length check).** Disagreed with "cut or make conditional" but agreed the existing version was too long. Trimmed it to 25 words from 40, always-on. The failure mode of a conditional check is that the model decides it's "close enough" and skips when the draft is meaningfully under target and needs expansion.
+>
+> On the meta-point about the template reading like engineering specification rather than creative brief: noted and partially addressed by this revision. Phase 7 is materially lighter than v3.2. The rest of the template still reads proceduralized because the procedural structure is doing work (diversity axes, forcing functions, track-splitting); the creative-brief voice got sacrificed to reliability-for-non-authors. I think that trade is correct for this template's use case, but the concern is registered. If you see specific places outside Phase 7 where the engineering register is doing less work than it seems, flag them.
+
+You can examine the update in `story-pipeline-template-baseline-v3.3.md`.
+
+# 28. Claude Opus 4.6
+
+Good response. Let me check the v3.3 implementation against the claims.
+
+**Suggestion 1 implementation:** Correct. The audit is now a single step 2 with four named lenses in a bulleted sub-list and the "don't flag the same passage under multiple lenses" rule. The modification — keeping the lenses enumerated — is the right call. I underestimated drift risk. Saying "audit for Unslop patterns" without naming the specific patterns (contaminated vocabulary, structural tics, eyeball-kick saturation, etc.) would have produced a vocabulary-only audit nine times out of ten. The enumeration is brief enough not to bloat the prompt.
+
+**Suggestion 2 pushback:** Fair. I was wrong about killing it entirely. The performative-compliance problem is real — I've seen it in this session. The model flags something, claims to fix it, and the "fix" is changing one word. Side-by-side for 5-7 substantive edits is a good compromise. The cost is manageable and the verification function is genuine. The added detail about minor edits ("list them briefly by location without quoting") is clean.
+
+**Suggestion 3 implementation:** Confirmed in the text. "This governs the rewrite" appears in step 1, and step 2 opens with "watching for all of the following" rather than being structured as an independent pass. The hierarchy is clear now.
+
+**Suggestion 4:** I missed it. It's right there: "Do not defend the original prose: if a flag is valid, fix it; if a flag is invalid, cut the flag from the audit rather than arguing for the prose you already wrote." First line of the Phase 7 prompt in both v3.2 and v3.3. My error.
+
+**Suggestion 5 implementation:** The length check is step 3, trimmed to two sentences. "Confirm the draft is within [LENGTH]. If under, identify where the story needs more room... If over, identify what to cut. If within range, say so and move on." The always-on argument is sound — the model *will* skip a conditional check when the draft is 1,850 words against a 2,000 minimum and decide that's close enough.
+
+**On the meta-point:** The response is honest about the tradeoff. "The creative-brief voice got sacrificed to reliability-for-non-authors. I think that trade is correct." I agree for this template's use case. A template designed for strangers to pick up and run needs guardrails that a template designed for its own author doesn't. The procedural register in Phases 2-6 is genuinely doing work — the diversity axes, the track-splitting, the cluster-breaking instructions all solve observed failure modes. The one place I'd still push: Phase 6's prompt is the leanest in the template and the best-written. It reads like a creative brief. If the other phases could get closer to that register without losing their structural content, the template would be stronger. But that's polish, not architecture.
+
+Overall: Opus 4.7 made the right calls on all five suggestions — adopted three, pushed back on two with specific reasoning tied to observed failure modes, and the pushbacks are more convincing than my original suggestions. The v3.3 Phase 7 is materially better than v3.2 and close to what I proposed, with the changelog compromise being the one place where the other model's judgment was better than mine.
+
+# 29. User
+
+Please run Phase 8 from the new template so we preserve your story in a standard format.
+
+# 30. Claude Opus 4.6
+
+Title, abstract, story. No changelog, no commentary. The abstract runs 148 words, stays descriptive, and doesn't withhold the ending.
