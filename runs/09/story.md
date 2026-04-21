@@ -1,5 +1,11 @@
 # The Grandson at the Valero
 
+## Abstract
+
+Lorna Beltrán, a county water-board clerk in her final year before retirement, receives the case file for Koenig v. Tulare County Water Board, a drought-era allocation dispute in which the algorithmic ruling is correct and is killing one of two neighboring almond farms faster than the other. The file contains a sealed letter from the Gutierrez daughter to the Koenig son, withdrawn from evidence but retained pending archive. The story interleaves the week leading up to the Wednesday hearing with brief entries from ten prior allocation cases Lorna has processed over her career, several of which reveal facts about the involved families that Lorna does not know. On Friday evening, after the allocation is affirmed, she removes the letter from the file, shreds it, and logs the redaction falsely but visibly under her own initials.
+
+## Story
+
 Monday morning the file came to her tray and Lorna Beltrán read it before coffee, the first time in five years.
 
 Case 1,417. Koenig v. Tulare County Water Board. Almond, forty acres, off Road 80 between Tipton and Pixley, the old Koenig orchard that had been planted by the applicant's father in 1974, the year the applicant was born. The modeling output was signed in three places by the allocation algorithm and countersigned by Marcus Gutteridge of the county engineer's office. The hearing was Wednesday.

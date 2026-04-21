@@ -1337,13 +1337,13 @@ No flag cut as invalid. All seven were genuine.
 
 # 15. User
 
-Please write the story to `story.md`.
+Please run Phase 8 from the new `story-pipeline-template-baseline-v3.3.md` so we preserve your story in a standard format.
 
 ---
 
 # 16. Claude
 
-Story written. Roughly 1,180 words of catalogue entries and present-week scenes, interleaved as the outline specified, ending on the factual coda.
+Phase 8 complete. Title, abstract (142 words, descriptive, no withholding), and the revised Phase 7 story.
 
 ---
 
