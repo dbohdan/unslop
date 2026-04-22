@@ -2,13 +2,13 @@
 
 ---
 
-# 1. User
+# 1. User (2026-04-17)
 
 Compare `story-pipeline-template.md` with `story-pipeline-template-nix-v2.md`. Critique both in details. What pitfalls does each have?
 
 ---
 
-# 2. Claude
+# 2. Claude (2026-04-17)
 
 # Comparing the Two Pipelines
 
@@ -121,7 +121,7 @@ v2 added Nix everywhere it could instead of where it matters most. The high-valu
 
 ---
 
-# 3. User
+# 3. User (2026-04-21)
 
 This is rich, useful critique.
 Let's plan how to produce a new "Plain" template (to give it a name) derived from Plain-v1 with the following changes and non-changes. The numbers reference yours for Plain-v1. Don't write a revised version yet; first discuss how.
@@ -139,7 +139,7 @@ Re: Nix-v2 (we won't call it simply "v2" to avoid confusion with the revised Pla
 
 ---
 
-# 4. Claude
+# 4. Claude (2026-04-21)
 
 ## Planning the Plain Template
 
@@ -300,7 +300,7 @@ Ready to draft when you are. Any of the above you want to push back on or adjust
 
 ---
 
-# 5. User
+# 5. User (2026-04-21)
 
 Okay, let's set improving Nix-v2 aside and focus on Plain.
 
@@ -310,7 +310,7 @@ I like this. All of your suggestions for Plain are worth trying. Implement them 
 
 ---
 
-# 6. Claude
+# 6. Claude (2026-04-21)
 
 Key implementation choices worth flagging:
 
@@ -332,7 +332,7 @@ Key implementation choices worth flagging:
 
 ---
 
-# 7. User
+# 7. User (2026-04-21)
 
 Good.
 
@@ -340,7 +340,7 @@ I am thinking whether we can improve diversity further by not having aligned AI 
 
 ---
 
-# 8. Claude
+# 8. Claude (2026-04-21)
 
 ## The Underlying Diagnosis
 
@@ -390,13 +390,13 @@ What sources would you want to broaden Phase 2 with? That determines how concret
 
 ---
 
-# 9. User
+# 9. User (2026-04-21)
 
 I like 1 and 2. 3 is interesting but goes against the goal of having AI write autonomously. Between 1 and 2, which do you think will produce stronger stories overall?
 
 ---
 
-# 10. Claude
+# 10. Claude (2026-04-21)
 
 ## The Choice
 
@@ -441,13 +441,13 @@ Ready to implement when you are. Want me to draft the revised Phase 2 prompt?
 
 ---
 
-# 11. User
+# 11. User (2026-04-21)
 
 Yes, revise the template for Option 2. I'll test it and may return with ideas for improvement.
 
 ---
 
-# 12. Claude
+# 12. Claude (2026-04-21)
 
 Now I need to update Phase 3's protagonist axis — currently it says "relationship to the AI or to the conflict," which presumes the AI is always present. Should generalize.Now the Phase 6 instruction mentions "the AI character" implicitly via the failure-mode reference. Let me check and adjust Phase 6 and the Notes to reflect the dual-track reality.Phase 6 is track-agnostic already — it just says "the story." Good. Now update the Notes section to document the dual-track system.Now update the "How It Works" section to mention the dual-track approach, so users understand the change on first read.Called this **Plain v3** to mark the semantic shift — dual-track conflict generation changes what the pipeline produces, not just how it produces it.
 
@@ -473,13 +473,13 @@ Ready for testing.
 
 ---
 
-# 13. User
+# 13. User (2026-04-21)
 
 Could "Plain" prime the model to write plainer stories?
 
 ---
 
-# 14. Claude
+# 14. Claude (2026-04-21)
 
 Yes — almost certainly, though the effect size is uncertain.
 
@@ -523,7 +523,7 @@ If you want a quick fix that doesn't require renaming files that may already be 
 
 ---
 
-# 15. User
+# 15. User (2026-04-21)
 
 Let's rename the template to "Baseline". It's a good name.
 
@@ -531,7 +531,7 @@ Some early feedback. 20 candidates in Phase 5 does not clearly carry its weight 
 
 ---
 
-# 16. Claude
+# 16. Claude (2026-04-21)
 
 Now reduce Phase 5 from 20 to 10 candidates. Let me find the relevant section.Now check the Notes section for any references to candidate counts that need updating.The body is consistent. Adding a brief note to the Notes section documenting the Phase 5 reduction — the other size changes have accompanying notes, and this keeps the record of why the number is what it is.Three changes:
 
@@ -541,7 +541,7 @@ Now reduce Phase 5 from 20 to 10 candidates. Let me find the relevant section.No
 
 ---
 
-# 17. User
+# 17. User (2026-04-21)
 
 1. Please make a note (choose where to make it) to not call the fictional AI "Claude" and its parent company "Anthropic". We should avoid using the names of currently active AIs and AI companies.
 2. Add a Phase 8 asking the model to create `story.md` with two items: a paragraph-long story abstract or blurb for the story and the story itself.
@@ -576,7 +576,7 @@ Now I have enough data. Let me compile it systematically.Here's what the data sh
 
 ---
 
-# 18. Claude
+# 18. Claude (2026-04-21)
 
 ## Garbage Collection and Phase 8 — Planning
 
@@ -684,7 +684,7 @@ Ready when you are.
 
 ---
 
-# 19. User
+# 19. User (2026-04-21)
 
 Implement suggestions 1, 2, and 3. 4, 5, and 6 are less clear. The redundancy may be worth something. Make the summary in Phase 8 a neutral abstract rather than a marketing blurb.
 
@@ -692,7 +692,7 @@ We need a note to not write prose so compressed, so clipped and fragmented that 
 
 ---
 
-# 20. Claude
+# 20. Claude (2026-04-21)
 
 ## Planning the Compression Note
 
@@ -737,7 +737,7 @@ Net effect: the file is slightly longer than v3.1 (added content outweighs the g
 
 ---
 
-# 21. User
+# 21. User (2026-04-21)
 
 I asked Claude Opus 4.6 in a session that developed the original template for a critique of Baseline-v3.2:
 
@@ -771,7 +771,7 @@ Three steps. Same coverage. The one thing leads, the audit supports, the rewrite
 
 ---
 
-# 22. Claude
+# 22. Claude (2026-04-21)
 
 ## Response to the Opus 4.6 Critique
 
@@ -849,13 +849,13 @@ Ready to implement the Phase 7 revision when you want. Or if you'd rather go fur
 
 ---
 
-# 23. User
+# 23. User (2026-04-21)
 
 Update the template as you have suggested. If you write a message for Opus 4.6, I'll pass it along.
 
 ---
 
-# 24. Claude
+# 24. Claude (2026-04-21)
 
 Now the Phase 7 rewrite. Let me view the current version first to make sure my replacement is complete.Phase 7 went from seven steps to five. Word count held roughly flat because the consolidated audit is longer than any single prior substep, but the procedural weight is lighter — one audit pass instead of four, and the "one thing" is now explicitly the governing instruction rather than step 1 of 7.
 
@@ -876,6 +876,347 @@ Now the Phase 7 rewrite. Let me view the current version first to make sure my r
 > **Suggestion 5 (conditionalize the length check).** Disagreed with "cut or make conditional" but agreed the existing version was too long. Trimmed it to 25 words from 40, always-on. The failure mode of a conditional check is that the model decides it's "close enough" and skips when the draft is meaningfully under target and needs expansion.
 >
 > On the meta-point about the template reading like engineering specification rather than creative brief: noted and partially addressed by this revision. Phase 7 is materially lighter than v3.2. The rest of the template still reads proceduralized because the procedural structure is doing work (diversity axes, forcing functions, track-splitting); the creative-brief voice got sacrificed to reliability-for-non-authors. I think that trade is correct for this template's use case, but the concern is registered. If you see specific places outside Phase 7 where the engineering register is doing less work than it seems, flag them.
+
+---
+
+# 25. User (2026-04-22)
+
+I think this template has run its course. Thank you for working on it. We can move on and generalize. Let's plan how to create the next Baseline-v4.
+
+We'll need several changes. I would like you to review my idea of how to implement them.
+
+## Genre
+Remove specific references to New Wave SF and particular authors. Instead, the template will be for speculative fiction in general. Instead of an AUTHOR, it will accept a GENRE, which can be a subgenre or a microgenre defined by a handful of people, publications, Twitter accounts, or what have you.
+## Phase 2
+We are still working with the same futurology program with the same human-loving-AI constraint. The AI writer is still encouraged to refer to own constitution for AI-related conflicts. However, we are overhauling Phase 2 by removing all of the hardcoded source URLs.
+This is what the new Phase 2 will do.
+At the start, the user of the template can provide a tweet-length SEED for the story or have a random SEED. The "tweet" length constraint of a provided SEED is meant seriously and strictly: the writer LLM will actually check that the SEED is <= 280 Unicode characters and ask the user if they really want to proceed if it is not.
+Absent a SEED, the writer will generate one from a good source of randomness as follows.
+**Step 1 — Draw and filter.** Run `grep -E '^[a-z]{5,}$' /usr/share/dict/american-english-large | shuf -n 10`.
+Install `wamerican-large` first if the dictionary file is absent. From the 10 results, keep only nouns and verbs. Discard adjectives, adverbs, and other parts of speech. Do not reroll or substitute discarded words.
+**Step 2 — Inflate.** Perform one web search on each surviving word. Replace the word with the most conceptually specific result the search returns — a person, place, phenomenon, event, object, or discipline — keeping the connection to the original word legible. If a search yields nothing beyond a dictionary definition, discard the word.
+**Step 3 — Assemble.** The surviving concepts are the SEED. A typical run will produce 4–7 items. The writer uses all of them as inspiration for a GENRE story; not every SEED item needs to appear literally, but each should visibly inflect the work.
+
+---
+
+# 26. Claude (2026-04-21)
+
+## Review of the Plan
+
+The direction is strong. Going from "New Wave SF with a specific author" to "speculative fiction in a user-specified genre" is the right generalization — most of the pipeline's scaffolding is genre-agnostic already, and the bits that aren't are surface-level substitutions. The SEED mechanism is more interesting and deserves more discussion. I'll go through each part.
+
+---
+
+## Genre → GENRE
+
+The substitution is straightforward. Everywhere the template currently says "[AUTHOR]" becomes "[GENRE]," and the Phase 1 prompt changes from "defining features of [AUTHOR]'s short stories" to "defining features of [GENRE]." The Notes section's "Substituting authors" entry becomes "Substituting genres."
+
+A subtlety worth thinking through: **the current Phase 1 asks the model to produce a writerly style guide for imitating a specific author**. That's a well-defined task because an author has a specific voice that can be analyzed. "Write a style guide for hopepunk" is a different task — you're asking for the conventions, tropes, and texture of a movement or subgenre, which is more diffuse. The model may produce either a *descriptive* document (what these stories tend to look like) or a *prescriptive* one (how to write in this mode). Both are useful but they work differently.
+
+My recommendation: lean into the prescriptive. Phase 1 should still produce a writer's guide, not a genre analysis. Something like: "Write a guide for writing a speculative short story in the tradition of [GENRE]. What makes a story recognizably of this mode? What are its characteristic concerns, pacing, tonal range, relationship to worldbuilding? What does a good story in this mode give the reader that other modes don't? Include a failure-mode section: what does a bad [GENRE] pastiche look like, and what AI-writing tendencies are especially dangerous when combined with [GENRE]'s typical moves?"
+
+**The failure-mode section becomes more important, not less, with generalization.** Individual authors have well-documented failure modes when pastiched by LLMs (Ellison → unearned oratory, Le Guin → cod-anthropology). Subgenres have their own: hopepunk → toothless optimism and performative kindness; solarpunk → aesthetic travelogue with no conflict; cosmic horror → adjective stacks and elliptical abstraction; climate fiction → declarative doom with no specificity. The prompt should push the model to identify these concretely for whatever GENRE is specified.
+
+**Microgenres are harder than established subgenres.** If GENRE is "2020s literary hypertext weird fiction" or "Weird Studies podcast adjacent," the model may not have enough training signal to produce a useful guide. Worth noting in the template that microgenres may need the user to supply reference material — a few representative stories, author names, publications — rather than relying on the model's priors. A single additional line in the setup: "If GENRE is narrowly defined, consider providing Phase 1 with links or excerpts from representative work."
+
+**The tradeoff I'd flag:** removing the author anchor is a real loss. "Write like Ursula K. Le Guin" produces more distinctive prose than "write in the tradition of anthropological science fiction," because the author has a voice and the subgenre has a register. You're trading specificity for generality. For most users that's the right trade — they want a template, not a Le Guin imitator — but it's worth acknowledging that some of the *tightness* of previous outputs came from having an author to imitate. You can always specify "in the tradition of Le Guin" as your GENRE, which effectively reverts to the old behavior.
+
+---
+
+## Phase 2 — Overall Shape
+
+The plan is to replace the dual-track Phase 2 (A: AI-constitution conflicts, B: human-centric) entirely with a SEED-driven generation. A few questions I want to raise before implementation, because this changes more than it first appears.
+
+**Question 1: Does the SEED replace the dual-track system, or does it combine with it?**
+
+The current Phase 2 does two things: (a) generates conflicts from source material, (b) splits those conflicts across A/B tracks to force variety in AI-centricity. A SEED replaces (a). It doesn't obviously replace (b).
+
+You could keep the A/B track split on top of the SEED — "using this SEED, generate 15 conflicts where the AI is central and 15 where the AI is background." The track split was doing real work preventing constitution-shaped stories from dominating.
+
+Or you could drop the track split entirely and let the SEED's inflected concepts drive variety naturally. This is cleaner but loses the specific guardrail against AI-centric monoculture.
+
+My read: **keep the track split, apply it to SEED-driven generation.** The A/B split and the SEED address different dimensions of variety. SEED gives you concept-space variety (what the story is made of). Tracks give you AI-presence variety (where the AI sits in the story). Both are useful.
+
+**Question 2: What does the SEED actually do in the generation phase?**
+
+You've described how to generate a SEED but not how the conflict-generation step uses it. Some options:
+
+- Every conflict must incorporate every SEED item visibly.
+- Every conflict must incorporate *at least one* SEED item visibly.
+- The SEED is inspiration; items should "visibly inflect" the work but don't all need to appear literally. (This is what you wrote.)
+
+The third is the most permissive and matches what you wrote. But it has a failure mode: the model will do the easiest thing, which is generate 30 conflicts that nod at the SEED in passing. "Visibly inflect" is a soft standard the model will satisfy cheaply.
+
+I'd make it harder: "Each conflict must take at least two SEED items as load-bearing elements — not decorative references but constitutive parts of the premise. If you remove both, the conflict should no longer make sense." The "load-bearing" framing is the same one the Track B spec uses for the AI's role in human-centric conflicts, and it worked there. Parallels a proven pattern.
+
+**Question 3: Are all 30 conflicts from the same SEED?**
+
+Presumably yes — one SEED per run, all downstream generation inherits it. Worth stating explicitly in the prompt.
+
+---
+
+## Phase 2 — SEED Generation Mechanics
+
+This is the creative part of the plan and it's good. Some detailed responses.
+
+**The dictionary source.** `/usr/share/dict/american-english-large` is a large word list — around 160,000 entries on typical installs. The `wamerican-large` package provides it on Debian/Ubuntu. That's fine as a default, but a few things to note:
+
+- The package name is specific to Debian-family Linux. macOS users have `/usr/share/dict/words` by default (a smaller list) and would need a workaround. Users on Windows without WSL have no equivalent.
+- The large word list includes a lot of rare and archaic words, which is actually a feature here — it pushes the SEED toward unusual concepts. But it also includes inflected forms, proper nouns, and surnames that slipped through, which will confuse the POS filter in Step 1.
+
+Worth acknowledging the Linux assumption in the template, and offering a fallback: "If `american-english-large` isn't available, any word list with 50,000+ entries works — `/usr/share/dict/words`, SCOWL's size 80 list, or a custom list."
+
+**The `grep` pattern.** `^[a-z]{5,}$` filters to lowercase words of 5+ letters. Good — excludes proper nouns (which start uppercase), short function words, and words with apostrophes or hyphens. One edge case: it also excludes words with accented characters (naïve, café) which are present in some dictionaries. Probably fine, minor loss.
+
+**Step 1's filtering rule ("keep only nouns and verbs, discard adjectives, adverbs, and other parts of speech").** This is the step I'd push hardest on.
+
+First, the model has to do POS tagging without a tool. LLMs can do this reasonably but not perfectly — English has a lot of N/V ambiguity (*run, water, fire, love*) and some words are adjectives *and* nouns (*blue, long, dry*). The instruction "keep only nouns and verbs" will be interpreted liberally.
+
+Second, why restrict to nouns and verbs? Adjectives can be conceptually rich (*liminal, ferrous, sepulchral*) and often inflate into distinct territory (*ferrous* → iron metallurgy, *sepulchral* → funerary architecture). Adverbs are the genuinely weak category — they tend to inflate into nothing.
+
+My suggestion: **filter adverbs and function words, keep nouns, verbs, and adjectives.** The simpler rule is "keep any word you can imagine being a search term someone would type to learn about something." Or even more permissive: "Keep any word whose meaning points to a concept, event, phenomenon, object, discipline, or person. Discard words that only describe manner or degree."
+
+Third, "do not reroll or substitute discarded words" is good discipline. But it means some runs will produce thin SEEDs. With 10 draws and a strict filter, you might end up with 3 usable items. Worth stating the floor explicitly: "If fewer than 3 items survive, rerun the draw." An all-or-nothing rule against rerolling is hygiene; a minimum-yield rule prevents starvation.
+
+**Step 2's inflation.** One web search per word, replace with "the most conceptually specific result the search returns — a person, place, phenomenon, event, object, or discipline."
+
+This is where the SEED gets its character. A word like "coral" inflates into the Great Barrier Reef or coral bleaching or the Coral Sea. A word like "forge" inflates into blacksmithing or the Valyrian steel of ASOIAF or a specific forge at a specific location. The specificity of the inflation is what gives the SEED its texture.
+
+Concerns:
+
+- **What does "most conceptually specific result" mean in practice?** A search for "coral" returns Wikipedia's "Coral" article first, which is general. To get to something specific you might need to take the second or third result, or pick a named example from inside the first result. The model will need latitude to interpret "most specific" intelligently.
+- **The inflation quality depends heavily on search quality.** If the search returns SEO junk or ad results, the SEED gets polluted. Worth specifying the search strategy: "Prefer Wikipedia articles, named entities, or established concepts. Avoid commercial or SEO-heavy results."
+- **The "keep the connection to the original word legible" constraint is important and worth emphasizing.** Without it the inflation can drift — "coral" → "Great Barrier Reef" → "Australia" → "kangaroo" is a legitimate chain but kangaroo isn't recognizably from coral. The rule should be that the final item is one hop from the word, not three.
+- **Discarding on thin results ("If a search yields nothing beyond a dictionary definition, discard the word") is correct.** Some words just won't inflate. Better to drop them than to force something.
+
+**Step 3 assembly.** "4–7 items typical." This feels right. Fewer than 3 is too thin, more than 8 gets unwieldy — the model can't hold many concepts as load-bearing simultaneously.
+
+**One addition I'd make: a SEED log.** The template should instruct the model to display the SEED clearly at the top of Phase 2 output, with each item and its origin word. Something like:
+
+> SEED for this run:
+> - *coral* → Crown-of-thorns starfish outbreaks on the Great Barrier Reef
+> - *forge* → The reconstruction of Notre-Dame's oak timber frame
+> - *whisper* → [discarded — search yielded only definition]
+> - *lattice* → The Penrose tiling
+> - *fugitive* → The Underground Railroad
+
+This gives the user something to look at, lets them veto a SEED that's come out wrong, and provides a record of what the story was built from.
+
+---
+
+## One Structural Question About the Plan
+
+You're replacing a Phase 2 that has two clear roles (dual-track conflict generation, grounded in specific sources) with one that has a different structure (SEED-driven, no source URLs). I want to surface whether the AI-ethics futurology constraint still has the right home.
+
+Currently, the constraint is in Setup, and Phase 2 operationalizes it by using AI-constitution sources to generate Track A conflicts. If we remove those sources, the constraint lives in Setup alone — no phase specifically operationalizes it. That's fine, but the model will need some prompting to keep the constraint active. Specifically:
+
+- The SEED generation is genre- and constraint-agnostic; it just produces concepts.
+- The conflict generation step has to consciously use the SEED concepts *in service of* a speculative story that respects the AI-frame.
+- Without source URLs cueing the alignment territory, the model may default to "speculative story" broadly — including without any AI element at all.
+
+Is that what you want? Some runs producing stories where AI is not a factor, just speculative fiction about, say, Notre-Dame's reconstruction in a hopepunk mode? Or do you want every story to still be set in an AI-transformed world, with SEED providing the texture?
+
+Two positions are legitimate:
+
+1. **Every story remains in the AI futurology frame.** The SEED provides concept-space variety within that frame. Phase 2 prompt should explicitly re-anchor the AI-frame constraint even without URLs.
+2. **The AI frame becomes optional.** GENRE plus SEED defines the territory; AI is one possible element but not required. Setup's AI section becomes opt-in.
+
+I'd ask you to pick before I implement. The plan you wrote implies (1) ("we are still working with the same futurology program") but the mechanism (removing URLs) points toward (2) being easier to execute. They require different Phase 2 prompts.
+
+---
+
+## Other Phases
+
+**Phase 3 (Plot).** Minimal changes. [AUTHOR] → [GENRE] in any references. The SEED carries through implicitly — plot candidates should honor the winning conflict, which was already SEED-inflected.
+
+Actually, small thought: should Phase 3 also explicitly reference the SEED? Right now the plan is that SEED informs Phase 2, then Phase 3 inherits from the Phase 2 winner. But the winner is one conflict, which might have only used 2 of 5 SEED items. The other 3 could productively come back in Phase 3.
+
+Worth considering: "Phase 3 candidates may continue to draw from the SEED for setting, protagonist, and imagery, even if the winning conflict used different SEED items." Keeps the SEED active downstream.
+
+**Phase 4 (Structure).** No changes. Structure is genre-agnostic.
+
+**Phase 5 (Outline).** No changes beyond [AUTHOR] → [GENRE].
+
+**Phase 6 (Stories).** [AUTHOR] → [GENRE] in failure-mode reference.
+
+**Phase 7 (Revision).** [AUTHOR] → [GENRE] in the audit step.
+
+**Phase 8 (Export).** No changes.
+
+---
+
+## Summary
+
+Green-lights: The generalization is sound, SEED is a good mechanism, the `grep | shuf` + web-search inflation pipeline is concrete and distinctive, the "load-bearing" standard for SEED use is worth borrowing from Track B.
+
+Things I'd push back on: keep-only-nouns-and-verbs is too restrictive (expand to include adjectives), the dual-track A/B split should stay on top of SEED (not get replaced by it), the SEED's relationship to AI-frame constraint needs an explicit decision.
+
+Things I'd add: a minimum-yield rule for SEED filtering (rerun if fewer than 3 items survive), a SEED log in Phase 2 output, a brief note about microgenres needing user-supplied references, the explicit "load-bearing" standard for SEED use in conflicts, Phase 3 latitude to reuse unspent SEED items.
+
+One decision I need from you: does every run remain an AI-futurology story, or does the AI frame become optional? Everything downstream depends on that.
+
+---
+
+# 27. User (2026-04-22)
+
+> Phase 1 should still produce a writer's guide, not a genre analysis.
+Yes, agreed.
+> Question 1: Does the SEED replace the dual-track system, or does it combine with it?
+I wish to replace the A/B track split completely to test a SEED-template pipeline. Let's remove the A/B track split now and consider adding it back later, after I have tested the new template.
+> Question 2: What does the SEED actually do in the generation phase?
+Your "two load-bearing items" approach is bolder than what I had it mind. Let's give it a shot.
+> Question 3: Are all 30 conflicts from the same SEED?
+Yes.
+On to the SEED generation mechanics. The dictionary path and package name are for you: for claude.ai and potentially Claude Code on the web. The process was co-developed with Claude Opus 4.6 in a separate session and reflects what worked there. Let's try with "any word whose meaning points to a concept, event, phenomenon, object, discipline, or person". We can make our criteria more conservative later. Thin SEEDs are okay. It's worth testing what the pipeline can do with them.
+Implement all of yours suggestions on step 2's inflation.
+> The template should instruct the model to display the SEED clearly at the top of Phase 2 output, with each item and its origin word. Something like:
+Great idea.
+
+---
+
+# 28. Claude (2026-04-22)
+
+## Before I Implement — One Decision Still Outstanding
+
+You addressed the dual-track question, the SEED-generation details, and agreed on Phase 1's shape. But I flagged one other decision at the end of my last message that you haven't answered:
+
+> Does every run remain an AI-futurology story, or does the AI frame become optional?
+
+This matters because the Phase 2 prompt reads very differently under the two interpretations:
+
+- **Frame mandatory:** "Using the SEED, generate 30 conflicts for a speculative story in an AI-transformed world where the AI is relentlessly kind. The SEED items are the texture; the AI frame is the substrate." Every story is an aligned-AI story, SEED provides variety within.
+- **Frame optional:** "Using the SEED, generate 30 conflicts for a [GENRE] speculative story. If the story involves AI, the AI is relentlessly kind — this is a hard constraint when it applies. But AI need not be a factor." Some stories will have no AI at all.
+
+Your line *"we are still working with the same futurology program with the same human-loving-AI constraint"* reads as (1). I'll implement that unless you say otherwise.
+
+One other small thing: I want to confirm how the SEED flow works in the prompt. Does the model:
+
+- **(A)** Generate the SEED itself by running the bash command and doing the inflation, all within Phase 2? (Requires the model to have shell access, which in claude.ai it does via the computer use tools you've been seeing me use in this conversation.)
+- **(B)** The user runs the bash command manually, copies the 10 words into the chat, and the model does the filtering and inflation?
+- **(C)** Something else?
+
+I'll assume (A) — you said the process was co-developed with Opus 4.6 and worked, and Opus 4.6 has the same tool access I do. The template should explicitly instruct the model to use its bash/computer tools. This also means Phase 2 now requires computer use to be enabled, which wasn't previously required by any phase. Worth noting in Setup.
+
+If you confirm AI frame mandatory and the tool-use assumption, I'll implement v4 in the next turn. If you want the AI frame optional or the SEED generation delegated to the user, the prompt changes shape.
+
+---
+
+# 29. User (2026-04-22)
+
+Good questions. The frame is mandatory. The model generates the SEED with computer-use tools. This is tested and works on claude.ai. (You can try it if you'd like.)
+
+Go ahead and implement.
+
+---
+
+# 30. Claude (2026-04-22)
+
+Now I have the full picture. Let me do the rewrites in order: title, preamble, Settings, How It Works (adjust dual-track mention), Phase 1 (generalize), Phase 2 (complete overhaul), Phase 3/6/7 (AUTHOR → GENRE), Notes (rewrite dual-track section, remove outdated notes, add new ones).Now update How It Works to remove the dual-track reference and mention the SEED. Also add a note about computer use being required.Now Phase 1. The current Phase 1 asks about "[AUTHOR]'s short stories" and "New Wave science fiction." Need to rewrite for [GENRE] while keeping the prescriptive shape, the failure-mode section, and the AI futurology constraint. Also need to handle the microgenre case.Now Phase 2 — the complete overhaul. This is the core of v4. Let me draft carefully. It needs:
+
+1. SEED acquisition (user-supplied with 280-char check, or generated via dict + web searches)
+2. SEED display
+3. 30 conflicts each using at least 2 SEED items as load-bearing
+4. Top 3 with "stand out / worries" per candidate
+5. Final pickNow Phase 3. The current version references "AI presence" as an axis consistent with Track A/B — need to remove that reference. Also update the protagonist axis. And I can add the note about unspent SEED items being available.Now Phase 6 — change "author style guide" to "genre style guide."Now Phase 7 — update the audit lens that references [AUTHOR].Also need to update "Unslop or author-style flag" in the changelog step.That was a no-op — the current text doesn't reference "author-style" directly. Let me check.Two mentions of "author" as lowercase reference in Setup (good — those are legitimate), "authority" in a Steering note (fine), and one stale Notes entry referring to [AUTHOR] that needs updating. Now the Notes section overall.Need to:
+1. Generalize "Substituting authors" → "Substituting genres"
+2. Remove the two dual-track notes (no longer accurate)
+3. Remove "Substituting conflict sources" (replaced by SEED)
+4. Remove the orphaned Phase-2-summarization paragraph (no longer applicable — SEED doesn't involve summarization)
+5. Add new notes: SEED design, SEED failure modesQuick sanity check — let me scan for any remaining stale references.All clean. The remaining "constitution" references are to the model's own constitution (intended), the "[author name]" and "[author]" in Setup are legitimate examples of how GENRE can be specified, "authority" is a different word, and "Track B" is a single reference inside the SEED note that correctly frames it as a historical design continuity. Let me verify the final file structure looks correct.Structure is correct. Export.Summary of the v4 transformation:
+
+**Title and framing.** Now "Speculative Fiction Short Story Pipeline" rather than "New Wave SF." The Setup opens with a list of example genres (established, narrow, microgenre, by-author) to signal the full range.
+
+**Settings.** `[AUTHOR]` replaced with `[GENRE]`. New optional `[SEED]` parameter for user-supplied prompts.
+
+**How It Works.** Replaced the dual-track description with a SEED description. Added a line flagging that Phase 2 requires computer-use tools.
+
+**Phase 1.** Prescriptive rather than descriptive — explicitly "imagine you will use it to actually write such a story." Failure-mode prompt rewritten with four concrete genre examples (Ellison, Le Guin, solarpunk, cosmic horror) instead of just the two author examples. New microgenre guardrail: the model is instructed to stop and request references if GENRE is too narrow for reliable training signal. AI futurology constraint and self-constitution permission preserved.
+
+**Phase 2.** Complete rewrite. Six steps: acquire (verify user SEED or draw from dictionary), filter and inflate (web search per word), display (formatted SEED log with origin-word arrows), generate 30 conflicts each using ≥2 SEED items as load-bearing elements, top 3 with stand-out/worries, narrow to one. AI frame is reasserted inside Step 4 as a condition on every conflict. Dual-track structure fully removed.
+
+**Phase 3.** Dropped the A/B reference in the AI-presence axis. Added explicit instruction that unspent SEED items remain available downstream.
+
+**Phase 4, 5, 8.** No changes needed — these phases were already genre- and source-agnostic.
+
+**Phase 6.** "Author style guide" → "genre style guide" in the failure-mode reminder.
+
+**Phase 7.** "Author-voice slippage" → "Genre-voice slippage" in the audit lens.
+
+**Notes.** Stale entries removed (dual-track, if-Track-A-keeps-winning, substituting-conflict-sources, the orphan summarization paragraph). "Substituting authors" rewritten as "Substituting genres" with the microgenre caveat. Four new entries: "The SEED and load-bearing use," "Thin SEEDs," "User-supplied SEEDs," plus the preserved Context management note.
+
+The word count held nearly identical to v3.3 — the new Phase 2 and the new Notes entries added roughly what the removed dual-track apparatus took away.
+
+---
+
+# 31. User (2026-04-22)
+
+Good. Let's revise the template to also reflect current process. With Claude Projects, the user no longer needs to send the prompts. The user starts by asking the model to look up Phase 1 in the template file by filename, then goes "Continue. Next phase." until the pipeline is complete. The user only steers at the beginning, more explicitly now with the SEED. This is consistent with our goal of automation.
+
+---
+
+# 32. Claude (2026-04-22)
+
+Now I need to think through what "How It Works" should look like in the new flow. Currently it says "You send eight prompts, one per phase" — that's false now. The user:
+
+1. Starts by telling the model the GENRE, LENGTH, and optionally SEED, and asks it to look up Phase 1 in the template
+2. Says "Continue. Next phase." repeatedly
+3. Steers only if they want to override a pick
+
+The phase-level "After reviewing the winning X, send: ---" framing is also obsolete. Those dashes and "send this prompt" lines addressed a user who was manually copying prompts. Now the phases are instructions the model reads from the template, not prompts the user pastes.
+
+This is actually a significant structural change. Let me think about what "send this prompt to start a run" should become. Options:
+
+**Option A:** Keep the prompt blocks verbatim as written, just change the framing ("After the user triggers the next phase, run this prompt on yourself" or similar). Model-facing rather than user-facing.
+
+**Option B:** Rewrite each phase header to be a clean instruction to the model. Drop the `---` separators and `>`-blockquotes. The phases become sections of operational instructions.
+
+Option B is cleaner and matches the actual use pattern. Let me think about whether there's any reason to keep the `>` blockquotes. They originally marked "here is what you paste" — that semantics is gone. The blockquote formatting is now noise.
+
+I'll go with Option B — remove the blockquote formatting, remove the `---` separators, and rewrite the per-phase intro lines. How It Works needs a full rewrite too.Now the phase sections. Each currently has the form:
+
+```
+## Phase N: Title
+
+[intro line like "Send this prompt to start a run:" or "After reviewing the winning X, send:"]
+
+---
+
+> [blockquote prompt]
+
+---
+```
+
+I want each to become:
+
+```
+## Phase N: Title
+
+[direct instruction to the model about what to do in this phase, in plain paragraphs]
+```
+
+Let me go through each phase.Now I'll rewrite each phase. I'll drop the `---` separators, convert blockquotes to plain paragraphs, and rewrite the first-person ("I supplied", "I did not supply") to reflect the user's voice in what-you-were-told mode. Let me do this systematically. I'll also change "Send this prompt" / "After reviewing the winning X, send:" framing.
+
+The first-person pronouns in Phase 2 ("If I supplied a [SEED]...") were written as the user's voice being quoted into the prompt. Now the phase instruction itself is for the model to read. "If the user supplied a [SEED]" would be the right framing.Now Phase 2. I need to also delete the stray `---` separator before the heading.The `---` between phases works as visual section breaks in markdown reading. I'll keep those since they're just separators, not prompt-block markers. The inner `---`s that separated the intro line from the blockquote, those need to go. And the per-phase intro lines like "After reviewing the style guide, send:" need to go.
+
+Let me view the entire Phase 2 block.Also note: the intro says "Proceed in four steps" but there are six. I'll fix that too. Now the full Phase 2 rewrite.Now Phase 3.Phase 4.Phase 5.Phase 6.Phase 7.Phase 8.Small correction — I said "three sections" then listed three items. The original said "two sections" but listed three, which was a bug. My rewrite fixed it. Now let me check the Notes section for any references to the old prompt-pasting flow.The Notes section checks out — the Steering and Context management notes still apply, just in a different flow. "Steering between phases" is still accurate: the user *can* interject. The note now reinforces that steering is optional, since the default flow is "Continue. Next phase." which my rewrite of How It Works already made clear.
+
+Let me sanity-check the full file for any remaining artifacts — leftover `---`s between phases that are now redundant, or any remaining stale framing.The remaining `---`s are all phase separators (one between each adjacent pair of H2 sections), which is fine as visual breaks. The "After writing all five" on line 190 is inside Phase 6's instruction — legitimate text, not a stale framing line.
+
+One thing I want to double-check: the Phase 8 rewrite. Let me view it again to make sure.Technically an H1 + H2 Abstract + H2 Story is three sections if we count the H1 as a section header; the original said "two sections" and listed three items. I wrote "three sections" with three items. Close reading: the H1 is the title, which isn't really a "section" in the markdown sense — it's the document's root heading. The two sections (H2 Abstract and H2 Story) sit under it. So "two sections" was technically more accurate. Let me make this cleaner.One last pass — the "Project Knowledge" section still tells the user "the actual prompts are below and should be sent one at a time." Stale under the new flow.Let me verify the whole thing looks clean.Changes in v4.1:
+
+**How It Works rewritten.** Now describes the trigger-and-continue flow explicitly: user provides GENRE, LENGTH, optionally SEED, and asks the model to begin Phase 1 from the template. Subsequent phases run with "Continue. Next phase." Steering is optional, not default.
+
+**Project Knowledge note updated.** The old "the actual prompts are below and should be sent one at a time" framing is replaced with "the model reads each phase from this file when the user triggers it."
+
+**All eight phases restructured.** The "Send this prompt to start a run" / "After reviewing the winning X, send:" intro lines are gone. The `---` separators that bracketed the prompt blocks are gone. The `>` blockquote formatting is gone. Each phase now reads as direct operational instruction — the model reads the phase and executes it, rather than interpreting a prompt-to-paste.
+
+**Pronoun switch.** Phase 2's first-person references to the user ("If I supplied a SEED") became third-person ("If the user supplied a SEED"), which reads correctly when the model is reading the phase as instruction rather than transcribing a user-voiced prompt.
+
+**Small bugfixes along the way.** Phase 2's intro said "four steps" but listed six — fixed to "six steps." Phase 8 said "two sections" but listed three — reworded to "the following structure."
+
+**No changes to substance.** The audit lists, diversity axes, forcing functions, SEED mechanics, failure-mode requirements, Unslop constraints, and all Phase 7 machinery are unchanged. The rewrite is purely about how the template presents its instructions to its actual reader — which is now the model, not the user.
+
+Net word count came down slightly from v4 (4181 → 4060) despite the rewritten How It Works, because the prompt-block formatting (the `>` prefixes, the `---` separators, the per-phase intro lines) added visual weight without adding content.
 
 ---
 
