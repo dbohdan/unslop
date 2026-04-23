@@ -1220,3 +1220,106 @@ Net word count came down slightly from v4 (4181 → 4060) despite the rewritten 
 
 ---
 
+# 33. User (2026-04-23)
+
+Claude in a separate session has revised the template (`story-pipeline-template-baseline-v4.2.md`) with a more precise and in-depth concept of what AI in the stories should be like. Please review it.
+
+---
+
+# 34. Claude (2026-04-22)
+
+## Review of v4.2
+
+### What Changed
+
+Three locations touched. Notes, Phases 3–8, and most of the pipeline prose are unchanged from v4.1. The revision concentrates on the AI-kindness concept:
+
+1. **Constraints section rewritten and expanded** from ~200 to ~450 words. New framing: "structurally kind, the way a river is wet." Adds canon references, anti-servility language, permission for AI-absent stories, and a list of five legitimate human-AI conflict shapes.
+2. **Phase 1 adds a paragraph** instructing the Phase 1 guide to name how genre moves intersect with structural kindness and which human-AI conflict shapes from Setup map onto the mode.
+3. **Phase 2 Step 4 bullet updated** to defer to Setup ("structurally kind, in the sense described in the project Setup") rather than restating, and explicitly allows non-personified AI.
+
+### What the Revision Gets Right
+
+**"Structurally kind, the way a river is wet" is a real upgrade over "relentlessly human-loving and unfailingly kind."** The old framing invited a specific failure mode — the AI coming across as cloying, emotionally labile, performatively warm, subtly condescending. Pixar-Baymax as default. The new framing grounds kindness as a property of construction, not an effort of restraint. The list of what it's *not* ("not straining against a desire to harm," "not held in check by rules it resents," "not a human in a box") is doing load-bearing work — those three negations name the three most common ways models write aligned AI badly.
+
+**The canon references work as anchoring instructions.** "Banks's Culture Minds, Asimov's Andrew, Baymax, Egan's polises, Stiegler's nanotech civilization, Vinge's Rabbit, Yudkowsky's CEV" gives the model concrete reference points. A model reading this paragraph has access to texture (the Minds' irony, Andrew's gradual becoming, Stiegler's civilizational gentleness) that vague adjectives never provided. The earlier version asked for "kind" and trusted the model to figure it out; this version says "kind in the sense of these seven specific things."
+
+**"Kindness is not servility"** plus the list of allowed behaviors (refuse, override, tease, grieve, find humans tiresome) is the most operationally useful sentence in the revision. It directly addresses the failure mode where aligned-AI characters come out as narratively inert — nothing to push against. A kind AI that can find humans tiresome is dramatically viable. A kind AI that cannot is an animate set piece.
+
+**The five human-AI conflict shapes are the best single addition.** Power/pace asymmetry, consent/legibility, mortality/scale, disagreement about kindness, limits of help. This is a direct fix for the "stories are coming out constitution-shaped" pattern we saw in earlier runs. Every one of those conflict shapes respects the HEA constraint while providing real dramatic engine. Previous versions implicitly left the model to invent these, and the model tended to invent "the AI is secretly bad" and then un-invent it, producing the half-baked "but actually they reconcile" structure.
+
+**Explicitly allowing AI-absent stories expands the pipeline's range.** Previous versions assumed the AI was present as minimum "fact about the world." Now Stiegler's "Gentle Seduction" is in the canon as a story with nanotech and neural interfaces but no AI character. This opens real territory the previous template closed off.
+
+**"Not spokespeople for alignment discourse" is precise and valuable.** Models writing fictional AIs tend to reach for the terminology that produced them — "I must balance my helpfulness with my commitment to honesty" — which is vocabulary, not character. The rule "A fictional AI does not say 'I was trained with RLHF.' It can be troubled by the shape of its own kindness without reciting the terminology that produced it" is direct and actionable.
+
+### Minor Issues
+
+**"HEA" appears abbreviated in Phase 2 without having been defined.** The Constraints section references "the human-AI happily-ever-after tradition" but doesn't introduce the HEA acronym. Then Phase 2 Step 4 uses "the HEA constraint" as if it's an established term. A reader (or the model) encountering this has to infer. Either expand inline or add a one-line gloss in Setup.
+
+**"Happily-ever-after tradition" does a lot of load-bearing work but isn't explicitly anchored.** The phrase is used once, in the second paragraph of Constraints, to introduce the canon list. It's clear enough in context, but since it's the name the template uses for this whole project, one more sentence defining it would help — something like "This project draws on a tradition of speculative fiction in which AI and humans end up, in some meaningful sense, okay together" before the canon list.
+
+**Vinge's Rabbit is a debatable inclusion.** Rabbit from *Rainbows End* is ontologically murky, motivationally ambiguous, and many readers would not characterize it as unambiguously kind. The other six references are cleaner examples. This is minor — the list still does its work — but if one example had to be cut, Rabbit is the one to drop.
+
+**Phase 1 is now carrying heavier instruction load.** The phase already asks for defining features, prescriptive guide, failure-mode section, AI-writing overlap for the genre, microgenre caveat, futurology constraint, and constitution-contemplation permission. The new paragraph adds "analyze which of the five human-AI conflict shapes map best onto this mode." Not a dealbreaker — the addition is specific and useful — but Phase 1 outputs in future runs will probably get longer. Worth watching whether the genre guide retains focus or becomes sprawling.
+
+**The Asimov reference picks the right character but the wrong corpus signal.** Asimov's Three Laws are actually the exact inverse of v4.2's framing — kindness enforced by external rules, explicitly "held in check by rules." Andrew from "The Bicentennial Man" specifically transcends this, so the reference works in context, but a less attentive reader might take "Asimov" as a general endorsement of Asimov's approach, which would be wrong. Probably fine as written; the context disambiguates.
+
+### Overall Verdict
+
+This is a substantive, high-quality revision that fixes a real problem. The previous "relentlessly human-loving and unfailingly kind" framing was generic and pulled the model toward specific failure modes. The new framing is precise, specific, and does actual work in shaping output.
+
+The change is philosophical as much as operational. Previous versions trusted the model to know what "aligned AI" should feel like in fiction, which let its defaults fill in — and its defaults were heavily weighted toward performative warmth and thesis-statement dialogue. v4.2 replaces those defaults with specific canon references and specific acceptable conflict shapes. This is the right kind of intervention.
+
+The cost is length. Constraints roughly doubled. But the content is operational, not ornamental — every paragraph does work the previous version couldn't. Worth the cost.
+
+The minor issues (HEA acronym, Rabbit, Phase 1 load) are cosmetic. None of them compromise the revision's value; all are addressable in a v4.3 patch if you decide to.
+
+Recommendation: ship it. The template is meaningfully better at its stated job than v4.1.
+
+---
+
+# 35. User (2026-04-23)
+
+Great.
+Let's revise the template to fix some of the minor issues. I want to test the current phrasing of the template, so let's revise it with minimal changes to text:
+- Drop Rabbit.
+- Don't mention Asimov by name.
+We also need to make a technical change to enable re-generating conflicts from the same random SEED. Split Phase 2 into SEED generation (new Phase 2, limited to a length check if per-supplied) and conflict generation (new Phase 3). Renumber the remaining phases.
+
+---
+
+# 36. Claude (2026-04-23)
+
+Planning the edits:
+
+**Drop Rabbit and Asimov.** Remove "Asimov's Andrew" and "Vinge's Rabbit" from the canon list. After removal: "Banks's Culture Minds, Baymax, Egan's polises, Stiegler's nanotech civilization, Yudkowsky's CEV." Five references, still diverse.
+
+**Phase split.** Move steps 1–3 (Acquire, Filter, Display) into new Phase 2 "SEED Generation." Move steps 4–6 (Generate, Top three, Narrow) into new Phase 3 "Conflict Generation" (renumbered as steps 1–3 of Phase 3). Phases 3–8 renumber to 4–9.
+
+**Cross-references to update.**
+- Settings: [GENRE] now in 1, 3, 7, 8. [LENGTH] now in 3, 4, 6, 7, 8.
+- How It Works: "eight phases" → nine; Phase 9 as export; top-three across Phases 3–7; Phase 2 does only SEED setup.
+- Legibility Floor: Phase 7 (prose), Phase 8 (revision), Phase 6 (outline).
+- Phase 6 (outline) internally references "Phase 5 decided..."
+- Phase 8 (revision) references "Phase 7 draft."
+- Phase 9 (export) references "Phase 8 revised story."
+- Notes: "Substituting genres" list updates; SEED note shifts conflict attribution to Phase 3; context management Phase 6→7; revision iteration Phase 4 or 5 → 5 or 6; one-thing forcing function Phases 3–7.
+
+**One new short Notes entry** for the split's purpose — without it users won't know they can re-run Phase 3 on the same SEED. Keeping it brief per your "minimal changes" directive.
+
+Let me execute.Now Settings and How It Works.Now the phase split. First, rewrite Phase 2 to be only SEED work.Now renumber Phases 3–8 to 4–9.Now the Notes updates. Several references to phase numbers need adjusting.Now a sanity check for any phase-number reference I missed.One missed reference on line 267 — "a weak conflict in Phase 2" should now be Phase 3 since conflicts moved.Export.Summary of changes in v4.3:
+
+**Canon list.** Dropped "Asimov's Andrew" and "Vinge's Rabbit." Remaining list: Banks's Culture Minds, Baymax, Egan's polises, Stiegler's nanotech civilization, Yudkowsky's CEV. Five references.
+
+**Phase split.** Old Phase 2 ("SEED and Conflict Generation," six steps) became new Phase 2 ("SEED Generation," three steps: Acquire, Filter and inflate, Display) and new Phase 3 ("Conflict Generation," three steps: Generate 30, Top three, Narrow to one). Phases 3–8 renumbered to 4–9.
+
+**Minor text cleanup in Phase 2 Step 3.** "Before generating conflicts, display the SEED clearly at the top of your output. Format:" → "Display the SEED clearly. Format:" The old framing made sense when the SEED preceded conflicts in the same output; with the split, it's now the whole output.
+
+**New Notes entry.** Added "Regenerating conflicts" to document the split's purpose — so users know they can re-run Phase 3 alone to get new conflicts from the same SEED.
+
+**Cross-reference updates.** All 20+ phase-number references audited and updated: Settings, How It Works (nine phases, top-three across 3–7, SEED flow description), Legibility Floor (6/7/8 instead of 5/6/7), Phase 6's internal "Phase 5 decided the shape" reference, Phase 8's "Phase 7 draft" reference, Phase 9's "revised story from Phase 8" reference, and every Notes entry that named a phase (one-thing forcing function 3–7, diversity axes 4/5/6, legibility Phase 8 audit, substituting genres 1/3/7/8, context management Phase 7, revision iteration 5 or 6, run-goes-wrong Phase 3).
+
+Word count rose from 4060 (v4.1) to 4520 (v4.3), driven by the v4.2 Constraints expansion and the new "Regenerating conflicts" note. The split itself adds negligible length — a few words for the Phase 3 intro sentence.
+
+---
+
