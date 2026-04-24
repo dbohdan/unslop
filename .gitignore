@@ -1,2 +1,5 @@
+attic/
+
+api/*.log
 sources/0*.md
 *.sw*
