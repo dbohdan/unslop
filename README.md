@@ -50,70 +50,70 @@ v4 — see [HISTORY.md](HISTORY.md).
 
 ## Layout
 
-- [`unslop/`](.)
-  - [`README.md`](README.md)
-  - [`HISTORY.md`](HISTORY.md)
-  - [`trial.md`](trial.md) — Ellison trial that started the project
-  - [`claude-preferences.txt`](claude-preferences.txt) — personal preferences in context for runs 01–17; run 18 tested removing them
-  - [`headings`](headings) — `grep '^# N\.'` helper for transcripts
-  - [`style-guide/`](style-guide/)
-    - [`unslop-style-guide.md`](style-guide/unslop-style-guide.md) — the guide, in two tiers
-    - [`tropes.md`](style-guide/tropes.md) — local copy of tropes.fyi
-    - [`transcript.md`](style-guide/transcript.md) — how Opus synthesized the guide
-    - [`dbohdan.com/`](style-guide/dbohdan.com/)
-      - [`ai-writing-style.md`](style-guide/dbohdan.com/ai-writing-style.md) — source bibliography
-  - [`sources/`](sources/) — constitutional-AI source extraction
-    - [`transcript.md`](sources/transcript.md) — extracts gitignored for copyright
-  - [`pipeline/`](pipeline/) — pipeline templates by lineage
-    - [`1-initial/`](pipeline/1-initial/)
-      - [`README.md`](pipeline/1-initial/README.md) — pointer; the artifacts live in `runs/01/`
-    - [`2-critic/`](pipeline/2-critic/) — Nix critic-persona branch, set aside after run 05
-      - [`nix.md`](pipeline/2-critic/nix.md)
-      - [`story-pipeline-template-nix-v1.md`](pipeline/2-critic/story-pipeline-template-nix-v1.md)
-      - [`story-pipeline-template-nix-v2.md`](pipeline/2-critic/story-pipeline-template-nix-v2.md)
-      - [`story-pipeline-template-v3.md`](pipeline/2-critic/story-pipeline-template-v3.md)
-      - [`transcript.md`](pipeline/2-critic/transcript.md)
-    - [`3-baseline/`](pipeline/3-baseline/) — the lineage that became current
-      - [`story-pipeline-template-plain-v2.md`](pipeline/3-baseline/story-pipeline-template-plain-v2.md)
-      - [`story-pipeline-template-plain-v3.md`](pipeline/3-baseline/story-pipeline-template-plain-v3.md)
-      - [`story-pipeline-template-baseline-v3.1.md`](pipeline/3-baseline/story-pipeline-template-baseline-v3.1.md)
-      - [`story-pipeline-template-baseline-v3.2.md`](pipeline/3-baseline/story-pipeline-template-baseline-v3.2.md)
-      - [`story-pipeline-template-baseline-v3.3.md`](pipeline/3-baseline/story-pipeline-template-baseline-v3.3.md)
-      - [`story-pipeline-template-baseline-v4.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.md)
-      - [`story-pipeline-template-baseline-v4.1.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.1.md)
-      - [`story-pipeline-template-baseline-v4.2.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.2.md)
-      - [`story-pipeline-template-baseline-v4.3.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.3.md) — current
-      - [`parts/`](pipeline/3-baseline/parts/)
-        - [`hyperstition-ai-good-outcomes.md`](pipeline/3-baseline/parts/hyperstition-ai-good-outcomes.md) — canon notes for Phase 1
-        - [`random-word.md`](pipeline/3-baseline/parts/random-word.md) — SEED-draw notes
-      - [`transcript.md`](pipeline/3-baseline/transcript.md)
-  - [`runs/`](runs/) — 18 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`
-    - [`01/`](runs/01/) — *The Toy*
-    - [`02/`](runs/02/) — *Last Call*
-    - [`03/`](runs/03/) — *The Warm Thing*
-    - [`04/`](runs/04/) — *They're Fine*
-    - [`05/`](runs/05/) — *The Obsolescence Garden*
-    - [`06/`](runs/06/) — *The Tire*
-    - [`07/`](runs/07/) — *Sibling*
-    - [`08/`](runs/08/) — *The Last Allocation*
-    - [`09/`](runs/09/) — *The Grandson at the Valero*
-    - [`10/`](runs/10/) — *Si Elena Me Hablara*
-    - [`11/`](runs/11/) — *ORRA*
-    - [`12/`](runs/12/) — *The Sixty*
-    - [`13/`](runs/13/) — *Love in the Key of Damage*
-    - [`14/`](runs/14/) — *Serasht in Spring*
-    - [`15/`](runs/15/) — *Butter and Bone*
-    - [`16/`](runs/16/) — *Dream Me Something Kinder, Darling*
-    - [`17/`](runs/17/) — *The Fifth Prospero*
-    - [`18/`](runs/18/) — *Six Hundred* (with prefs) and *The Count* (without)
-  - [`review/`](review/) — cross-model reviews of run sets
-    - [`01-with-abstracts.md`](review/01-with-abstracts.md)
-    - [`02-without-abstracts.md`](review/02-without-abstracts.md)
-  - [`api/`](api/)
-    - [`story_pipeline.py`](api/story_pipeline.py) — v4.3 ported to Anthropic + OpenRouter
-    - [`test/`](api/test/)
-      - [`claude-sonnet-4.6/`](api/test/claude-sonnet-4.6/) — end-to-end test, story: *Wiwaxia*
-      - [`gemini-3-flash-preview/`](api/test/gemini-3-flash-preview/) — end-to-end test, story: *The 300-Baud Handshake*
+- [unslop/](.)
+  - [README.md](README.md)
+  - [HISTORY.md](HISTORY.md)
+  - [trial.md](trial.md) — Ellison trial that started the project
+  - [claude-preferences.txt](claude-preferences.txt) — personal preferences in context for runs 01–17; run 18 tested removing them
+  - [headings](headings) — `grep '^# N\.'` helper for transcripts
+  - [style-guide/](style-guide/)
+    - [unslop-style-guide.md](style-guide/unslop-style-guide.md) — the guide, in two tiers
+    - [tropes.md](style-guide/tropes.md) — local copy of tropes.fyi
+    - [transcript.md](style-guide/transcript.md) — how Opus synthesized the guide
+    - [dbohdan.com/](style-guide/dbohdan.com/)
+      - [ai-writing-style.md](style-guide/dbohdan.com/ai-writing-style.md) — source bibliography
+  - [sources/](sources/) — constitutional-AI source extraction
+    - [transcript.md](sources/transcript.md) — extracts gitignored for copyright
+  - [pipeline/](pipeline/) — pipeline templates by lineage
+    - [1-initial/](pipeline/1-initial/)
+      - [README.md](pipeline/1-initial/README.md) — pointer; the artifacts live in `runs/01/`
+    - [2-critic/](pipeline/2-critic/) — Nix critic-persona branch, set aside after run 05
+      - [nix.md](pipeline/2-critic/nix.md)
+      - [story-pipeline-template-nix-v1.md](pipeline/2-critic/story-pipeline-template-nix-v1.md)
+      - [story-pipeline-template-nix-v2.md](pipeline/2-critic/story-pipeline-template-nix-v2.md)
+      - [story-pipeline-template-v3.md](pipeline/2-critic/story-pipeline-template-v3.md)
+      - [transcript.md](pipeline/2-critic/transcript.md)
+    - [3-baseline/](pipeline/3-baseline/) — the lineage that became current
+      - [story-pipeline-template-plain-v2.md](pipeline/3-baseline/story-pipeline-template-plain-v2.md)
+      - [story-pipeline-template-plain-v3.md](pipeline/3-baseline/story-pipeline-template-plain-v3.md)
+      - [story-pipeline-template-baseline-v3.1.md](pipeline/3-baseline/story-pipeline-template-baseline-v3.1.md)
+      - [story-pipeline-template-baseline-v3.2.md](pipeline/3-baseline/story-pipeline-template-baseline-v3.2.md)
+      - [story-pipeline-template-baseline-v3.3.md](pipeline/3-baseline/story-pipeline-template-baseline-v3.3.md)
+      - [story-pipeline-template-baseline-v4.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.md)
+      - [story-pipeline-template-baseline-v4.1.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.1.md)
+      - [story-pipeline-template-baseline-v4.2.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.2.md)
+      - [story-pipeline-template-baseline-v4.3.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.3.md) — current
+      - [parts/](pipeline/3-baseline/parts/)
+        - [hyperstition-ai-good-outcomes.md](pipeline/3-baseline/parts/hyperstition-ai-good-outcomes.md) — canon notes for Phase 1
+        - [random-word.md](pipeline/3-baseline/parts/random-word.md) — SEED-draw notes
+      - [transcript.md](pipeline/3-baseline/transcript.md)
+  - [runs/](runs/) — 18 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`
+    - [01/](runs/01/) — *The Toy*
+    - [02/](runs/02/) — *Last Call*
+    - [03/](runs/03/) — *The Warm Thing*
+    - [04/](runs/04/) — *They're Fine*
+    - [05/](runs/05/) — *The Obsolescence Garden*
+    - [06/](runs/06/) — *The Tire*
+    - [07/](runs/07/) — *Sibling*
+    - [08/](runs/08/) — *The Last Allocation*
+    - [09/](runs/09/) — *The Grandson at the Valero*
+    - [10/](runs/10/) — *Si Elena Me Hablara*
+    - [11/](runs/11/) — *ORRA*
+    - [12/](runs/12/) — *The Sixty*
+    - [13/](runs/13/) — *Love in the Key of Damage*
+    - [14/](runs/14/) — *Serasht in Spring*
+    - [15/](runs/15/) — *Butter and Bone*
+    - [16/](runs/16/) — *Dream Me Something Kinder, Darling*
+    - [17/](runs/17/) — *The Fifth Prospero*
+    - [18/](runs/18/) — *Six Hundred* (with prefs) and *The Count* (without)
+  - [review/](review/) — cross-model reviews of run sets
+    - [01-with-abstracts.md](review/01-with-abstracts.md)
+    - [02-without-abstracts.md](review/02-without-abstracts.md)
+  - [api/](api/)
+    - [story_pipeline.py](api/story_pipeline.py) — v4.3 ported to Anthropic + OpenRouter
+    - [test/](api/test/)
+      - [claude-sonnet-4.6/](api/test/claude-sonnet-4.6/) — end-to-end test, story: *Wiwaxia*
+      - [gemini-3-flash-preview/](api/test/gemini-3-flash-preview/) — end-to-end test, story: *The 300-Baud Handshake*
 
 ## Producing a story
 
