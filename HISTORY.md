@@ -189,11 +189,12 @@ kind, durably, in the way a river is wet" rather than "polite servant."
 can be regenerated without re-rolling the SEED — a cheap recovery path when
 30 conflicts produce no compelling winner.
 
-Run 17 used v4.1 (*The Fifth Prospero*). Run 18 used v4.2 with an A/B
-test of `claude-preferences.txt`: the same SEED and template run twice,
-once with the preferences file in context (*Six Hundred*) and once without
-(*The Count*). Both stories share the gregale and the village and the
-1555/2067 frame, but diverge on rendering choice and pacing.
+Run 17 used v4.1 (*The Fifth Prospero*). Run 18 used v4.2 to test the
+effect of *removing* `claude-preferences.txt`, which had been in context
+for every prior run. Same SEED and template, run twice: with prefs as
+usual (*Six Hundred*), and with prefs disabled (*The Count*). Both
+stories share the gregale and the village and the 1555/2067 frame, but
+diverge on rendering choice and pacing.
 
 ## 7. API port — `api/story_pipeline.py` (April 24)
 
