@@ -85,7 +85,7 @@ v4 — see [HISTORY.md](HISTORY.md).
       - [story-pipeline-template-baseline-v4.3.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.3.md) — current
       - [parts/](pipeline/3-baseline/parts/)
         - [hyperstition-ai-good-outcomes.md](pipeline/3-baseline/parts/hyperstition-ai-good-outcomes.md) — canon notes for Phase 1
-        - [random-word.md](pipeline/3-baseline/parts/random-word.md) — SEED-draw notes
+        - [random-word-seed.md](pipeline/3-baseline/parts/random-word-seed.md) — SEED-draw notes
       - [transcript.md](pipeline/3-baseline/transcript.md)
   - [runs/](runs/) — 18 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`
     - [01/](runs/01/) — *The Toy*
