@@ -1,0 +1,653 @@
+Jump to content
+[ ] Main menu
+Main menu
+move to sidebar hide
+Navigation
+
+  • Main page
+  • Contents
+  • Current events
+  • Random article
+  • About Wikipedia
+  • Contact us
+
+Contribute
+
+  • Help
+  • Learn to edit
+  • Community portal
+  • Recent changes
+  • Upload file
+  • Special pages
+
+[enwiki] Wikipedia The Free Encyclopedia
+Search
+[                    ]
+Search
+
+[ ] Appearance
+
+  • Donate
+  • Create account
+  • Log in
+
+[ ] Personal tools
+
+  • Donate
+  • Create account
+  • Log in
+
+Contents
+
+move to sidebar hide
+
+  • (Top)
+  • 1 History
+  • 2 Application area
+  • 3 Forensic accountants
+    Toggle Forensic accountants subsection
+      □ 3.1 Role
+      □ 3.2 Skillset
+  • 4 Methods
+    Toggle Methods subsection
+      □ 4.1 Forensic rating models
+  • 5 Analytical techniques
+  • 6 See also
+  • 7 References
+  • 8 External links
+
+[ ] Toggle the table of contents
+
+Forensic accounting
+
+[ ] 19 languages
+
+  • العربية
+  • Azərbaycanca
+  • Беларуская
+  • Español
+  • فارسی
+  • Français
+  • עברית
+  • हिन्दी
+  • Հայերեն
+  • Bahasa Indonesia
+  • 日本語
+  • 한국어
+  • മലയാളം
+  • Nederlands
+  • Português
+  • Română
+  • Русский
+  • Slovenčina
+  • 中文
+
+Edit links
+
+  • Article
+  • Talk
+
+[ ] English
+
+  • Read
+  • Edit
+  • View history
+
+[ ] Tools
+Tools
+move to sidebar hide
+Actions
+
+  • Read
+  • Edit
+  • View history
+
+General
+
+  • What links here
+  • Related changes
+  • Upload file
+  • Permanent link
+  • Page information
+  • Cite this page
+  • Get shortened URL
+
+Print/export
+
+  • Download as PDF
+  • Printable version
+
+In other projects
+
+  • Wikidata item
+
+Appearance
+move to sidebar hide
+From Wikipedia, the free encyclopedia
+Branch of accounting which investigates financial misconduct and fraud
+
+Part of a series on
+          Forensic science
+[250px-Teerahertz_near-field_array_]
+Physiological
+
+  • Anthropology
+  • Biology
+  • Bloodstain pattern analysis
+  • Dentistry
+  • DNA phenotyping
+  • DNA profiling
+      □ Forensic genealogy
+  • Entomology
+  • Epidemiology
+  • Limnology
+  • Medicine
+  • Palynology
+  • Pathology
+  • Podiatry
+  • Toxicology
+
+Social
+
+  • Psychiatry
+  • Psychology
+  • Psychotherapy
+  • Social work
+  • Verbal autopsy
+
+Criminalistics
+
+  • Accounting
+  • Body identification
+  • Chemistry
+  • Colorimetry
+  • Election forensics
+  • Facial reconstruction
+  • Fingerprint analysis
+  • Firearm examination
+  • Footwear evidence
+  • Forensic arts
+  • Profiling
+  • Gloveprint analysis
+  • Palmprint analysis
+  • Questioned document examination
+  • Vein matching
+  • Forensic geophysics
+  • Forensic geology
+  • Social network analysis
+
+Digital forensics
+
+  • Computer exams
+  • Data analysis
+  • Database study
+  • Location analysis
+  • Malware analysis
+  • Mobile devices
+  • Network analysis
+  • Photography
+  • Video analysis
+  • Audio analysis
+
+Related disciplines
+
+  • Electrical engineering
+  • Engineering
+  • Fire investigation
+  • Fire accelerant detection
+  • Fractography
+  • Linguistics
+  • Materials engineering
+  • Polymer engineering
+  • Statistics
+  • Traffic collision reconstruction
+
+Related articles
+
+  • Crime scene
+  • CSI effect
+  • DNA in forensic entomology
+  • Perry Mason syndrome
+  • Pollen calendar
+  • Skid mark
+  • Trace evidence
+
+  • Outline
+  • Category
+
+  • v
+  • t
+  • e
+
+Forensic accounting, forensic accountancy or financial forensics is the
+specialty practice area of accounting that investigates whether firms engage in
+financial reporting misconduct, or financial misconduct within the
+workplace by employees, officers or directors of the organization. Forensic
+accountants apply a range of skills and methods to determine whether there has
+been financial misconduct by the firm or its employees. The use of digital
+forensics and data analytics has become a significant part of forensic
+accounting. Modern practitioners employ machine learning, transaction-pattern
+analysis, and metadata tracing to identify financial anomalies and reconstruct
+digital evidence. These tools enhance the detection of fraud, money laundering,
+and cyber-enabled crimes that traditional auditing methods may overlook.^[5
+]
+
+History
+
+
+
+Forensic accounting or forensic accountancy has been used since the time of the
+ancient Egyptians when Pharaoh had scribes account for his gold and other
+assets. These scribes worked in Pharaoh's courts and were charged with fraud
+prevention and detection. Their role stayed much the same until the turn of the
+20th century. However, forensic accounting was not formally defined until
+the 1940s. Originally, Frank Wilson is credited with the birth of forensic
+accounting in the 1930s.
+
+When Wilson was working as a CPA for the US Internal Revenue Service, he was
+assigned to investigate the transactions of the infamous gangster Al Capone.
+Capone was known for his involvement in illegal activities, including violent
+crimes. However it was Capone's federal income tax fraud that was discovered by
+forensic accountants. Wilson's diligent analysis of the financial records of Al
+Capone resulted in his indictment for federal income tax evasion.
+
+Capone owed the government $215,080.48 from illegal gambling profits and was
+found guilty of tax evasion for which he was sentenced to 10 years in federal
+prison. This case established the significance of forensic accounting.
+
+Application area
+
+
+
+Forensic accountants are necessary for a variety of reasons. They can be useful
+for criminal investigations, litigation support, insurance claims, and
+corporate investigations. Financial forensic engagements may fall into
+several categories. For example:
+
+  • Economic damages calculations, whether suffered through tort or breach of
+    contract;
+  • Post-acquisition disputes such as earnouts or breaches of warranties;
+  • Bankruptcy, insolvency, and reorganization;
+  • Divorce settlement
+  • Securities fraud;
+  • Tax fraud;
+  • Money laundering;
+  • Business valuation;
+  • Credit card fraud;
+  • Skimming;
+  • Computer forensics/e-discovery; and
+  • Fraud risk assessments under SOX 404 or otherwise.
+
+Forensic accountants
+
+
+
+Forensic accountants, investigative accountants or expert accountants may be
+involved in recovering proceeds of serious crime, and provide evidence to
+confiscation proceedings concerning actual or assumed proceeds of crime or
+money laundering. In the United Kingdom, relevant legislation is contained in
+the Proceeds of Crime Act 2002. Forensic accountants typically hold the
+following qualifications; Certified Forensic Accounting Professional (CFA -
+England & Wales), Certified Fraud Examiners (CFE - US / International),
+Certificate Course on Forensic Accounting and Fraud Detection (FAFD) by
+Institute of Chartered Accountants of India (ICAI), Certified Public
+Accountants (CPA - US) with AICPA's [Certified in Financial Forensics est.
+2008] (CFF) Credentials, Chartered Accountants (CA - Canada), Certified
+Management Accountants (CMA - Canada), Chartered Professional Accountants (CPA
+- Canada), Chartered Certified Accountants (CCA - UK), or Certified Forensic
+Investigation Professionals (CFIP). In India there is a separate breed of
+forensic accountants called Certified Forensic Accounting Professionals.
+
+The Certified Forensic Accountant (CRFAC) program from the American Board of
+Forensic Accounting assesses Certified Public Accountants (CPAs) knowledge and
+competence in professional forensic accounting services in a multitude of
+areas. Forensic accountants may be involved in both litigation support
+(providing assistance on a given case, primarily related to the calculation or
+estimation of economic damages and related issues) and investigative accounting
+(looking into illegal activities). The American Board of Forensic Accounting
+was established in 1993.
+
+Large accounting firms often have a forensic accounting department. All of
+the larger accounting firms, as well as many medium-sized and boutique firms
+and various police and government agencies have specialist forensic accounting
+departments. Within these groups, there may be further sub-specializations:
+some forensic accountants may, for example, specialize in insurance claims,
+personal injury claims, fraud, anti-money-laundering, construction, or
+royalty audits. Forensic accounting used in large companies is sometimes
+called financial forensics.
+
+Role
+
+
+
+The role of the forensic accountants differ from what auditors do.
+Forensic accountants are involved with investigating and analyzing the factual
+information brought about by the crime, whereas auditors handle the gross
+financial statements. Auditors detect financial deficiencies that need to
+be corrected, and they give suggestions to investors, based on their
+professional opinion, on the reliance of financial statements. Forensic
+accountants examine evidence of criminal offences and through this evidence,
+make efforts to improve the processes adopted by those affected. Though
+audits and forensic accounting investigations have their differences, they
+share a couple similarities; both require knowledge of the practices and
+processes possessed by the business and the general accounting principles
+concerned with the particular situation, and they both require the ability to
+interpret financial documents and be objective and impartial.
+
+Forensic accountants combine knowledge of the law with their accounting
+skills. They can assess companies, and help companies resolve issues. This can
+help companies prevent corruption, fraud, embezzlement, etc. As with all
+accounting professionals, forensic accountants performing an audit of a company
+should remain neutral. Large companies mainly use forensic accountants when
+performing audits; however, there are other uses for forensic accountants in
+companies. Forensic accountants often assist in professional negligence
+claims where they are assessing and commenting on the work of other
+professionals. Forensic accountants are also engaged in marital and family law,
+analyzing lifestyle for spousal support purposes, determining income available
+for child support, and equitable distribution of marital assets.
+
+Forensic accounting and fraud investigation methodologies are different
+than internal auditing. Thus forensic accounting services and
+practice should be handled by forensic accounting experts, not by internal
+auditing experts. Forensic accountants may appear on the crime scene a little
+later than fraud auditors; their major contribution is in translating complex
+financial transactions and numerical data into terms that ordinary laypersons
+can understand, because if the fraud comes to trial, the jury will be made up
+of ordinary laypersons. On the other hand, internal auditors investigate using
+checklists and techniques that may not surface the types of evidence that the
+jury or regulatory bodies look for in proving fraud. Forensic investigation
+fieldwork may carry legal risks and consultant malpractice risks if internal
+auditing checklists are used, rather than the specialized skills of forensic
+accounting.
+
+The fraud cycle describes the process which is taken by those in order to
+conduct a fraud. It begins with planning the actions of the fraud, which is
+then followed by the actual commitment of the act, ending with the conversion
+of the assets to cash. The main goal of Forensic accountants is to
+determine whether financial crime has been committed, and if so, to what
+extent. They are often used as expert witnesses to assist the judge or jury in
+forming the verdict, where they are required to give testimony which is
+based upon sufficient facts or data and is the product of reliable principles
+and methods, and they are required to have applied the principles and methods
+reliably to the facts of the case. When acting as expert witnesses in
+court proceedings in England and Wales, they are obliged to give objective,
+unbiased opinion on matters within their expertise.
+
+Skillset
+
+
+
+It is important that forensic accountants possess skills such as
+microeconomics, cost-center accounting systems, coming up with conclusions with
+little data, report writing, research skills and interview skills. This
+process can employ one or more of the following techniques: review of Public
+records; background investigations; interviews of knowledgeable parties;
+analysis of Real evidence to identify possible Forgery and/or document
+alterations; Surveillance and inspection of business premises; analysis of
+individual Financial transactions or statements; review of Business records to
+identify fictitious vendors, employees, and/or business activities, or
+interrogation of suspects, questioning of witnesses or victims.
+
+Forensic accountants are also increasingly playing more proactive risk
+reduction roles by designing and performing extended procedures as part of the
+statutory audit, acting as advisers to audit committees, fraud deterrence
+engagements, and assisting in investment analyst research.
+
+Methods
+
+
+
+Forensic accounting combines the work of an auditor and a public or private
+investigator. Unlike auditors whose goal is focused on finding and preventing
+errors, the role of a forensic accountant is to detect instances of fraud, as
+well as identify the suspected perpetrator of the fraud. Some of the most
+common types of fraud schemes include overstating revenues, understating
+liabilities, inventory manipulation, asset misappropriation, and bribery/
+corruption. To discover these, forensic accountants apply a variety of
+techniques.
+
+Forensic accounting methods can be classified into quantitative and
+qualitative. The qualitative approach studies the personal characteristics of
+the individuals behind financial fraud schemes. A popular theory of fraud
+revolves around the fraud triangle, which classifies the three elements of
+fraud as perceived opportunity, perceived need (pressures), and
+rationalization. This theoretical construct was first articulated by
+behavioral scientist Donald Cressey.
+
+More recently, forensic accountants have gone beyond incentive effects and
+focused on behavioral characteristics, a branch of accounting known as
+accounting, behavior and organizations, or organizational behavior. Certain
+predictive factors, like being labeled as “narcissistic” or committing
+adultery, are common traits among fraud perpetrators. These characteristics
+are often not conclusive enough on their own to identify the culprit, but can
+help forensic accountants to narrow down a suspect list, sometimes based on
+behavioral or demographic factors.
+
+The quantitative approach focuses on financial data information and searches
+for abnormalities or patterns predictive of misconduct. Today, forensic
+accountants work closely with data analytics to dig through complex financial
+records. Data collection is an important aspect of forensic accounting because
+proper analysis requires data that is sufficient and reliable. Once a
+forensic accountant has access to the relevant data, analytic techniques are
+applied. Predictive modeling can detect potentially fraudulent activities,
+entity resolution algorithms and social network analytics can identify hidden
+relationships, and text mining allows forensic accountants to parse through
+large amounts of unstructured data quickly. Another common quantitative
+forensic accounting method is the application of Benford's law. Benford's law
+predicts patterns in an observed set of accounting data, and the more the data
+deviates from the pattern, the more likely that the data has been manipulated
+and falsified.
+
+Forensic rating models
+
+
+
+Forensic rating models are financial models used to represent the information
+known about a business and to derive an overall score, indicating a risk of
+financial fraud. Financial ratios are calculated from published figures, then
+techniques to judge the stability of a company by looking at particular ratios
+have been used since the 1930s. An improved technique is based on
+discriminant analysis, where these ratios are weighted by coefficients to
+give an overall value or Z-score. The coefficients are chosen based
+on research by forensic accountants across good and bad business practices, and
+may vary for particular market sectors or for different models. Since Altman's
+1968 publication and later work such as Taffler's in 1983, these
+Z-score models have been widely used.
+
+In India, such models were developed in response to the Satyam scandal of 2008.
+ Models such as J-score were developed, from the work of CA Mayur
+Joshi and published in 2011. J-score is built on the presumption that it
+is more difficult to manipulate the cash flows than to present an inflated
+value for an asset, and so emphasises these.
+
+Analytical techniques
+
+
+
+Forensic accountants utilize an understanding of economic theories, business
+information, financial reporting systems, accounting and auditing standards and
+procedures, data management & electronic discovery, data analysis techniques
+for fraud detection, evidence gathering and investigative techniques, and
+litigation processes and procedures to perform their work.
+
+When detecting fraud in public organizations accountants will look in areas
+such as billing, corruption, cash and non-cash asset misappropriation, refunds
+and issues in the payroll department. To detect fraud, companies may undergo
+management reviews, audits (both internally and externally) and inspection of
+documents. Forensic accountants will often try to prevent fraud before it
+happens by searching for errors and imprecise operations as well as poorly
+documented transactions.
+
+The process begins with the forensic accountant gathering as much information
+as possible from clients, suppliers, stakeholders and anyone else involved in
+the company. Next, they will analyze financial statements in order to try and
+find errors or mistakes in the reporting of those financial statements as well
+as they will analyze any background information provided. The next step
+involves interviewing employees in order to try and find where the fraud may be
+occurring. Investigators will look at company values, performance reviews,
+management styles and the overall structure of the company. After this is
+complete the forensic accountant will try to draw conclusions from their
+findings.
+
+See also
+
+
+
+  • Benford's law
+  • Certified Fraud Examiner
+  • Association of Certified Fraud Examiners
+
+References
+
+
+
+ 1. ^ ^a ^b ^c Honigsberg, Colleen (2020-10-13). "Forensic Accounting". Annual
+    Review of Law and Social Science. 16 (1): 147–164. doi:10.1146/
+    annurev-lawsocsci-020320-022159. ISSN 1550-3585. S2CID 241891310. Archived
+    from the original on 2023-06-29.
+ 2. ^ ^a ^b Homer, Emily M. (2020-01-01). "Testing the fraud triangle: a
+    systematic review". Journal of Financial Crime. 27 (1): 172–187. doi:
+    10.1108/JFC-12-2018-0136. ISSN 1359-0790. S2CID 213294263.
+ 3. ^ W.S. Hopwood, J.J. Leiner & G.R. Young, Forensic Accounting, McGraw-Hill
+    Irwin (2008), as quoted by Stephen Pedneault, Frank Rudewicz, Michael
+    Sheetz & Howard Silverstone, Forensic Accounting and Fraud Investigation,
+    John Wiley & Sons, Inc. (4th ed. 2017).
+ 4. ^ Silverstone, Howard; Sheetz, Michael; Pedneault, Stephen; Rudewicz, Frank
+    (2012). Forensic Accounting and Fraud Investigation for Non-Experts
+    (3rd ed.). John Wiley & Sons. ISBN 9780470879597.
+ 5. ^ Kranacher, Mary-Jo; Riley, Richard (2023). Forensic Accounting and Fraud
+    Examination (3rd ed.). Wiley. ISBN 9781394200900.
+ 6. ^ "So That's Why It's Called a Pyramid Scheme". Journalofaccountancy.com.
+    October 2000. Archived from the original on 2014-02-16. Retrieved 
+    2012-03-10.
+ 7. ^ kimberly.vigil (2016-03-31). "What is Forensic Accounting?". The
+    University of Scranton Online. Archived from the original on 2016-06-06.
+    Retrieved 2019-09-12.
+ 8. ^ ^a ^b ^c Singleton, Tommie W.; Singleton, Aaron J. (2010-08-23). Fraud
+    Auditing and Forensic Accounting (1 ed.). Wiley. doi:10.1002/9781118269183.
+    ISBN 978-0-470-56413-4.
+ 9. ^ ^a ^b Connell, Des W. (2005), "Financial Crimes", Financial Investigation
+    and Forensic Accounting (2 ed.), Routledge, pp. 35–56, doi:10.1201/
+    9781420039061-9, ISBN 978-0-429-24781-1, retrieved 2024-04-23{{citation}}:
+    CS1 maint: work parameter with ISBN (link)
+10. ^ "3.2. China and India catching up". 2008. doi:10.1787/404104023422.
+    Retrieved 2022-03-24. {{cite journal}}: Cite journal requires |journal= (
+    help)
+11. ^ ^a ^b "Becoming a Certified Forensic Accountant® | ABFA.US". Retrieved 
+    2022-02-21.
+12. ^ "Service of Forensic Accountants". big4accountingfirms.org. Archived from
+    the original on 2016-02-07. Retrieved 2014-04-08.
+13. ^ Cicchella, Denise (2005). Construction audit guide: overview, monitoring,
+    and auditing. Altamonte Springs, FL: IIA Research Foundation. ISBN 
+    0-89413-587-2.
+14. ^ Parr, Russell L.; Smith, Gordon V. (2010). Intellectual property:
+    valuation, exploitation, and infringement damages. Hoboken, N.J.: Wiley.
+    pp. Chapter 33. ISBN 978-0-470-45703-0.
+15. ^ ^a ^b ^c ^d ^e Skalak, Steven L.; Golden, Thomas W.; Clayton, Mona M.;
+    Pill, Jessica S. (2011-04-04). A Guide to Forensic Accounting Investigation
+    . John Wiley & Sons. ISBN 978-1-118-01773-9.
+16. ^ Shapiro, David M. (Sep 2015). "Forensic Accounting: Beyond the courtroom"
+    . Strategic Finance. 97 (3) – via Gale OneFile.
+17. ^ Godbole, Pradeep. "Fraud Investigation Methodologies and Report
+    Structuring" (PDF). WIRC-ICAI. Archived from the original (PDF) on
+    2023-06-30. Retrieved 2024-09-23.
+18. ^ "What is internal audit? | About us | IIA". www.iia.org.uk. Retrieved 
+    2024-03-15.
+19. ^ "Forensic Accounting". AICPA. Retrieved 2024-09-24.
+20. ^ ^a ^b Miller, Joseph; Jenkins, Glen; Houser, John (2005). "The use of
+    forensic accounting techniques in the determination of intellectual
+    property damage". The Forensic Examiner. 14.
+21. ^ "Federal Rules of Evidence #702". Federalevidence.com. Archived from the
+    original on 2010-08-19. Retrieved 2012-03-10.
+22. ^ Civil Procedure Rules Practice Direction Part 35 Paragraph 2.2
+23. ^ Criminal Procedure Rules 2010 Rule 33.2(1)
+24. ^ Gottlieb, Mark S (2020). "Forensic Investigations & Litigation Support".
+    ForensicAccountingNYC.com. Archived from the original on 2020-10-22.
+    Retrieved 2020-08-28.
+25. ^ "Investing in Equities" (PDF). nbim.no. p. 135.
+26. ^ Gray, Dahli (October 1, 2008). "Forensic Accounting and Auditing:
+    Compared and Contrasted to Traditional Accounting and Auditing" (PDF).
+    American Journal of Business Education. 1 (2): 115–126.
+27. ^ Ramamoorti, Sridhar (November 1, 2008). "The Psychology and Sociology of
+    Fraud: Integrating the Behavioral Sciences Component Into Fraud and
+    Forensic Accounting Curricula" (PDF). Issues in Accounting Education. 23
+    (4): 521–533. doi:10.2308/iace.2008.23.4.521.
+28. ^ Schuchter, Alexander; Levi, Michael (April 2016). "The Fraud Triangle
+    revisited". Security Journal. 29 (2): 107–121. doi:10.1057/sj.2013.1. ISSN 
+    0955-1662. S2CID 256514786.
+29. ^ Adkins, James (2023-07-28). "Inequality in embezzlement". UF Warrington
+    News. Retrieved 2023-09-09.
+30. ^ Jofre, Maria; Gerlach, Richard H. (2018). "Fighting Accounting Fraud
+    Through Forensic Data Analytics". SSRN Electronic Journal. arXiv:1805.02840
+    . doi:10.2139/ssrn.3176288. ISSN 1556-5068.
+31. ^ Rezaee, Zabihollah; Wang, Jim (October 10, 2018). "Relevance of Big Data
+    to Forensic Accounting Practice and Education". Managerial Auditing Journal
+    . 37 (5): 268–288. doi:10.1108/MAJ-08-2017-1633. S2CID 158443983.
+32. ^ Kumar, Kuldeep; Bhattacharya, Sukanto (June 1, 2007). "Detecting the
+    dubious digits: Benford's law in forensic accounting". Significance. 4 (2):
+    81–83. doi:10.1111/j.1740-9713.2007.00234.x ISSN 1740-9705.
+33. ^ ^a ^b ^c ^d Altman, Edward I. (1968). "Financial Ratios, Discriminant
+    Analysis and the Prediction of Corporate Bankruptcy". The Journal of
+    Finance. 23 (4): 589–609. doi:10.2307/2978933. JSTOR 2978933.
+34. ^ ^a ^b ^c Dr. Apurva Joshi. "Forensic Rating Model to identify creative
+    accounting". India Forensic.
+35. ^ Agarwal, Vineet; Taffler, Richard (2007). "Twenty-Five Years of the
+    Taffler Z-Score Model: Does It Really Have Predictive Ability?". Accounting
+    and Business Research. 37 (4): 285–300. doi:10.1080/00014788.2007.9663313.
+36. ^ "Forensic Rating Model and the Importance of J Score". Regtech Times.
+    2021.
+37. ^ CA Mayur Joshi. "Dealing with financial statement frauds with J-score".
+    India Forensic.
+38. ^ Singleton, Tommie W.; Singleton, Aaron J. (2010-08-23). Fraud Auditing
+    and Forensic Accounting (1 ed.). Wiley. doi:10.1002/9781118269183.ch1. ISBN
+     978-0-470-56413-4.
+39. ^ ^a ^b Akinbowale, Oluwatoyin Esther; Klingelhöfer, Heinz Eckart; Zerihun,
+    Mulatu Fikadu (2020-06-29). "An innovative approach in combating economic
+    crime using forensic accounting techniques". Journal of Financial Crime. 27
+    (4): 1253–1271. doi:10.1108/JFC-04-2020-0053. ISSN 1359-0790. S2CID 
+    225744942.
+40. ^ I-Long, Lin; Kuang-Heng, Shih; Su-Li, Lin (December 2018). "Following the
+    Money- Constructing the Prototype of Digital Evidence Forensic Accounting
+    Standard Operation Procedure for Government Audits". Journal of Accounting,
+    Finance and Management Strategy. 13: 141–162. ProQuest 2279772537.
+
+External links
+
+
+
+  • International Institute of Forensic Investigation Professionals Inc
+  • Association of Certified Fraud Examiners
+  • Certified in Financial Forensics
+  • Forensic Accountants, Forensic Accounting Certifications, and Due Diligence
+
+                      • v
+                      • t
+                      • e
+
+                 Accounting
+             • Financial accounting
+             • Cost accounting
+             • Management accounting
+             • Forensic accounting
+   Type      • Fund accounting
+             • Governmental accounting
+             • Social accounting
+             • Tax accounting
+
+             • Income statement
+             • Balance sheet
+Statements   • Statement of changes in equity
+             • Cash flow statement
+
+             • Debits and credits
+             • Revenue
+             • Cost of goods sold
+  Terms      • Operating expense
+             • Capital expenditure
+             • Depreciation
+             • Gross income
+             • Net income
+
+*
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Forensic_accounting&
+oldid=1350716351"
