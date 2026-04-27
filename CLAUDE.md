@@ -136,6 +136,11 @@ Title + 80–150-word abstract. Assemble the final `story.md`:
   (Phase 2 inflation, narrow Phase 1 genres), `WebFetch` (Wikipedia
   Special:Random when egress permits), `TodoWrite` (the nine phases plus
   five Phase-7 variants is a 14-step run; tracking helps).
+- **Pre-load deferred tools.** If `Write`, `Edit`, and `TodoWrite` appear as
+  deferred tools at session start (i.e. names listed but schemas not loaded),
+  load all three upfront with `ToolSearch select:Write,Edit,TodoWrite` before
+  starting Phase 1. Every run uses all three repeatedly; lazy-loading them
+  costs a load step at the head of nearly every phase.
 - **Self-evaluation caveat.** Phases 3–7 ask the same model that generated
   candidates to rank them. The forcing function ("one thing worries you") is
   the only guardrail — apply it strictly. If the model can't name a
@@ -146,6 +151,14 @@ Title + 80–150-word abstract. Assemble the final `story.md`:
   When this happens, check whether the file was written despite the error —
   often it was. Otherwise, split the output: write a partial file, then use
   `Edit` to extend it.
+- **Surface repeated infrastructure failures.** If the same phase fails twice
+  in a row with infrastructure errors (stream-idle timeouts, network errors,
+  partial-response truncation that isn't recoverable by re-reading the
+  partial file), stop and tell the user before a third attempt. The "no pause
+  for review" rule above is for editorial flow, not for hammering on a broken
+  tool path; the user may want to switch models (Sonnet 4.6 has been more
+  reliable than Opus 4.7 1M for the heavy Phase-7/8 writes) or save and
+  abandon, neither of which the model can choose unilaterally.
 
 ## When the user provides feedback after a run
 
