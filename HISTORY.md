@@ -225,6 +225,41 @@ synthesis call (rather than one monolithic call) to reduce truncation
 risk, and SEED inflation falls back to internal knowledge when web search
 is disabled.
 
+## 8. Claude Code on the web — `claude-code/`, comic-sf-1 and comic-sf-2 (April 26)
+
+`claude-code/CLAUDE.md` adapts the v4.3 template for runs driven by Claude
+Code on the web rather than the API script. Working directory for a run is
+`claude-code/test/<slug>/`; numbered, blessed runs would go in `runs/NN/`.
+File-naming and per-phase structure mirror `api/story_pipeline.py`. Two
+test runs are committed.
+
+**comic-sf-1** ([`claude-code/test/comic-sf-1/`](claude-code/test/comic-sf-1/))
+was the first run under this configuration: comic SF in the
+Lem/Sladek/early-Adams register, dictionary-drawn SEED.
+
+**comic-sf-2** ([`claude-code/test/comic-sf-2/`](claude-code/test/comic-sf-2/))
+was the first run using Wikipedia-sourced SEED. The sandbox blocks
+`*.wikipedia.org` (403 Blocked by egress policy), so the five articles were
+supplied externally as a zip
+([`claude-code/test/wp-seed.zip`](claude-code/test/wp-seed.zip), extracted
+under [`claude-code/test/wp-seed/`](claude-code/test/wp-seed/) — fifteen
+draws against the seven discard rules, of which five survived). The
+surviving items: the Moldovan writer Nicolae Esinencu (color-only — a
+deceased BLP-adjacent figure used only via excerpted letters, never on
+stage), the village of Mokro Polje, an Ecliptophanes beetle citation, a
+Gravity Group wooden roller-coaster, and the restaurant Cina in Chișinău.
+
+Phases 1–7 ran clean. Five Phase-7 variants under the catalogue form;
+synthesis selected V5, "Forty-Seven Refusals" (catalogue of the writer's
+declined invitations interleaved with second-person slices addressed to
+the nephew who sent a single-word refusal-to-the-centenary by post).
+Phases 8–9 were not completed: persistent Opus 4.7 stream-idle timeouts
+through the second half of the session, a mid-session switch to Sonnet
+4.6 to recover, and then a decision to commit the partial run as-is
+rather than finish under the new model. The run is preserved as a
+learning artifact for the Wikipedia SEED path; phases 8–9 may be
+completed in a follow-up session.
+
 ## Run index
 
 | #  | Title | Template | Directory |
