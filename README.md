@@ -31,24 +31,26 @@ Two artifacts get reused across every run:
 
 The pipeline runs in three modes:
 
-- **Hand-driven through the Claude web app.** Paste each phase prompt, review,
-  steer where you want. Runs 01–20 in [`runs/`](runs/) were produced this way.
-  Each run preserves the full `transcript.md` plus the final `story.md`.
+- **Hand-driven through the Claude web app.** With the template loaded as
+  project knowledge, the model looks up each phase from the template file
+  rather than the user pasting prompts. Between phases the user reviews,
+  steers, or simply asks for the next phase. Runs 01–20 in [`runs/`](runs/)
+  were produced this way; each run preserves a transcript and the resulting
+  story (or stories, for the A/B and multi-model runs).
 - **Autonomously through Claude Code on the web.** A `CLAUDE.md` at the
-  repo root tells Claude Code how to drive the v4.3 template end-to-end
-  in a sandboxed working copy. Two test runs are committed in
-  [`claude-code/test/`](claude-code/test/). This path trades the steerability
-  of the hand-driven mode for the convenience of a single "write me a story
-  in `[GENRE]`" instruction.
+  repo root tells Claude Code how to drive the v4.3 template end-to-end.
+  Two test runs are committed in [`claude-code/test/`](claude-code/test/).
+  This path trades the steerability of the hand-driven mode for the
+  convenience of a single "write me a story in `[GENRE]`" instruction.
 - **End-to-end via [`api/story_pipeline.py`](api/story_pipeline.py).** A
   Python port of v4.3 that calls Anthropic or OpenRouter directly, caches each
-  phase to disk, and supports resuming, regenerating, and slicing arbitrary
-  phase ranges. Tested against Claude Sonnet 4.6 and Gemini 3 Flash Preview;
-  outputs in [`api/test/`](api/test/). The script is much less tested than the
-  hand-driven Claude.ai path and may produce worse stories — it has two
-  end-to-end runs to its name, against the twenty that drove the template's
-  evolution. Use it for batch experiments and ablations; use the Claude.ai
-  path for the runs you care about.
+  phase to disk, and can resume, regenerate, or run an arbitrary slice of
+  phases. Tested against Claude Sonnet 4.6 and Gemini 3 Flash Preview;
+  outputs in [`api/test/`](api/test/). The script is much less tested than
+  the hand-driven Claude.ai path and may produce worse stories — two
+  end-to-end runs to its name, against twenty hand-driven runs in
+  [`runs/`](runs/). Use it for batch experiments and ablations; use the
+  Claude.ai path for the runs you care about.
 
 For the project's evolution — the Ellison trial, the abandoned Nix critic
 persona, the Plain → Baseline lineage, and the SEED mechanism that anchors
