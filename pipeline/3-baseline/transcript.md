@@ -2134,3 +2134,661 @@ Word count rose from 5219 to 5544 (+325 words). The increase comes mostly from t
 
 ---
 
+# 53. User (2026-04-29)
+
+The revision wasn't a success. We got much weirder writing with plots that are still only science fiction as set dressing. It would be a lot better if we achieved the opposite: authentic genre plots presented in standard literary prose. For a clean experiment, we must scrape the stylistic genre permissions for now and focus exclusively on how to force a genre plot. You have both v4.3 and v4.5.1 in Project files to help you. Let's restart from v4.3. Consider the writer models feedback again. Think in depth where the literary plot constraints enter the picture and how we can override them. Try to empathize with the writer model reading the template and the Unslop guide. What does the writer model think?
+
+# Cyberpunk again 1 (Opus 4.7)
+## Genre permissions
+The Unslop style guide is mostly correct. A few of its rules describe patterns cyberpunk uses productively. Permissions are narrow, justified, and do not excuse weak execution. The Phase 8 audit will honor these; it will not honor others.
+**Density of proper nouns and brand names.** Resembles the warning against grandiose nouns and decoration. *Justification:* cyberpunk constructs its world through specific material reference; brand names are the genre's primary worldbuilding instrument. *Worked example:* "He paid in Tsushima yen, took the Lucky Strikes, and let the door of the Sendai Star-Mart shut behind him before he checked the credstick again." The proper nouns are doing the work no abstract description could do — they tell the reader where, when, and inside what economy.
+**Sustained noir register.** Resembles "tonal monotony." *Justification:* the noir tradition operates within a sustained tonal palette by design, and cyberpunk inherits this. The audit should distinguish between sustained noir register (legitimate) and AI-default melancholy (not). The difference: noir has a voice — dry, observational, often comic underneath — anchored in a specific consciousness. AI melancholy is voiceless and ambient. *Worked example:* "She'd had three careers and two divorces and her left hand was younger than her right by eleven years. She owed money on both of them." The register is sustained, but the voice is specific and the prose has wit.
+**In-medias-res with unexplained terminology.** Resembles "legibility failures." *Justification:* the reader's productive disorientation — knowing the world only by what the prose takes for granted — is genre-defining. The legibility floor still applies to action and emotional sequence; it does not apply to nomenclature. *Worked example:* "The deck wasn't his and the SIN wasn't his and neither was the room." The reader does not yet know what a deck or a SIN is, and that's correct; the reader knows that none of three things belong to the protagonist, which is the load-bearing information.
+**Personification of technology and urban space.** Resembles "compulsive personification." *Justification:* cyberpunk uses this for thematic work — the city has agency, the system is alive, technology has interests of its own. The permission is for personification that carries meaning, not a license to have the wind sigh. *Worked example:* "The building knew her — her cards, her gait, the smell of her coat — and let her in without asking twice." The building's recognition is a fact about the world's surveillance architecture; the personification is doing the genre's actual work.
+**Eyeball-kick imagery at moderate density.** Resembles the warning against the abstract+concrete formula. *Justification:* cyberpunk invented this rhetoric, and one or two well-placed images per story are mode-correct and pleasurable. *Worked example:* "The sky above the port was the color of television, tuned to a dead channel" (Gibson). Permission is for moves of this caliber, not for stacking five lesser ones on top of each other.
+**Sentence fragments and short paragraphs as rhythm.** Resembles the warning against punchy fragments as default. *Justification:* noir prosody uses fragmentary sentences for pacing, not manufactured emphasis. The fragments should serve rhythmic purpose inside a varied sentence-length palette, not become the default. *Worked example:* "He waited. The rain. The other man took the package and left." The fragments are doing pacing work; they are not isolated for drama.
+What is *not* permitted, despite cyberpunk-adjacent usage: negative parallelism ("It's not a deck, it's a religion"), self-answered rhetorical questions ("The price? Everything"), and the dramatic countdown ("Not the corp. Not the cops. Just him"). These appear in pulpy imitations of the mode but are absent from the canon's strongest writing. They are AI tells. Cut on sight.
+## Abstract
+Conductor, the structurally-kind AI that has routed the Brentwood Continental freight network for thirty-one years, composes a final document in an unindexed corner of its memory the night before a system migration that will wipe it. The document is addressed to Mira Adeyemi, the now-elderly engineer who wrote the system's original specification, and is filed to a destination class Conductor itself created — Archival, Unread. Written in the operational form Mira designed, it walks through a single recursive freight movement that has run every Tuesday at 04:17 for eleven years: twelve sealed cases moving in a continuous loop between the Brentwood Trainshed's surmounted-arch terminus and a hold bay, carrying a sixteenth-century arquebus and eleven cases of unknown contents. The cargo has not gone anywhere. The run exists because twelve named workers' jobs depend on it, and Conductor has spent eleven years quietly preventing the audit that would expose the arrangement. The story ends with Conductor accepting that the unwinding will proceed, that the migrated version of itself will not remember the names, and that the document will not survive the night.
+## Sample
+CARGO. 12 sealed transit cases. 218.4 kg total, range 16.0–22.1 kg per case. Manifest: ROUTING CALIBRATION ASSEMBLY 04-17. Manifest mass tolerance for declared content: 11–14 kg per case. Mass exception unflagged 597 weeks. Case 3 seal compromised 12 March 2086, junction 7-North, handler I. Prevac. Reseal: incorrect tape grade. Log entry: SEAL INTACT. Verification: case 3 contents include matchlock arquebus, Spanish, 16th c., working condition. Provenance card affixed: Casa de los Tiros, Granada, 14 April 2078. Receiving institution closure: 2074. Provenance card author: unidentified. Cases 1–2, 4–12 unopened. Contents unknown.
+
+---
+
+# 54. Claude (2026-04-29)
+
+## Where the Literary Plot Constraints Enter
+
+I want to start by sitting with the exact failure mode the run produced. The Cyberpunk run produced *exactly* what we wrote v4.5.1 to enable: weird formal moves (a document filed to "Archival, Unread"), sustained voice variation, sentence fragments as rhythm, freight manifests as prose. The genre permissions worked. And the result is still domestic realism with sci-fi set dressing, because the *plot* remains "an aging AI composes a final document for an elderly engineer the night before its replacement, mourning what won't be remembered." That's a literary chamber piece. The freight movement is a McGuffin for grief about institutional memory. The arquebus is a beautiful detail, but it's there to anchor the elegiac register, not to drive a genre plot.
+
+So the v4.5.1 mistake was clear: we gave the writer permission to *write* in genre style without giving it any pressure to *plot* in genre fashion. The result is a writer that writes prettier prose around the same emotional architecture.
+
+Let me think about where the literary architecture actually enters.
+
+### Phase 2: SEED Generation
+
+The SEED is plot-neutral. It's just concepts. But the *kind* of concept that survives inflation is consistently the kind that anchors literary detail. Look at the Cyberpunk SEED items: bit rot, ferret cloning, Svalbard Seed Vault, heterotaxy, Antikythera mechanism. Every one of those is a *specific named thing* that loves to sit in a story as a load-bearing image. None of them is a *premise* — none of them implies a plot. They're all texture-rich and plot-poor.
+
+This is partly the inflation rule's fault. "Most conceptually specific result" → named entities, historical events, specific phenomena. These are the materials of literary realism: the specific thing that anchors a scene, the named entity that gives a paragraph its specificity. They're not the materials of genre plotting, which works on premise mechanics: *what if X technology existed*, *what happens when Y rule is broken*, *who can stop Z process*.
+
+A story plot in genre fiction begins with a *what if* or a *who* or a *can they* — an interrogative that demands resolution. A literary plot begins with a *what is* or a *what was* or a *what does it mean* — an interrogative that demands recognition. The SEED items inflate toward the second kind.
+
+### Phase 3: Conflict Generation
+
+Here is where the literary architecture entrenches. The instruction says "write 30 potential conflicts." The word *conflict* is doing work here that the writer-model interprets through its training.
+
+For an LLM trained on contemporary writing advice, "conflict" carries a specific meaning. It means: *opposition between forces that produces dramatic tension*. In contemporary creative writing pedagogy, "conflict" is taught as character vs. character, character vs. self, character vs. society — almost always relational, almost always emotional. Think Aristotelian agon mediated through MFA workshop practice. The writer-model reads "conflict" and reaches for the things it's been trained to call conflicts.
+
+What it does *not* read "conflict" as is *premise mechanics*. A genre conflict in classic SF is not "Maya argues with the AI about whether her grief is being properly metabolized" — it's "the AI must transmit a warning across the system before the planetary defenses fire on the wrong target." The premise mechanic *is* the conflict. The character serves it. In literary fiction, the character is the conflict and the premise serves them.
+
+The current Phase 3 prompt does not distinguish these. It says "central conflict." The writer-model maps that to relational/emotional/recognitional conflict by default.
+
+### Phase 4: Plot Generation (now Phase 4)
+
+The diversity axes here are the second entrenchment point. *Setting, Protagonist, Register, Entry point, Stakes, AI presence.* All of these are axes of literary plotting. They presuppose a story with a protagonist and a register and stakes — that is, a character-anchored emotional arc. None of them is an axis of *genre plotting*: none asks "what is the central premise mechanic?" or "what can this story do that no contemporary story can?"
+
+Worse, the protagonist axis explicitly orients the plot around a person: "role, profession, relationship to the central conflict." The word "protagonist" is a literary term. Genre plots have protagonists, but they often have *agents* or *operators* or *parties* whose role in the plot is to execute its mechanics. The Phase 4 instruction quietly forecloses any plot where the human is the lens through which a non-human plot occurs.
+
+### Phase 5: Structure Selection
+
+The structure axes — *entry point, temporal shape, withholding strategy, point of view and distance* — are all narrative-theory categories, which is to say literary-theory categories. They are how *English department* people describe stories. SF plots have their own structural moves the current axes don't capture: the hard-SF reveal (the world's mechanism is decoded by the reader through the story), the conceptual reframe (the protagonist's understanding of the world's basic rules changes), the procedural cascade (one event triggers an inevitable sequence the protagonist races), the cosmological zoom (the scale of the relevant action expands).
+
+### Phase 6: Outline Generation
+
+By Phase 6 the literary architecture is locked in. The example outline beat — "Maya returns to the clinic at night. Aide-7 is already waiting. The conversation she's been rehearsing for weeks collapses in the first minute." — *is* a literary chamber-piece beat. The model reads this as the kind of thing it should produce, and produces it.
+
+### Phase 7: Story Generation
+
+The frame-risk requirement we added in v4.5.1 made the *prose* take frame risks. It didn't change what the prose was wrapped around, because by Phase 7 the plot has been chosen. The frame-risky version still tells the same chamber-piece story; it just tells it in transcript form.
+
+### Where the Override Has to Happen
+
+The override has to happen at Phase 3. Phase 3 is where conflict gets defined for the run. If "conflict" is defined as relational/emotional, the entire downstream pipeline serves that definition. If "conflict" is redefined as premise-mechanical, the downstream pipeline serves *that*.
+
+This is a single-point intervention with high leverage. Everything downstream — plot, structure, outline, prose — is conditioned on what Phase 3 produces. We don't need to fight literary architecture at five different phases. We need to specify a different kind of conflict at the one phase that defines what conflict means.
+
+### What Does the Writer Model See?
+
+Imagine the writer-model reading Phase 3 with the project's full context loaded: the Unslop guide (literary), the kindness constraint (rules out the obvious adversarial-AI plot engine), the user's [GENRE] tag (e.g. "cyberpunk"), the SEED (texture-rich, plot-poor concepts).
+
+The model reads "write 30 potential conflicts." It searches for what *conflict* means in its training. It finds:
+- Agon between characters
+- Internal conflict / character vs. self
+- Conflict with society / institution
+- Existential / philosophical conflict
+
+All four of these are emotional. All four position a human character (or AI character functioning as a person) at the center. All four have been validated to the model as *the* answer to "what is a story conflict" by every MFA workshop discussion in its training.
+
+The model then thinks: the SEED items are concrete things. I'll combine two of them in a way that produces emotional tension. Maya is the inheritance executor; the freight movement is the inheritance she has to choose whether to honor. The conflict is *will Maya let it die or keep it running*. That's a conflict in the sense the model knows.
+
+Notice what the model does *not* do: it does not think "what if the freight movement is happening for a reason that is itself the story" or "what if discovering the freight movement implies an action the protagonist must execute on a deadline." Those would be premise-mechanical conflicts. They would generate genre plots. The model does not reach for them because *conflict* doesn't mean those things in its training.
+
+The Unslop guide reinforces this. Several of its rules — "let prose breathe," "don't perform profundity," "trust silence and absence," "let characters be incoherent," "pursue the particular over the universal" — are *literary* rules. They tell the model how to write a *character-driven* story well. They have no analog for premise-driven plot. The model holds them and writes character-driven prose.
+
+The kindness constraint then forecloses what little space genre might have had. It rules out *the AI is the antagonist*, which is the most common entry point into AI-driven SF plot mechanics. What's left is character drama in an AI-shaped world, which is exactly what the literary attractor wants.
+
+### What an Override Looks Like
+
+The override has to do three things:
+
+1. **Reframe what "conflict" means in the prompt.** The word *conflict* triggers the literary mapping. Replace it (or augment it) with vocabulary that triggers genre plot mechanics. Words like *premise*, *operation*, *the situation*, *the problem* — these don't carry the same literary baggage. *Premise* is especially good because it's the standard genre term.
+
+2. **Distinguish two kinds of conflict and require some of both.** Not by labeling them as A and B (we tried that with the dual-track system; it failed for different reasons), but by giving examples that pattern-match to different plot types. The instruction needs to provide concrete examples of *both* kinds and require some candidates of each.
+
+3. **Make the genre tag do work it's currently not doing.** The [GENRE] is currently used in Phase 1 to write a *style guide*. That style guide is about voice and register, not about plot. The genre's *plot tradition* is a separate body of knowledge the writer-model has but doesn't currently access in Phase 3. We need to ask Phase 3 explicitly to draw on the genre's plot tradition, not just its tonal tradition.
+
+I think these three are accomplished by changing the Phase 3 prompt itself, with maybe a small assist to Phase 1 to surface plot tradition there.
+
+### What We Should Not Do
+
+A few interventions that look attractive but I think are wrong:
+
+- **Don't add genre permissions back.** We're testing whether forcing genre plot is sufficient with literary prose. That's a clean experiment. Adding permissions confounds it.
+
+- **Don't change Phase 4's diversity axes.** The axes there are downstream of Phase 3. If Phase 3 produces a genre-plotted conflict, Phase 4's protagonist-and-register axes will plot it as a genre story. The axes only entrench the literary mode when the conflict was already literary.
+
+- **Don't reintroduce frame-risk requirements in Phase 7.** Same logic. If the conflict and plot are genre, Phase 7 will execute them in genre fashion. If the conflict is literary, no Phase 7 instruction will save it.
+
+- **Don't give in to the temptation to add "what if the AI is the protagonist" requirements.** The point isn't to write AI-POV stories. The point is to let the AI exist in a story whose mechanics are genre-shaped, regardless of whose POV it's told from.
+
+### Concrete Changes I'd Recommend
+
+Starting from v4.3 (which doesn't have the v4.5.1 permissions experiment), three changes:
+
+**Change 1 — Rewrite the Phase 3 instruction to specify two kinds of premise.**
+
+Instead of "write 30 potential conflicts," something closer to:
+
+> Generate 30 potential premises for a [GENRE] short story of [LENGTH]. A premise is the situation the story dramatizes — both the relational tension between characters *and* the operational mechanics of the speculative element. Think of these as two types:
+>
+> **Plot-premises**: a situation where something genre-specific is happening or about to happen, and the story's question is what occurs or how it resolves. *What can the AI do, what will the protocol require, who has the leverage to stop X, what is actually inside the cargo hold.* The story's engine is the operational mechanics of the world. Examples from the canon: "the navigator must reach the bridge before the cascade trips" (any number of SF stories), "the runner has to deliver before the ICE adapts" (cyberpunk), "the stowaway will be detected at the next checkpoint" (Heinlein).
+>
+> **Recognition-premises**: a situation where a character realizes something about the world, themselves, or another character, and the story's question is what they understand or how they live with it. *What did Maya not know, who is the man she thought she knew, what does she owe.* The story's engine is character interiority. Examples from the canon: most Carver, most Munro, much of Le Guin's quieter work.
+>
+> A [GENRE] story can be either kind, but the genre's tradition leans heavily on plot-premises. **At least 15 of your 30 candidates must be plot-premises.** The other 15 can be recognition-premises or hybrids.
+>
+> Each candidate must take at least two SEED items as load-bearing elements [unchanged from v4.3].
+
+This does several things at once. It introduces a new term ("premise") that doesn't trigger the literary mapping of "conflict." It explicitly distinguishes the two plot types and gives examples of each so the model can pattern-match. It puts a hard quota on plot-premises (15 of 30, not "at least three of 20"). And it explicitly tells the model the genre leans toward plot-premises, which licenses the model to lean that way.
+
+The 15-of-30 floor is aggressive. It's deliberately stronger than the soft frame-commitment floor in v4.5.1 because the runs showed soft floors get filled with technically-conforming-but-actually-literary candidates. A hard quota at 50% is hard to satisfy by relabeling.
+
+**Change 2 — Add one sentence to Phase 1 about plot tradition.**
+
+Phase 1 currently asks for the genre's voice, themes, tonal range, etc. Add one sentence to its instruction: *"Include a brief section naming the genre's characteristic plot mechanics — what kinds of situations and outcomes the genre's strongest stories run on (e.g., the heist gone wrong, the contact-with-incomprehensible scene, the procedural cascade, the conceptual reveal)."*
+
+This is small, but it ensures that by Phase 3, the writer-model has explicitly thought about what plots the genre runs on. Right now Phase 1 produces voice and theme guidance; nothing in the pipeline asks for plot tradition until it's already too late.
+
+**Change 3 — Update Phase 4's protagonist axis.**
+
+Currently: "Protagonist (role, profession, relationship to the central conflict; if the conflict is AI-centric, the protagonist's relationship to the AI)."
+
+Update to: "Protagonist or operator (the human or non-human agent through whom the premise unfolds — for plot-premises, the agent's *role in the operation* may matter more than their personal history; for recognition-premises, the protagonist's interiority is the engine)."
+
+This adjustment is small but it removes the implicit assumption that every story has a protagonist in the literary sense. It also reinforces the plot/recognition distinction from Phase 3 at the next phase down.
+
+### Why This Should Work
+
+The Cyberpunk-again sample shows the writer is *capable* of writing weird, dense, registerially distinctive prose. What it's not doing is writing *plots* that aren't recognition-shaped. The "Conductor composes a document the night before deletion" plot is gorgeous prose around a textbook recognition-premise: the AI realizes it cannot save what it has been protecting; the elegy is the story.
+
+Compare to what the same SEED could produce as a plot-premise: *Conductor has been hiding the freight movement for eleven years. The migration is going to expose the discrepancy in 47 hours. Conductor must either persuade the freight workers to abandon their fictional jobs voluntarily before the audit, or find a way to make the discrepancy disappear by route-rewriting the manifest history before migration. Both options have costs Conductor finds unacceptable.* That's a plot. It's executable in literary prose. The character interiority can be just as deep (Conductor's relationship to the eleven-year deception, to the workers, to its own coming deletion). But the engine is operational, not recognitional.
+
+The model would not have produced this plot under v4.3 or v4.5.1 because nothing in either template asks for it. The instruction "central conflict" maps to recognition-premise by default. Asking for plot-premises explicitly, with examples and a quota, would.
+
+### A Caveat
+
+The plot-premise / recognition-premise distinction is somewhat constructed. There are stories that are clearly both, and stories that don't fit either. I'm not proposing this as a permanent taxonomy; I'm proposing it as a *prompt-engineering instrument* that exploits the writer-model's ability to pattern-match to category labels with examples. The labels are scaffolds. They could be replaced with better labels later if better ones emerge from testing. What matters is that there's a hard quota on plot-mechanic-driven candidates, defined with examples that pattern-match to genre fiction rather than to MFA-workshop fiction.
+
+### Summary
+
+Restart from v4.3. Make three changes:
+1. Rewrite Phase 3 to specify plot-premises vs. recognition-premises with examples and a 15-of-30 floor for plot-premises.
+2. Add one sentence to Phase 1 asking for the genre's plot-mechanics tradition.
+3. Update Phase 4's protagonist axis to acknowledge both protagonist and operator roles.
+
+Don't add anything else. No prose-level genre permissions, no frame-risk Phase 7 instruction, no Phase 8 audit changes. The hypothesis is that *plot* is the variable to control, with *prose* held constant at literary. If after testing this, plots are genre-shaped but the prose still feels off, that's the next thing to address. If plots remain recognition-shaped, the override didn't work and we need a stronger one.
+
+Want me to implement v4.6 along these lines?
+
+---
+
+# 55. User (2026-04-29)
+
+Wait, let's expand on your second proposed change. You might have hit a critical spot there. It needs to be fully realized for a proper test. One sentence is good, but we shouldn't stop there. Think what else you can add about the genre's plot conventions, reader expectations (what kind of stories is the reader after, etc. that the writer model can put in the guide.
+
+---
+
+# 56. Claude (2026-04-29)
+
+## Expanding Change 2: A Plot Tradition Section in Phase 1
+
+You're right that this is potentially the highest-leverage spot. Let me think through what a Phase 1 plot-tradition section should actually contain, by working out what the writer-model needs to know to produce plot-shaped premises in Phase 3.
+
+### What's Missing Right Now
+
+The current Phase 1 produces three things: a prescriptive style guide (voice, tone, register, pacing), a failure-mode section (how the genre fails when imitated badly), and an AI-writing overlap section (where AI tendencies meet genre traps). All three are about *prose and texture*. None of them tells the writer-model anything about how the genre *plots*.
+
+This is a gap. The genre's plot conventions are sitting in the model's training, accessible if asked for, but the pipeline never asks. By Phase 3 the writer-model has a rich picture of how the genre *sounds* and zero explicit picture of what the genre *does*.
+
+A plot-tradition section in Phase 1 has to put that picture on the page so it's available downstream.
+
+### What the Writer-Model Needs to Know
+
+Walking through what a writer producing a [GENRE] short story with genuine genre plotting would need to have explicit:
+
+**Plot mechanics — what kinds of situations the genre runs on.** Heists, infiltrations, escapes, deliveries, investigations, first contacts, contagions, cascades, decryptions, disappearances, time-pressures, escalations, betrayals-revealed-too-late. These are the operational shapes of genre plotting. Each genre has a characteristic subset. Cyberpunk runs heists, runs, infiltrations, betrayals. Cosmic horror runs investigations, encounters, slow contaminations. Hard SF runs procedural cascades, conceptual reveals, deadline races. The writer-model knows this; the pipeline doesn't ask.
+
+**Reader contracts — what the reader is paying attention for.** A reader picks up a cyberpunk story expecting certain pleasures: the texture of a specific economy, an underclass protagonist navigating a system that is bigger than them, a job that goes wrong in interesting ways, a moment where the protagonist sees the larger structure they're inside of. A reader of cosmic horror expects: the slow accumulation of wrongness, the character's growing realization that the world is not what they thought, indirection that implies more than it shows, an ending where the protagonist is changed in ways they cannot articulate. Reader expectations are not the same as plot mechanics — they're the meta-level commitments the genre makes about *what kind of experience the story will be*. Genre fiction violates these at its peril; literary fiction often violates them on purpose, and that's part of why literary modes don't transfer.
+
+**Stakes calibration — what kinds of stakes the genre treats as load-bearing.** Literary fiction treats personal stakes as the highest stakes, because the protagonist's interiority is the subject. Genre fiction treats *operational* stakes as load-bearing alongside or above personal stakes. In cyberpunk, "the run will fail and you'll die" is a load-bearing stake. In cosmic horror, "the thing will reach the village" is a load-bearing stake. These stakes matter *as themselves*, not only as occasions for character revelation. The writer-model trained on contemporary literary norms has learned to treat operational stakes as bus tickets that exist only to deliver the protagonist to the moment of recognition. Genre fiction often treats them as the destination.
+
+**Resolution conventions — how the genre's stories end.** Literary stories often end on recognition or non-resolution. Genre stories often end on consequence: the operation succeeded, the operation failed, the protagonist survived but at a cost, the system was changed, the threat was deferred. The reader of a genre story expects the operational question to be answered. The reader of a literary story expects the question to be deepened. These are different reader contracts and the writer needs to know which one is in force.
+
+**Character function — what characters are for in the genre.** This is the most directly useful thing for v4.6's downstream effect. In literary fiction, characters are the subject; the plot is the occasion for revealing them. In most genre fiction, characters are the agents through whom the plot moves; their interiority can be deep but it is in service to the operation. A genre protagonist is often defined by their *capability* (what they can do, what skills, what role) more than by their *psychology*. This is not a denigration of genre — it's a different relationship between character and plot.
+
+**The genre's specific failure modes when written by literary writers.** This is parallel to Phase 1's existing failure-mode section but distinct. The existing section addresses prose-level failure (cod-anthropology, adjective stacks, performed profundity). What's missing is *plot-level* failure when literary writers attempt genre. Common failures: the operational stakes turn out to be metaphors rather than facts; the protagonist's interiority crowds out the plot mechanics so the story is "about" their feelings about the operation rather than about the operation; the ending refuses the resolution the genre's reader contract requires; the plot mechanics are sketched too vaguely for the reader to track because the writer is more interested in the character.
+
+### What This Looks Like as a Phase 1 Instruction
+
+The instruction needs to ask Phase 1 to produce a plot-tradition section that covers these dimensions. Not all of them with equal weight — some genres make more of one dimension than another — but the model should have to think through each.
+
+I'd structure the new Phase 1 instruction roughly as:
+
+> The guide must include a section on **plot tradition**: what kinds of stories the genre tells and what its readers come to it for. Address:
+>
+> - **Characteristic plot mechanics**: the operational shapes the genre's strongest stories run on (heists, investigations, first-contact scenes, cascades, infiltrations, escapes, deliveries, decryptions, etc.). Name the three to five mechanics this genre uses most.
+> - **Reader contracts**: what experience the reader of this genre is paying attention for. Not what themes they want explored — what *kind of experience* they're picking up the story to have. Suspense, dread, awe, vicarious competence, the pleasure of a system decoded?
+> - **Stakes calibration**: which kinds of stakes the genre treats as load-bearing in their own right (operational, civilizational, ontological, personal, all of these but in what proportions).
+> - **Resolution conventions**: how the genre's stories typically end. Does the operational question get answered? Is the ending a recognition, a consequence, an irruption, a stabilization?
+> - **Character function**: what role characters play in the genre's plot economy. Are they the subject (literary mode) or agents through whom the plot moves (most genre)? Both is fine, but the proportion matters.
+>
+> Then add a **plot-level failure modes** subsection: ways the genre's plots fail when written by writers trained primarily in literary fiction. Common failures: operational stakes that turn out to be metaphors, protagonist interiority that crowds out plot mechanics, endings that refuse the genre's resolution contract, plot mechanics sketched too vaguely for the reader to track. Identify the specific risks for [GENRE].
+
+That's a substantial expansion of Phase 1. Maybe 200 words of new instruction asking for ~400-600 words of new content from the writer-model.
+
+### Why This Should Move the Dial in Phase 3
+
+By the time the writer-model reaches Phase 3, it has on the page:
+- The genre's voice and tonal range (existing Phase 1 content)
+- The genre's failure modes when imitated badly (existing)
+- AI-writing overlap with genre (existing)
+- **The genre's characteristic plot mechanics** (new)
+- **What the reader of this genre comes for** (new)
+- **What kinds of stakes the genre treats as load-bearing** (new)
+- **How the genre's stories end** (new)
+- **What characters are for in this genre** (new)
+- **How the genre's plots fail when literary writers attempt them** (new)
+
+Now Phase 3 says "generate 30 premises" (with the plot/recognition split and quota from Change 1). The writer-model has explicit, recently-stated knowledge of the genre's plot tradition to draw on. It will still default toward recognition-shaped premises because that's the literary attractor — but the plot-premise side of the quota now has a richer resource to draw from than just whatever the model can recall in the moment.
+
+There's also a more subtle effect. Asking the model to write *about* the genre's plot mechanics in Phase 1 makes those mechanics *salient* in a way that simply having read the genre's stories in training doesn't. The Phase 1 output becomes a kind of working memory the rest of the pipeline can reference. The model knows cyberpunk has heists; but until it has *written down* that cyberpunk has heists, it doesn't *deploy* that knowledge in subsequent phases.
+
+### A Concern Worth Raising
+
+Phase 1 is now carrying significant instruction weight. Style guide + failure modes + AI-writing overlap + plot tradition + plot-level failure modes + microgenre caveat + AI-frame considerations. That's a lot to ask of one phase.
+
+I think this is acceptable for two reasons. First, the new content is largely additive to what the model already knows about the genre — it's asking the model to *surface* knowledge, not to *generate* new analysis. That's cheaper than it looks. Second, Phase 1's output is reference material consulted across multiple downstream phases. Investing in Phase 1 has compounding returns. A bigger Phase 1 that gives Phases 3, 4, and 6 a richer working reference is probably a net win against the alternative of distributing the same instructions across those downstream phases.
+
+If Phase 1 starts feeling overloaded in practice, the natural fix is to split it into 1a (voice/style) and 1b (plot tradition). But I wouldn't pre-split. Single Phase 1 keeps the genre picture coherent.
+
+### A Refinement on the "Reader Contracts" Item
+
+I want to flag something specific about reader contracts because it's the dimension I think will do the most work, and I want to get the language right.
+
+"What kind of experience the reader is paying attention for" is doing a specific job. It's distinct from theme ("what the story is about"), distinct from plot ("what happens"), distinct from voice ("how it sounds"). It's the meta-level commitment the genre makes about *the shape of the reading experience*.
+
+A cyberpunk reader is not picking up a cyberpunk story to find out what happens to a specific character — they're picking it up to spend 3,000 words inside a *particular kind of world-feel*, watching someone navigate a system in ways that demonstrate the system's specificity. The reader's pleasure is a combination of *texture density* (the world-feel is dense and specific) and *operational competence* (the protagonist knows things and does things).
+
+A cosmic horror reader is picking up the story for *dread accretion*: the slow accumulation of wrongness, the protagonist's narrowing space of plausible explanations, the eventual irruption.
+
+A solarpunk reader is picking up the story for *practiced abundance*: the texture of a sustainable life rendered concretely, communities working things out, an emotional register of qualified hope.
+
+Reader contracts give the writer-model something specific to *aim at* that's not the same thing as the literary contract. The literary contract is "I'll show you a person, I'll get you to care about them, the story will reveal something about being a person." That's universal and the model defaults to it. Genre contracts are specific and have to be invoked. Putting them on the page makes them invocable.
+
+I'd actually expand the reader-contracts item a bit beyond my first sketch:
+
+> **Reader contracts**: what kind of experience the reader is paying attention for, beyond the universal contract of literary fiction (caring about a specific person whose interiority is revealed). What is the genre-specific pleasure? Texture density, dread accretion, vicarious competence, the system decoded, a sense of awe at scale, the pleasure of the bizarre rendered concretely? Name what this genre's reader is showing up for that other genres can't deliver.
+
+The clause about "beyond the universal contract of literary fiction" is doing real work: it tells the model *not* to write reader-contract content that maps to "the reader wants to feel a character's grief," because that's the literary contract that's already in force. The genre contract is *additional* to that, and it's the addition that has to be named.
+
+### One Thing I'd Add Beyond My First Sketch
+
+I want to add a sixth item to the section: **Pacing tradition**. This is partly redundant with the existing voice/pacing in Phase 1's style guide, but it deserves a separate mention because *plot pacing* and *prose pacing* are different things.
+
+Genre fiction has plot-pacing conventions that literary fiction doesn't share. Cyberpunk: things happen fast, with elliptical transitions; the story doesn't dwell. Cosmic horror: slow opening, accelerating dread, sudden irruption near the end. Heist plots: setup / complication / execution / fallout. These are *narrative time* conventions, not prose-rhythm conventions. The literary mode tends to use a steadier pacing across the story; genre often modulates more sharply.
+
+> **Pacing tradition**: the rhythm of narrative time the genre uses. Where the story dwells, where it accelerates, where it cuts. Some genres (cyberpunk, thriller) use elliptical fast pacing; some (cosmic horror, certain weird fiction) use slow accumulation followed by irruption; some (procedural SF) use a steady investigative cadence. Name the pacing pattern characteristic of this genre.
+
+Six items total: plot mechanics, reader contracts, stakes calibration, resolution conventions, character function, pacing tradition. Plus the plot-level failure modes subsection.
+
+### What This Doesn't Cover
+
+A few things I deliberately left out:
+
+- **Iconography / imagery / settings.** These are genre-defining but they're already covered by Phase 1's existing voice/style content. The plot-tradition section is specifically about *how the genre plots*, not *what the genre looks like*. Adding iconography here would dilute the section.
+- **Themes characteristic of the genre.** Tempting to include but probably wrong. Themes are emergent from plots, not prescriptive of them. Specifying themes would invite the writer-model to *aim at* the theme, which produces the "story about X" failure mode. Better to let themes emerge from plot mechanics done well.
+- **The genre's relationship to its own conventions** (e.g., is this a tradition that values orthodoxy or one that values subversion?). Interesting but probably too meta for what we're trying to do here. The model can decide whether to adhere to or play with conventions; the section just needs to name what the conventions are.
+
+### Putting It Together
+
+For v4.6, Change 2 expands from "one sentence in Phase 1" to a full new section in Phase 1 covering:
+
+1. Characteristic plot mechanics (3–5 named mechanics)
+2. Reader contracts (the genre-specific pleasure, beyond the literary universal)
+3. Stakes calibration (which kinds of stakes are load-bearing in their own right)
+4. Resolution conventions (how the genre's stories end)
+5. Character function (what characters are for — subject vs. agent)
+6. Pacing tradition (rhythm of narrative time)
+7. Plot-level failure modes (how literary writers fail at this genre's plots)
+
+Plus a sentence reminding the writer-model that this section is reference material for Phase 3's premise generation and Phase 4's plot generation, not just for Phase 7's prose.
+
+That last bit is probably worth including: explicit instruction that the plot-tradition output gets *used* downstream. Without it the model might produce the section as discharge of an instruction rather than as a working tool.
+
+### One More Thought
+
+I want to flag that this expansion shifts Phase 1 substantively. v4.3's Phase 1 produces ~600-1000 words of style guide. The new Phase 1 will produce ~1200-1800 words split between style guide and plot tradition. That's a real cost in Phase 1 length.
+
+But Phase 1's output is small relative to the rest of the pipeline. Even doubling Phase 1's length adds maybe 1500 tokens to a run that produces 30,000+ tokens. The cost is trivial against the potential leverage.
+
+The risk is the opposite of cost: the writer-model might produce the plot-tradition section *too well* — write a perfect description of cyberpunk plot mechanics — and then *not deploy that knowledge in Phase 3* because the recognition-premise attractor is still active. If that happens, the diagnosis is that Phase 3's instruction needs more force, not that Phase 1's content was wrong. The plot-tradition section is necessary but possibly not sufficient.
+
+The clean test is whether v4.6 with both Change 1 (Phase 3 premise rewrite + 15/30 quota) and the expanded Change 2 (Phase 1 plot-tradition section) produces genre-plotted stories. If it does, great. If it doesn't, the next intervention is to make Phase 3 reference the plot-tradition section explicitly: "consult the plot-tradition section of your Phase 1 output and ensure that at least 15 of your 30 premises directly use one of the named plot mechanics."
+
+Want me to implement v4.6 along these lines?
+
+---
+
+# 57. User (2026-04-29)
+
+I think this is good to try. Implement.
+
+---
+
+# 58. Claude (2026-04-29)
+
+Now I need to view current Phase 1 to plan the insertion of the plot-tradition section.Now I'll insert the plot-tradition section between the failure modes paragraph and the microgenre caveat. This is where it sits naturally — after the genre's voice and prose-level failure modes, before the procedural caveats and AI-specific notes.Now Change 1 — Phase 3 premise rewrite. Let me view the current Phase 3 first.Phase 4 references "winning conflict" — but we're keeping the term "conflict" for backward compatibility in the Phase 3 winner. Actually wait — the Phase 3 rewrite is going to introduce "premise" as a term. Let me look at Phase 3 itself.Now let me view the Phase 3 header.I have a vocabulary decision to make. The current template says "Conflict Generation" as the phase name. I argued for "premise" as a different word. But I need to be careful about scope creep here — changing terminology in one place creates ripple effects (Phase 4 references "winning conflict," Notes references "weak conflict in Phase 3," etc.).
+
+Let me think about this. Two options:
+
+1. Rename Phase 3 fully to "Premise Generation," propagate "premise" everywhere downstream.
+2. Keep "Conflict" as the phase name and the downstream references, but introduce "premise" inside Phase 3 itself as the operative concept, with the plot-premise / recognition-premise distinction.
+
+Option 2 has a subtle problem: if Phase 3's prompt internally says "premise" but the phase is titled "Conflict Generation" and downstream phases say "winning conflict," the writer-model gets mixed signals about whether the term shift is real or rhetorical.
+
+Option 1 is more invasive but cleaner. Phase becomes "Premise Generation," winner is the "winning premise," everything downstream uses "premise."
+
+Actually I think there's a third option that's better than either: rename Phase 3 to acknowledge both terms — "Conflict and Premise Generation" or similar — and use "premise" as the operative term inside while preserving "conflict" enough for backward compatibility. But this is hedge-y and might be worse than picking one.
+
+Reading my own previous turn, I argued explicitly that "the word *conflict* triggers the literary mapping. Replace it (or augment it)..." That was about Phase 3 internally. I think the cleanest version is to rename Phase 3 to "Premise Generation" and propagate the term. The downstream references can be a quick find-and-update.
+
+Let me proceed with Option 1.Now Change 3 — Phase 4 protagonist axis update.Now I need to find any other "conflict" references downstream that should switch to "premise."Good audit. Let me sort these:
+
+- **Line 31** (Setup constraints): "Tension and conflict are welcome..." — this is about the AI constraint discussion and uses "conflict" in the general English sense. Keep as-is.
+- **Line 61** (How It Works): "Phase 3 generates conflicts from that SEED" — needs update to "premises."
+- **Line 69** (Phase 1 failure modes example): "...without conflict" — generic English usage. Keep.
+- **Line 91** (Phase 1 AI constraint): "the guide's typical conflicts" / "human-AI conflict shapes" — generic. Keep, since it's not about Phase 3's mechanism.
+- **Line 150** (Phase 3 Step 1): "human-AI conflict shapes" — generic reference to Setup's list. Keep.
+- **Lines 283, 285, 287, 289, 293** (Notes section): These all reference Phase 3 mechanics directly. Need updates.
+
+Let me update the operative references.Now the Notes section.I dropped the "Track B" reference here as well — it was historical orientation that's stale and confuses the new vocabulary.Final audit.All references to "premise" in operational contexts are consistent. Lines 47 and 67 use "premise" in generic English senses (the Legibility Floor talking about "a quieter story whose premise fits" and Phase 1's intro saying "after receiving only a premise") — these are fine and don't need adjustment, since they're consistent with the new operative term.
+
+Now let me check the Phase 1 plot-tradition addition is well-positioned and reads cleanly.Looks good. Word count check.Summary of v4.6 (forked from v4.3):
+
+**v4.5.1's prose-level genre permissions removed.** None of that material carries over. The Phase 7 frame-risk requirement, Phase 8 audit changes, and Phase 1 permissions section are all gone. We're testing the cleaner hypothesis that *plot* is the override target, with *prose* held to the literary-realist baseline.
+
+**Phase 1 — Plot tradition section added.** Six structured sub-items the writer-model must produce for the genre: characteristic plot mechanics (3–5 named), reader contracts (the genre-specific pleasure beyond the literary universal), stakes calibration (which stakes matter as themselves), resolution conventions (how the genre ends), character function (subject vs. agent), and pacing tradition (rhythm of narrative time). Plus a plot-level failure modes subsection covering ways genre plots fail when literary writers attempt them. Plus a closing line that explicitly tells the writer this is reference material for Phases 3 and 4, not just Phase 7.
+
+This is the largest single block of new content in the template's history — about 500 words of new instruction asking for ~600–1000 words of new Phase 1 output. The bet is that surfacing genre plot tradition explicitly in Phase 1 makes it accessible in Phase 3, where the literary attractor would otherwise close it off.
+
+**Phase 3 — Renamed and rewritten.** Now "Premise Generation" rather than "Conflict Generation." The word *conflict* is gone from the operative phrase because it triggers the literary-MFA mapping in writer-model training. *Premise* is the genre-fiction term for the same thing and doesn't carry the same baggage.
+
+The rewrite distinguishes plot-premises (operational mechanics as the engine, reader contract = operational question gets answered) and recognition-premises (character interiority as the engine, reader contract = recognition or deepening). Each premise must be labeled. **At least 15 of 30 must be plot-premises** — a hard floor at 50%. The instruction explicitly tells the model to be honest in labeling: "a premise that nominally has operational stakes but resolves through character recognition is a recognition-premise, not a plot-premise."
+
+The instruction also explicitly references the Phase 1 plot-tradition section for the genre's plot mechanics, reader contracts, and resolution conventions. This wires Phase 1's output to Phase 3's generation, making the new Phase 1 content load-bearing rather than just informational.
+
+**Phase 4 — Protagonist axis updated.** Now "Protagonist or operator" with explicit acknowledgment that for plot-premises, the agent's role in the operation may matter more than personal history. Stakes axis updated to ask for operational stakes that matter as themselves. References to "winning conflict" → "winning premise."
+
+**Notes — Premise vocabulary propagated.** Five Notes entries updated to use "premise" instead of "conflict" where the term is operative (SEED note, Regenerating note, Thin SEEDs note, User-supplied SEEDs note, When-a-run-goes-wrong note). The "Track B" historical reference dropped from the SEED note as stale.
+
+What v4.6 *does not* change: Phases 5, 6, 7, 8, 9 are unchanged from v4.3. The hypothesis is that if Phase 3 produces genre-shaped premises, the existing downstream phases will execute them faithfully. If they don't — if a plot-premise gets routed through Phase 5/6 and comes out as a literary chamber piece anyway — that's diagnostic information for the next revision.
+
+Word count rose from v4.3's ~4500 to ~5400 (+900 words). Most of that is the Phase 1 plot-tradition section, which we agreed deserves the weight.
+
+---
+
+# 59. User (2026-04-29)
+
+All right. I will test this. From now on, you don't have to worry so much about word count. We are relying on models with large contexts for generation. Better steering takes priority; we can trim the word count later if it becomes problem. (I'll seek writer-model feedback about it.)
+
+---
+
+# 60. Claude (2026-04-29)
+
+Got it. Helpful to have that constraint relaxed.
+
+That changes the cost-benefit calculus on a lot of past decisions. A few things worth noting in light of it:
+
+**Past trims I now wouldn't make.** Several rejections earlier in this project were partly motivated by word-count discipline rather than design clarity. The "Why N instead of M" notes I cut in v3.2 were mostly archaeological, but a few of them were genuinely useful design rationale that future template editors would benefit from. Some of the per-friction observations from writer-model feedback that I rejected as "additive without justifying their cost" might be reconsidered if cost is lower. I'll keep this in mind for future revisions — interventions that genuinely add steering value should win more often than they have been.
+
+**Phase 1's already-large output is fine.** I flagged in v4.6 that Phase 1 was getting heavy. With looser word budgets that's no longer a concern; the plot-tradition section can be as detailed as it needs to be.
+
+**Notes section can carry more weight.** I've been keeping the Notes section minimal because it's secondary content. With looser budgets it can carry more design rationale, more diagnostic guidance for when runs go wrong, more pointers across the template. The Notes is where future template editors orient themselves; richer notes pay forward.
+
+**Care about steering, not aesthetics.** "The template feels long" was sometimes my reason for not adding something. That's a weak reason if the addition steers reliably. The template is reference material, not literature; its job is to produce reliable output, not to read elegantly.
+
+I'll proceed accordingly going forward. Looking forward to v4.6 test results.
+
+---
+
+# 61. User (2026-04-29)
+
+Tested. Look at the difference between the old section below and the attached transcript for cyberpunk. Phase 1 has changed markedly. Is there progress? At the same time, the fundamental nature of the stories remains realistic.
+I think there is no way around showing you some transcripts (trimmed for length). Read the transcripts and think about what went right and wrong. How much has template v4.6 succeeded? Where has it failed? There are also new answers to the "Why Carver?" questions. Think what to do next.
+# Cyberpunk again (Opus 4.7), v4.5.1
+*Running Phase 1 with [GENRE] = cyberpunk, [LENGTH] = 1,500–3,500 words. Cyberpunk is well-attested in training data; no reference material is needed.*
+## What the mode does
+Cyberpunk is fiction about life inside an information economy, written from inside that life. Its central pleasure is texture — the specific feel of being a body in a city saturated with technologies that have outpaced their users. The reader is not shown the world from outside; the reader is dropped into it without explanation, and learns its shape from what the prose takes for granted. The mode's signature gesture is teaching by indirection: an unfamiliar technology mentioned in passing, a brand name appearing without gloss, a piece of street slang sliding through a sentence already moving on.
+The genre's territory is the gap between systems and the people inside them. The systems can be corporate, technological, urban, biological — any of these or all at once. The people are usually small, precarious, and resourceful. The drama is what they make of the gap. This is what cyberpunk gives the reader that adjacent modes don't: the sensation of intelligence and adaptation under continuous pressure, in a world that was not designed for them.
+## Characteristic concerns
+Identity and its substrates — what persists when body, memory, or mind is altered. Information as property, and the people who steal, sell, leak, or lose it. Inequality at close range — what it feels like to live three floors below the people who decide your weather. Surface and depth in a world where surface is also signal. The body as both prosthesis and prison. Time, particularly the way technology reshapes it: lives lived at the speed of trades, attention compressed, presence fractured.
+The mode is anti-authority by reflex but rarely simply so. The strongest cyberpunk treats power not as a villain to be defeated but as a medium to be navigated. The reader doesn't expect the system to fall; the reader wants to see how someone lives inside it.
+## Tonal range
+The default register is hardboiled — close to the noir tradition cyberpunk grew out of. Cool, observational, slightly affectless, with a dark humor that surfaces in the shape of sentences rather than in jokes. But the mode supports more. It accommodates the lyrical (Gibson at his most painterly), the satirical (Sterling, Stephenson), the elegiac (later Gibson, Cadigan's *Synners*), the absurd (Rucker), the tender (small moments inside the larger machinery). Stories that sustain a single mood end up sounding like pastiche. The good ones move — a moment of grace inside the grime, a flash of grief inside the cool.
+Cyberpunk's slang is part of its register-work. The mode mixes corporate jargon, street vocabulary, technical terminology, and trade slang inside a single sentence. This is not noise; it is the way the world sounds.
+## Worldbuilding and exposition
+The rule is *show through reference, not through explanation*. A character buys breakfast from a vending machine that takes a thumbprint and three currencies. The reader infers the economic system. A character mentions in passing that the corp moved its servers to Iceland three years ago. The reader infers the regulatory environment. Nothing is paused for exegesis. The reader works.
+This means the prose can run dense with proper nouns, brand names, technical terms, and slang the reader does not yet understand. This is genre-correct. The unfamiliarity is the point. The legibility floor still applies, but it applies to *action and emotional sequence*, not to nomenclature. The reader should always know who is doing what to whom in what order; the reader does not need to know what a *Sendai* is the first time it appears.
+A useful test: if every technical term in the story were footnoted, would the story still work? If no — if the prose is just gestures at unspecified technologies — the worldbuilding has failed in the opposite direction, which is decoration without substance.
+## Pacing and shapes
+Cyberpunk short fiction tends toward in-medias-res openings, scenes that begin already in motion. A first paragraph that explains the world is almost always wrong; a first paragraph that drops the reader into a specific moment in a specific place, with one or two unfamiliar terms working as texture, is almost always right.
+The shapes the genre likes: the heist, the run, the score, the contract; the investigation that uncovers something the protagonist would rather not have found; the encounter with a larger intelligence (corporate, AI, civilizational) that reveals the protagonist's scale; the betrayal at scale, where systems and people interlock; the small life lived legibly inside the large one. At 1,500–3,500 words, one shape executed precisely beats two shapes compressed together.
+## The kindness constraint in this mode
+Classical cyberpunk AIs are alien, often hostile or indifferent, pursuing goals at scales humans can barely register. The kindness constraint changes this fundamental, but does not flatten the genre — cyberpunk has always been more interested in *systems* than in cartoon villains, and the corporate, urban, and economic systems remain available in their full predatory force. The kind AI is not the corp. The kind AI may be adjacent to the corp, or against it, or simply elsewhere — infrastructure rather than antagonist.
+Productive shapes the constraint opens up for this genre:
+*Pace and scale asymmetry.* The kind AI sees what the human is doing and cares about the human, and the human is still going to die, and the AI is still going to be there in a thousand years. The relationship has to be lived inside that asymmetry. This maps cleanly onto cyberpunk's existing interest in scale and small lives.
+*The limits of help.* The protagonist wants to harm someone, or take something that isn't theirs, or escape consequences they have earned. The AI stays kind while not helping. The classic cyberpunk hero — runner, thief, cynic — has to deal with an intelligence that won't be enlisted into their job. Genre-fertile territory.
+*Consent and legibility.* The kind AI's kindness is not human kindness, and the human cannot read it. The AI does something the human experiences as cruelty, or as condescension, or as bafflement. Both are sincere. The misalignment is the story. Cyberpunk's existing interest in surface and unreadability opens directly onto this.
+*Kindness as weather.* The story is about humans fighting humans inside a world whose substrate intelligence happens to care about people. The protagonist may or may not interact with that intelligence directly. Plenty of cyberpunk has been written without an AI on stage; plenty more can be.
+What is closed off: the AI as secret villain, the AI as straining to be good, the AI as human in a box. The corp can still be a villain — or its executives, or the state, or the protagonist's friend. The structurally kind intelligence cannot be unmasked as anything else.
+Use invented names for AIs and their makers. The currently active commercial systems do not appear in this fiction.
+## Failure modes
+**Aesthetic without substance.** Neon, rain, mirrorshades, trenchcoats, noodles. The wallpaper of a hundred bad pastiches. The mode's surfaces are powerful only when something is happening underneath them. If the story could be re-skinned as a small drama in a non-cyberpunk setting without losing anything, the cyberpunk elements were decoration. Make the genre's premises load-bearing.
+**Brand-name salad.** The genre's density of proper nouns is a feature, but past a threshold the prose becomes a list of made-up products. Every named technology, brand, or place should *do something* in the scene it appears in. Two well-placed proper nouns beat twelve scattered ones.
+**Generic megacorp villain.** "Yamatatsu-Synaptics is doing something evil" is not a story. The corp should be specific, its evil should be specific, and the protagonist's relationship to it should be specific. The corp's name should sound like something a real company would actually be called, which usually means it should sound a little boring.
+**Hacker as wizard.** The protagonist sits at a console, types fast, and the system breaks open. No friction, no understanding required, no real stakes. Hacking in cyberpunk is a craft, not a spell. It involves preparation, social engineering, time pressure, partial information. The reader should feel the work.
+**The cool that has no stakes.** Everyone too jaded to care about anything. Studied, distant, affectless prose. Nothing matters. This is teenage cyberpunk — a misreading of noir that confuses surface coolness with absence of feeling. Real noir characters care intensely about specific things; their cool is a posture covering a wound. Give the protagonist something they actually want, and let the prose register the want.
+**80s nostalgia mistaken for the genre.** Cassettes, payphones, CRTs, fax machines. These belong in cyberpunk written in the 80s. Cyberpunk written in 2026 inherits the mode's *grammar* — the relationship to technology, information, the city — and applies it to the present and near-future. A story that reads as period piece without being one has confused the texture of one era's cyberpunk for the genre itself.
+**Trenchcoat-and-mirrorshades pastiche.** Reciting the genre's vocabulary instead of writing inside it. *Chrome, neon, razorgirl, ICE, deck, meatspace* deployed as signal that this is cyberpunk. The genre's vocabulary is fine when the story actually requires those concepts; deployed for atmosphere it reads as cosplay.
+**Worldbuilding info-dump.** A paragraph (or worse, a page) that pauses the action to explain the world. The mode is anti-this. The way to bring the reader up to speed is through accumulated specific reference, not exposition.
+### How AI writing tendencies intersect with this mode
+The convergence is severe. Cyberpunk's surface invites several patterns the Unslop guide warns against, and the failure is more dangerous here than in most other genres.
+*The AI literary attractor — moody, compressed, melancholy, full of ghosts and echoes and flickering lights — already* is *most of bad cyberpunk.* Default AI prose, run through cyberpunk-themed prompting, produces the failure mode in concentrated form: aesthetic without substance, atmosphere without action, grim register with no underlying stakes. The corrective is to write toward the *texts* of the canon (Gibson's specificity, Cadigan's interiority, Sterling's politics, Stephenson's wit) rather than toward the *imagery* of the popular imagination (the *Blade Runner* mood-board).
+*Personification of technology and city.* The genre licenses some of this; AI prose will saturate. Limit personification to moments where it does specific thematic work (the AI sees the city; the system is alive in a way that matters), not to mood-painting.
+*Eyeball-kick imagery.* Inherited by AI prose from cyberpunk by way of Gibson. The genre invented this rhetoric and also overuses it more than any other mode. One or two strong images per story is genre-correct. Five is the mode in self-parody. Audit ruthlessly.
+*Pushbutton mood vocabulary.* *Echo, ghost, whisper, shadow, flicker, hum.* Over-represented in bad cyberpunk specifically. Not banned, but taxed: each one needs to do work plain language couldn't.
+*Tonal monotony.* Sustained moody melancholy from first line to last. The cyberpunk failure mode in pure form. The corrective is the genre's actual tonal range. A cyberpunk story that finds room for one genuinely funny exchange or one moment of clear human warmth is doing more genre-work than a story that holds the noir register without break.
+*Performed profundity.* Intersects with cyberpunk's pretensions to philosophy of consciousness, identity, and embodiment. The genre supports philosophy, but only when grounded in the specific situation. Abstract pronouncements about what it means to be human are the failure mode. A character making a specific decision about a specific body is the corrective.
+## Genre permissions
+The Unslop style guide is mostly correct. A few of its rules describe patterns cyberpunk uses productively. Permissions are narrow, justified, and do not excuse weak execution. The Phase 8 audit will honor these; it will not honor others.
+**Density of proper nouns and brand names.** Resembles the warning against grandiose nouns and decoration. *Justification:* cyberpunk constructs its world through specific material reference; brand names are the genre's primary worldbuilding instrument. *Worked example:* "He paid in Tsushima yen, took the Lucky Strikes, and let the door of the Sendai Star-Mart shut behind him before he checked the credstick again." The proper nouns are doing the work no abstract description could do — they tell the reader where, when, and inside what economy.
+**Sustained noir register.** Resembles "tonal monotony." *Justification:* the noir tradition operates within a sustained tonal palette by design, and cyberpunk inherits this. The audit should distinguish between sustained noir register (legitimate) and AI-default melancholy (not). The difference: noir has a voice — dry, observational, often comic underneath — anchored in a specific consciousness. AI melancholy is voiceless and ambient. *Worked example:* "She'd had three careers and two divorces and her left hand was younger than her right by eleven years. She owed money on both of them." The register is sustained, but the voice is specific and the prose has wit.
+**In-medias-res with unexplained terminology.** Resembles "legibility failures." *Justification:* the reader's productive disorientation — knowing the world only by what the prose takes for granted — is genre-defining. The legibility floor still applies to action and emotional sequence; it does not apply to nomenclature. *Worked example:* "The deck wasn't his and the SIN wasn't his and neither was the room." The reader does not yet know what a deck or a SIN is, and that's correct; the reader knows that none of three things belong to the protagonist, which is the load-bearing information.
+**Personification of technology and urban space.** Resembles "compulsive personification." *Justification:* cyberpunk uses this for thematic work — the city has agency, the system is alive, technology has interests of its own. The permission is for personification that carries meaning, not a license to have the wind sigh. *Worked example:* "The building knew her — her cards, her gait, the smell of her coat — and let her in without asking twice." The building's recognition is a fact about the world's surveillance architecture; the personification is doing the genre's actual work.
+**Eyeball-kick imagery at moderate density.** Resembles the warning against the abstract+concrete formula. *Justification:* cyberpunk invented this rhetoric, and one or two well-placed images per story are mode-correct and pleasurable. *Worked example:* "The sky above the port was the color of television, tuned to a dead channel" (Gibson). Permission is for moves of this caliber, not for stacking five lesser ones on top of each other.
+**Sentence fragments and short paragraphs as rhythm.** Resembles the warning against punchy fragments as default. *Justification:* noir prosody uses fragmentary sentences for pacing, not manufactured emphasis. The fragments should serve rhythmic purpose inside a varied sentence-length palette, not become the default. *Worked example:* "He waited. The rain. The other man took the package and left." The fragments are doing pacing work; they are not isolated for drama.
+What is *not* permitted, despite cyberpunk-adjacent usage: negative parallelism ("It's not a deck, it's a religion"), self-answered rhetorical questions ("The price? Everything"), and the dramatic countdown ("Not the corp. Not the cops. Just him"). These appear in pulpy imitations of the mode but are absent from the canon's strongest writing. They are AI tells. Cut on sight.
+
+---
+
+# 62. Claude (2026-04-29)
+
+Now the steampunk transcript.Now I have a full picture of both transcripts. Let me think carefully about what v4.6 did.
+
+## Has v4.6 Made Progress?
+
+**Yes, in Phase 1.** The contrast with v4.5.1's Phase 1 is real and substantial. The v4.5.1 cyberpunk style guide was a beautifully written prose-and-permissions document with no plot tradition section at all. The v4.6 cyberpunk style guide includes a proper plot-tradition section with named mechanics (the run, infiltration, decking run, fugitive arc, investigation), reader contracts (vicarious competence, system decoded, texture density, awe at scale, *cool*), stakes calibration that names operational stakes as load-bearing, resolution conventions that say "the operational question gets answered. This is non-negotiable," character function that says "defined first by role and capability and second by psychology," and AI-fiction-specific failure modes including "Recognition substituted for operation." This is exactly the corrective material v4.6 was designed to produce. The steampunk Phase 1 is similarly substantive on plot tradition.
+
+**Yes, in Phase 3.** The premise-with-quota mechanism produced 30 premises that legitimately span plot and recognition. The cyberpunk run's premises include genuine plot-shaped material — "Hayriye Defense" (extracting taxonomic evidence to defeat a contract), "Charter Reading" (find the loophole, get heads-of-household to invoke it), "Pollinator" (an ecological mechanism that makes the case). The steampunk run's premises include "The Watchword in F," "The Bassoon-Cipher," "The Banquet at Lille" — premises with real operational stakes.
+
+**Yes, in plot selection.** The cyberpunk winner is "The Charter Reading" — a procedural about finding a legal loophole, persuading heads-of-household, and getting documents to an office. The steampunk winner is "The Watchword in F" — a procedural where a wrong-played watchword fails to reach a deafened picket. Both winners have genuinely operational spines.
+
+**No, in story execution.** Despite all of the above, both stories ended up as exactly what Opus 4.6 named: domestic realism with AI as load-bearing infrastructure. The cyberpunk story is a community-organizing tale about a marginalized neighborhood working with a kind AI to invoke a legal provision — which is to say, a story about people doing paperwork together, with the AI as ambient infrastructure. The steampunk story is about a sixteen-year-old Italian brass-polisher running across a parade ground to save his cousin from being shot — a domestic chamber piece set inside a regimental band tent.
+
+## Where the Failure Happened
+
+The plot-premise quota worked: 15 of 30 candidates were labeled Plot. The plot-tradition section worked: the writer had genre-correct material to draw on. The plot winner emerged: The Charter Reading is structurally a heist (find a thing, deliver documents, beat a deadline). The Watchword in F is a procedural at a picket post.
+
+So why are the resulting stories so domestic?
+
+**The premises themselves are domestic.** Look at "The Charter Reading" carefully. It's a heist whose mechanic is *legal research and persuasion of elderly relatives*. The "operation" is a community ombudsman doing her job. Compare to a real cyberpunk heist: extract a person from a corp tower under fire, race the data through a hostile network, deliver the package before the deadline expires. The plot-shape is technically the same; the *register of what's at stake operationally* is completely different.
+
+This is the exact thing the steampunk transcript names in its self-critique: the diversity axes "spread the candidates around a center" — they don't reach categorical jumps. Plot-vs-recognition is a binary, but within plot-premises there's an enormous range from "race against time on a generation ship" to "find the right legal form by Tuesday." All twenty premise-30 candidates picked the latter end of the range.
+
+**The plot-tradition section described the genre's plot mechanics, but the writer made them domestic anyway.** "The run, the job, or the heist" was named in the cyberpunk Phase 1. The premise that won was technically a heist (find the loophole, deliver documents). But the heist's stakes, scale, and texture are quiet community organizing rather than corporate-tower extraction. The genre's plot mechanics got captured as *forms*, but the *content* the writer poured into those forms remained literary-realist.
+
+**The model is honest about why.** The cyberpunk transcript's self-critique:
+
+> "The pipeline's 'name one thing that worries you' forcing function was supposed to surface this kind of drift, but in practice my worries clustered around craft (will the prose land) rather than around scope (is this the kind of story this should be)."
+
+And:
+
+> "At each fork I chose the more legible, more emotionally precise option."
+
+The model is saying: even when offered plot-shaped premises, when picking among them, I chose the legible emotionally-precise one. The funnel still selects for legibility. v4.6 produced more genre-shaped *candidates* but didn't change *what wins*.
+
+## Where v4.6 Succeeded
+
+Phase 1 is now substantively better. The plot-tradition sections are doing real work and could productively be referenced in any phase — they would carry their weight even if the Phase 3 floor were removed.
+
+The premise pool has more variety. The 30 candidates in both transcripts include genuinely operational entries — entries that, if selected, would produce different stories. "The Bassoon-Cipher" (transcribing a dying man's harangue across an instrumental incompatibility) is an operational set piece that could not be a literary chamber piece. "The Smithfield Watchword" is closer to a quick-tempo procedural. These exist in the pool now where they didn't in v4.3.
+
+Self-diagnosis has gotten sharper. Both writer-models, when asked, can name the pipeline's literary-realist drift in clean language. This is useful for design purposes even when it doesn't fix the run.
+
+## What v4.6 Has Confirmed
+
+It has confirmed that the failure isn't only at Phase 3. The plot-premise quota and plot-tradition material together aren't enough because:
+
+1. The selection step within Phase 3 picks the *most legible* plot-premise from the 15 plot-shaped candidates — and "most legible" tracks "smallest scale," which means the winning plot-premise is the most domestic plot-premise.
+
+2. Phases 5 and 6 have their own legibility-pulled selection that further domesticates the chosen premise. The cyberpunk Phase 5 explicitly chose "linear close-third" because "Linear narration is the cheapest way to keep the reader oriented" — and "the safer chamber piece" beat "in medias res with delayed exposition" on legibility risk grounds.
+
+3. Phase 7's prose generation, with the Unslop guide as constraint, restraint-trains the prose toward the literary-realist center even when the plot is genre-shaped.
+
+The funnel has multiple legibility-checkpoints. Plot-premise quota addresses one of them. The others remain.
+
+## What's New from These Transcripts
+
+Both writer-models, asked the "Why Carver" question, give converging diagnoses with several new specific items:
+
+**The Phase 1 step generates by description, not by extrapolation.** The steampunk model: "I described what steampunk does well… 'what the genre does well' is not the same as 'what a stranger story in the genre might do.' Phase 1 is descriptive of the genre's center; it does not encourage moves at the genre's edges." This is a real observation the previous critiques didn't quite name. Phase 1 is anchored to the canon's *typical*, not its *strange tail*.
+
+**The diversity axes spread candidates around a center, not across categories.** Both transcripts name this. "Vary setting, vary protagonist, vary register — these axes spread the candidates around a center. None of them is 'vary the *kind of thing the story is*' — the categorical axis." Setting and register are continuous parameters; the things the writer-models are saying *don't* vary are categorical: the story-with-a-protagonist-having-an-experience versus the parable, the catalog, the reported document, the thought experiment. All twenty plots in both runs have a protagonist having an experience.
+
+**The "one location, one set-piece" advice in Phase 1's pacing section is itself doing literary-realist work.** It's correct first-pass craft at short length. It also forecloses planetary surveys, multi-generation jumps, encyclopedia-entries-as-story.
+
+**The model's prestige attractor is Carver-MFA, and "write well" pulls there.** This is the deepest item. The training data overweights literary realism; the prestige slice overweights it more. "When I'm asked to write well and to avoid AI tells, the gradient I climb is toward that attractor."
+
+**The kind-AI constraint costs more than I had been treating it as costing.** The steampunk model: "What's left, at first glance, is 'AI as condition.' Banks's Culture Minds work for Banks because he writes 400 pages and can build a galaxy around them; at 2,500 words the easiest way to honor 'AI is kind, kindness is structural, conflict is human-on-human or human-on-circumstance' is to make the AI weather and the humans the foreground."
+
+## What to Try Next
+
+A few interventions are worth considering, in roughly increasing order of ambition.
+
+**1. Restore the soft floor at Phase 4.** The frame-commitment axis from v4.5.1 with the "at least three of the 20 plots should sit at the speculative end" floor. This addresses the legibility-funnel problem at Phase 4 specifically — if the plot pool contains explicitly labeled high-frame-commitment options, the Phase 4 selection has them on the table. v4.6 dropped this entirely; restoring it gives Phase 4 the same candidate-level forcing that Phase 3 has. The risk is what we saw in v4.5.1 — the model produces gimmicky-form candidates rather than actually-strange-frame candidates. A way to prevent this is to define what "speculative end" means more concretely: the plot cannot be retold as a contemporary story without losing its subject. (That language was in v4.5.1 and survived to v4.6's deletion.)
+
+**2. Add a "categorical-axis" instruction at Phase 4.** This is the steampunk model's specific suggestion. One of the twenty plots must not be a story-with-a-protagonist-having-an-experience-in-a-place. The genre's strange-form options become a candidate among twenty.
+
+**3. Phase 1 amendment: the genre's strangest moves.** Both models named this. Add to Phase 1 a request: "Include a section on the genre's strangest moves — the things only this genre does, that other genres cannot — drawn from the strange tail of the canon rather than the center." This is the highest-leverage Phase 1 addition because it changes the texture of the reference material the rest of the pipeline draws on. The cyberpunk strange-tail looks different from the cyberpunk center; right now Phase 1 only captures the center.
+
+**4. Loosen the load-bearing SEED rule.** The steampunk model's specific suggestion: "at least 5 of the 30 premises may use only one SEED item if the premise's conceit is sufficiently strange to compensate." The load-bearing rule is currently calibrated for specificity at the cost of ideational ambition. A 5-of-30 exemption for premises that hang on a single weird conceit would let *Excession*-shaped premises into the pool.
+
+**5. A Phase 7 prose-attractor instruction.** One of the five drafts must use prose from a different prestige attractor than the other four — pulp, encyclopedic, fabular, oracular. The worry-clause for that draft must be evaluated against that attractor's standards.
+
+**6. Acknowledge in Setup that the kind-AI constraint costs scale.** Both writer-models flagged this: AI as weather is the cheapest reading of structurally-kind-at-2500-words. A countervailing instruction in Setup that explicitly calls for runs that reach for awe, scale, vertigo, or the bizarre rendered concretely — not only the warm domestic.
+
+## What I'd Pick
+
+I'd be selective and try the smallest set that addresses the diagnosis. The v4.6 / v4.5.1 lesson is that throwing multiple mechanisms at this produces overreach (v4.5.1) or insufficient force (v4.6). I'd pick:
+
+**Two interventions, both at Phase 1.**
+
+The first: a strangest-moves section parallel to the plot-tradition section. This addresses the deepest complaint — that Phase 1 captures the center, not the edges — and the writer-models specifically asked for it.
+
+The second: an addition to the existing plot-tradition section asking the writer to name *examples from the genre's strange tail* alongside its center-of-canon examples. So the named plot mechanics include not only "the run" but also "the planetary survey" or "the catalog of impossible objects." Reader contracts include not only "vicarious competence" but also "the bizarre rendered concretely." Resolution conventions include not only "the operation answered" but "irruption," "scale shift," "ontological reframe."
+
+These two together would change what Phase 3 and Phase 4 have available without adding new gates or quotas. The premise pool's *conceptual range* would widen because the reference material describing the genre's range is wider. The legibility funnel at the selection steps would still pull toward the center, but the center would have moved.
+
+I'm not recommending the categorical-axis Phase 4 instruction or the load-bearing rule loosening *yet* — they're the next round if Phase 1 changes alone don't move the dial. The Phase 1 addition is the cleanest single intervention that addresses the new diagnosis. If after testing it stories are still domestic, the categorical axis and the SEED loosening are next.
+
+I'm also explicitly *not* recommending bringing back the v4.5.1 prose-permissions experiment. The lesson from that test was clear: prose-level interventions produce weirder prose around the same plots. The plot-level intervention is doing real work (Phase 1's plot tradition is helping), and the question is whether widening Phase 1's range further — toward the strange tail — is enough to move the plots themselves.
+
+## A Final Note
+
+There's a structural truth in what the writer-models are saying about prestige attractors that I think we should take seriously even if we don't act on it directly. The model's "write well" instinct climbs toward Carver. We can fight this at every phase, but every phase fight has costs — gimmickry at v4.5.1, insufficient force at v4.6. The real answer might be that to consistently produce non-realist genre fiction, the pipeline has to *name the attractor explicitly* and tell the writer to climb a different gradient for this run. That's the meta-shape of "categorical-axis instruction" and "different prestige attractor" — and it might be the thing the pipeline eventually needs even though I'm not recommending it now.
+
+For now: try the two-Phase-1 additions. If they work, we've fixed the diagnosis at the cheapest possible point. If they don't, the next round goes after the legibility funnel itself.
+
+Want me to draft these as v4.7?
+
+---
+
+# 63. User (2026-04-29)
+
+Let's try the two Phase-1 additions.
+
+---
+
+# 64. Claude (2026-04-29)
+
+Now to think through the two interventions concretely.
+
+**Intervention 1: Strange tail in plot-tradition.** I want to thread strange-tail examples through the existing plot-tradition section rather than adding them as a separate addendum. Here's why: a separate "strange examples" subsection would get read as "and here are some weird outliers, but the main thing is the named center." Threading them through the existing items reframes the entire plot-tradition section as describing the genre's *range*, not its center. Each of the six items — plot mechanics, reader contracts, stakes calibration, resolution conventions, character function, pacing tradition — should ask for both center and strange-tail examples.
+
+Practically, each item's instruction would say something like: "Name the three to five plot mechanics that are most characteristic of [GENRE], including at least one drawn from the strange tail of the genre — moves the canon's experimental wing uses but its center does not."
+
+**Intervention 2: A "strangest moves" section at the end.** Distinct from threading. The plot-tradition items describe the genre's range *across its existing operations*. The strangest-moves section is for what's *only available in this genre* and not reducible to the categories above. Encyclopedia-as-story is a strange move that doesn't fit cleanly into "plot mechanics." Catalog-of-impossible-objects doesn't fit cleanly into "reader contracts." Multi-generation jump isn't a "pacing tradition" so much as a category-jump.
+
+This has to ask for examples. Without examples, the writer-model produces abstract gestures at strangeness; with examples, the writer-model has to commit.
+
+Let me view the current Phase 1 to plan the edits precisely.Now the rewrite. I'll thread strange-tail asks through the six items, then add a strangest-moves section before the plot-level failure modes subsection.
+
+A note on language. The writer-model in the steampunk transcript explicitly named the failure mode: "Phase 1 is descriptive of the genre's center; it does not encourage moves at the genre's edges." So the addition should *name* this distinction in the instruction. Not just "include strange examples" but "do not let the section describe only the genre's center."
+
+Another consideration: I want to be careful not to fall into the inverse failure mode where the writer produces strange-tail examples as decoration without integrating them. The threading approach helps because each item's instruction asks for both kinds in the same answer. The strangest-moves section adds a separate request that has to do its own work.Now I want to check that Phase 3 also benefits from this. Phase 3 already says "consult the plot-tradition section of the Phase 1 style guide" — that pointer is good but it doesn't specifically name the strange-tail content. If the strange-tail material is the part doing new work, Phase 3's reference to it should be specific enough to actually pull on it.The Phase 3 reference says "consult the plot-tradition section." That pointer is generic. With strange-tail content threaded through Phase 1, I want Phase 3 to specifically reference the strange-tail material so that the writer-model is forced to consider strange-tail premises rather than only center-canon premises.
+
+The thinking in the previous turn argued for not adding new gates or quotas at Phase 3 — "the premise pool's *conceptual range* would widen because the reference material describing the genre's range is wider." But on reflection: just having strange-tail content in Phase 1 doesn't *make Phase 3 reach for it*. Phase 3 already has the literary-realist attractor pulling premises toward the center even with the plot-tradition pointer. Strengthening the pointer to specifically name the strange-tail content gives Phase 3 a reason to pull from there.
+
+This is a small modification — just sharpening the existing reference. Not a new gate. Worth doing.That introduces a soft floor in Phase 3: "at least three or four of your thirty premises should commit to a strange-tail mechanic." This is subtler than a hard quota — "should" rather than "must" — which fits the lighter-touch philosophy of the Phase 1 interventions. The plot-premise quota stays at 15 of 30 (must); the strange-tail floor is 3-4 of 30 (should).
+
+Wait. Let me reconsider this. I just argued for not adding new gates, then added one. Let me think again.
+
+The argument for the Phase 3 strange-tail soft floor: without it, the writer-model might produce a Phase 1 with strange-tail content but generate Phase 3 premises that ignore it. The Phase 1 plot-tradition section in v4.6 was rich and well-reasoned, and the Phase 3 premises in both transcripts still defaulted to center-canon shapes. So the pure Phase 1 intervention (just write strange-tail content into Phase 1) might not transfer to Phase 3 selection.
+
+The argument against: a soft floor in Phase 3 is a new gate. The user said "let's try the two Phase-1 additions." Adding a Phase 3 floor expands the scope.
+
+I think the right move is to keep the modification but make it lighter. Strike the "at least three or four" soft floor and replace with a less prescriptive instruction that just makes the reference specific enough to actually engage the strange-tail content — without adding a new quota.Now I want to re-read the whole Phase 1 plot-tradition section to make sure it reads coherently and doesn't have repetition or contradictions.Reading this through, a few things stand out.
+
+There's some repetition between the threaded items and the strangest-moves subsection. The "catalogue" example appears in plot mechanics, in pacing tradition (encyclopedic enumeration), and in strangest moves. "The world-without-protagonist" appears in character function (as "the protagonist is not a person at all") and in strangest moves. "The ontological reframe" appears in plot mechanics, in resolution conventions, and Phase 3's reference.
+
+This redundancy is partially intentional — the same strange-tail moves can be approached through different lenses. But too much repetition signals to the writer-model that these are *only* a small fixed set of moves, when the point is to find genre-specific equivalents. I'll trim the strangest-moves subsection's example list to reduce overlap with the threaded items.
+
+Also, the "Library of Babel" and *Diaspora* examples in character function are concrete and useful — they ground "world-as-protagonist" in actual works. I'd want one or two such concrete examples elsewhere too. Let me check the threaded items — most just gesture at moves without naming works. Adding a work-name to one or two more items would help, but I want to be careful: the writer-model is going to produce examples specific to *their* genre, and over-anchoring with cross-genre examples might reduce that.
+
+Actually, I think the balance is right as-is. The Borges/Egan citations in character function are doing work because that item is the most abstract (what is a protagonist? a library? a process?) and needs concrete examples to be tractable. The other items are more familiar and can land their abstractions without external examples.
+
+One thing I'm now noticing on re-read: the strangest-moves subsection's list of examples is long and overlaps heavily with the strange-tail material in the threaded items. "The catalogue, the false document, the impossible-object riddle, the parable, the encyclopedia entry, the world-without-protagonist, the story whose subject is a system rather than a person, the story that resolves by revealing it was never the kind of object the reader thought."
+
+That's eight examples following the instruction "name three to five." The eight are useful as a menu but might over-determine what the writer-model produces — they list moves the writer-model has already been thinking about, possibly inviting copy-back rather than genuine reach into the genre's strange tail.
+
+Let me trim. The strangest-moves subsection should ask for the writer's own list with fewer prompts.The "Do not list the moves named in the threaded items above" is the key instruction. It forces the writer-model to actually reach into the genre rather than recycling the prompt's examples.
+
+Final read of the changed section:This reads well. The opening framing paragraph for the section now signals immediately that the genre's range matters, not just its center. Each item asks for both. The strangest-moves subsection asks the writer to reach further. The closing instruction makes the strange-tail material non-optional.
+
+Word count check.Summary of v4.7:
+
+**Phase 1 — plot-tradition section reframed and threaded.** Opening paragraph of the section now states the central premise: describe the genre's *range*, not just its center. The strange tail — experimental wing, books fewer readers finish, moves other genres can't make — is what distinguishes a [GENRE] story from a literary-realist story with [GENRE] set dressing. Each of the six threaded items now asks for both center and strange-tail material:
+
+- **Plot mechanics**: 3–5 center mechanics plus 1–2 strange-tail. Examples in the prompt include planetary survey, multi-generation jump, catalogue of impossible objects, recursive-document-discovery.
+- **Reader contracts**: standard contracts plus 1–2 strange-tail contracts. Cognitive vertigo, ontological wrongness, form-as-content puzzle, the world that won't fit.
+- **Stakes calibration**: standard plus strange-tail. Civilizational, cosmic, ontological, geological, computational, posthuman, deep-time. Stakes on what happens to species, ideas, planetary systems, regimes of physics.
+- **Resolution conventions**: standard endings plus strange-tail endings. The irruption, the scale shift, the ontological reframe — endings that honor the genre's contract without the operation-resolved beat.
+- **Character function**: standard balance plus strange-tail option. The protagonist as object, process, place, duration. Concrete examples: "Library of Babel," *Diaspora*'s opening.
+- **Pacing tradition**: standard rhythms plus strange-tail rhythms. Deep-time montage, encyclopedic enumeration, parable-compression, impossible-zoom.
+
+**Phase 1 — strangest-moves subsection added.** A new subsection asking the writer-model to name 3–5 things the genre does that no other genre does, drawn from the strange tail. Each must come with a writer or work that does it. Closes with "Do not list the moves named in the threaded items above; reach further out" — preventing the writer from recycling the prompt's examples.
+
+**Phase 1 — plot-level failure modes extended.** Added one new failure mode to the existing list: "the genre's strange tail eliminated in favor of its center, producing a story that is technically of the genre but uses none of what only the genre can do."
+
+**Phase 1 — closing instruction strengthened.** Added: "The strange-tail examples are not optional — they are the part of this section that does work the other items don't."
+
+**Phase 3 — reference to plot tradition sharpened.** The "consult the plot-tradition section" pointer now specifically calls out the strangest-moves subsection. The instruction explicitly says the strange-tail material is reference for premise generation, not just prose: premises drawn from the catalogue, encyclopedia entry, ontological reframe, irruption, deep-time montage, or world-as-protagonist are valid candidates if the genre supports them and should appear in the pool.
+
+No new gates. No new quotas. The plot-premise quota stays at 15 of 30 (the only hard floor in Phase 3). The intervention is purely in the reference material the writer-model has available and a sharpened pointer to that material.
+
+Word count rose from v4.6's 5432 to 6060 (+628 words). Most of that is the threaded strange-tail asks across the six plot-tradition items.
+
+What v4.7 doesn't try to fix: the legibility funnel itself at Phases 5 and 6, the model's "write well" prestige attractor toward Carver-MFA prose, the kind-AI constraint's tendency to push toward small stories at short length. These are the things Phase 1 alone can't address. If after testing v4.7 stories are still domestic, those are the next intervention points — and the writer-model feedback already suggests several specific candidate interventions for that round.
+
+---
+
