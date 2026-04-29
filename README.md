@@ -63,14 +63,20 @@ v4 — see [HISTORY.md](HISTORY.md).
 1. Open a [Claude project](https://claude.ai/projects). Add
    `style-guide/unslop-style-guide.md` and the v4.3 template to project
    knowledge.
-2. Tell the model the run's `[GENRE]` and `[LENGTH]`, plus an optional
-   `[SEED]` of ≤280 Unicode characters. Without a SEED, Phase 2 draws ten
-   words from `/usr/share/dict/american-english-large` (the American English
-   dictionary is available in the Claude.ai sandbox), filters them, and
-   inflates each survivor via web search into a specific named referent.
-3. Ask the model to look up Phase 1 in the template and begin. After each
-   phase, say "Continue. Next phase." Override or blend candidates wherever
-   you want; without intervention the model picks and proceeds.
+2. Open a chat in the project and start the run with a prompt like:
+
+   > Please refer to `story-pipeline-template-baseline-v4.3.md` and run
+   > Phase 1 with solarpunk as GENRE and a LENGTH of 2,000–3,000 words.
+
+   With no `[SEED]` supplied, Phase 2 draws ten words from
+   `/usr/share/dict/american-english-large` (the American English dictionary
+   is available in the Claude.ai sandbox), filters them, and inflates each
+   survivor via web search into a specific named referent. To supply a
+   `[SEED]` instead, append `SEED:` and up to 280 Unicode characters to the
+   prompt.
+3. After each phase, say "Continue. Next phase." The model picks and moves
+   on without further input. You can step in to override a pick, blend
+   candidates, or regenerate, but the default flow runs end-to-end.
 
 ### Autonomously through Claude Code on the web
 
