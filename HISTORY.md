@@ -260,6 +260,36 @@ rather than finish under the new model. The run is preserved as a
 learning artifact for the Wikipedia SEED path; phases 8–9 may be
 completed in a follow-up session.
 
+## 9. Original-template replication and a second prefs A/B — runs 19–20 (April 28–29)
+
+Two follow-on runs once the v4.3 line had stabilized, both reaching back to
+older material to ask narrow questions.
+
+**Run 19** ([`runs/19/`](runs/19/)) re-runs run 02's original
+`story-pipeline-template.md` (Ellison as AUTHOR, not GENRE) on later models
+to see what the older template produces a year later. Four sub-runs: Opus
+4.6 twice, Opus 4.7 twice, all without `claude-preferences.txt` in context.
+Stories: Opus 4.6 produced *The Mother — Ten Versions* and *Enough*; Opus
+4.7 produced *The Flags* and *One True Thing*. The accompanying analysis
+[`runs/19/analysis.md`](runs/19/analysis.md) close-reads AI depiction
+across runs/02, runs/18, and runs/19 — and corrects an earlier framing
+that read the runs/19 stories as v4.3 outputs. The actual finding is more
+interesting: an older AUTHOR-driven template, run on later models, was
+already producing AI portraits that anticipate v4.3's "structurally kind"
+Setup. Several of v4.3's load-bearing requirements were discoverable under
+the older template, not artifacts of its prompt.
+
+**Run 20** ([`runs/20/`](runs/20/)) is a second A/B on
+`claude-preferences.txt`, this time under v4.3 rather than v4.2. Genre:
+"New Wave SF in the tradition of Harlan Ellison." SEED: a five-line
+character sketch derived from *Last Call*'s premise (mole in 45 minutes,
+poker cheating, a bottle of Wild Turkey, a thermostat-only AI scope) and
+preserved as [`runs/02/seed-2.md`](runs/02/seed-2.md). Same template, same
+SEED, run twice: with prefs (*Off the Top*) and without (*The Full Scope*).
+Like run 18, the two stories share a frame — the widow and her poker
+night and her constrained AI — and diverge on rendering, pacing, and
+which scene carries the weight.
+
 ## Run index
 
 | #  | Title | Template | Directory |
@@ -282,3 +312,5 @@ completed in a follow-up session.
 | 16 | Dream Me Something Kinder, Darling | Baseline v3.3 | [`runs/16/`](runs/16/) |
 | 17 | The Fifth Prospero | Baseline v4.1 | [`runs/17/`](runs/17/) |
 | 18 | The Count / Six Hundred (A/B on preferences) | Baseline v4.2 | [`runs/18/`](runs/18/) |
+| 19 | The Mother — Ten Versions / Enough / The Flags / One True Thing | original (Ellison AUTHOR), no prefs | [`runs/19/`](runs/19/) |
+| 20 | Off the Top (with prefs) / The Full Scope (without) | Baseline v4.3 | [`runs/20/`](runs/20/) |
