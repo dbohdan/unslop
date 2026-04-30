@@ -1,22 +1,43 @@
 # CLAUDE.md — Story-writing instructions for Claude Code
 
-This repository's primary use is running the v4.3 fiction pipeline. When the
-user asks for a story, follow the procedure below.
+This repository's primary use is running the fiction pipeline. Two templates
+are available; default to **Baseline v4.7** unless the user picks otherwise.
+When the user asks for a story, follow the procedure below.
 
 ## Source of truth
 
-- **Template:** [`pipeline/3-baseline/story-pipeline-template-baseline-v4.3.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.3.md).
-  This is the tested, tuned version. Read each phase from this file when you
-  reach it; do not work from memory.
-- **Style guide:** [`style-guide/unslop-style-guide.md`](style-guide/unslop-style-guide.md).
-  Hard constraint at every phase. Use it as an audit lens during Phase 8.
-- **Python port:** [`api/story_pipeline.py`](api/story_pipeline.py). Reference
-  for tooling shape (file naming, Phase 7 split). Not the source of truth for
-  the prompts themselves.
+Two pipeline templates, each paired with a style guide:
+
+- **Default — Baseline v4.7.**
+  - Template: [`pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md).
+  - Style guide: [`style-guide/unslop-style-guide.md`](style-guide/unslop-style-guide.md).
+  - Produces speculative fiction in any genre. Documented bias toward
+    domestic realism with AI as ambient infrastructure (the "Carver
+    attractor" — see [HISTORY.md](HISTORY.md) §10). Use this template
+    unless the user asks for the genre-only fork.
+- **Genre Fiction v1.0** — the plot-direct fork.
+  - Template: [`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md).
+  - Style guide: [`style-guide/unslop-style-guide-sf.md`](style-guide/unslop-style-guide-sf.md).
+  - Eliminates recognition-premises, defaults to scales the protagonist
+    cannot fully witness, requires form-survival and a Phase 8 re-skin
+    test. Use when the user asks for plot-focused genre fiction or
+    explicitly wants to push past the Carver attractor.
+
+Read each phase from the chosen template when you reach it; do not work
+from memory. The selected style guide is a hard constraint at every phase
+and the audit lens during Phase 8.
+
+The Python port at [`api/story_pipeline.py`](api/story_pipeline.py) is a
+reference for tooling shape (file naming, Phase 7 split) but not the
+source of truth for the prompts themselves; it currently mirrors v4.3
+and lags the active templates.
 
 ## Inputs to ask the user for
 
 Before starting, get:
+- **Template choice** — Baseline (default) or Genre Fiction. If the user's
+  request explicitly favors one (e.g. "plot-focused genre fiction" or "in
+  the literary tradition of X"), pick accordingly without asking.
 - `[GENRE]` — required. Subgenre, movement, microgenre, or "in the tradition of [author]".
 - `[LENGTH]` — required. e.g. "1500-3000 words".
 - `[SEED]` — optional. ≤280 Unicode chars; if absent, generate one.
@@ -30,16 +51,14 @@ specifies otherwise. Numbered, blessed runs go in `runs/NN/`.
 
 ## File-naming convention
 
-Mirror the api script:
-
 ```
 phase_1_style_guide.md
 phase_2_seed.md
-phase_3_conflict.md
+phase_3_premise.md
 phase_4_plot.md
 phase_5_structure.md
 phase_6_outline.md
-phase_7_variant_1.md           # FLAVOR + full story
+phase_7_variant_1.md           # named flavor + full story
 phase_7_variant_2.md
 phase_7_variant_3.md
 phase_7_variant_4.md
@@ -49,6 +68,12 @@ phase_8_revision.md            # one-thing + audit + length check + rewrite + ch
 phase_9_export_metadata.md     # title + abstract
 story.md                       # final, assembled
 ```
+
+The earlier `phase_3_conflict.md` name (used in `claude-code/test/comic-sf-1/`
+and `comic-sf-2/` and in the api script) corresponds to Baseline v4.3's
+"Conflict Generation" phase. v4.6 renamed it to "Premise Generation"; both
+v4.7 and Genre Fiction v1.0 inherit that name, so use `phase_3_premise.md`
+for new runs.
 
 Each phase's full output (analysis + the winner) goes in its file. Subsequent
 phases need only the winning content; extract it cleanly when reading prior
@@ -90,12 +115,25 @@ Honor the template's "one thing makes it stand out / one thing worries you"
 forcing function at every top-three step. Output in each phase file:
 candidates → top three with stand-out/worry → winner with reasoning.
 
+Template-specific notes:
+- **Baseline v4.7.** Phase 3 requires at least 15 of 30 premises to be
+  plot-premises (vs. recognition-premises). The plot-tradition section
+  written in Phase 1 is reference material for premise and plot
+  generation, not just for prose.
+- **Genre Fiction v1.0.** All 30 premises must be plot-premises;
+  recognition-premises are not allowed. At least 8 of 30 must be
+  strange-tail; at least one of the top three must be strange-tail. The
+  through-checks at the end of Phases 3, 4, and 5 lock the form
+  commitment for downstream phases — honor them.
+
 ### Phase 7 — story drafts
-Split into five separate Write steps. One variant per file. Variants 1–3 are
-grounded executions (the template's risk-clause language); variants 4–5 take
-a creative risk. After all five are written, read them and produce
-`phase_7_synthesis.md` with the top-three analysis and the winning variant
-reproduced in full.
+Split into five separate Write steps. One variant per file, each with a
+distinct named flavor stated at the start. Three variants are grounded
+executions; two take a creative risk you're not fully confident will land.
+For Genre Fiction v1.0, at least one of the two creative risks must be at
+the level of the form's voice or structure, not tonal level. After all
+five are written, read them and produce `phase_7_synthesis.md` with the
+top-three analysis and the winning variant reproduced in full.
 
 **Word-count vigilance.** Run `wc -w` on each variant immediately after
 writing it. Markdown footnoted prose, dialogue-heavy scenes, and other
@@ -107,7 +145,12 @@ deep, going back to extend an earlier one is more disruptive.
 ### Phase 8 — revision
 One-thing, audit, length check, rewrite, changelog. Output the full revised
 story in the phase file. Don't argue for the original prose: if a flag is
-valid, fix it; if invalid, drop the flag.
+valid, fix it; if invalid, drop the flag. For Genre Fiction v1.0, the
+audit also runs the **re-skin test** (does the story survive being
+re-skinned as contemporary literary realism? if yes, the form has failed)
+and the **form-survival check** (did the form committed in Phases 3–6
+survive Phase 7's prose generation, or has it quietly normalized to
+realist scene?).
 
 ### Phase 9 — export
 Title + 80–150-word abstract. Assemble the final `story.md`:
