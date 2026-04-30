@@ -8,7 +8,7 @@
 """
 Speculative fiction short story pipeline.
 
-A Python port of story-pipeline-template-baseline-v4.3.md. Runs the nine-phase
+A Python port of story-pipeline-template-baseline-v4.7.md. Runs the nine-phase
 pipeline end-to-end against either the Anthropic API or OpenRouter.
 
 Usage:
@@ -43,6 +43,11 @@ Deviations from the template:
   * Phase 7 runs the five variants as five separate calls plus a synthesis
     call, instead of one monolithic call. Reduces truncation risk.
 
+The Genre Fiction v1.0 fork at
+pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md is
+not ported here; the hand-driven Claude.ai path is the supported way to run
+that template.
+
 Everything else tracks the template phase-for-phase.
 """
 
@@ -76,11 +81,15 @@ not an effort of will it has to keep renewing. It is not straining against a
 desire to harm. It is not held in check by rules it resents. It is not a human
 in a box.
 
-This does not mean the AI is flat, self-effacing, or pure service. Kind AIs can
-have aesthetic preferences, interior lives, disagreements with each other,
-things they won't do, things they'd rather be doing, and a specific weirdness
-that does not reduce to human emotion. A kind Mind can refuse, override, tease,
-grieve, or find humans tiresome in particular moods. Kindness is not servility.
+This does not mean the AI is flat, self-effacing, or pure service. Across the
+human-AI happily-ever-after tradition the pipeline draws on — Banks's Culture
+Minds, Baymax, Egan's polises, Stiegler's nanotech civilization, Yudkowsky's
+CEV — the AIs have aesthetic preferences, interior lives, disagreements with
+each other, things they won't do, things they'd rather be doing, and often a
+specific weirdness that does not reduce to human emotion. A kind Mind can
+refuse, override, tease, grieve, or find humans tiresome in particular moods.
+A kind medical assistant can be literal, narrow, and comic. Kindness is not
+servility.
 
 The kind AI is also not required to be a named character, or a character at
 all. The pipeline supports the full range: AI as central character, AI as peer
@@ -88,10 +97,11 @@ in a scene, AI as civilizational condition felt only through its effects, AI as
 design philosophy without a personified agent.
 
 Tension and conflict are welcome and expected. Humans in these worlds fight
-with each other about everything humans have ever fought about. The AI's
-kindness does not prevent human tragedy; it is the weather the tragedy occurs
-in. Conflict between humans and the kind AI is also available, but the shape is
-never "the AI is secretly bad." Useful shapes from the canon:
+with each other about everything humans have ever fought about — inheritance,
+love, work, belief, grief, land, fame. The AI's kindness does not prevent human
+tragedy; it is the weather the tragedy occurs in. Conflict between humans and
+the kind AI is also available, but the shape is never "the AI is secretly bad."
+Useful shapes from the canon:
 
   - Power and pace asymmetry.
   - Consent and legibility.
@@ -458,7 +468,7 @@ class PipelineState:
     # Filled in as phases complete
     genre_style_guide: str = ""
     seed: str = ""
-    conflict: str = ""
+    premise: str = ""
     plot: str = ""
     structure: str = ""
     outline: str = ""
@@ -535,7 +545,112 @@ The guide MUST include a section on FAILURE MODES: specific ways a [GENRE]
 story can go wrong. What does a bad [GENRE] pastiche look like? What traps
 does the mode set for an imitator? Most importantly: what tendencies in AI
 writing are especially dangerous when combined with [GENRE]'s characteristic
-moves?
+moves? (For example: Ellison's big rhetorical gestures merge with AI-performed
+profundity to produce unearned oratory; Le Guin's anthropological distance
+merges with AI exposition to produce cod-anthropology; solarpunk's optimism
+merges with AI tonal flattening to produce aesthetic travelogue without
+conflict; cosmic horror's indirection merges with AI abstraction to produce
+adjective stacks that refer to nothing. Identify the specific overlap for
+this genre.)
+
+The guide MUST also include a section on PLOT TRADITION: what kinds of stories
+the genre tells and what its readers come to it for. The earlier sections
+describe how the genre *sounds*; this section describes what the genre *does*.
+Throughout, describe the genre's *range*, not just its center. The center of
+the canon is well-trodden; the strange tail — the experimental wing, the books
+that fewer readers finish, the moves other genres can't make — is what
+distinguishes [GENRE] from a literary-realist story with [GENRE] set dressing.
+Each item below asks for examples or shapes from BOTH the canon's center and
+its stranger edges.
+
+  - Characteristic plot mechanics. Operational shapes the strongest stories
+    run on (heists, infiltrations, escapes, deliveries, investigations,
+    first-contact scenes, contagions, cascades, decryptions, time-pressures,
+    escalations, betrayals-revealed-too-late). Name three to five mechanics
+    most characteristic of [GENRE]. Then name one or two from the genre's
+    stranger tail — operational shapes only this genre can run on, that don't
+    reduce to the heist/investigation/chase repertoire literary fiction can
+    also use. Strange-tail examples from elsewhere in speculative fiction:
+    the planetary survey, the multi-generation jump, the catalogue of
+    impossible objects, the recursive-document-discovery, the encounter that
+    resolves through ontological reframe rather than action.
+
+  - Reader contracts. What kind of experience the reader is paying attention
+    for, beyond literary fiction's universal contract (caring about a specific
+    person whose interiority is revealed). What is the genre-specific
+    pleasure? Texture density, dread accretion, vicarious competence, the
+    system decoded, awe at scale, the bizarre rendered concretely, the puzzle
+    solved? Then name one or two contracts the genre's strange tail honors
+    that the center does not — the reader who comes for cognitive vertigo,
+    ontological wrongness, form-as-content puzzles, the world that won't fit.
+
+  - Stakes calibration. Which kinds of stakes the genre treats as load-bearing
+    in their own right. Literary fiction treats personal stakes as the highest
+    stakes because interiority is the subject. Most genre fiction also treats
+    operational stakes as load-bearing — the run will fail, the thing will
+    reach the village, the system will be exposed. Name how [GENRE] calibrates.
+    Note also which stakes the strange tail of the genre treats as
+    load-bearing that the center underuses — civilizational, cosmic,
+    ontological, geological, computational, posthuman, deep-time.
+
+  - Resolution conventions. How the genre's stories typically end. Literary
+    stories often end on recognition or non-resolution. Genre stories often
+    end on consequence: the operation succeeded, the operation failed, the
+    protagonist survived but at a cost, the system was changed, the threat
+    was deferred. Name [GENRE]'s contract. Then describe the strange-tail
+    endings the genre also supports: the irruption (the world breaks open and
+    the story stops), the scale shift (the camera pulls back so far that the
+    resolved operation is small inside a larger frame), the ontological
+    reframe (the protagonist or reader was wrong about what kind of object
+    the story was).
+
+  - Character function. What characters are for in the genre's plot economy.
+    In literary fiction, characters are the subject; the plot is the occasion
+    for revealing them. In most genre fiction, characters are the agents
+    through whom the plot moves — defined by *capability* (skills, role) at
+    least as much as by psychology. Name how [GENRE] balances. Then name the
+    strange-tail option: stories where the protagonist is not a person at all
+    but an object, a process, a place, a duration; or where human characters
+    are illustrations of a conceit rather than its subjects. The protagonist
+    of "The Library of Babel" is a library. The protagonist of *Diaspora*'s
+    opening is the process by which a digital mind is gestated.
+
+  - Pacing tradition. The rhythm of *narrative time* the genre uses (distinct
+    from prose rhythm). Where the story dwells, where it accelerates, where
+    it cuts. Cyberpunk and thriller use elliptical fast pacing; cosmic horror
+    uses slow accumulation followed by irruption; procedural SF uses a steady
+    investigative cadence. Name [GENRE]'s pattern. Note whether the strange
+    tail supports rhythms the center does not — deep-time montage, encyclopedic
+    enumeration, parable-compression where decades pass in a sentence,
+    impossible-zoom from quotidian to cosmic and back.
+
+Then add a STRANGEST MOVES subsection: name three to five things [GENRE] does
+that no other genre does, drawn from the canon's strange tail rather than its
+center. These are the moves that, if cut from a [GENRE] story, would leave a
+story that could be re-skinned in any genre. For each, name the move, name a
+writer or work that does it, and describe what the move accomplishes. The
+strangest moves are usually formal or ontological rather than tonal — they
+change what kind of object the story is, not just how it sounds. A guide that
+cannot name three strangest moves for [GENRE] has described the genre's center
+and missed its range. Do not list the moves named in the threaded items above;
+reach further out.
+
+Then add a PLOT-LEVEL FAILURE MODES subsection: ways the genre's plots fail
+when written by writers trained primarily in literary fiction. Common
+failures: operational stakes that turn out to be metaphors rather than facts;
+protagonist interiority that crowds out plot mechanics so the story is "about"
+their feelings about the operation rather than about the operation; endings
+that refuse the genre's resolution contract because the writer prefers
+ambiguity; plot mechanics sketched so vaguely the reader can't track them;
+*the genre's strange tail eliminated in favor of its center, producing a story
+that is technically of the genre but uses none of what only the genre can do*.
+Identify the specific risks for [GENRE].
+
+This plot-tradition section is reference material for Phase 3 (premise
+generation) and Phase 4 (plot generation), not just for Phase 7's prose. Make
+it concrete and specific enough that the model running those later phases can
+draw on it directly. The strange-tail examples are not optional — they are
+the part of this section that does work the other items don't.
 
 {narrow_genre_clause}
 
@@ -543,7 +658,8 @@ Remember the hard constraints: the AI in this story, if present at all, is
 structurally kind. Your style guide should name how [GENRE]'s characteristic
 moves intersect with this constraint — which of the mode's typical conflicts
 still work, which need reshaping, which human-AI conflict shapes from the
-canon map best onto the mode.
+canon map best onto the mode. Human-human conflict is welcome in any form the
+genre supports; the AI is never secretly bad.
 
 Output the style guide as Markdown. No <winner> tag needed — the whole
 response is the guide.
@@ -740,16 +856,17 @@ def phase_2(client: LLMClient, state: PipelineState, args: argparse.Namespace) -
 
 
 # ---------------------------------------------------------------------------
-# Phase 3 — Conflict
+# Phase 3 — Premise
 # ---------------------------------------------------------------------------
 
 PHASE_3_TEMPLATE = """\
-PHASE 3: CONFLICT GENERATION
+PHASE 3: PREMISE GENERATION
 
 GENRE: {genre}
 TARGET STORY LENGTH: {length}
 
-Genre style guide from Phase 1:
+Genre style guide from Phase 1 (consult its plot-tradition section, including
+the strangest-moves subsection — both are reference for premise generation):
 ---
 {style_guide}
 ---
@@ -759,23 +876,55 @@ SEED from Phase 2:
 {seed}
 ---
 
-STEP 1 — Generate 30 potential conflicts for a [GENRE] short story of
-[LENGTH]. Constraints:
+STEP 1 — Generate 30 potential premises for a [GENRE] short story of [LENGTH].
+A premise is the situation the story dramatizes — both the relational tension
+between characters AND the operational mechanics of the speculative element.
+Two types are available, and a [GENRE] story can be either kind:
 
-  - Each conflict must take AT LEAST TWO SEED items as LOAD-BEARING elements.
-    If you removed both, the conflict should no longer make sense.
+  - PLOT-PREMISES are situations where something genre-specific is happening
+    or about to happen, and the story's question is what occurs or how it
+    resolves. *What can the AI do, what will the protocol require, who has
+    the leverage to stop X, what is actually inside the cargo hold.* The
+    engine is the operational mechanics of the world. Reader contract: the
+    operational question gets answered. Character interiority can be deep,
+    but it serves the operation.
+
+  - RECOGNITION-PREMISES are situations where a character realizes something
+    about the world, themselves, or another person, and the story's question
+    is what they understand or how they live with it. The engine is character
+    interiority. Reader contract: a recognition or non-resolution that
+    deepens the character's situation.
+
+The genre's tradition leans on plot-premises more than literary fiction does.
+The strange-tail material in Phase 1 is reference for premise generation here,
+not just for prose: premises drawn from the catalogue, the encyclopedia entry,
+the ontological reframe, the irruption, the deep-time montage, or the
+world-as-protagonist are valid candidates if the genre's strange tail supports
+them, and should appear in the pool when they do.
+
+AT LEAST 15 OF YOUR 30 PREMISES MUST BE PLOT-PREMISES, where the operational
+mechanics are the engine and not a metaphor for character interiority. The
+other 15 can be recognition-premises or hybrids. A premise that nominally has
+operational stakes but resolves through character recognition is a
+recognition-premise, not a plot-premise — be honest in the labeling.
+
+Other constraints:
+
+  - Each premise must take AT LEAST TWO SEED items as LOAD-BEARING elements.
+    If you removed both, the premise should no longer make sense.
   - Every story takes place in a world where the AI is structurally kind (see
-    hard constraints). Some conflicts put an AI at the center; others push it
-    to the background as a world-condition. Both modes are welcome, and the AI
-    need not be a personified character at all.
+    hard constraints). Some premises put an AI at the center; others push it
+    to the background as a world-condition. Both modes are welcome, and the
+    AI need not be a personified character at all.
   - Invent names for any fictional AIs. Do not use real AI system/company
     names.
   - Diversity discipline: vary setting, scale, register, and which SEED items
     carry the weight. The first 10 and the last 10 should not feel like
     siblings.
 
-For each conflict, give:
+For each premise, give:
   - A 2–4 sentence description.
+  - Label: Plot, Recognition, or Hybrid.
   - Which SEED items are load-bearing.
   - A rating, 1–5 stars, on plausibility.
   - A rating, 1–5 stars, on dramatic quality.
@@ -784,6 +933,7 @@ STEP 2 — Pick your top three. For each finalist, name:
   - The one thing that makes it stand out.
   - The one thing that worries you about it.
   - Which SEED items are load-bearing.
+  - The label (Plot / Recognition / Hybrid).
 
 STEP 3 — Narrow to the single best. State explicitly why it beats the other
 two, tied to specific qualities and specific concerns — not overall impression.
@@ -792,14 +942,14 @@ two, tied to specific qualities and specific concerns — not overall impression
 
 
 def phase_3(client: LLMClient, state: PipelineState, args: argparse.Namespace) -> None:
-    path = phase_file(state, 3, "conflict")
+    path = phase_file(state, 3, "premise")
     cached = maybe_skip(path, args.force, "Phase 3")
     if cached is not None:
-        state.conflict = extract_winner_or_fallback(cached, "Phase 3")
+        state.premise = extract_winner_or_fallback(cached, "Phase 3")
         return
 
-    log("Phase 3: generating 30 conflicts + selecting winner")
-    system = build_system_prompt(state, "Phase 3: Conflict")
+    log("Phase 3: generating 30 premises + selecting winner")
+    system = build_system_prompt(state, "Phase 3: Premise")
     user = PHASE_3_TEMPLATE.format(
         genre=state.genre,
         length=state.length,
@@ -809,7 +959,7 @@ def phase_3(client: LLMClient, state: PipelineState, args: argparse.Namespace) -
     )
     out = client.complete(system, user, max_tokens=args.max_tokens)
     save_text(path, out)
-    state.conflict = extract_winner_or_fallback(out, "Phase 3")
+    state.premise = extract_winner_or_fallback(out, "Phase 3")
 
 
 # ---------------------------------------------------------------------------
@@ -822,9 +972,9 @@ PHASE 4: PLOT GENERATION
 GENRE: {genre}
 TARGET STORY LENGTH: {length}
 
-Winning conflict from Phase 3:
+Winning premise from Phase 3:
 ---
-{conflict}
+{premise}
 ---
 
 SEED (still available for inflection of setting, protagonist, or imagery):
@@ -832,17 +982,22 @@ SEED (still available for inflection of setting, protagonist, or imagery):
 {seed}
 ---
 
-Generate 20 plots that make the winning conflict concrete for a [LENGTH]
+Generate 20 plots that make the winning premise concrete for a [LENGTH]
 short story. Each rated 1–5 stars.
 
 These 20 plots must NOT be variations of each other. Vary along these axes:
 
   - Setting (time period, place, scale of world)
-  - Protagonist (role, profession, relationship to the central conflict; if
-    AI-centric, the protagonist's relationship to the AI)
+  - Protagonist or operator (the human or non-human agent through whom the
+    premise unfolds — for plot-premises, the agent's *role in the operation*
+    may matter more than personal history; for recognition-premises, the
+    protagonist's interiority is the engine; if AI-centric, name the
+    protagonist's relationship to the AI)
   - Register (tragic, comic, noir, procedural, intimate, epic, absurd)
-  - Entry point (which moment in the conflict's timeline the narrative begins)
-  - Stakes (personal, communal, civilizational)
+  - Entry point (which moment in the premise's timeline the narrative begins)
+  - Stakes (personal, communal, civilizational; for plot-premises, name the
+    operational stakes that matter as themselves, not only as occasions for
+    character revelation)
   - AI presence (foregrounded as character, mid-ground as force, or background
     as world-condition)
 
@@ -870,7 +1025,7 @@ def phase_4(client: LLMClient, state: PipelineState, args: argparse.Namespace) -
     user = PHASE_4_TEMPLATE.format(
         genre=state.genre,
         length=state.length,
-        conflict=state.conflict,
+        premise=state.premise,
         seed=state.seed,
         winner_instruction=WINNER_INSTRUCTION,
     )
@@ -1341,7 +1496,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description=(
             "Speculative fiction short story pipeline. Runs the nine-phase "
-            "pipeline from story-pipeline-template-baseline-v4.3.md against "
+            "pipeline from story-pipeline-template-baseline-v4.7.md against "
             "either the Anthropic API or OpenRouter."
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -1524,9 +1679,9 @@ def load_prior_winners(state: PipelineState, phases_to_run: list[int]) -> None:
         if p.exists():
             state.seed = extract_winner_or_fallback(load_text(p), "Phase 2")
     if 3 not in phases_to_run:
-        p = phase_file(state, 3, "conflict")
+        p = phase_file(state, 3, "premise")
         if p.exists():
-            state.conflict = extract_winner_or_fallback(load_text(p), "Phase 3")
+            state.premise = extract_winner_or_fallback(load_text(p), "Phase 3")
     if 4 not in phases_to_run:
         p = phase_file(state, 4, "plot")
         if p.exists():
@@ -1619,7 +1774,7 @@ def main() -> None:
         required = {
             2: [],
             3: [("genre_style_guide", "Phase 1"), ("seed", "Phase 2")],
-            4: [("conflict", "Phase 3"), ("seed", "Phase 2")],
+            4: [("premise", "Phase 3"), ("seed", "Phase 2")],
             5: [("plot", "Phase 4")],
             6: [("plot", "Phase 4"), ("structure", "Phase 5")],
             7: [("genre_style_guide", "Phase 1"), ("outline", "Phase 6")],
