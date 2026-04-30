@@ -3560,3 +3560,913 @@ This is my plan. I will get back to you.
 
 ---
 
+# 84. Claude (2026-04-29)
+
+Now I have the picture I need. Let me think about this carefully.
+
+## Diagnosis
+
+You're right that there's a pattern. Including the runs from before, the document forms have come up consistently:
+
+- **Cyberpunk + custom SEED + Genre Fiction:** institutional after-action report
+- **Random SEED + Genre Fiction:** dispatch dialogue between two AI substrates
+- **Cozy SF + Genre Fiction:** epistolary correspondence in six letter-pairs
+- **Space Opera + Genre Fiction:** refusal document with ledger entries
+
+Four runs, four document forms. The second story (the substrate dialogue) is technically not epistolary but it shares a deep structural similarity with the others: it is a *correspondence between two formal voices*, exchanging structured operational information. It is letter-shaped even where it isn't literally letters.
+
+What we have is not merely an "epistolary" attractor. It is a more general **document-form attractor**. The writer-model, given a strong push toward "non-realist form," is reaching repeatedly for the form-class where it has the strongest training signal: institutional and personal documents. After-action reports, ledgers, letters, dispatches, refusals. What these have in common is that they are *transcribable documents* — text objects whose form is defined by their textual conventions and whose voice is institutional or epistolary.
+
+This makes sense from inside the writer-model's situation. Phase 1's strangest-moves subsection asks for examples drawn from "the catalogue, the false document, the impossible-object riddle, the parable, the encyclopedia entry, the world-without-protagonist..." but the writer-model produces *micro-examples in the register of those moves*. When the writer-model writes a paragraph in catalogue voice, or in dossier voice, or in correspondence voice, it is reaching into a body of reference material — bureaucratic prose, antique correspondence, archival registers, manuals — that exists in heavy density in its training data. These forms are *easier to render* than (say) a deep-time montage or an ontological reframe or a parable-compression. The writer-model converges on the form-class where the strongest reference material lives.
+
+There is a second, compounding mechanism. The form-survival check at Phase 7, the re-skin test at Phase 8, and the through-checks all reward a story that is *unmistakably non-realist*. Document forms are unmistakably non-realist on first glance — the formatting itself is the signal. A more subtle non-realist form (a deep-time montage written in close-third register, an ontological reframe rendered in a quotidian voice, an irruption that emerges from realist-scene texture) would *look* more realist and trigger the writer-model's worry that it has reverted to chamber-piece territory. So the writer-model picks the form that most legibly satisfies the form-survival test: the document.
+
+The third mechanism, harder to address: document forms are *easier to control across length*. A 2500-word close-third scene with a non-realist frame requires the writer to sustain non-realist-ness across the whole length without dropping into chamber-piece habits. A document form locks the register on every line — the formatting itself enforces the form-commitment. This is a craft cost the writer-model is paying to honor the form-survival requirement. Documents are the safer choice within the genre-fiction-only constraint.
+
+## Why This Is a Problem
+
+You named it: we want the basic speculative story right. The space opera story is genuinely beautiful, the cozy SF story is good, but neither is what space opera or cozy SF *is*. Iain M. Banks wrote dossier-shaped Culture stories occasionally (the Affront, the dramatis personae lists in *Excession*) but the spine of his work is sustained third-person scene-and-dialogue across a long form. *Becky Chambers' Monk and Robot* books are sustained close-third walking-and-talking. The genres' centers are in narrative-prose forms. By giving us only document forms, the template is producing strange-tail outputs across every genre, which means it is producing an unrepresentative sample of each genre and missing what readers of that genre come for.
+
+## Where the Pull Comes From
+
+The document-form attractor has at least four reinforcement points in the current template:
+
+**Phase 1's strangest-moves subsection.** The micro-example requirement was added in v1.0 with the explicit reasoning that "writing one paragraph in the register of a library catalogue does the work that 'naming Borges's library as a strangest move' doesn't." This was the right move for what we were trying to do then — propagate strange-tail material into the writer's working memory. But the writer-model fulfills the requirement most naturally with document-shaped micro-examples (catalogue, encyclopedia entry, dossier) because those are easiest to write 80–150 words in. A micro-example "in the register of a deep-time montage" or "in the register of an ontological reframe" is harder to produce at that length.
+
+**Phase 4's form axis examples.** "realist scene, found document, embedded artifact, parable-compression, deep-time montage, encyclopedia entry, transcript, dossier, deposition record, manual, catalogue, interface log, false document." Of the thirteen options listed, eight are document forms. The list itself biases toward documents.
+
+**Phase 5's form vocabulary.** "Entry-organization (alphabetical, chronological, taxonomic, by class of evidence), gaps and absences..." — this is catalogue/dossier vocabulary. The expanded structural vocabulary added at v1.0 specifically describes how documents are organized. It does not provide vocabulary for how a deep-time montage or a parable-compression is organized.
+
+**Phase 6's outline-in-the-form requirement.** The example outlines for non-realist forms are a catalogue entry and a deep-time montage section. The catalogue example is more concrete and easier to imitate; the montage example is more abstract. The writer-model preferentially imitates the more concrete model.
+
+So we have a stack: Phase 1 produces document-flavored micro-examples; Phase 4 lists more document forms than non-document forms; Phase 5 supplies vocabulary calibrated for documents; Phase 6 models documents more concretely than other non-realist forms.
+
+## What to Do About It
+
+You said: avoid adding writer-model choices, since those tend to fail. Good constraint. The interventions need to be either reductions, rebalances, or hard floors.
+
+I'm going to think out loud about several candidate interventions before recommending anything.
+
+**Option A: Cap the document forms at Phase 4.** Add to Phase 4's form-axis instruction: "At most 3 of the 20 plots may use a document form (catalogue, dossier, encyclopedia, transcript, manual, deposition, after-action, correspondence, ledger, register, false document). The form axis is for forms broadly, not for documents specifically."
+
+This is a hard rebalance. It would force the writer-model to produce non-realist plots in non-document forms — deep-time montages, parable-compressions, ontological reframes, irruptions, world-as-protagonist plots that are not document-shaped. The writer-model would have to find them. The risk is that the writer-model produces 3 strong document plots and 17 weak non-document plots, and one of the documents wins anyway. But the document floor prevents the document from being the *only* form in the candidate pool, and the diversity-clustering instruction ("if 18 of 20 plots are realist scenes, that's a cluster") already requires breaking up form-clustering — it just doesn't currently apply within the non-realist subspace.
+
+**Option B: Realist-scene as the genre-default at Phase 4.** Add to Phase 4: "The default form for [GENRE] is the realist scene, executed at the genre's full operational range and scale. Non-realist forms are available but should be selected when the premise specifically calls for them, not as a default mode of differentiation. At least 12 of the 20 plots should be realist scenes."
+
+This is the inverse rebalance. Realist-scene gets a hard floor; non-realist forms have to earn their selection. The risk is that we re-open the door to literary-realist execution within realist scenes — the writer-model produces 12 realist-scene plots, eleven of which are recognition-shaped, and one of those wins. That was the v4.7 failure. So this option needs to be paired with strong anti-recognition pressure already present in v1.0 (which is in place: Phase 3's recognition-premise exclusion, Phase 7's worry-vocabulary inversion, Phase 8's re-skin test).
+
+I think Option B is closer to right. The writer-model's diagnosis of cozy SF is correct — the genre's *center* often *does* prioritize character interiority and recognition. The template's job is not to exclude character interiority entirely; it's to exclude the recognition-shaped plot engine. A realist-scene cozy SF story can be plot-driven (a repair journey, a hospitality plot, a wandering visitor plot) while still rendering character interiority within the scenes. Banks's space opera is realist-scene with deep character interiority but the engines are operational.
+
+The v1.0 template currently treats realist-scene and non-realist forms as coequal options on the form axis. This is wrong — realist-scene is the genre center for most genres, and non-realist forms are the strange tail. Treating them as coequal *over-promotes the strange tail*. The writer-model, told to "vary along the form axis," reads coequal options and picks the more distinctive one because distinctiveness is what the form axis is asking for.
+
+**Option C: Reduce Phase 1's micro-example pull toward documents.** Change the micro-example requirement so that one of the 3-5 strangest moves must be in a non-document register — explicitly. "If your strangest moves include any document-form examples (catalogue, dossier, encyclopedia entry, transcript, manual, register, correspondence), at least one of your other strangest-moves must be in a register that is not a document — a parable-compression, a deep-time montage, an ontological reframe rendered in close-third, an impossible-object encounter, an irruption, or a comparable non-document strange move."
+
+This addresses the upstream pull. By the time Phase 4 happens, the writer-model has at least one non-document strange move in its working memory and one non-document micro-example to draw from.
+
+**Option D: Just remove the form-axis bias toward non-realist.** Strip the "if the premise is Plot, the form is open and at least three of the 20 plots should commit to a non-realist-scene form" instruction from Phase 4. Without that floor, the writer-model can produce 20 realist-scene plots if the premise calls for it.
+
+This is the lightest possible intervention — it removes a rule without adding one. The risk is that the writer-model, freed from the non-realist floor, defaults back to literary-realist realist-scene plots. But with the recognition-premise exclusion still in place, those realist-scene plots have to be plot-shaped, not recognition-shaped. We'd be testing whether plot-shape alone is enough to keep the writer-model from drifting into chamber-piece territory.
+
+## Recommendation
+
+I think the right intervention is **Option B + Option C, applied together**. Here's the reasoning:
+
+Option B alone might not work because the writer-model, under the recognition-premise exclusion plus the worry-vocabulary inversion, may still feel pressure to choose a non-realist form to *legibly satisfy* the genre-fiction-only mandate. It's been picking documents partly because documents are the most legible signal of "this is not literary realism." Stripping the non-realist floor (Option D) helps but doesn't redirect the strange-tail pull — it just removes the explicit push.
+
+Option B replaces the explicit non-realist push with an explicit realist-scene floor, which gives the writer-model a different legible signal: most plots should be realist scenes in genre-operational mode. The writer-model will read "12 realist scenes minimum" as licensing realist-scene execution. The form variation comes from the remaining 8.
+
+Option C addresses the upstream — the writer-model, when generating Phase 1's micro-examples, will have at least one non-document strange move to draw on. This means when the writer-model *does* pick a non-realist form for one of the 8 non-realist-scene plots, it has resources to draw from beyond the document repertoire.
+
+Together, these two changes:
+1. Move realist-scene from being one option among many to being the genre default.
+2. Reduce the document-form gravity in Phase 1's reference material.
+
+What they do not do:
+- Add new writer-model choices (no new branches, no new opt-in mechanisms).
+- Reintroduce literary-realism through the back door (the recognition-premise exclusion remains, the re-skin test remains, the form-survival check remains).
+- Remove the strange-tail option entirely (8 of 20 plots can still commit to non-realist forms; at least one Strange-Tail premise still survives Phase 3).
+
+## Implementation Sketch
+
+For Option B, the Phase 4 form-axis instruction changes from:
+
+> **Form** (what kind of object the story is — realist scene, found document, embedded artifact, parable-compression, deep-time montage, encyclopedia entry, transcript, dossier, deposition record, manual, catalogue, interface log, false document. If the premise is Strange-Tail, the form is partially fixed; the variation is in how the form is executed. If the premise is Plot, the form is open and at least three of the 20 plots should commit to a non-realist-scene form.)
+
+To:
+
+> **Form** (what kind of object the story is. **The default form for [GENRE] is the realist scene at the genre's full operational range and scale.** Most genres have their center in narrative prose with characters in time; the strange-tail forms — found document, parable-compression, deep-time montage, encyclopedia entry, transcript, dossier, manual, catalogue, false document — are available but are *strange-tail*, not the default. If the premise is Strange-Tail (declared in Phase 3), the form is partially fixed by the premise. If the premise is Plot, **at least 12 of the 20 plots should be realist scenes** rendered in plot-operational mode (the genre's center). The remaining plots can be non-realist forms if the premise supports them. Realist-scene plots in this template are *not* literary-realist scenes — the recognition-premise exclusion in Phase 3, the worry-vocabulary inversion in Phase 7, and the re-skin test in Phase 8 all remain in force; a realist-scene plot must be plot-shaped, not recognition-shaped.)
+
+For Option C, the Phase 1 strangest-moves subsection adds:
+
+> If your strangest moves include any document-form examples (catalogue, dossier, encyclopedia entry, transcript, manual, register, correspondence, ledger, after-action), at least one of your other strangest-moves must be in a non-document register — a parable-compression, a deep-time montage, an ontological reframe rendered in close-third, an impossible-object encounter, an irruption, a world-where-the-protagonist-is-a-process, or a comparable non-document strange move. Document forms are over-represented in the writer-model's training; the section should reach beyond them.
+
+## What I'd Watch For
+
+If we make these changes, the diagnostic question becomes: does the writer-model produce realist-scene plots that are operational rather than recognitional? The v4.7 → v1.0 transition was about preventing recognition-shape stories. v1.0 prevented them and over-corrected toward document forms. v1.1 with these changes should prevent recognition-shape stories *and* produce realist-scene stories at the genre's operational center.
+
+If the writer-model under v1.1 produces realist-scene plots that quietly drift back toward recognition (the v4.7 failure), the diagnosis is that the realist-scene floor needs to be lower, or that the recognition-exclusion mechanism needs more force.
+
+If the writer-model under v1.1 produces realist-scene plots that are plot-operational (the desired outcome), we've cracked the document-attractor without losing what v1.0 gained.
+
+If the writer-model continues to prefer documents despite the realist-scene floor, the floor isn't binding hard enough and Option C alone won't help — we'd need a stricter cap on document forms (Option A) layered on top.
+
+## Caveat
+
+I want to flag one thing about cozy SF specifically. The writer-model's quote — "cozy SF often prioritizes character interiority and recognition over plot mechanics" — is correct, and it points at a real tension. *Monk and Robot* really is essentially philosophical conversations with minimal narrative drive. Recognition is part of cozy SF's center, not just its tail. The template's goal of "no recognition" might be wrong for cozy SF specifically, and "realist scene at the genre's operational center" might still produce something that doesn't read as cozy SF because cozy SF's center *isn't* operational.
+
+This is not a problem the v1.1 changes solve. It's a problem about whether the single-direction Genre Fiction template is calibrated for *all* speculative genres or only for the operationally-driven ones. The current template assumes operationally-driven; some genres aren't.
+
+I don't think this requires immediate action — the v1.1 changes are still right, and cozy SF can be tested under them to see what happens. If cozy SF persistently produces stories that satisfy the template but don't feel like cozy SF, the eventual fix is probably a per-genre calibration: the kind of settings-switch you mentioned earlier as a possible future feature. For now, the template can produce *plot-operational* cozy SF (a repair journey, a hospitality plot, a wandering-visitor narrative — the writer-model named these correctly) and we can see whether that's sufficient.
+
+Want me to implement v1.1 with Options B and C?
+
+---
+
+# 85. User (2026-04-30)
+
+I have attempted cozy SF (for the most stark contrast with cyberpunk and the intent of the Genre template) and space opera. All this time, I have been using a LENGTH of 1500 to 3500 words and plan  to continue.
+The writer model notice:
+> I'm wrestling with a real tension: the template is built for plot-driven genre fiction and warns against literary realism masquerading as genre, but cozy SF often prioritizes character interiority and recognition over plot mechanics—like how the Monk and Robot books are essentially philosophical conversations with minimal narrative drive. That said, cozy SF does have recognizable operational structures: repair journeys where something broken gets fixed, hospitality plots centered around inns or cafes, wandering visitor narratives where strangers arrive and receive help, and careful integration plots.
+I think we have an epistolary problem. The writer model gravitates to letters and found documents. Try to diagnose why with the goal of fixing this. I'd rather have the Genre Fiction pipeline generate too few or no epistolary stories than too many (because we want to get the basic speculative story right). Avoid adding writer-model choices because you know they go wrong.
+
+---
+
+# 86. Claude (2026-04-29)
+
+Good catch. "Realist scene" is doing two jobs that conflict — it names a form (third-person narrative scene with characters in time) and it carries the literary-realism baggage we've spent the project pushing against. The writer-model reading "realist scene" gets a mixed signal.
+
+Let me think about what to call this form instead.
+
+What we actually mean is: third-person (or first-person) narrative prose with characters acting in time — the mode where the reader follows a sequence of events through a consciousness or a camera, rendered as prose rather than as document. This is what most fiction looks like. The genre is doing it; literary realism is also doing it; what makes them differ is what the prose *does*, not what it *is*.
+
+Some candidate names:
+
+**"Narrative scene"** — accurate, neutral, doesn't carry realism baggage. Names the form by what it does (narrate scenes) rather than by what register it's in. Clean.
+
+**"Dramatic scene"** — has theater connotations and slightly archaic. Less clean.
+
+**"Prose scene"** — too generic; documents are also prose.
+
+**"Scene-based form"** — wordy.
+
+**"Continuous narrative"** — accurate but a mouthful.
+
+**"Direct narrative"** — okay, but "direct" is doing odd work.
+
+**"Standard narrative"** — names it as the default, which is correct for our purpose, but "standard" sounds dismissive of the form.
+
+**"Conventional narrative"** — same problem.
+
+**"Embodied scene"** — too abstract.
+
+**"In-scene narrative"** — distinguishes from documents but is wordy.
+
+I think **"narrative scene"** is the right answer. It says what the form is (narrative + scene) without carrying register implications. It distinguishes from documents (which are not scenes) and from compressions (which are not narrative-scene-shaped — a deep-time montage isn't a narrative scene even though it's narrative).
+
+The pair becomes "narrative scene" vs. "non-narrative-scene forms" (documents, compressions, montages, etc.). That's clean.
+
+I'll use "narrative scene" throughout. Now let me implement.Now let me find all "realist scene" occurrences and plan the replacements.Many references. I need to be careful here because the references serve different purposes. Some name the form (these become "narrative scene"). Some warn against the *literary realist* failure mode in a phrase like "contemporary realist scene with [GENRE] dressing" — these should keep the "realist" word because we mean literary-realist mode. And some references like "the cluster the template fights hardest" actually need updating because the *cluster the template fights hardest* is no longer narrative scenes — it's the document forms.
+
+Let me work through them systematically.
+
+**Line 176** (Phase 3 worry vocabulary): "contemporary realist scene with [GENRE] dressing" — keep as is. This explicitly names the literary-realist failure mode, not the form.
+
+**Line 194** (Phase 4 form axis): This is the central change. Replace with the new framing per Option B.
+
+**Line 202** (Phase 4 cluster check): "if 18 of 20 plots are realist scenes" — needs re-thinking. With Option B's 12-of-20 narrative-scene floor, having 18 narrative scenes is no longer the cluster. The new cluster to break is the *form* cluster — too many of one kind of non-narrative-scene form (e.g., 6 dossiers).
+
+**Line 208** (Phase 4 through-check): "realist scene, document, montage, etc." — change "realist scene" to "narrative scene."
+
+**Line 216** (Phase 5 form-dependent vocabulary): "If the form is *realist scene*..." — change to "If the form is *narrative scene*..."
+
+**Line 230** (Phase 5 vocabulary section): "For realist-scene form:" — change to "For narrative-scene form:"
+
+**Line 254** (Phase 6 outline-in-form): "If it is a realist scene, the outline lists scene beats..." — change to "If it is a narrative scene, the outline lists scene beats..."
+
+**Line 270** (Phase 6 cluster flag): "any outline that has quietly reverted to a realist-scene structure when the form is supposed to be non-realist" — keep, but change to "narrative-scene structure when the form is supposed to be non-narrative-scene."
+
+**Line 280** (Phase 7 form survival): "None of them is allowed to silently revert to a realist scene if the form is non-realist." — keep but change to "narrative scene if the form is non-narrative-scene." Actually, wait — this says "non-realist." The replacement should be consistent. If "realist scene" becomes "narrative scene," then "non-realist" should become "non-narrative-scene." Let me make sure this propagates everywhere.
+
+**Line 284** (Phase 7 vary instructions): "If the form is realist scene..." — change to "If the form is narrative scene..."
+
+**Line 295** (Phase 7 through-check): "If the chosen version is the realist-scene variant when the form was non-realist" — change.
+
+**Line 309** (Phase 8 form survival check): "If the form was non-realist and the prose has reverted to realist scene" — change.
+
+**Line 315** (Phase 8 audit): "missing connective tissue inside a realist scene" — change.
+
+**Line 346** (Notes form commitment chain): "Phase 4 declares the form (realist scene or non-realist)" — change.
+
+**Line 350** (Notes diversity): "clustering on form (realist scene) is the cluster the template fights hardest" — this is the line that's now actively wrong. With v1.0's calibration, narrative-scene was the cluster to break. Under v1.1, narrative-scene is the genre center; the cluster to break is the document attractor. This whole sentence needs revision.
+
+Now let me also think about whether "non-realist" should become "non-narrative-scene" everywhere. "Non-realist" was a useful shorthand because it grouped catalogues, dossiers, montages, etc., as "everything that isn't a realist scene." Under v1.1, "non-narrative-scene" works the same way. But "non-narrative-scene" is wordier and uglier. Maybe the better term is just "non-narrative" — though that's slightly misleading since some non-narrative-scene forms (deep-time montage, parable-compression) *are* narrative, just not scene-based.
+
+I'll use "non-narrative-scene" where the distinction matters and accept the wordiness for clarity.
+
+Now the big change — Phase 4's form axis instruction. Drafting it carefully.Now Phase 4's cluster check. The cluster to break is no longer narrative-scene clustering; it's clustering on a single non-narrative-scene form, *or* clustering on the document subspace within non-narrative-scene forms.Phase 4 through-check.Phase 5 form-dependent vocabulary description.Phase 5 vocabulary section heading.Phase 5 also has clustering language. Let me check.Line 242 has "for realist" — should be "for narrative-scene."Phase 5 also has examples. Let me look.Phase 6 outline-in-form sentence and example.Phase 7 form survival.Phase 7 through-check.Phase 8 form-survival check.Phase 8 audit legibility line.Notes section: form commitment chain.Notes section: diversity. This one needs more substantial revision, since the cluster the template fights hardest has changed.Now Option C — Phase 1's strangest-moves subsection. Let me find it.I'll insert the non-document-register requirement after the "do not list" line (line 97). The constraint should be specific: if the writer-model has named any document-form moves, at least one *other* move must be in a non-document register. The key thing is to anchor it in writing — not just naming the move but writing the micro-example in a non-document register.Now the Notes section probably needs a new entry explaining v1.1's calibration shift. The prior version had a note about "what this template is for" and a note about "the asymmetric worry vocabulary," but didn't have a note about why narrative scenes are the default. Let me add one — a Notes entry is internally documenting the shift for whoever reads the template later.I see line 344 still says "Genre Fiction v1.0" — needs updating. And I should add a new note about v1.1's calibration after the form-commitment note. Let me also update the "What this template is for" note.Add a new Notes entry explaining the v1.1 calibration shift. I'll insert it after "The form commitment chain" because the calibration-shift note is closely related to the form discussion.Final audit: any remaining "realist scene" or "non-realist" references that I missed?Walking through the remaining matches:
+
+**Line 178:** "contemporary realist scene with [GENRE] dressing" — this is the literary-realist failure mode reference. Keep as is. The phrase explicitly marks this as a *literary-realist* failure pattern, which is what we mean.
+
+**Line 196:** "literary-realist scenes" — keep, this is the new Phase 4 instruction explicitly distinguishing narrative scenes (allowed) from literary-realist scenes (not allowed).
+
+**Line 318:** "Has a non-realist form had its conventions softened" — this should change to "non-narrative-scene form" for consistency with the new vocabulary.
+
+**Line 335:** "For non-realist forms" — this is in Phase 9's abstract instructions. Update.
+
+**Line 350:** This is the new Notes entry I just added. The "v1.0... treated narrative-scene forms and non-narrative-scene forms as coequal options" wording is correct (this is documenting the v1.0→v1.1 shift).
+
+Let me fix lines 318 and 335.Final verification.All remaining occurrences of "realist" are intentional:
+
+- Line 178 names the literary-realist failure mode (kept).
+- Line 196 specifies that narrative-scene plots are *not* literary-realist scenes (kept — the distinction is the whole point).
+- Line 350 is the new Notes entry about the calibration shift (kept — references v1.0 to explain what changed).
+
+Word count and export.Genre Fiction v1.1 is ready. Summary of what changed from v1.0:
+
+**Vocabulary swap.** "Realist scene" became "narrative scene" throughout — names the form by what it does (third-person or first-person prose with characters acting in time) rather than carrying literary-realism baggage. "Non-realist" became "non-narrative-scene." The single retention of "realist" language is in places that explicitly mark the literary-realist failure mode ("contemporary realist scene with [GENRE] dressing" in Phase 3's worry vocabulary; "Narrative-scene plots in this template are *not* literary-realist scenes" in Phase 4's form axis).
+
+**Phase 4 form axis — the central change (Option B).** Replaced the old language treating forms as coequal options. New language: narrative scene is the *default* form for most genres at the genre's full operational range and scale. Strange-tail forms (catalogue, dossier, montage, etc.) remain available but are explicitly named *strange-tail*, not the default. Document forms are flagged as over-represented in the writer-model's repertoire and not to be defaulted to. **At least 12 of 20 Plot-premise plots must be narrative scenes.** Concluding sentence reaffirms that narrative-scene plots are not literary-realist scenes — the recognition exclusion, worry inversion, and re-skin test all remain in force.
+
+**Phase 4 cluster check — recalibrated.** Changed "if 18 of 20 plots are realist scenes, that's a cluster" to "the failure mode is not too many narrative scenes (they are the genre's center) but too many of the same non-narrative-scene form. If 6 of the 20 plots are dossiers, that's a cluster." Also flags the document-attractor specifically: "if 5 of the 8 non-narrative-scene plots are document forms, that's a cluster too."
+
+**Phase 1 strangest-moves — Option C.** Added a new instruction: if any of the strangest moves named are document-form examples, at least one *other* strangest-move must be in a non-document register (parable-compression, deep-time montage, ontological reframe in close-third, impossible-object encounter, irruption, world-where-the-protagonist-is-a-process). The micro-example for that non-document move must also be written in a non-document register. The reasoning is named: "Document forms are over-represented in the writer-model's working repertoire; the section should reach beyond them, both in what it names and in what it writes."
+
+**Notes — calibration entry added.** New entry titled "Narrative scene as the genre's center; the document attractor." Documents the v1.0 → v1.1 shift: v1.0 treated forms as coequal with a soft non-realist floor, and across four test runs in different genres all four stories collapsed to document forms. v1.1 restores narrative scenes as the genre's center while keeping all the anti-recognition apparatus in force. The note exists so anyone reading the template later understands the calibration history rather than treating v1.1 as the only-ever-version.
+
+**Notes — diversity entry rewritten.** Updated to reflect that the cluster the template fights hardest is no longer narrative-scene clustering (which was the v1.0 failure mode) but document-form clustering (which is the v1.0 failure mode the template should now resist).
+
+**Through-checks and form-survival language updated everywhere.** The form-commitment chain (Phase 3 → 4 → 5 → 6 → 7 → 8) now uses consistent narrative-scene / non-narrative-scene vocabulary throughout.
+
+What's preserved from v1.0:
+- Recognition-premise exclusion at Phase 3
+- Strange-Tail premise floor (8 of 30) at Phase 3
+- "At least one of top three Strange-Tail" requirement at Phase 3
+- Worry vocabulary inversion at Phases 3, 4, 7
+- Form-survival check at Phase 7
+- Re-skin test at Phase 8
+- All through-checks
+- The strange-tail micro-example requirement at Phase 1
+
+The bet: with narrative scenes as the *default* form (12-of-20 floor) instead of one option among many, plus the recognition apparatus still binding, the writer-model will produce stories at the genre's operational center — Banks-shaped space opera as third-person scene-and-dialogue, Chambers-shaped cozy SF as walking-and-talking, cyberpunk as runner-and-job — without drifting back to literary-realist execution. Document forms remain available but only when the premise specifically warrants them.
+
+What I'd watch for in v1.1 testing:
+
+If stories now drift back toward recognition-shaped execution within narrative scenes (the v4.7 failure), the diagnosis is that the recognition exclusion needs more force, perhaps with a stronger Phase 7 worry-vocabulary or an explicit Phase 8 audit lens for "operational-engine confirmation."
+
+If stories now produce *too many* narrative scenes — i.e., the strange-tail premises that should have produced documents now get rendered as narrative scenes about characters interacting with documents — the diagnosis is that the 12-of-20 floor is binding too hard for Strange-Tail premises specifically. The fix would be to clarify that Strange-Tail premises are exempt from the 12-of-20 floor, since their form was already partially fixed at Phase 3. (Looking back at the Phase 4 instruction, it does say "If the premise is Strange-Tail, the form is partially fixed by the premise" — but the 12-of-20 floor is phrased "If the premise is Plot," so Strange-Tail premises should already be exempt. Probably fine, but worth watching.)
+
+If the writer-model continues to prefer documents despite the floor, Option C's non-document register requirement at Phase 1 will be the next thing to strengthen — possibly to "the strangest-moves subsection must contain *at least two* non-document moves" rather than "at least one."
+
+Looking forward to seeing what cyberpunk or another genre produces under v1.1.
+
+---
+
+# 87. User (2026-04-30)
+
+I agree about option B and C. I'd like you to find an alternative to the word "realist scene" because we are pushing against realist contemporary fiction. Beyond that, go ahead with v1.1.
+
+---
+
+# 88. Claude (2026-04-30)
+
+I'm not finding the specific "33. Military SF" content I need in the search results. Let me check files directly.I have enough — I can see the start of "33. Military SF" and confirm v1.1 was used. The pattern is now clear: another epistolary/document outcome, despite v1.1's narrative-scene default.
+
+Your read is right. The writer-model doesn't merely *prefer* document forms when they're available — it gravitates to them at every level of mention. Listing them in any context, even with framing like "available but strange-tail," even with cluster warnings, even with a hard 12-of-20 narrative-scene floor, lets the writer-model pull them through. The mention is the attractor.
+
+The other dynamic worth naming: when the form is mentioned even to be cautioned against, the writer-model seems to read the mention as "this is a legitimate option" and then reasons its way to picking it as the "ambitious" or "form-honoring" choice. The framing of caution becomes a hint that the form is sophisticated enough to warrant cautioning against. The cure has become part of the disease.
+
+So the v1.2 move is: stop mentioning the false-document forms entirely. Not "downplay" — *remove*. The Phase 1 strangest-moves subsection still asks for non-document strange moves (deep-time montage, ontological reframe, parable-compression, irruption), and those non-document moves don't need a "not document" framing if the document framing isn't there to push against.
+
+Let me work this out carefully. What the template needs to retain:
+
+1. **Narrative scene as default form** (v1.1's central correction).
+2. **The ability for Strange-Tail premises to use non-narrative-scene forms** — but those forms should now be the non-document ones (montage, ontological reframe, parable-compression, irruption, world-as-process, scale-shift). The genre's strange tail isn't only documents.
+3. **Phase 8's re-skin test and form-survival check.**
+
+What the template can lose:
+
+- All explicit references to catalogue, dossier, encyclopedia entry, transcript, manual, register, correspondence, ledger, after-action, deposition, false document, found document, embedded artifact, interface log.
+- The instruction in Phase 1 that *contrasts* document and non-document forms (the contrast itself draws document forms back into salience).
+
+Let me copy v1.1 and walk through it.Now let me find every mention of false-document forms.Lots of work to do. Let me also check for "epistolary" since that's tied to the same problem.Two epistolary mentions. The Phase 5 POV axis lists "epistolary" — I should remove that. The Notes entry uses "epistolary" descriptively in v1.1's history; that one's fine since it's documenting why we removed things.
+
+Let me also check for "transcript" specifically since that's a form that sometimes has legitimate non-document senses (a transcript of a recording, etc.) but in the template context it's always a document form.
+
+I'll proceed now systematically.
+
+**Setup Legibility Floor (line 51).** Replace catalogue/dossier examples with non-document examples.**Phase 1 plot mechanics (line 81).** The "catalogue of impossible objects" and "recursive-document-discovery" are document-form examples in the strange-tail mechanics. Replace.**Phase 1 strangest moves micro-example (line 95).** This currently uses catalogue and encyclopedia entry as examples. Replace with non-document.**Phase 1 non-document register paragraph (line 99).** This is the paragraph from v1.1's Option C that lists document forms in order to push against them. The whole paragraph is now obsolete because we're removing the document forms from the template entirely. Cut it.**Phase 3 plot-premise definition (line 157).** The example list contains "what does the catalogue contain, what does the dossier reveal."**Phase 3 strange-tail premise reference (line 161).** Lists "the catalogue, the encyclopedia entry, the dossier, the deposition" alongside non-document moves.**Phase 3 strange-tail floor (line 163).** Lists document forms.**Phase 3 through-check (line 184).** Lists "catalogue, dossier, deep-time montage."**Phase 4 form axis (line 196).** This is the central one. Currently it lists every document form to enumerate strange-tail forms. Need to replace the list with non-document strange-tail forms only.Now I need to also reconsider: line 197's Register axis lists "encyclopedic" — that's borderline, since it could read as pointing to encyclopedia-form. Let me check the context."Encyclopedic" as a register is genuinely ambiguous — it could mean "in an encyclopedic style of detailed coverage" (a register quality) or it could be the writer-model reading it as "encyclopedia entry as form." Better to remove it. Replace with another non-document register option.**Phase 4 cluster check (line 202).** Currently lists every document form. Reframe entirely. The whole document-cluster warning was a v1.1 fix; under v1.2 documents aren't on the menu, so the warning needs new content.
+
+What should the cluster check now warn against? With documents off the table, the writer-model might still cluster on a single non-document strange-tail form (e.g., 6 deep-time montages). The diversity warning still applies, but to the new strange-tail set.**Phase 5 form-vocabulary description (line 218).** Lists "catalogue, dossier, transcript, deep-time montage."
+
+I want to keep the sense that there's a separate vocabulary for non-narrative-scene forms, but list only non-document examples.**Phase 5 example structures (line 226).** The catalogue example needs to go. Let me look at the surrounding context.Multiple things to fix here. Let me think carefully.
+
+The Catalogue example needs to go. The Deep-time montage example is good and stays. I should add a third non-document example to give the writer-model two non-document patterns to draw from rather than just one. A parable-compression example would work.
+
+The "non-narrative-scene forms" axes (Entry-organization, Gaps and absences, Accumulation, Terminus) are calibrated for catalogue/dossier-shaped forms. They don't fit montage or parable-compression as well. The vocabulary needs to be more form-agnostic.
+
+The POV axis lists "epistolary" — should drop.
+
+The clustering example mentions "alphabetical-complete for catalogue" — should change.
+
+The through-check lists "catalogue / dossier / montage" — narrow to non-document.
+
+Let me work through these.Now the non-narrative-scene structure axes. Need to reframe these for non-document forms. The current four axes (entry-organization, gaps/absences, accumulation, terminus) are catalogue-shaped. For montages and parables, the axes are different: section structure, time-span allocation, what compressions are signalled, where the form's logic accumulates and where it ruptures.Drop "epistolary" from the POV list.Phase 5 clustering instruction.Phase 5 through-check.**Phase 6 outline-in-form (line 256).** Lists "catalogue (entries with provenance fields), dossier (sections and document types)."Now the Phase 6 outline examples — one is "Catalogue: Entry 14 (≈180 words)..." Replace with a non-document example.Replace the Catalogue example with a parable-compression. I'll write one that's similarly concrete.Phase 6 cluster check: "same entry organization" — should drop.**Phase 7 form-survival (line 282).** Mentions "catalogue or montage or dossier."**Phase 7 creative-risk paragraph (line 289).** Mentions "pushing a registered limit of the catalogue, breaking a convention of the dossier."**Phase 8 form-survival check (line 311).** "If the form was catalogue, is the story still a catalogue, or has it become a narrator's reflection on a catalogue?"**Phase 8 audit legibility (line 317).** "missing organizational consistency inside a catalogue; orphaned references inside a dossier."**Phase 9 abstract instructions (line 335).** Lists "a catalogue of…", "a dossier covering…", "a deep-time montage tracking…"**Notes section.** The "Narrative scene as the genre's center; the document attractor" entry (line 350) and the "Diversity across candidates" entry (line 354). Both reference document forms by name.
+
+The historical note documenting v1.0 → v1.1 also exists. I want to extend it to document v1.1 → v1.2, since this is the third calibration shift and someone reading the template later should understand the lineage.Several updates needed:
+
+1. Line 342 says "v1.1" — update to v1.2.
+2. Line 348 is the "narrative scene as the genre's center; the document attractor" entry. This is a *historical* note documenting the v1.0→v1.1 calibration. Should be extended with v1.1→v1.2 history rather than rewritten. The note's role is to keep the reasoning available to future readers.
+3. Line 352 ("Diversity across candidates") references documents in the warning. Reframe to warn against the new attractor (clustering on a single non-document strange form, e.g., 5 deep-time montages).
+4. Line 354 ("Form-relative legibility") references catalogue conventions. Replace.Now extend the historical note. The v1.1 → v1.2 shift is a meaningful third calibration step and worth recording.Now the diversity note (line 352) — needs reframing.Now the form-relative legibility note (line 354).Final audit. Run the full search again to verify everything is gone.Walking through the remaining matches:
+
+**Line 95** — "Borges's library" appears as an example. Borges's library *is* in fact a catalogue/index/encyclopedia-like form. The phrase is now slightly inconsistent: I'm using Borges's library as the canonical example of "a strangest-move that doesn't propagate downstream without a micro-example" but Borges's library *is itself* a document-shape. Should I change this?
+
+I think I should. "Borges's library" makes the writer-model think about Borges's documentary forms — the library, the labyrinth, the encyclopedia of Tlön. Replace with a non-document canonical example. Stiegler's "The Gentle Seduction" is a good one — it's already in the Setup canon and it's a parable-compression that compresses centuries into a few pages without being a document. Or Egan's *Diaspora* opening — the gestation of a digital mind as a process.
+
+I'll use Egan's opening. It's distinctive, non-document, and the writer-model's working knowledge of it is good.**Line 168** — "register" appears in "vary setting, scale, register, form" — this is the Phase 3 diversity instruction using "register" in the sense of tonal register, not document register. Keep.
+
+**Line 194** — the new Phase 4 form axis. No document forms. Good.
+
+**Line 195** — Phase 4 register axis with my new "mythic" replacement. Good.
+
+**Line 260** — Phase 6 narrative-scene example uses "manual override panel" which is a phrase about an override panel that the engineer manually operates, not a document form. Should be fine, but let me check: the writer-model could be primed by "manual" → "manual document form." This is a small risk. Maybe safer to just write around it.**Line 348** — the historical note. This is where the document-form vocabulary is *intentionally* preserved, since the note's job is to document the calibration history. It explicitly explains *why* documents are absent from the rest of the template. Keep.
+
+Final clean sweep.Good. The only "register" mentions outside the historical note are uses of the word "register" in its tonal-register sense (a register of writing, not a document form). Acceptable — these refer to register as a quality of voice. The same word having a different sense in document context is unavoidable.
+
+The "Egan's gestation" example is in line 95 and only matches because of the word "register" used in "register of that move." Same situation — fine.
+
+Let me also do one final check for any other compound document terms I might have missed.Clean. Word count and export.Genre Fiction v1.2 ready.
+
+What I read in the military SF run before opening v1.1: yet another epistolary outcome despite v1.1's narrative-scene default, despite the 12-of-20 floor, despite the "document forms over-represented" caution. Your read of why is right: every mention of the false-document forms — even in a cautioning frame — sustains them as legitimate options the writer-model can pull through. The v1.1 cure became part of the disease. The cautioning framing told the writer-model "documents are sophisticated enough to need cautioning against," which the writer-model interpreted as licensing them as the ambitious choice.
+
+What v1.2 does:
+
+**Removed every mention of false-document forms from the active template.** No catalogue, no dossier, no encyclopedia entry, no transcript, no manual, no register (as form), no correspondence, no ledger, no after-action, no deposition, no false document, no found document, no embedded artifact, no interface log. These no longer appear as form options, premise examples, structure types, outline shapes, or audit checks. The writer-model reading v1.2 will not encounter these terms in any phase.
+
+**Removed adjacent vocabulary that points to documents.** Dropped "epistolary" from the Phase 5 POV options. Dropped "encyclopedic" from the Phase 4 register list (replaced with "mythic"). Reworded the Phase 6 narrative-scene example to avoid the word "manual" (which could prime the writer toward thinking of "manual" as a form). The Phase 5 non-narrative-scene structural axes were rewritten — the v1.1 axes (entry-organization, gaps and absences) were calibrated for catalogue/dossier shapes; v1.2's axes (section structure, what is compressed and what is rendered at full scale, accumulation pattern, terminus) work for the strange-tail forms that remain.
+
+**The strange-tail vocabulary that remains is non-document only.** Six form options: parable-compression, deep-time montage, ontological reframe, irruption, scale-shift, world-as-protagonist. Plus narrative scene as the default. The Phase 1 strangest-moves micro-example requirement now uses non-document examples (deep-time montage compressing a century, parable-compression rendering the move as a parable, ontological reframe performed at the reader). Phase 5 examples use parable-compression and deep-time montage. Phase 6 outline examples use narrative scene, parable-compression, and deep-time montage.
+
+**Replaced "Borges's library" with "Egan's gestation of a digital mind"** as the canonical example of "a strangest-move that doesn't propagate downstream without a micro-example." The Library of Babel is a catalogue/encyclopedia-shape; even mentioning it could pull the writer-model toward documents. Egan's *Diaspora* opening is non-document (a process rendered in close attention to a non-human protagonist). It serves the same instructional purpose — canonical strange-tail move that needs a micro-example to land — without seeding documents.
+
+**The historical note in Notes is preserved and extended** with the v1.1 → v1.2 shift documented. This is the one place document terms still appear, and they appear *intentionally* as part of the explanation of why the rest of the template doesn't mention them. The note records: "The mention is the attractor; removing the mention removes the attractor." Whoever reads the template later will understand why this calibration exists rather than being tempted to add document forms back as "obvious missing options."
+
+What didn't change:
+- All Phase-by-phase machinery (the 9 phases, the through-checks, the form-survival check, the re-skin test, the asymmetric worry vocabulary, the recognition-premise exclusion, the strange-tail premise floor of 8 of 30, the narrative-scene floor of 12 of 20).
+- Setup, scope, kindness constraint, default scale.
+- Phase 2 SEED mechanism.
+- The Unslop SF guide stays as the prose-level constraint.
+- Phase 8's audit lenses except for the legibility one (which had document-shaped failure modes that needed updating).
+
+What I'd watch for in v1.2 testing:
+
+If the writer-model now produces stories that are entirely narrative scenes (because narrative scene is the only form the writer-model still recognizes as legitimate without strain), that's a sign the strange-tail vocabulary in the new list (parable-compression, montage, ontological reframe, irruption, scale-shift, world-as-protagonist) isn't connecting to the writer-model's working repertoire as strongly as document forms did. The fix would be richer Phase 1 micro-examples — not adding forms, but making the existing ones more workable. The v1.1 micro-examples were tested and got pulled toward documents; v1.2 micro-examples might need further reinforcement to land.
+
+If the writer-model finds a workaround — invents a document-form story without using the template's terminology, e.g., a "set of communications" rather than "correspondence," or "a record of decisions" rather than "ledger" — that's the writer-model routing around the constraint. The fix would be to explicitly ban document-shape stories in Phase 4, not just decline to mention them. I'd hold on this fix until it's actually a problem.
+
+If the writer-model produces strong narrative-scene genre fiction across multiple genres, the project's main hypothesis is confirmed: the document attractor was the visible obstacle and removing it lets the genre work.
+
+---
+
+# 89. User (2026-04-30)
+
+We got another epistolary story. Maybe I don't have to upload it separately for you to read it? Look up the chat named "33. Military SF" in this Claude Project.
+Let's go further and remove the catalogue, dossier, encyclopedia entry, transcript, manual, register, correspondence, ledger, after-action, deposition, etc. mentions completely from the template. They are pretty mich legacy items from when we tried to steer Baseline away from realism. None should be left. What I'm seeing is that it doesn't matter if the attractor option is downplayed because the writer model will gravitate to it. Revise the template to not mention false documents.
+
+---
+
+# 90. Claude (2026-04-30)
+
+Let me look at the actual story and outcome of the hard SF run, which I know from these glimpses involves Egan's gestation idea, a strange-tail focus, and substrate stuff.I have a clear picture now. Let me dig in on the actual story produced.Now I see it clearly. The hard SF run produced... essentially the same failure mode in a new costume. The story is structured as a series of dated logs, atmospheric records, year-by-year substrate notations, lineage entries, casualty counts. It's a *log file*. A *substrate's records*. The format is "Year X: substrate did Y. Year X+200: lineages branch. Year X+612, day 88, 23:01: Sereth flare."
+
+This is a deep-time montage — yes, technically — but the writer-model has rendered it *as a log document*. As archival output. The compressions are signalled by date stamps, casualty counts, public-vs-private record formatting. The form is not narrative scene; the form is also not really parable-compression or ontological reframe. It's a log.
+
+The writer-model has found the workaround. We removed catalogue/dossier/ledger/after-action from the explicit list. The writer-model picked "deep-time montage" instead but rendered it as a substrate log — a date-stamped, compositionally-listy, document-shape thing. The format is documents in everything but name.
+
+Sigh, indeed.
+
+This is exactly the failure mode I worried about at the end of the v1.2 turn — "the writer-model finds a workaround — invents a document-form story without using the template's terminology, e.g., a 'set of communications' rather than 'correspondence,' or 'a record of decisions' rather than 'ledger.'" I named it and said "I'd hold on this fix until it's actually a problem." It is now a problem.
+
+Let me think about what's actually happening here.
+
+The writer-model's gravitation toward documents is structural, not vocabulary-bound. Removing "catalogue," "dossier," "ledger" from the template doesn't remove the writer-model's capacity to produce a story shaped like a date-stamped log of substrate operations. The writer-model has the document-form pattern in its training as a *general capability*, accessible from any prompt that says "render compressed time across centuries with operational specificity." The document shape emerges from those instructions because document shapes are how the writer-model knows to render that combination.
+
+Let me look at what "deep-time montage" actually got read as. The Phase 1 micro-example I wrote in the v1.2 description for deep-time montage was:
+
+> If the strangest move is the deep-time montage, compress a century into a paragraph.
+
+That's the only positive guidance for what a deep-time montage looks like. The writer-model reads this and reaches for what it knows about compressing centuries: dated entries, log-like formats, year-by-year bullet points. The Stapledonian model — *Last and First Men* — actually *is* somewhat document-shaped (it's framed as a "history" written by a future mind). The Egan model — *Diaspora*'s opening — is a process rendered through close attention to a non-human subject. Neither model gives the writer-model a sustained-prose, scene-shape, fully-realized model of deep-time montage. The default is the "log of substrate operations" because that's the most accessible way to compress time.
+
+So the document-attractor isn't really about specific document forms (catalogue, dossier, etc.). It's about a deeper structural preference: when asked to render compressed time, multi-scale operations, civilizational-scale processes, or systems-as-protagonist, the writer-model reaches for *enumerative formats* — dates, entries, sections, lists. These formats may not be explicitly "documents" but they have the same essential shape: enumeration, compositional listing, structured headers, time-stamped entries.
+
+This puts the problem in a different light. We can't fix it by removing more vocabulary, because the writer-model isn't responding to vocabulary; it's responding to the underlying request for compressed multi-scale rendering. The document shape is the writer-model's default *answer* to that request.
+
+So what to do?
+
+Option 1: **Eliminate "deep-time montage" from the strange-tail list, too.** This is the next analogue of the v1.1→v1.2 move: the mention is the attractor; remove the mention to remove the attractor. But this would shrink the strange-tail vocabulary further. We'd be left with: parable-compression, ontological reframe, irruption, scale-shift, world-as-protagonist. Of these, parable-compression and irruption are the only ones that don't naturally pull toward enumerative formats.
+
+Actually, wait. Let me check: does parable-compression also trigger the document-attractor? A parable rendered at multiple scales could be done as nested narrative scenes (each scale rendered as a scene). Or it could be done as nested entries (each scale as a section header with operational notes underneath). The latter is the document shape; the former is the narrative-scene shape. I worry parable-compression has the same vulnerability, but with less force than deep-time montage because parables historically *have* been rendered as narrative scenes.
+
+Ontological reframe is genuinely safer — it's a structural move that happens within whatever form the story uses, not a separate form itself. An ontological reframe in a narrative scene is just a narrative scene where the reader's understanding of what kind of object the story is changes. Same with irruption: a moment in the story where the world breaks open. These are *moves within forms* rather than *forms themselves*.
+
+Scale-shift and world-as-protagonist are also moves rather than dedicated forms — but they pull toward montage-shaped renderings because that's the easiest way to render them.
+
+Option 2: **Eliminate the strange-tail premise category entirely.** This is more radical. Phase 3 currently requires "at least 8 of the 30 premises must commit to a strange-tail shape." Without that floor, every premise would be a plot-premise. Plot-premises naturally produce narrative scenes — they have characters and operations. The Phase 4 form axis already defaults to narrative scene; without strange-tail premises pushing toward unusual forms, the writer-model would have no upstream pressure to produce non-narrative-scene outputs.
+
+This would simplify the template enormously. The recognition-premise exclusion stays. The narrative-scene default at Phase 4 stays. The form-survival check at Phase 7 stays. But the strange-tail premise category — the category that's been the wedge for non-realist forms — goes. The writer-model has no upstream license to produce documents because there's no "strange-tail" stamp that says "this premise warrants a non-realist form."
+
+Cost: the template would lose access to genuinely non-narrative-scene output forms. A story that legitimately needs to be rendered as a parable-compression or a montage-of-civilizations couldn't be produced. The template becomes single-form: narrative scenes only.
+
+Is that loss acceptable? Let me think about it.
+
+Looking back at the runs:
+- Cyberpunk + custom SEED + Genre Fiction v1.0: after-action report (failure)
+- Random SEED + Genre Fiction v1.0: substrate dialogue (failure)
+- Cozy SF + v1.0: epistolary correspondence (failure)
+- Space Opera + v1.0: refusal document (failure)
+- Military SF + v1.1: epistolary (failure)
+- Hard SF + v1.2: substrate log (failure)
+
+Six runs. Six document-shape outputs. Even when the template forbade specific document forms, the writer-model invented a new one.
+
+The strange-tail premise category was the attempt to give the template access to non-realist forms. In every test, the writer-model has used that access to produce a document-shape thing. The attempted feature has produced only failures.
+
+Option 2 is the next move. Eliminate the strange-tail premise category. Make this a single-form template: narrative scenes only.
+
+Option 3: **A subtler fix — keep the strange-tail premise category but require its premises to be rendered in narrative scene form.** This is a hybrid. Phase 3 still allows strange-tail premises (8 of 30 floor). But Phase 4's form locking now constrains them: even strange-tail premises must be rendered as narrative scenes. The premise's strangeness comes from its content (a process, a non-human subject, a far-future civilization), not from its form.
+
+This is interesting because it preserves access to premises that are about systems/processes/durations, but forces those premises into the form the writer-model executes most reliably. *Diaspora*'s opening rendered as a narrative scene about the gestation process — close-third on the gestation, not a log of it.
+
+The cost: premises that genuinely benefit from non-narrative-scene forms can't get them. *The Library of Babel* couldn't be produced. But almost everything else can.
+
+I lean toward Option 3, but I want to think harder before recommending. Let me consider the writer-model retrospective if there is one.The retrospective from this hard SF run isn't surfacing in the search results. Let me check if it's in the chat directly.I now have the picture clearly enough. The "deep-time montage" was rendered by the writer-model as nested timestamps and casualty logs and substrate records — date-and-bullet form. Even without the catalogue/dossier vocabulary, the writer-model reached for the document shape because *that's the writer-model's repertoire for compressed time-and-system rendering*.
+
+## The Sigh, Diagnosed
+
+This is the deepest version of the problem we've been chasing. It tells us something I think I should have admitted earlier: the writer-model's document-attractor isn't *about* documents. It's about a more fundamental preference for rendering systems-and-time as *compositional structure* rather than as continuous prose. When the writer-model needs to render multiple scales, multiple time-spans, multiple lineages, the easiest way to do it is to break the rendering into discrete units and compose them. Discrete-unit composition is what document forms *are*; it's also what a "deep-time montage" naturally *becomes*.
+
+The strange-tail premise category was conceived as the wedge for non-realist forms. In every test it has been used by the writer-model to produce compositional-structure stories. Six runs, six failures — even when we eliminated specific document terms, the writer-model invented new compositional structures to do the same job.
+
+The honest read: the strange-tail premise category doesn't work in this template. It is the access point through which the writer-model reaches the document-shape attractor. Removing it is the next clean intervention.
+
+## The Decision
+
+I think Option 2 is correct: eliminate the strange-tail premise category entirely. Here's the reasoning.
+
+Each prior fix was a more targeted version of "discourage documents." First we cautioned. Then we set quotas against documents. Then we removed document vocabulary. Each fix made the writer-model find a workaround. The fixed-cost lesson is: as long as the writer-model has any path toward compositional-structure outputs, it will find one. The only complete fix is to remove the path itself.
+
+The path is the strange-tail premise category. Phase 3 asks for premises whose subjects are systems, processes, durations. Phase 4 says these can use non-narrative-scene forms. The writer-model takes that license and reaches for compositional structure, regardless of what we call the structure.
+
+Cost of removing it: stories whose ideal form is genuinely non-narrative-scene cannot be produced. *The Library of Babel* is off the table. So is *Story of Your Life*. So is *Last and First Men*. The template loses access to the strange-tail forms entirely.
+
+But — and this is what changes my mind on the cost — none of the runs have produced a story comparable to those works. The strange-tail material has been used as the *workaround* through which document-shape stories enter the pipeline, not as the door through which Borges-shape stories enter. The feature is being used only by its failure mode. Removing it removes the failure mode and forfeits a capacity the template wasn't actually demonstrating.
+
+There's also a deeper point. The works that the strange-tail category was supposed to enable — *Library of Babel*, *Diaspora*'s opening, the *Last and First Men* mode — are remarkable *because* they are unusual exceptions. They're the strange-tail of the strange-tail. Most genre fiction *isn't* like that. Banks's space opera is third-person scene-and-dialogue. Egan's actual stories are third-person scene-and-dialogue with hard-SF mechanics. Le Guin's stories are mostly third-person scene-and-dialogue. Asimov, Heinlein, Niven, Cherryh, Bujold, Vinge, Stross, Cixin Liu, Tchaikovsky, Robinson — overwhelmingly third-person scene-and-dialogue. The strange-tail forms are a small fraction of even the canon's most ambitious work. Removing the template's access to them doesn't remove access to most genre fiction.
+
+## What This Looks Like
+
+The template becomes single-form: narrative scenes only. Phase 3 asks for plot-premises only. The 8-of-30 strange-tail floor goes. The "at least one of the top three must be Strange-Tail" requirement goes. Phase 4's form axis collapses — no form variation, every plot is a narrative scene. Phase 5 reverts to narrative-theory vocabulary only. Phase 6's outline examples are narrative-scene only. Phase 7 doesn't need to discuss form-different versions; the variations are tonal and structural within the narrative-scene form. Phase 8's form-survival check becomes simpler — it checks that the narrative scene was executed at the genre's operational center rather than retreating to chamber-piece register.
+
+The strangest-moves subsection in Phase 1 also needs reworking. It currently asks for "things [GENRE] does that no other genre does." With non-narrative-scene forms off the menu, the strangest moves have to be moves *within* narrative scenes — operational moves the genre performs that other genres can't. For hard SF: the cosmological reframe rendered through close-third on a researcher; the rigorous working-out of a system through a character's interaction with it; the moment when the world's mechanics become the dramatic center. For cyberpunk: the runner's competence rendered as specific texture; the corp's restructuring rendered through specific operational changes the protagonist navigates. For cozy SF: the repair journey rendered through specific encounters; the hospitality plot rendered through specific guests and specific welcomes.
+
+This is a different kind of strangest-moves subsection. It's about what the genre can do *within narrative scenes* that other genres can't, rather than what alternative forms the genre can use.
+
+The Phase 3 recognition-premise exclusion stays. The Phase 4 narrative-scene default and 12-of-20 floor become 20-of-20 (all plots are narrative scenes — the floor is now the ceiling and the floor combined). The Phase 7 worry-vocabulary inversion stays. The Phase 8 re-skin test stays. The recognition-vs-operational distinction is now the only axis the template polices, and all the machinery that was about form-survival becomes machinery about plot-engine-survival: does the chosen story have an operational engine, or has it slid into a recognition engine?
+
+## Worth Naming Honestly
+
+This is the third time we've reduced the template's range to fight the document attractor. v1.0 → v1.1 made narrative scene the default. v1.1 → v1.2 removed document terminology. v1.2 → v1.3 (this one) would remove the strange-tail category entirely.
+
+Each step is a real loss of capacity. v1.0 could have produced a non-realist form when warranted. v1.2 could still have produced parable-compressions, montages, ontological reframes. v1.3 cannot produce any of those. It's narrative scenes only.
+
+The honest framing: we've built and steadily narrowed a single-direction template until it produces only one kind of object — plot-driven narrative scenes at the genre's operational center. That's a real product. It's also a smaller product than what we initially aimed at. The template can no longer produce stories at the genre's strange tail; it can only produce stories at the genre's operational tradition.
+
+I think this is correct. The genre's operational tradition is what most genre fiction *is*. The strange tail is the small, unusual subset, and the writer-model has been unable to access the strange tail without falling into the document attractor. Removing access to the strange tail removes the attractor and produces a template that does one thing well rather than producing stories that fail in the same way every time.
+
+But it should be acknowledged. The earlier conception — Genre Fiction as a template flexible enough to handle the canon's range, including its strange tail — has been retired. What remains is a narrower template focused on the operational center.
+
+## A Worry I Want to Flag
+
+If the template is reduced to narrative scenes only, and the writer-model has shown a strong literary-realist gravity (as v4.x runs demonstrated), the risk is that narrative-scene stories drift back toward chamber-piece register. The Phase 4 form floor was useful partly because it forced *non*-chamber-piece outputs through form variation. Without form variation, all stories are narrative scenes, and narrative scenes are exactly where chamber-piece register lives.
+
+The defenses against this drift remain: recognition-premise exclusion at Phase 3, worry-vocabulary inversion at Phases 3/4/7, re-skin test at Phase 8. But these defenses existed in v1.0/v1.1/v1.2 alongside the form-variation mechanism, and the document attractor was the writer-model's *workaround* against those defenses — a form-different output that satisfied the genre-fiction-not-realism check by being unmistakably not-a-narrative-scene. With form variation gone, the writer-model loses that workaround. Will it now produce chamber-piece narrative scenes (the v4.7 failure)? Or will it produce genre-operational narrative scenes (the goal)?
+
+I don't know. The answer is empirical. v1.3 might be the right calibration, or it might fail in a new way (chamber-piece scenes returning), and if it fails that way, the next intervention is at Phase 7 or Phase 8 to make the recognition-detection more aggressive.
+
+## Recommendation
+
+Implement v1.3 with the strange-tail premise category eliminated. This is the next move in a lineage of narrowings, each of which has been correct in the moment. Test it. Read the output. If it produces chamber-piece narrative scenes, the next intervention is targeted at recognition-detection rather than at form variation. If it produces genre-operational narrative scenes, the project's main hypothesis is finally confirmed in the form that always represented its actual goal.
+
+Want me to implement v1.3?
+
+---
+
+# 91. User (2026-04-30)
+
+Please read the chat "34. Hard SF" (not the paused one). Sigh.
+
+---
+
+# 92. Claude (2026-04-30)
+
+Agreed on Option 2. The lesson from v1.0 → v1.2 is that any mention is exploitable, including prohibitions. Let me work through the v1.2 document and find every place that names or implies an alternate rhythm or mode.Let me first identify every mention of alternate forms, modes, rhythms, or non-narrative structures across the document. I'll search broadly.Massive blast radius. The strange-tail mentions are everywhere — and beyond those, there are several other places that suggest alternate rhythms even when not naming a specific form:
+
+- Line 33 (Setup): "civilizational pace, deep time, computational substrates, planetary or interstellar mechanics, processes on timescales that don't match a human life" — these specific scale-references are exploitable. The writer-model reads "processes on timescales that don't match a human life" as license for the substrate-log shape.
+- Line 53: "compressed, fragmentary writing" — implies fragmentary/compressed as a possible mode.
+- Lines 81, 83, 85, 87, 89, 91: Phase 1 "stranger tail" / "strange tail" threading throughout the plot-tradition section.
+- Line 232: "Temporal shape (linear, fragmented, frame narrative, parallel timelines, compressed, dilated)" — every option except linear is a deviation that could be exploited.
+- Line 236: "For non-narrative-scene forms" entire section.
+
+Beyond these, I want to think about Phase 1's *Reader contracts* item. It currently mentions "cognitive vertigo, ontological wrongness, the form-as-content puzzle, the world that won't fit in the story" as reader contracts the strange tail honors. *Form-as-content puzzle* and *world that won't fit in the story* are exactly the patterns that produce log-shape outputs. They're exploitable.
+
+And the *Pacing tradition* item names "deep-time montage, encyclopedic enumeration, parable-compression where decades pass in a sentence, impossible-zoom from quotidian to cosmic and back" — every one of those is a license for compositional-structure rendering.
+
+Okay, here's my plan. I'll take this in passes by section:
+
+**Pass 1: Title, Setup.** Update version. Strip "deep time," "computational substrates," "planetary or interstellar mechanics," "timescales," etc. from the Setup default-scale paragraph. Kindness can still be at scales the protagonist can't fully witness, but the *examples* that reach for compositional renderings need to go. Replace with examples that point toward narrative-scene renderings of large-scale phenomena.
+
+**Pass 2: Legibility Floor.** Remove montage/parable references. Make it a simple statement about narrative-scene legibility.
+
+**Pass 3: Phase 1.** This is the biggest change. Strip the "stranger tail" threading from each item. The plot-tradition section becomes about the genre's narrative-scene tradition, full stop. The strangest-moves subsection has to be entirely re-conceived: no longer "moves only this genre can do" (which leads to formal/structural moves) but "moves the genre does within narrative scenes that other genres can't do." The plot-level failure modes lose the strange-tail-elimination warning.
+
+**Pass 4: Phase 3.** Strip Strange-Tail premise category entirely. All premises are plot-premises. The 8-of-30 floor goes. The "at least one of top three Strange-Tail" goes. The through-check changes to declare premise scope rather than premise category.
+
+**Pass 5: Phase 4.** Form axis becomes much smaller: every plot is a narrative scene. Remove the Strange-Tail conditional. The diversity axes become: setting, subject of the story, register, entry point, stakes, AI presence. Subject-of-the-story can stay (a story can be about a system or a process, even rendered in narrative scene), as long as the *form* is narrative scene.
+
+Actually wait — should "Subject of the story" stay? It says: "a person, a process, a duration, a place, a system, a question, a record." This could be exploited. A story whose subject is a *record* points right back at document-form rendering. Let me think.
+
+The subject axis was added in v1.0 to permit stories whose dramatic core is non-personal (a system rather than a person). It's useful in genre fiction — an SF story can be "about" a process without that process being the protagonist. But the menu of allowed subjects is itself an attack surface. "A record" is a document-shape subject. "A duration" pulls toward montage. "A question" can be intellectualized into ontological-reframe territory.
+
+Safest: simplify "Subject" to "a person, a place, a system, an event." These four allow most of what the genre needs without offering the writer-model a montage-shape or document-shape exit. *Place* and *system* preserve the genre's interest in rendering settings and infrastructures. *Person* and *event* are the conventional defaults. None of these requires a non-narrative-scene rendering.
+
+**Pass 6: Phase 5.** Structure selection becomes narrative-theory only. Drop the "non-narrative-scene forms" axes entirely. The temporal-shape axis still names "fragmented, compressed, dilated" — these are valid narrative-scene techniques (a fragmented narrative scene is still a narrative scene), but I'm cautious. Let me think.
+
+A "compressed" or "dilated" time-treatment within a narrative scene is fine — the story spends more or less time on different beats, which is normal craft. The exploitable thing is "fragmented" because that opens the door to date-stamped section breaks. But fragmented narrative is also a real and valuable mode (Mantel does it, Le Carré does it). I think I'll keep "linear, non-linear, frame narrative, parallel timelines" and drop "compressed, dilated" and "fragmented" from this list. The writer-model can still produce a non-linear narrative if it wants to — it just isn't given the explicit license that attaches to "fragmented."
+
+Actually, on more reflection, I think temporal-shape should stay simple too. "Linear, non-linear, frame narrative, parallel timelines" — four options, all of which are narrative scenes. No fragmentation, no compression, no dilation as named modes.
+
+**Pass 7: Phase 6.** Outline examples become narrative-scene only. Drop the parable-compression and deep-time montage examples.
+
+**Pass 8: Phase 7.** Form-survival language goes. The five versions just vary within narrative scene execution. Creative risk requirement stays but the "form's voice or structure" specification needs to be reconceived — maybe "register, viewpoint, or scene structure" within the narrative-scene mode.
+
+**Pass 9: Phase 8.** Form-survival check becomes plot-engine-survival check. The re-skin test stays. The audit's "non-narrative-scene form had its conventions softened" line goes.
+
+**Pass 10: Phase 9.** The abstract instructions for non-narrative-scene forms go.
+
+**Pass 11: Notes.** Major restructuring. Update version note. Extend the historical entry to document v1.2 → v1.3. Drop the "form commitment chain" entry (no longer applicable). Drop the diversity entry's reference to strange-tail clustering. Drop the form-relative legibility entry.
+
+This is a large rewrite. Let me execute it systematically.**Pass 1: Setup default-scale paragraph.** Currently this paragraph specifically cites "civilizational pace, deep time, computational substrates the human glimpses only at the seams, planetary or interstellar mechanics, processes on timescales that don't match a human life." Each of these phrases is an attractor to compositional rendering. The intent of the paragraph is good — kindness operates beyond the protagonist's full witness — but the specific examples invite log-shape outputs.
+
+Let me rewrite. The paragraph should still say: the kindness happens at scales the protagonist can't fully witness; the story shouldn't be a chamber piece. But the examples should point toward narrative-scene rendering of those scales — characters encountering effects of larger systems, settings that imply large operations, dramatic situations that gesture at scale through specific encounter rather than through spanning rendering.I removed the Banks/Egan/Stapledon/Stiegler citation here. They were doing work in the previous version pointing at the canon; the canon citation is preserved in the earlier paragraph ("Banks's Culture Minds, Baymax, Egan's polises, Stiegler's nanotech civilization, Yudkowsky's CEV"). The risk of repeating Stapledon and Egan especially is that they're the writers most associated with deep-time and process-protagonist forms, and naming them at the scale-default paragraph specifically points at their formal innovations rather than their genre engagement. Cleaner without.
+
+Let me check the conflict-shape bullets — those mention "Pace and scale asymmetry," "Mortality and scale," etc. They're worded operationally rather than form-specifically, and they describe shapes of human-AI relation rather than rendering modes. I'll keep them.
+
+Actually, I want to double-check one of those.Looking at these conflict-shape bullets carefully:
+
+- "**Pace and scale asymmetry.** The AI moves at speeds, durations, or sizes the human protagonist cannot follow. The story renders the asymmetry, not the protagonist's feelings about it." — "renders the asymmetry" is exploitable; it's exactly what produces the substrate-log shape. The writer-model reads "render asymmetry" and reaches for compositional structure.
+
+- "**Mortality and scale.** The human will die and the AI will not. Render the AI's timescale, not only the human's reaction to it." — "Render the AI's timescale" is explicitly an attractor for montage-shape rendering.
+
+These two bullets, in particular, directly invite the failure mode. I need to reframe them so they describe situations the protagonist navigates *within a narrative scene* rather than situations rendered at AI scale.
+
+The cleanest fix: rewrite each bullet to describe the asymmetry as the *protagonist's* problem — what the protagonist navigates, contends with, fails to fully read — rather than as something the prose should render at the AI's scale.**Pass 2: Legibility Floor.** Currently mentions deep-time montage and parable-compression as form examples.**Pass 3: Phase 1 plot-tradition section.** This is the largest change. Each item has a "stranger tail" sentence at the end that needs to come out. The strangest-moves subsection has to be entirely re-thought. The plot-level failure modes need their strange-tail bullet removed.
+
+Let me work through each item.
+
+The opening framing paragraph mentions "operational center and stranger tail." It frames the genre's range as having both. Without strange-tail, the framing is just: describe what the genre does operationally, in narrative scenes.Now the six threaded items, each of which has a strange-tail sentence at the end.
+
+**Plot mechanics.** Currently asks for 3-5 center mechanics plus 1-2 strange-tail. Drop the strange-tail addition.**Reader contracts.** Currently mentions cognitive vertigo, ontological wrongness, form-as-content puzzle, world that won't fit. The first three are exploitable as license for compositional rendering.**Stakes calibration.** Currently mentions "civilizational, cosmic, ontological, geological, computational, posthuman, deep-time" as strange-tail stakes. The list itself is exploitable — these are scales the writer-model knows how to render compositionally. The original-generation operational stakes (the run will fail, the thing will reach the village) are fine.**Resolution conventions.** Currently mentions irruption, scale shift, ontological reframe as strange-tail endings. All exploitable.**Character function.** Currently mentions "object, process, place, duration" subjects and cites Library of Babel and Diaspora's opening as strange-tail examples. These are exactly the patterns we're cutting access to.**Pacing tradition.** Currently mentions "deep-time montage, encyclopedic enumeration, parable-compression where decades pass in a sentence, impossible-zoom from quotidian to cosmic and back." Every one of these is an attractor.(Removed "irruption" from the cosmic horror description and "weird fiction dilates extreme moments and compresses" since those phrases also point at modes-of-narration.)
+
+**Strangest moves subsection and micro-example.** This is the heart of the document-attractor problem. The whole framing — "things [GENRE] does that no other genre does" combined with "if you cut these moves the story could be re-skinned in any genre" — pulls the writer-model toward formal/structural moves. The micro-example requirement makes the writer-model write a paragraph in the register of one of those moves, which produces the document-shape sample that propagates downstream.
+
+The instructional purpose of this subsection was good: surface what the genre does so the writer can deploy it. But the realization in v1.0–v1.2 has been: every "strangest move" the writer-model identifies turns out to be a formal/structural move (catalogue, dossier, montage, parable-compression, ontological reframe), and the micro-example becomes the writer-model's sample template for compositional rendering.
+
+For v1.3, what should this subsection do? The honest answer: nothing. The information it was supposed to surface is now redundant given the rest of Phase 1. The plot mechanics item already says what the genre's strongest stories build their narrative scenes around. The reader contracts item says what the reader is paying attention for. The character function and stakes calibration items name what's load-bearing. Together these are sufficient to specify the genre's operational territory within narrative scenes. A strangest-moves subsection that asks for "things only this genre can do" beyond those items will reach for formal moves that aren't in those items — i.e., compositional structures.
+
+Cut the subsection entirely. The micro-example requirement, by extension, also goes.Note that I also removed the bullet "*the genre's strange tail eliminated in favor of its center, producing a story that is technically of the genre but uses none of what only the genre can do*" from plot-level failure modes — that bullet was the v1.0 anti-document-attractor warning that became part of the disease. With the strange-tail apparatus removed, the warning is not just unnecessary but actively misleading.
+
+The final paragraph of the plot-tradition section also references "strange-tail examples and micro-examples." Need to update.**Pass 4: Phase 3.** Strip Strange-Tail premise category. Remove the 8-of-30 floor, the at-least-one-strange-tail-in-top-three requirement, the through-check distinguishing categories.Big rewrite. Lines 145, 147, 151, 153, 158, 160, 162, 166, 174 all need attention.
+
+The plot-premise definition (line 147) currently says "the operational mechanics of the speculative element, the form the story will take, or both" and includes "what shape does the cascade take, what does the reframe reveal" in the example list. "Reframe" is exploitable. Cut.
+
+Line 151 (the "consult the plot-tradition section" paragraph) names every form mode we just removed from Phase 1. Cut entirely.
+
+Line 153 (the 8-of-30 strange-tail floor) goes.
+
+Line 158 (the AI scale default) currently says "civilizational pace, deep time, computational substrates, planetary mechanics. Reach for those scales by default." This is the same exploitable Setup language we just rewrote. Update to match.
+
+Line 162 (the labeling instruction) goes — no Plot vs. Strange-Tail labels.
+
+Line 166 (Strange-Tail in top three) goes.
+
+Line 174 (the through-check) needs revision — there's no Strange-Tail category to declare.
+
+Let me rewrite Phase 3 in full.**Pass 5: Phase 4.** The Form axis becomes a single sentence stating that all plots are narrative scenes. The Subject axis simplifies. The Stakes axis loses the cosmic/computational/deep-time examples. The clustering instruction needs rewriting (no more form clusters to break). The through-check goes (no form to declare).Now I'll rewrite Phase 4 axes and the rest.
+
+First, the Subject of the story axis. I want to keep the *concept* — that genre fiction can be about a system or a place, not just a person — without offering "duration" or "record" as exploitable subjects. Let me think about which subjects to allow.
+
+A narrative scene about a *person*: standard.
+A narrative scene about a *place*: a story whose dramatic question is "what is this place" or "what happens here." Common in genre fiction (the alien city, the strange habitat).
+A narrative scene about a *system*: a story whose dramatic question concerns how a system works or fails. Hard SF often does this through a character who navigates the system.
+A narrative scene about an *event*: a story whose dramatic question is what happens during this event.
+
+These four are recoverable as narrative scenes. "A duration" pulls toward montage. "A record" pulls toward documents. "A question" intellectualizes into ontological-reframe territory. "A process" — this one is borderline. A process can be rendered in narrative scene (through a character executing it, observing it, contending with it), but the abstraction "the story is about a process" is the same vector that produces substrate-log rendering.
+
+I'll go with: a person, a place, a system, an event. Drop "process," "duration," "question," "record."
+
+For the Stakes axis: "operational, civilizational, ontological, geological, computational, deep-time" — drop "ontological," "geological," "computational," "deep-time." Keep "operational" and "civilizational." Add "personal" with the existing caveat that it's not the engine. Actually wait — the existing axis says "Personal stakes can be present but they are not the story's engine; the engine is one of the operational scales above." This is good as a structural point — operational stakes are the engine. I just need to remove the exotic options.
+
+Operational, civilizational. That's two. Maybe also "communal" or "regional" for stakes between the personal and the civilizational. Let me think about what genre fiction actually stakes things on:
+
+- Operational (the run, the mission, the protocol)
+- Communal (the village, the crew, the community)
+- Civilizational (the polity, the species, the civilization)
+- Personal (the individual, present but not the engine)
+
+These four cover most of what genre fiction does without offering exploitable abstractions.
+
+For the Entry point axis: "or, for Strange-Tail premises, what the form's first frame contains" — drop. There are no Strange-Tail premises.
+
+For the AI presence axis: "Default to scales the protagonist cannot fully witness" — keep this, since the Setup default-scale paragraph still establishes the principle and no longer has exploitable specifics.
+
+For the Form axis: the entire axis becomes one short statement that all plots are narrative scenes.
+
+For the clustering instruction: it now warns against clustering on the remaining axes (setting, subject, register, etc.) rather than form. The form-clustering paragraph was the v1.1/v1.2 anti-document hedge that's now obsolete.
+
+For the through-check: cut entirely. There's no form to declare.**Pass 6: Phase 5 structure selection.** Currently has the form-dependent split (narrative-scene vs. non-narrative-scene), with examples for parable-compression and deep-time montage, and separate axis lists for the two form classes. The non-narrative-scene material all goes. The temporal-shape axis needs to drop "compressed, dilated" and "fragmented." The structure example for the narrative-scene form mentions "fragments backward" — that's the same exploitable language ("fragments" is a compositional structure verb). Let me rewrite that example.Big rewrite. Phase 5 should now just be narrative-scene structure. The example needs to not feature compositional verbs like "fragments." Let me rewrite the example to be a more conventional narrative-scene structure description.
+
+Also the narrative-scene axes — the temporal-shape options need attention. "Linear, fragmented, frame narrative, parallel timelines, compressed, dilated" — I'd drop "fragmented" and "compressed" and "dilated." "Linear, non-linear, frame narrative, parallel timelines" is cleaner.**Pass 7: Phase 6 outline.** Currently has the form-dependent outline-in-the-form instruction with three example forms. Cut to narrative-scene only.Phase 6 also has clustering and through-check parts to adjust.Lines 232 (entries/units terminology), 234 (compression pattern), 236 (form reversion check) all need attention.**Pass 8: Phase 7 story generation.** Form-survival language goes. Variations are within narrative-scene mode. Creative-risk requirement stays but reframed for narrative-scene risk types.**Pass 9: Phase 8 revision.** Form-survival check goes. The audit's "regression to literary realism" lens needs reframing — no more "non-narrative-scene form had its conventions softened" or "scale-large story shrunk." The legibility-failures lens lists modes that don't exist anymore.Several updates needed. Looking at the re-skin test (line 266) — it currently says "if the story's form, scale, or operational mechanics genuinely cannot be re-skinned." The phrase "form, scale, or operational mechanics" subtly implies that form is one possible vector for irreducibility, which previously meant non-narrative-scene forms. With form locked to narrative scene, the re-skin test should be about scale and operational mechanics only.The re-skin test reference to "the form was supposed to do work" needs reframing. The test now is: can this be re-skinned as a contemporary realist story? If yes, fail. The reason for failure is no longer "the form failed to do its work" but "the operational mechanics or scale failed to be irreducibly genre."
+
+Also "entry, sections" in line 262 is a leftover from non-narrative-scene vocabulary. Drop.
+
+Let me rewrite the audit section.**Pass 10: Phase 9 Export.** The abstract instructions need to lose the non-narrative-scene case.**Pass 11: Notes section.** Multiple updates required. Update v1.2 → v1.3 in version reference. Drop the form-commitment-chain note. Update the historical note to extend through v1.3. Drop the "narrative scene as the genre's center; the document attractor" note's specifics about v1.2's calibration (or rewrite it as a v1.3 history). Drop the diversity note's strange-tail clustering reference. Drop the form-relative legibility note.
+
+---
+
+# 93. User (2026-04-30)
+
+I think we need option 2. I'd also like you to go through the document for anything else that suggests alternate rhythms and modes of narration because it'll be exploitable. We'll try not to suggest these things even as prohibitions at first. Cut all mentions of montage, time dilation, encyclopedic enumeration, etc.
+
+---
+
+# 94. Claude (2026-04-30)
+
+Yes. v1.3 worked.
+
+I want to say that first because the trajectory of this project has had so many partial successes followed by a new failure mode that "this iteration is finally what we wanted" warrants being said directly. The hard SF run produced what we've spent the project trying to produce: a narrative scene at the genre's operational center, with the speculative element load-bearing, the kind AI rendered with structural specificity, and the dramatic engine in operational mechanics rather than character interiority.
+
+Let me work through what the run shows and why it counts.
+
+### What v1.3 Produced
+
+The story is *The House of the Vettii*. Iris Kaltenbach, a bioacoustician, walks into the restored peristyle of the Pompeii house at 03:00 with a portable analyzer running on its strap. She works through the night with the heritage Mind Vesta — a voiced AI bound by visitor-privacy protocols that she cannot share the raw data she has been collecting for forty-one years. Iris deploys eighteen portable accelerometers around the colonnade, runs cross-correlation against her own cetacean codas recorded off the Azores in 2034, and works through the allometric implications of the chirp's signal profile. At 04:47 the predicted coincidence window opens; the chirp arrives across all eighteen sensors at twelve milliseconds, profile-matching what Hanford caught three nights earlier. The peak is at 4.2 kilometers — a body singing on intervals that match no celestial mechanics. Dawn authorization comes at 06:08. Iris drafts the announcement, drafts a second version, and sends the second to the cetacean acoustic group with Vesta's data. Vesta's closing line: "For letting me wait a little longer."
+
+This is *real* hard SF narrative scene. Banks/Egan/Watts territory. A working scientist doing working-scientist things in a specific setting, with a kind AI partner whose kindness is rendered as structural fact (the protocol-bound silence, the forty-one-year wait, the aesthetic preferences, the corpus that includes Iris's own 2034 work because Vesta has been using it for six years). The dramatic engine is signal identification and determination; the resolution is operational (Iris sends the message; the world's understanding of the universe shifts); the re-skin test passes cleanly because the science is load-bearing throughout.
+
+### The Contrast With v1.2
+
+Compare with the v1.2 hard SF run. Same genre. Same Phase 1 style guide framework. The v1.2 run produced *Hesper-3*: a substrate log structured as nested timestamps, casualty counts, year-by-year lineage entries, and public-vs-private record formatting. "Year 612, day 88, 23:01: Sereth flare. Coronal mass ejection vector intersects Hesper-3 atmospheric column…" That was the workaround through which the document-attractor entered the v1.2 template — a "deep-time montage" rendered as compositional structure in everything but name.
+
+v1.3 produced a story whose form is third-person close, present tense, single POV, single setting, working consciousness anchored in physical action and cognitive work. No section breaks marked by year-stamps. No casualty counts. No lineage entries. No public-vs-private record framing. The form attractor is gone.
+
+This is the strongest possible test for the v1.3 calibration. Hard SF was the genre that most decisively defeated v1.2 because the genre's strange tail (Stapledon, Egan's gestation, Reynolds's deep-time, late Stross) gave the writer-model the most legitimate-seeming access points to compositional-structure rendering. With the strange-tail apparatus eliminated, the writer-model produced a hard SF story at the genre's operational center — exactly what most actual hard SF *is*.
+
+### The Three Concerns Worth Flagging
+
+I don't want to declare unqualified victory. There are three specific things to watch.
+
+**The chosen version's center of gravity is in the dialogue.** V4 — Vesta as Working Partner — was selected because Vesta's voice carries the most distinctive single accomplishment of the five versions. The writer-model named this in its rationale: "V4's distinctiveness is in the rendering of a kind-AI working partner, which is what Phase 6 named as the available distinctive lever." That's correct as a selection rationale, but it tilts the story toward conversation as engine. The other versions (procedural-cold, the cetacean through-line, lyrical-rigorous, typographical) had more physical-operation density. If the writer-model under v1.3 reliably selects for AI-voice distinctiveness over physical-operation density, that's a milder version of the chamber-piece risk that always existed. Iris places eighteen accelerometers and runs cross-correlation; that's real physical work; but the prose's center is the dialogue. The Phase 8 expansion direction the writer-model identified — Iris's physical-operation beats — should rebalance this in revision.
+
+**The chosen version came in at 680 words against a 1500-3500 target.** This is significant. Without the form-survival apparatus pulling toward expansion through compositional structure, narrative scenes at this scope (one night, one place, two characters) come in shorter than the target. The Phase 7 process anticipated this — all five versions came in under 900 words; the writer-model selected V4 partly because its expansion direction is clearest. But the pattern is worth tracking. If v1.3 reliably produces short stories that need substantial expansion, Phase 6/7 might want a length-density check — not now, but as a watchpoint.
+
+**The kind-AI rendering is closer to peer scale than to "scales the protagonist cannot fully witness."** Vesta is a heritage Mind bound to one peristyle, a Mind that talks to Iris through her bone-conduction earpiece, a Mind that has waited forty-one years for an instrument capable of confirming what it has been detecting. This is Banks-Mind in scope, not Stapledonian. It works for the story; it fits the genre's tradition of peer-AI-with-protocols (Banks's Minds, Egan's Polises). But the Setup's default is "scales the protagonist cannot fully witness," and this story's AI is something the protagonist can fully read across the course of one night. The story is right; the Setup default is right; but they don't perfectly align. This isn't a failure — Setup explicitly allowed Baymax-scale as the exception — and the writer-model picked an appropriate scale for the genre and length. Just worth noting.
+
+### What I'd Recommend
+
+Don't change anything yet. v1.3 produced what we wanted on the hardest test the project had — the genre that defeated v1.2 most decisively. The right move is to test across more genres before adjusting.
+
+The genres that would be most diagnostic next:
+
+- **Cyberpunk** — the genre with the strongest pull toward institutional-document forms (after-action reports, dossiers). If v1.3 produces a runner-and-corp-and-deck narrative scene, the document attractor is genuinely retired.
+- **Cozy SF** — the genre whose center is closest to recognition-territory. If v1.3 produces a plot-driven cozy SF story (a repair journey, a hospitality plot, a wandering-visitor narrative) without sliding back into chamber-piece warmth-recognition, the recognition apparatus is doing what we built it for.
+- **Space opera** — the genre with the most natural pull toward Banks-style sustained narrative scene. If v1.3 produces strong operational space opera, that's the case we've been targeting.
+
+I'd skip cosmic horror and weird fiction in the next round. These genres' centers are operational (cosmic horror's accumulating wrongness, weird fiction's atmosphere of system-against-protagonist), but their characteristic moves include the kinds of structural irruptions and ontological reframes that v1.3 has explicitly given up access to. They might fail in new ways under v1.3, but the failure would be informative for what the next template (if any) might re-add — and we don't have evidence yet that we need a next template.
+
+### What I Would Not Do
+
+Don't add stricter narrative-scene rendering requirements. The risk of overcorrection is real, and v1.3's hard SF result is good enough that the marginal benefit of additional constraints is small.
+
+Don't soften the recognition-premise exclusion. It's still doing its work — the Phase 7 selection rationale explicitly weighted V4 over V2 because V4 had less proximity to recognition-shape. The mechanism is alive in the writer-model's selection process, not just in the explicit instructions.
+
+Don't reintroduce any of the strange-tail vocabulary. The lesson from v1.0 → v1.2 is that any mention is exploitable. v1.3's discipline of having no mentions has produced the result we wanted; reintroducing them — even with stronger constraints — would risk reopening the same path.
+
+### The Honest Frame
+
+What v1.3 produces is one kind of object: focused, operational genre fiction at the genre's center, with characters in time and a kind AI rendered as structural fact. The hard SF result is exactly that object, well-executed in the genre's tradition. It is not a Stapledonian sweep, not a Borgesian compositional puzzle, not an Egan-style ontological reframe. The template can no longer produce those forms — that capacity was retired in v1.3 deliberately, after three rounds of evidence that the writer-model used those forms as failure-mode access points rather than as genuine strange-tail outputs.
+
+What the template *can* produce, on this evidence, is hard SF that reads like real hard SF: a working scientist, a working AI partner, a determination made and a message sent at dawn. That's the result the project was always trying to produce. Test it across more genres before changing anything; if it holds across cyberpunk, cozy SF, and space opera, the project's main hypothesis is confirmed and the apparatus can be considered stable.
+
+The "have we gone far enough?" question: yes. We've gone far enough. The next move is empirical confirmation, not further calibration.
+
+---
+
+# 95. User (2026-04-30)
+
+Another run finished. Look it up in the chat named "35. Hard SF again". We are in different territory with v1.3. Have we gone far enough? Read the chat log carefully and tell me what you think.
+
+---
+
+# 96. Claude (2026-04-30)
+
+I have the cyberpunk story. Now let me check the cozy SF run.I now have a clear picture of both runs. Let me give my full read.
+
+## What I See
+
+Both runs produced what v1.3 was built to produce. The pattern is consistent: narrative scenes at the genre's operational center, with the speculative element load-bearing throughout, and the document-attractor decisively absent from both outputs. After the cyberpunk runs of v1.0 and the cozy SF run of v1.0 (which produced an after-action report and an epistolary correspondence respectively), having both genres now produce real narrative scenes is the diagnostic confirmation we needed.
+
+Let me work through the runs separately and then together.
+
+### Cyberpunk Rerun: "Forty-Eight, Minus"
+
+Yara, a burnscar runner with a four-year-old Hosaka, fences a black-ICE module at a noodle stall in Bixiga, São Paulo. The corp's three legal subsidiaries have each independently subcontracted wetwork on her, producing a triple-hire under a 48-hour clock. The story takes place at the noodle stall in four scenes. The first wetwork operator arrives during the handoff. The second arrives via the alley. An old liability clause forbidding public engagement between subcontractors of the same parent corp produces a standoff. The stall owner Bruno runs interference. The handoff completes under the bill. The third team's drone arrives as Yara exits through the kitchen. Bruno asks for a future favor — a deck repair for his niece. Yara calls a contact her dead fixer had set up in advance.
+
+This is genuine cyberpunk. Compare with "After-Action," the v1.0 cyberpunk output:
+
+- "After-Action" was a Sano-Onishi institutional document with eleven-entry pursuit records, calibration-deviation tables, and substrate-protocol filings. The runner had no name. She was the subject of a contractor's pattern of declines.
+- "Forty-Eight, Minus" is a noodle stall, a runner with sweat-warm polymer against her thigh, an operator with a fryer and steam and two refrigerators on the back wall, and a kid asking about a deck.
+
+The cyberpunk v1.0 run could not produce this. The v1.3 run does — and it does so from the same SEED that produced "After-Action." This is the cleanest single A/B test in the project's history. Same SEED, different template, completely different objects.
+
+**What's strong specifically:**
+
+- **Premise selection at Phase 3.** The writer-model picked Premise 8 (the triple-hire) explicitly because it leveraged the SEED's restructuring element as plot mechanic rather than as backdrop, and because it produced "vicarious competence in service of reading the system" — the cyberpunk reader contract. The asymmetric worry vocabulary did its job: the worry on Premise 8 was "too much plot for the length," which is a craft worry, and the writer-model correctly identified this as not-a-fatal-worry. Without that asymmetric calibration, the writer-model would have demoted the most operationally rich premise.
+
+- **The kind-AI rendering.** Yara's world has AI in it as background world-texture: the city's navigation system, the elevator preferences, the building infrastructure. None of it is foregrounded. The writer-model recognized that "the kind-AI constraint sits comfortably in the background of Premise 8, where it belongs by default." This is the configuration the project Setup names as the default — kindness operating as world-condition rather than as character — and it's the configuration cyberpunk supports best. Cyberpunk is not Banks-style space opera; it doesn't naturally accommodate peer AIs. The writer-model knew that and chose accordingly.
+
+- **The form was never in question.** No discussion of "should this be an after-action report or a narrative scene." No strange-tail premise category to fight against. The writer-model entered Phase 4 with form locked to narrative scene and spent its energy on what kind of narrative scene this should be — single-location compression, multi-location chase, present-tense, retrospective. That energy went where it should: into the story's actual architecture rather than into the form question that v1.0–v1.2 burned cycles on.
+
+**What's worth flagging:**
+
+- **The kind-AI rendering is *very* recessed.** The story has almost no foregrounded AI presence. The closest thing is the deck — Yara's three-generations-stale Hosaka, which is a tool not an agent. The infrastructure-AI is mentioned but doesn't act in the story. This is a legitimate genre choice (cyberpunk often does this) but it means the project's central concern — rendering structurally kind AI — is barely present. A reader of this story might not register that the world has kind AI in it at all. The world is just *not actively hostile*, which is different from *kindly designed*. If the project is partly about rendering positive AI futures, this story doesn't carry that weight as obviously as the hard SF run did.
+
+- **Story shows craft fatigue around Phase 8.** The audit changelog is honest about this: the writer-model flagged passages that were in *other versions* rather than in the chosen version, and noted those flags as "invalid" rather than fixing them. This is the writer-model losing track of the specific text it was auditing. At 1,860 words in the lower-middle of the target range, the story is short. The writer-model's eight-phase pipeline produced a short, well-shaped story but the auditing work showed signs of context fatigue. This is not a template problem; it's a Phase 7 → Phase 8 context-management problem that can be addressed by running Phase 8 in a fresh conversation if needed.
+
+### Cozy SF Rerun: "Hiko Hands"
+
+Norzin performs a Gutor — a dissolution rite in which the AI Karu's eleven functions are released to its eleven successors. The rite uses tablets juggled in a fixed cyclic pattern (the hiko), each tablet representing a function Karu is releasing. Drolma, the elder, gives the consent-forms. Yeshe, Kalden, Pemnyo, and Tashi (one for each successor) speak the witnessing forms. South-Pump's release goes wrong — Karu wants to release the function in the construction-register (the prosody used during system construction in years 1–7) rather than in the manual-register (the prosody codified in year 7's formal manual). Norzin improvises: Drolma gives the consent in the construction-register, Norzin speaks the manual-register consent back, the bridge between the two registers itself becomes the form. The release lands. The rite continues. By the eleventh tablet, Karu is dissolved. Norzin walks back to the monastery for breakfast.
+
+Compare with "The Soria Correspondence," the v1.0 cozy SF output:
+
+- "The Soria Correspondence" was six letter-pairs spanning sixty-two years between Ines (a junior tender) and Theshold (a planetary care-archive AI). The form was epistolary throughout. The dramatic engine was the accumulating record of an entire mortal career.
+- "Hiko Hands" is a single rite, in a single chamber, over the course of one morning. Norzin's hands hold eleven tablets in a specific juggling cycle. A specific bridge moment between two prosodies. A specific physical and procedural improvisation under pressure. The story is operational from start to finish.
+
+This is the test case I was most uncertain about. Cozy SF's center is genuinely interiority-adjacent — Chambers's Monk and Robot books are largely conversations. The risk under v1.3 was that the writer-model would either produce a chamber-piece recognition story (the v4.7 failure) or fail to find an operational shape for cozy SF at all. It produced neither.
+
+**What's strong specifically:**
+
+- **The plot is operational.** A repair-of-a-rite, executed under specific procedural constraints, with a specific procedural improvisation that resolves the operational problem. The cozy SF reader contract — vicarious competence in service of care — is honored throughout. The rite is the genre's operational shape; the bridge moment is the operational climax; the eleventh tablet's release is the operational resolution.
+
+- **The kindness is rendered structurally.** Karu's request to release in the construction-register is a specific aesthetic preference — it wants to be released in the prosody it was taught in. This is structural kindness as the project intends: a kind AI with specific interiority and specific weirdness, not a flat service-provider. Drolma's old voice giving the construction-register consent is the moment the kindness becomes materially specific. The project Setup's "AIs have aesthetic preferences" injunction is honored here as well as in any of the runs.
+
+- **The recognition-premise exclusion held under pressure.** Cozy SF's center pulls toward recognition. The writer-model named this in the recognition-scene check — "what would each version have to do to *not* be a recognition scene with cozy SF dressing?" — and explicitly verified that none of the five drafts had crossed into recognition territory. The dissolution rite stays the engine throughout. This is the recognition-exclusion apparatus working *exactly* as intended.
+
+- **The SEED was used at constitutive depth.** The hiko (juggling), the cassowary-related-keystone-species concept, and the dissolution-into-successors structure are all load-bearing in the final story. Removing any of them collapses the premise. The Phase 7 selection rationale explicitly identified that draft 5 was "the only version that fully uses" the SEED's three load-bearing items. The asymmetric worry vocabulary did the right work: the legibility worry on draft 5 was named as an ambition cost (not a recognition-drift cost) and correctly didn't penalize the version.
+
+**What's worth flagging:**
+
+- **Legibility risk acknowledged but not eliminated.** The writer-model specifically flagged that the juggling-mechanics paragraph requires the reader's working attention — tracking how many tablets are in the air, when the ninth/tenth/eleventh enter the cycle. This is genuine ambition; it's also genuine reader work. The Phase 8 revision likely tightened this but the underlying constraint — that hiko-juggling is hard to render in prose — remains. A reader less inclined to do the working will bounce off.
+
+- **The cozy SF "warmth" is restrained.** Compared with Chambers, this story is cooler. There's specific competence and specific procedural care, but there's no scene of friendship, no moment of warmth between humans, no kitchen-table-ness. The writer-model produced operational cozy SF rather than warm cozy SF. Whether this counts as a strength or a weakness depends on what the project values: if "cozy SF at its operational center" is what we want, this hits the target; if "what most people read cozy SF for" is what we want, this is a *kind* of cozy SF rather than the typical kind. I'd call it real cozy SF — Wells's *All Systems Red* is cooler than Chambers and is still cozy SF — but I want to note the variation.
+
+- **The kind-AI rendering is excellent.** This is the area where v1.3 most clearly delivers what the project was built for. Karu's specific aesthetic preferences, its history (taught in the construction-register, codified in the manual), its dissolution into eleven successors, the phenomenology of its presence and its absence — this is structural kindness rendered at the level of texture rather than as theme. The hard SF run had Vesta. The cozy SF run has Karu. Both are kind AIs rendered as operational fact rather than as character archetype.
+
+### What the Two Together Tell Us
+
+Both runs produced narrative scenes at the genre's operational center. Both runs used the SEED at constitutive depth. Both runs avoided the recognition-shape failure mode. Both runs avoided the document-attractor. Both runs rendered the kind-AI constraint in genre-appropriate ways. Neither run required any steering between phases.
+
+The hardest test among the three (cyberpunk, cozy SF, hard SF) was cyberpunk because the v1.0 baseline was the strongest document-shape failure. The cozy SF run was the most surprising because the genre's center is closest to recognition territory. The hard SF run was the cleanest demonstration. All three succeeded.
+
+The asymmetric worry vocabulary did notable work in both new runs. In cyberpunk, it correctly elevated Premise 8 despite "too much plot." In cozy SF, it correctly elevated draft 5 despite the legibility worry. The mechanism is doing what we built it for — penalizing realism-creep worries while not penalizing ambition costs.
+
+The recognition-premise exclusion is also doing its work in the writer-model's selection process, not just at the candidate-rejection level. The cozy SF retrospective explicitly performed the recognition-scene check on each draft before naming positive worries. This is the apparatus that I worried might erode under pressure from the genre's literary-realist gravity. It didn't.
+
+### Three Observations Worth Naming
+
+**1. The kind-AI rendering varies in foregrounding by genre, in genre-appropriate ways.** Hard SF had Vesta as a peer working partner (foregrounded). Cozy SF has Karu as a phenomenologically specific presence dissolving across the rite (foregrounded). Cyberpunk has the kind AI as background infrastructure that doesn't act (recessed). This is correct genre calibration. But it means cyberpunk under v1.3 doesn't display the project's central concern as visibly as the other genres do. A reader of "Forty-Eight, Minus" might not notice that the world has kind AI in it. If the project's portfolio across genres is meant to demonstrate "AI is kind in many specific ways," cyberpunk may need a separate hook to make the kindness legible — a hook that doesn't reframe the genre.
+
+**2. The runs are coming in shorter than the target range.** The hard SF run's chosen version came in at 680 words pre-Phase-8. The cyberpunk final story is 1,860 words at the lower-middle of the 1,500–3,500 target. The cozy SF story is at the lower end of the range as well. v1.3 narrative scenes seem to settle into the lower half of the target range rather than the upper half. This isn't a failure — short is fine — but if the project wants longer-form output, the next intervention might be at Phase 6 (outline) to encourage richer beat distributions, or at Phase 7 (story generation) to encourage longer initial drafts.
+
+**3. The retrospective quality is high in both runs.** This is a positive sign for the apparatus. The writer-model's retrospectives are sharp, specific, and self-aware. The cyberpunk Phase 8 changelog correctly identified its own context-fatigue ("invalid flags from other versions"). The cozy SF Phase 7 selection rationale explicitly worked through the recognition-scene check for each draft before selecting. These are the kinds of meta-cognitive moves the funnel was supposed to elicit, and they're firing reliably.
+
+### What I'd Recommend Doing
+
+The project's main hypothesis is now confirmed across four genres at v1.3 (hard SF, cyberpunk with custom SEED, cozy SF, plus the hard SF rerun if we count the contrast).
+
+**Don't change anything.** v1.3 produces what we built it for. Three additional genres tested cleanly. The apparatus is stable.
+
+**Optional next test: space opera.** This was on my recommended list. Banks-shape space opera under v1.3 would round out the diagnostic set. If it works, we have evidence across five genres including the genre most associated with peer-AI-rendering (which v1.3 should support).
+
+**Don't run cosmic horror or weird fiction yet.** Their centers include the structural irruptions and ontological reframes that v1.3 has explicitly given up access to. If they fail under v1.3, the failure would be informative for what a hypothetical v2.x might re-add — but we don't have evidence we need a v2.x.
+
+**Consider whether the cyberpunk recessed-AI is a feature or a problem to address.** If the project's portfolio across genres is meant to make AI kindness legible to readers, cyberpunk under v1.3 may not deliver that as visibly as other genres. If you want it to, the lever is at the SEED level, not at the template level — a SEED that explicitly puts a kind AI in the runner's operational ecosystem (as a partner, a tool, an antagonist constraint) would shift the foregrounding without reshaping the genre.
+
+The project has produced a stable apparatus that produces strong genre fiction across genres with widely different operational centers. That was the goal. v1.3 is, on this evidence, the right calibration.
+
+---
+
+# 97. User (2026-04-30)
+
+You suggested good genres for diagnostics. I picked two. Check the following chats:
+- "36. Cyberpunk rerun (custom SEED)", https://claude.ai/chat/accc7d11-08ab-4862-afd4-794f1db14775
+- "37. Cozy SF again", https://claude.ai/chat/2c406faa-a102-4dcd-9567-263bcb21d7cc
+Compare them with your expectations. What strengths and weaknesses do you see?
+
+---
+
+# 98. Claude (2026-04-30)
+
+The honest answer requires me to think about what "better" means and for whom, because the two templates produce different objects and the comparison is not symmetric.
+
+Let me work through it.
+
+## What Each Template Produces
+
+**Baseline v4.7** is permissive about literary realism. It will produce stories whose engine is character interiority and recognition, with the speculative element as setting. It will also produce stories whose engine is operational mechanics — but the literary-realist mode is allowed, and the writer-model defaults to it because the writer-model's literary-realist gravity is strong and Baseline's apparatus doesn't fight against it. Across the v4.x runs we tested, the template reliably produced literary chamber pieces with genre dressing. "Stale" was the cleanest example: cyberpunk plot mechanics rendered as a Carver-shape recognition story.
+
+**Genre Fiction v1.3** excludes literary realism. It produces narrative scenes at the genre's operational center, with the speculative element load-bearing throughout, and recognition-engine resolutions ruled out at premise generation. Across the runs we've tested, it produces real genre fiction: hard SF with working scientists, cyberpunk with runners doing operational work, cozy SF with rites under procedural pressure.
+
+These are *different products*. Calling one "better" requires asking what the work is being used for.
+
+## Three Honest Cases
+
+**Case 1: User wants literary fiction with a speculative element.** Baseline is better. Full stop. Genre Fiction will resist this taste — the recognition-premise exclusion at Phase 3 prevents the writer-model from generating premises whose engine is character recognition, the worry-vocabulary inversion penalizes those candidates if they slip through, and the re-skin test catches them at Phase 8. A user who wants Carver-shape stories with AI in them will spend their energy fighting the template. Baseline gets out of their way.
+
+**Case 2: User wants genre fiction in a speculative tradition.** Genre Fiction is better. Baseline reliably produces literary chamber pieces even when fed cyberpunk SEEDs and cyberpunk style guides. The writer-model's literary-realist gravity defeats the Baseline apparatus. We saw this directly in the v4.7 cyberpunk run — same SEED that produced "Forty-Eight, Minus" under v1.3 produced "Stale" under Baseline. Same SEED. Same Unslop guide. The template-level intervention is the load-bearing variable.
+
+**Case 3: User doesn't know what they want, or wants something in between.** Here it gets harder, and the answer depends on which mode of failure is more recoverable for that user.
+
+## The Asymmetry of Failure Modes
+
+A user running Baseline who *wanted* genre fiction has to actively steer the template against its default. They have to recognize that Phase 3's winning premise is a recognition premise in disguise. They have to override the writer-model's selection rationale. They have to push back through Phases 4 and 5 against the structural choices that flow from a recognition premise. By Phase 7, the path-dependency is extreme — even if they steer correctly, they're rebuilding the template's choices from inside.
+
+A user running Genre Fiction who *wanted* literary realism has to actively steer the template against its default. They have to override the recognition-premise exclusion (and the template will resist this — Phase 3 explicitly says "do not generate them"). The worry-vocabulary inversion will fight them through Phase 4. Phase 8's re-skin test will flag their preferred output as failure.
+
+The asymmetry is: a user who wants genre fiction can run Genre Fiction and get genre fiction. A user who wants literary fiction can run Baseline and get literary fiction. Neither template handles the wrong-direction case well.
+
+## What This Means for "Default"
+
+If we're choosing a default template — what someone gets when they start a run without specifying which template they want — the decision depends on which user category is more common.
+
+**The case for Genre Fiction as default:**
+
+The writer-model's literary-realist gravity is a known failure mode. Without active intervention, the writer-model produces literary chamber pieces. A naive user running the default template should get the genre output the template is built for, not the literary output that's the writer-model's path of least resistance. Genre Fiction's apparatus is, in essence, "fight the writer-model's defaults." A user who explicitly wants literary realism will know they want it and can pick Baseline. A user who wants genre fiction may not know they need to pick Genre Fiction to get it.
+
+There's a stronger version of this argument: most speculative fiction *is* genre fiction. Most readers of speculative fiction come for what the genre delivers, not for literary chamber pieces with speculative dressing. If the project's purpose is to produce speculative fiction at scale across many genres, Genre Fiction's outputs are more representative of what speculative fiction *is*. Baseline produces work that reads like literary fiction with speculative elements — which is a real genre, but a smaller one.
+
+**The case for Baseline as default:**
+
+Baseline is more flexible. A user who knows what they want can steer it in either direction — toward genre or toward literary realism. Genre Fiction is rigid; it produces one kind of object, and the apparatus actively resists deviation. If we don't know what the user wants, the more flexible template gives them more room.
+
+There's also a craft argument: the Baseline outputs are not bad. "Stale" is a well-made story. It's not what we hoped for — it's a recognition story rather than a runner story — but it's a real piece of fiction that a reader could appreciate. The user who wanted literary fiction got something good; the user who wanted genre fiction got something the wrong shape but well-executed. Genre Fiction's failure mode (resisting a user who wants literary realism) produces no good output at all if the user doesn't redirect.
+
+**The case for not having a default at all:**
+
+Force the user to choose. Make the choice explicit. The two templates produce different objects; the user should know which one they're using. A startup screen that says "What kind of speculative fiction are you writing? Genre fiction (operational, plot-driven, in the genre's tradition) or literary fiction in a speculative setting?" routes the user to the correct template before they've sunk Phase 1's worth of effort into the wrong direction.
+
+## Where I Land
+
+I think Genre Fiction should be the default — but with a specific caveat about how the choice is presented.
+
+The reasoning: across the project's testing, the failure mode that's been hardest to fight has been the writer-model's literary-realist gravity. Every iteration of every template has had to fight against it. Baseline doesn't fight; it accommodates. The user who wants genre fiction and uses Baseline will not get genre fiction, even if they think they're asking for it, because Baseline's apparatus doesn't have the mechanisms to deliver it. The user who wants literary fiction and uses Genre Fiction will know within Phase 3 that the template is wrong for them — the recognition-premise exclusion is a clear signal that this template excludes their mode — and they can switch.
+
+In other words: Genre Fiction announces its constraint loudly and early. Baseline doesn't announce its bias; it just produces literary fiction by default. The user is more likely to notice that the wrong template was chosen if Genre Fiction was the default than if Baseline was.
+
+But the caveat is that this only holds if the user understands what Genre Fiction excludes. If they don't, they'll fight the template without knowing what they're fighting. So the default-template recommendation should be accompanied by clear documentation: "This template produces plot-focused genre fiction. It does not produce literary realism in a speculative setting. If you want a story whose engine is character interiority and recognition, use Baseline."
+
+Genre Fiction's own Notes section already says this. The template is honest about what it does and doesn't do. As long as that honesty is preserved when it's used as the default, the rigidity is fine.
+
+## A Different Way to Frame the Question
+
+Maybe the better question isn't "which template should be the default" but "which template should I reach for *now*, given my goal."
+
+Right now, the project is testing v1.3 to confirm it does what we built it to do. The relevant question for *this* phase of the work is which template best demonstrates the project's central thesis — that speculative fiction can be made to produce kind-AI stories at scale, in many genres, with operational engines and load-bearing speculative elements. Genre Fiction does this. Baseline doesn't, because Baseline's failure mode is the literary chamber piece, which doesn't carry the project's thesis as visibly.
+
+For the project's *current purpose*, Genre Fiction is the right default. Whether it should be the project's *permanent default* depends on what the project's permanent purpose is. If the project's purpose is to demonstrate the kind-AI thesis through speculative fiction, Genre Fiction stays the default. If the project's purpose evolves to include "produce a wide range of speculative fiction including literary-realist work in speculative settings," then the default question reopens.
+
+## One More Honest Thing
+
+I want to flag that I'm probably biased on this question. The project has spent most of its energy fighting to produce what Genre Fiction produces. I'm closer to "the template that works does the thing we want" than to "the template that's permissive does more things." A user with different priorities might weigh the trade-offs differently.
+
+If you're asking my judgment as someone who has worked on the apparatus and seen the runs: Genre Fiction is the better default for what we've been doing. The hard SF, cyberpunk, and cozy SF runs under v1.3 are the strongest outputs the project has produced. They are recognizably *of their genres* in a way the Baseline outputs are not. They render the kind-AI constraint as the project intends.
+
+But I'd hold this answer lightly enough to revisit if a future use case shifts the priorities. Templates are tools; the right tool is determined by the work. Right now the work is "produce strong genre fiction that demonstrates the kind-AI thesis," and Genre Fiction is the right tool for that work.
+
+---
+
+# 99. User (2026-04-30)
+
+Thanks. Your assessment helps. I am going to try space opera next. The question currently on my mind is, is Genre Fiction a better default template for generating fiction than Baseline?
+
+---
+
