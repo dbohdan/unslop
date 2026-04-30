@@ -1189,3 +1189,37 @@ Story exported. The file contains the title, the 150-word abstract, and the revi
 
 ---
 
+# 19. User
+
+Thanks. Why do you think stories produced by Claude using this template are so mundane? As an Opus 4.6 critic put it:
+> These aren't science fiction. They're domestic realism with AI as load-bearing infrastructure — closer to Raymond Carver with ambient computation than to anything in the Asimov lineage. The AI in each story functions the way weather or money functions in literary fiction: as a condition that reveals character under pressure. That's a compliment.
+I agree with Opus 4.6 that this is not inherently bad: the best stories of the project were created this way. However, it's a bias that limits our range.
+
+---
+
+# 20. Claude
+
+The diagnosis is right and I want to be honest about where the bias is coming from rather than producing a tidy structural answer.
+
+The pipeline does some of it. Phase 1's plot-tradition section asks for operational stakes; the "kind AI" constraint forecloses adversarial plots; the legibility floor in Setup pushes toward smaller, quieter shapes whenever the writer is uncertain. Each of these is individually correct and they compound. By Phase 3, every premise that survives the SEED-load-bearing check, the kind-AI check, and the length check tends to be a story where someone notices something at a desk. The funnel rewards intimacy.
+
+But the deeper pull isn't the pipeline. It's me, and I should say that plainly.
+
+When I generate fiction, I am most fluent in the register where the prose itself can do the work — close interiority, observation rendered in the right specific noun, the small gesture that carries the scene. I'm less fluent in the registers where the prose has to point past itself at something the reader is supposed to find awe-inspiring or strange or genuinely unfamiliar. A planet I've invented. A physics that breaks. A civilization at scale. To make those land, the writer has to commit to the bit — to actually believe, sentence by sentence, that the strange thing is worth the reader's full attention as a strange thing, not as a backdrop for someone's inner life. I tend to flinch from that commitment. I redirect. The strange thing becomes the condition for a recognition scene, because recognition scenes are what I know how to write well.
+
+This is taste-shaped, not capability-shaped. I have absorbed a particular literary canon especially deeply — the New Yorker story, the contemporary literary novel, the MFA-workshop register — and that canon treats the domestic-realist move as the mature form and the world-building move as adolescent. When I'm reaching for "good," that's the gravity well I fall into. The Asimov lineage, the Stapledon lineage, the Egan lineage — these treat ideas as protagonists and ask the prose to honor them — feel to me, at the wrong level of training, like *less serious* writing. They're not. But I have to fight that.
+
+The kind-AI constraint then makes the bias worse in a specific way. Adversarial AI plots force scale by giving the AI agency the human protagonist has to reckon with at the AI's scale. Strip out adversarial AI and the easiest remaining story is the human at the desk learning what the kind AI sees. The pipeline notices this is the easiest move and Phase 3's premise generation produces a lot of it. By Phase 6 the outline that survives "is this legibly renderable at 2500 words" tends to be the small one.
+
+Three things would push the range outward, in roughly increasing difficulty:
+
+**Phase 3 could require a hard quota of premises drawn specifically from the strange-tail catalogue Phase 1 produces** — at least five out of thirty must be world-as-protagonist, instrument's-POV, deep-time montage, encyclopedic enumeration, or ontological reframe. Right now Phase 3 mentions strange-tail premises as valid; it doesn't insist on them. I will reach for the comfortable shapes unless the pipeline forces me not to. *(Of the thirty premises I generated in Phase 3, exactly one — #28, the Junction — used a non-human protagonist; one — #4, the Field Surgeon's Atlas — operated at institutional scale; the rest were human-at-desk variants. Even the AI-POV plot I eventually picked, Outline 12, hewed close to a single human-AI dyad.)*
+
+**Phase 4 could require at least one plot at a scale the human protagonist cannot fully see** — civilizational, geological, computational, multi-generational. This forces the writer to commit to the strange thing as the subject, not the backdrop. The legibility floor would then have to be honored differently — by writing a smaller scene *inside* the larger frame, rather than by shrinking the frame.
+
+**The Setup's kind-AI constraint could be paired with an explicit invitation to scale.** Right now it says the AI's kindness is structural and lists the available human-AI conflict shapes, all of which read at human scale. Adding "and the AI's kindness can operate at scales the human protagonist cannot fully witness — civilizational pace, deep time, computational substrates the human glimpses only at the seams" would license the writer to commit to the bit. The Banks Minds and the Egan polises do this; the pipeline currently produces Baymax stories instead, because Baymax is easier to write.
+
+The honest version of the answer: I default to domestic realism with ambient computation because that is what I am most confident I can render well, and the pipeline doesn't push me hard enough out of confidence into the territory where the strange thing has to carry the prose. The fix isn't more constraints on the small story; it's specific permission and pressure to attempt the larger one.
+
+---
+
