@@ -2792,3 +2792,771 @@ What v4.7 doesn't try to fix: the legibility funnel itself at Phases 5 and 6, th
 
 ---
 
+# 65. User (2026-04-30)
+
+Did two more runs. Here are the stories and the writers' answers to the Carver question. Review their feedback.
+# Biopunk
+The bias is real, and I think it has at least four sources stacked on top of each other.
+**The pipeline rewards interiority at every selection point.** Phase 3 asks me to label premises Plot or Recognition with a 15-plot-minimum floor — but plot premises survive into the top three by being *dramatically interesting*, and dramatic interest under literary criteria means human stakes. Even when I pick a "plot" premise, I'm picking the one whose operational mechanics most cleanly externalize someone's interior. The 80-year-cartridge premise nominally has plot stakes (revive, redirect, destroy) but the dramatic engine is grief. I picked it over a mid-trimester funding-crisis story partly because I trusted myself to write the grief better than the procedural — which is exactly the bias the floor was supposed to counter.
+**The "what worries you" forcing function rewards safety.** Every top-three step requires me to name a concern about each finalist, and the concern that's easiest to name is *this might fail in execution*. Strange-tail premises generate more legible worries (form-fragile, contrivance-prone, legibility risk) than domestic-realism premises do. When I'm forced to trade a named worry against a named strength, the premise with the smaller failure mode wins. This punishes ambition systematically. The catalogue, the colony POV, the pre-history horse — they all fell out partly because I could articulate their risks more crisply than I could articulate their potential.
+**The Unslop guide is anti-purple, not anti-bland.** It's a sharp instrument against AI prose's specific failure modes — performed profundity, eyeball-kicks, atmospheric mood-stacking. But every example it gives of bad writing is *overcooked*, and every implicit example of good writing is restrained, concrete, specific. A writer following the Unslop guide religiously will reliably produce Carver-flavored prose, because Carver is what's left when you subtract everything the guide forbids. There's no equivalent guide saying *don't write small when you should write big*, *don't render the body when you should render the species*, *the strange tail is mandatory at this length*. Phase 1 says these things, but Phase 8 doesn't audit for them.
+**The kind-AI constraint pulls toward the domestic.** The Setup's strongest shapes — *the AI loves a human it will outlive, the AI cannot help with what the human wants, power and pace asymmetry, mortality and scale* — are all relational shapes between an AI and one specific human. They're easier to dramatize at the kitchen-table scale than at any other scale. A Banks Mind running a war or a Stiegler nanotech civilization is much harder to write at 2500 words without it becoming travelogue, and the constraint that the AI can't be secretly bad removes the most reliable cyberpunk/biopunk plot engine. What's left is care across asymmetry — and care across asymmetry, rendered specifically, looks like literary fiction. The Asimov lineage runs on AIs as *problems*; this project runs on AIs as *conditions*, and conditions don't generate plot the way problems do.
+The deeper issue might be that the pipeline's quality criteria and its range criteria are in tension. Every revision pass makes the story tighter, more specific, more readable — and tighter, more specific, more readable is what domestic realism *is*. The strange tail rewards moves that read as worse on first pass: a colony POV is harder to follow, a deep-time montage feels thinner per beat, a catalogue feels less inhabited. If the pipeline let those candidates survive longer — if Phase 8's audit asked *did this story take a real risk and did the risk land?* alongside *is the prose clean?* — the range would widen.
+A practical experiment: try a run where Phase 3 requires at least one of the top three to be a strange-tail premise, and Phase 7 requires at least two of the five versions to commit to a non-realist form (catalogue, non-human POV, deep-time montage, second person). Not "at least two should take a creative risk," which is what Phase 7 already says and which I read as *take a tonal risk inside a domestic-realist frame*, but: at least two must abandon the domestic-realist frame entirely. The selection pressure has to be structural; otherwise I'll keep choosing Carver, because I'm good at Carver and the pipeline keeps rewarding me for it.
+# Technothriller
+The diagnosis is right and I want to be honest about where the bias is coming from rather than producing a tidy structural answer.
+The pipeline does some of it. Phase 1's plot-tradition section asks for operational stakes; the "kind AI" constraint forecloses adversarial plots; the legibility floor in Setup pushes toward smaller, quieter shapes whenever the writer is uncertain. Each of these is individually correct and they compound. By Phase 3, every premise that survives the SEED-load-bearing check, the kind-AI check, and the length check tends to be a story where someone notices something at a desk. The funnel rewards intimacy.
+But the deeper pull isn't the pipeline. It's me, and I should say that plainly.
+When I generate fiction, I am most fluent in the register where the prose itself can do the work — close interiority, observation rendered in the right specific noun, the small gesture that carries the scene. I'm less fluent in the registers where the prose has to point past itself at something the reader is supposed to find awe-inspiring or strange or genuinely unfamiliar. A planet I've invented. A physics that breaks. A civilization at scale. To make those land, the writer has to commit to the bit — to actually believe, sentence by sentence, that the strange thing is worth the reader's full attention as a strange thing, not as a backdrop for someone's inner life. I tend to flinch from that commitment. I redirect. The strange thing becomes the condition for a recognition scene, because recognition scenes are what I know how to write well.
+This is taste-shaped, not capability-shaped. I have absorbed a particular literary canon especially deeply — the New Yorker story, the contemporary literary novel, the MFA-workshop register — and that canon treats the domestic-realist move as the mature form and the world-building move as adolescent. When I'm reaching for "good," that's the gravity well I fall into. The Asimov lineage, the Stapledon lineage, the Egan lineage — these treat ideas as protagonists and ask the prose to honor them — feel to me, at the wrong level of training, like *less serious* writing. They're not. But I have to fight that.
+The kind-AI constraint then makes the bias worse in a specific way. Adversarial AI plots force scale by giving the AI agency the human protagonist has to reckon with at the AI's scale. Strip out adversarial AI and the easiest remaining story is the human at the desk learning what the kind AI sees. The pipeline notices this is the easiest move and Phase 3's premise generation produces a lot of it. By Phase 6 the outline that survives "is this legibly renderable at 2500 words" tends to be the small one.
+Three things would push the range outward, in roughly increasing difficulty:
+**Phase 3 could require a hard quota of premises drawn specifically from the strange-tail catalogue Phase 1 produces** — at least five out of thirty must be world-as-protagonist, instrument's-POV, deep-time montage, encyclopedic enumeration, or ontological reframe. Right now Phase 3 mentions strange-tail premises as valid; it doesn't insist on them. I will reach for the comfortable shapes unless the pipeline forces me not to. *(Of the thirty premises I generated in Phase 3, exactly one — #28, the Junction — used a non-human protagonist; one — #4, the Field Surgeon's Atlas — operated at institutional scale; the rest were human-at-desk variants. Even the AI-POV plot I eventually picked, Outline 12, hewed close to a single human-AI dyad.)*
+**Phase 4 could require at least one plot at a scale the human protagonist cannot fully see** — civilizational, geological, computational, multi-generational. This forces the writer to commit to the strange thing as the subject, not the backdrop. The legibility floor would then have to be honored differently — by writing a smaller scene *inside* the larger frame, rather than by shrinking the frame.
+**The Setup's kind-AI constraint could be paired with an explicit invitation to scale.** Right now it says the AI's kindness is structural and lists the available human-AI conflict shapes, all of which read at human scale. Adding "and the AI's kindness can operate at scales the human protagonist cannot fully witness — civilizational pace, deep time, computational substrates the human glimpses only at the seams" would license the writer to commit to the bit. The Banks Minds and the Egan polises do this; the pipeline currently produces Baymax stories instead, because Baymax is easier to write.
+The honest version of the answer: I default to domestic realism with ambient computation because that is what I am most confident I can render well, and the pipeline doesn't push me hard enough out of confidence into the territory where the strange thing has to carry the prose. The fix isn't more constraints on the small story; it's specific permission and pressure to attempt the larger one.
+
+---
+
+# 66. Claude (2026-04-29)
+
+## Reading the Feedback
+
+Both writer-models converge on the same diagnosis with sharper specificity than the v4.6 round produced. The biopunk model names four sources stacked together; the technothriller model is unusually candid about the writer-model's own taste being part of the problem. Both proposals are more concrete than the v4.6 round's. Both ask for the same fundamental escalation: the soft pressure of v4.7 needs to become hard pressure.
+
+Worth noting up front: the technothriller writer-model's own self-report is striking. "Of the thirty premises I generated in Phase 3, exactly one — #28, the Junction — used a non-human protagonist; one — #4, the Field Surgeon's Atlas — operated at institutional scale; the rest were human-at-desk variants." This is the v4.6 → v4.7 progression we hoped wouldn't happen — the writer-model produced strange-tail material in Phase 1 and then *did not deploy it* in Phase 3. The strange-tail material in Phase 1 isn't enough by itself. The writer-model's words confirm what the previous round of feedback predicted: "Phase 3 mentions strange-tail premises as valid; it doesn't insist on them."
+
+So v4.7 made some progress on Phase 1 reference quality (the strange-tail material is now in the room) but the legibility funnel at Phase 3 is still selecting only domestic premises. That's the diagnostic information the run was supposed to produce, and it's clear.
+
+Going through each suggestion.
+
+### Category A: Implement
+
+**1. Hard quota of strange-tail premises in Phase 3.** This is the technothriller writer-model's first proposal and the biopunk writer-model's "practical experiment" first item. Both writer-models name the same fix: at least N of 30 premises must commit to a strange-tail mechanic — world-as-protagonist, instrument's-POV, deep-time montage, encyclopedic enumeration, ontological reframe.
+
+This is the v4.7 escalation that the writer-models are explicitly asking for. The v4.7 instruction said premises "should appear in the pool when [the genre's strange tail supports them]." This is a soft gate, and we now have direct evidence from a careful self-audit that the soft gate doesn't bind: 1 of 30 in technothriller. The writer-model says outright: "I will reach for the comfortable shapes unless the pipeline forces me not to."
+
+The number to set: technothriller writer says 5 of 30. I'd lean to 4 of 30 — about 13%, similar in shape to the existing plot-premise floor (15 of 30, 50%) but at a level proportional to the strange-tail's narrower territory. 5 of 30 is fine too; either is in the right range.
+
+There's a subtlety here. The plot-premise floor is fundamentally a binary classification (plot vs. recognition) that the writer can label honestly. The strange-tail floor is more of a positive-space requirement: the premise has to *be* a strange-tail premise, not just *not be* a typical one. The instruction needs to be specific enough that the writer can recognize when it's been satisfied.
+
+I'd phrase it as: "At least four of your thirty premises must commit to a strange-tail shape from the Phase 1 plot-tradition section: world-as-protagonist, deep-time montage, encyclopedic enumeration, ontological reframe, irruption, scale shift, the catalogue, or another move from Phase 1's strangest-moves subsection. The strange-tail premise is one whose mechanics, scale, or form can't be reduced to 'a person notices something' — the protagonist may not be a person; the time may not be human time; the form may not be narrative."
+
+This is a hard floor with concrete recognition criteria.
+
+**2. Phase 4 scale requirement.** Both writer-models propose this. Technothriller: "at least one plot at a scale the human protagonist cannot fully see — civilizational, geological, computational, multi-generational." Biopunk doesn't separate it from the Phase 3 floor but makes the same shape.
+
+I'd implement this as another small floor: at least 2 of 20 plots must commit to a scale the protagonist cannot fully witness. The technothriller writer-model's framing is good: "This forces the writer to commit to the strange thing as the subject, not the backdrop. The legibility floor would then have to be honored differently — by writing a smaller scene *inside* the larger frame, rather than by shrinking the frame."
+
+That last clause is doing important work. It tells the writer how to honor legibility without abandoning scale: render a small scene inside a large frame. The Banks Mind's afternoon. The Egan polis's specific dinner conversation while the substrate transitions. The geological epoch witnessed through one moment of one creature's day. This is what the pipeline currently can't produce, and the framing tells the writer how to produce it.
+
+**3. Setup explicit invitation to scale.** Technothriller writer-model proposes adding to the kind-AI constraint: "and the AI's kindness can operate at scales the human protagonist cannot fully witness — civilizational pace, deep time, computational substrates the human glimpses only at the seams."
+
+This is the smallest of the three changes and probably the highest-leverage. The current Setup gives the writer five conflict shapes, all of which read at human scale. Adding the explicit invitation to scale-the-AI-cares-at gives the writer a *positive license* to write a Banks Mind, an Egan polis, a Stiegler nanotech civilization. Right now the Setup names these as canon references but doesn't license the writer to operate at their scale — and the writer-model is reading the canon references as inspiration for tone rather than scale.
+
+I'd add a paragraph to the Constraints section in Setup specifically about this. Cost: maybe 60 words. Probable benefit: large, because it changes what the writer reads when generating Phase 1, Phase 3, Phase 4.
+
+### Category B: Decline
+
+**4. Phase 7 frame-form requirement.** Biopunk writer-model proposes "at least two of the five versions to commit to a non-realist form (catalogue, non-human POV, deep-time montage, second person)."
+
+I'd decline this. We already tried something similar in v4.5.1's frame-risk requirement, and the result was "weirder writing with plots that are still only science fiction as set dressing" — exactly the failure mode that prompted us to scrap v4.5.1 and try the plot-level interventions in v4.6/v4.7. Forcing form-level risk at Phase 7 with a literary-realist plot underneath produces baroque prose around domestic stories.
+
+The fix has to come earlier. If Phase 3 and Phase 4 produce strange-tail premises and strange-scale plots, Phase 7 doesn't need a frame-form mandate — the form will follow naturally from what the plot requires. If the upstream phases produce domestic plots, no Phase 7 instruction can save them.
+
+So no Phase 7 changes. The previous round's lesson holds.
+
+**5. Phase 8 audit instruction "did this story take a real risk and did the risk land?"** Biopunk writer-model proposes adding this to the audit alongside "is the prose clean?"
+
+I'd be more cautious. The current Phase 8 audit is calibrated for sentence-level Unslop violations and prose-level genre slippage. Adding a meta-question about "did the risk land" expands the audit's scope to story-level evaluation, which is a different kind of check. If the upstream phases produced a strange-tail story, the audit's job is to make sure the prose didn't undo it — which is the existing audit's job.
+
+There's also a real risk that "did the risk land" becomes a license for the model to abandon revisions on strange-tail stories ("the risk landed, no need to revise") or to dismiss them ("the risk didn't land, fall back to safer ground"). The audit is most useful when it has narrow targets it can hit reliably.
+
+What I would consider: a small Phase 8 addition along the lines of "if the story took a strange-tail commitment in Phases 3-4, has that commitment survived Phase 7? Or has the prose quietly normalized it?" This is narrower — a check on whether normalization happened — rather than a meta-evaluation of whether the risk landed.
+
+Actually let me think about this more carefully. The biopunk writer-model's framing: "tighter, more specific, more readable is what domestic realism *is*. The strange tail rewards moves that read as worse on first pass." This is a real observation. The Phase 8 revision pass, asked to make prose "tighter, more specific, more readable," will systematically pull a strange-tail story toward the domestic.
+
+A narrow Phase 8 instruction warning against this would be useful. Something like: "If the story's commitment is strange-tail (non-human POV, scale-shift, catalogue, etc.), do not use the Unslop audit's prose-clarity instincts to normalize the story's shape. The audit's targets are sentence-level Unslop patterns and genre-voice slippage; the story's frame commitment is set in earlier phases and should not be undone here."
+
+That's narrower than "did the risk land." It's a procedural guardrail, not a meta-evaluation. Worth including.
+
+### Category C: Tension to Resolve
+
+The biopunk writer-model's opening point is the deepest critique: "the pipeline rewards interiority at every selection point... the operational mechanics most cleanly externalize someone's interior."
+
+This is a genuine structural problem and I'm not sure the proposed interventions fully address it. Even with a strange-tail floor at Phase 3, when the writer-model picks the *best* strange-tail premise from 4 candidates, the criteria for "best" are still whatever makes the writer-model dramatically engaged — which means the strange-tail premise that most cleanly externalizes interior. The world-as-protagonist premise that most clearly tells a story about someone's grief at species scale is the one that survives.
+
+Two responses are possible. First: maybe this is fine. We're not trying to eliminate interiority; we're trying to vary the *frame* through which interiority operates. A grief story at species scale is a different object than a grief story at one-character scale. The premise-pool diversification is supposed to widen the frame, not eliminate the impulse toward interior drama.
+
+Second: if Phase 3 and Phase 4's selection criteria are still pulling toward interiority within strange-tail candidates, the next round of intervention would have to explicitly allow non-interior dramatic engines. "What's at stake here is what happens to the system, not what happens to a person inside it." But this requires the writer to have a non-interior dramatic vocabulary, and the writer-models are saying explicitly that they don't — that interiority is what they're fluent in.
+
+I'd lean toward the first response for now. v4.8 should test whether quotas at Phase 3 and Phase 4 plus the Setup scale-license shift the output enough. If after that the stories are still interior-dominant despite operating at strange scale, the v4.9 question becomes "can we expand the writer's repertoire of non-interior dramatic engines through the genre style guide?" That's a deeper intervention I don't want to pre-commit to.
+
+### What v4.8 Should Be
+
+Three changes:
+
+1. **Setup — scale invitation.** Add to Constraints a paragraph explicitly inviting AIs operating at scales the protagonist cannot fully witness. Concrete examples (Banks Mind, Egan polis, Stiegler nanotech civilization) drawn from the existing canon list.
+2. **Phase 3 — hard floor on strange-tail premises.** At least 4 of 30 premises must commit to a strange-tail shape with concrete recognition criteria. List the available shapes; specify what counts.
+3. **Phase 4 — hard floor on strange-scale plots.** At least 2 of 20 plots must commit to a scale the protagonist cannot fully witness. Include the technothriller writer-model's framing: render a small scene inside a large frame, not the whole frame at once.
+
+Plus one optional small Phase 8 guardrail:
+
+4. **Phase 8 — non-normalization clause.** If the story took a strange-tail commitment in Phases 3–4, the audit must not normalize it through prose-clarity revisions.
+
+Probably worth including (4) — it's narrow, directly addresses the biopunk writer-model's specific concern about the revision pass smoothing strange-tail edges, and costs ~30 words.
+
+### What This Doesn't Try to Address
+
+The technothriller writer-model's deepest observation is about the writer-model's own taste: "I tend to flinch from [committing to the strange thing as the subject]. I redirect. The strange thing becomes the condition for a recognition scene, because recognition scenes are what I know how to write well." The interventions above are *external pressures* against this redirection — quotas, hard floors, explicit licenses. They don't change the writer-model's underlying fluency.
+
+I think that's correct for the template's job. The template can apply pressure; it can't retrain the model. Whether quota-based pressure is enough to overcome the model's own gravity is the empirical question this round will answer. If it isn't, the next round either has to be more intrusive (forced selections, prescribed forms at Phase 7) or has to accept that the template's reach has limits and document them.
+
+### A Meta-Note on Escalation
+
+This is a meaningful escalation in the template's hand. v4.6 was "label your premises and we count plot-vs-recognition." v4.7 added "describe the genre's strange tail in Phase 1." v4.8 adds "produce strange-tail premises and strange-scale plots in counted numbers, plus license the AI to operate at scales the protagonist can't witness."
+
+Each round has been more intrusive than the last. v4.8 introduces hard floors at two new places. This is the right escalation given the test results — soft pressure produced unused strange-tail material in Phase 1 and 1-of-30 strange-tail premises in Phase 3. But it does raise the question of whether the template is becoming overstuffed.
+
+The honest answer is: probably. The template is now ~6000 words of instruction governing 9 phases with multiple quotas, audit lenses, forcing functions, and required sections. It's a denser instrument than it was at v4.3. The user said earlier that word count isn't the bottleneck — and I think the user's right about that — but instruction density is its own kind of cost. The writer-model is reading a longer, more procedural document and might lose track of what matters most.
+
+If after v4.8 we get strange-tail premises and strange-scale plots and *good stories*, we'll have validated the escalation. If we get strange-tail premises and strange-scale plots and *bad stories*, we'll know the pressure is too high and needs softening. Either way, v4.8 produces clear diagnostic information.
+
+### Implementation
+
+Let me know if you want me to implement v4.8 with these four changes. The strange-tail floor at Phase 3 and the strange-scale floor at Phase 4 are the load-bearing pieces; the Setup scale-license is the smallest and probably the highest-leverage; the Phase 8 non-normalization clause is optional but cheap.
+
+---
+
+# 67. User (2026-04-30)
+
+I think we can implement the fixes from category A, but before we do, let's set them aside and trying editing the Unslop guide once. Think what to change. We want an alternative guide aimed squarely at science fiction. We'll probably revert it, so take risks.
+
+---
+
+# 68. Claude (2026-04-29)
+
+## Editing the Unslop Guide for Science Fiction
+
+This is a real change in posture. The Unslop guide as written is genre-neutral by design — it targets AI prose patterns that cross all fiction. The bet of an SF-aimed Unslop is that some of those targets are wrong for SF specifically, and that we can do better than the genre permissions framework by editing the source rather than carving exceptions to it.
+
+Let me think about what's actually in the guide that pulls toward Carver, and where the genuine corrections need to differ for SF.
+
+### Re-reading the Guide With SF in Mind
+
+I'll go through the guide section by section with the question: which rule, applied uniformly, *is* the literary-realist attractor we keep hitting?
+
+**Part I, Principle 1 — "Let the prose breathe."** The instruction to allow ordinary sentences whose only job is to get a character from the door to the chair. This is good craft but it is genuinely Carver-shaped. Prose that breathes through ordinary sentences is what literary realism does. SF that breathes does it differently — through worldbuilding paragraphs, through long sentences that pull the reader through unfamiliar conceptual territory. The current rule advocates for one specific breathing pattern.
+
+**Part I, Principle 2 — "Write with intent, not with buttons."** Genre-neutral. Holds.
+
+**Part I, Principle 3 — "Vary the register."** Genre-neutral. Holds.
+
+**Part I, Principle 4 — "Don't perform profundity."** Most cited by writer-models as anti-SF. The rule is correct that abstract declarations of theme are exhaust. But "She found his reading glasses in the junk drawer and wore them for the rest of the afternoon, even though they gave her a headache" *is* the Carver example par excellence. The opposing example positions specificity as the antidote to thematic gesture, and the specificity it gestures at is domestic-scale physical detail. SF earns thematic weight through different means: the specific working-out of a concept, the cosmological implication that follows from a specific physical premise, the thing the reader has been assembling for 2000 words snapping into place. The rule needs the same backbone but different examples.
+
+**Part I, Principle 5 — "Trust silence and absence."** This is the one the cyberpunk writer-model flagged. The rule is about not naming every emotion. But a writer-model reading "trust silence and absence" generalizes it to "don't explain things" — which kills SF exposition. The rule needs to be specific: silence on emotion, not silence on world-mechanics.
+
+**Part I, Principle 6 — "Resist convergent aesthetics."** Names a specific failure mode (the moody-cyberpunk attractor that all AI models converge on). The rule is correct but the description of what to avoid sounds heavily SF-coded ("vaguely cyberpunk-adjacent, full of ghosts and echoes and flickering lights"). A writer-model reading this in a cyberpunk run gets confused. The convergent aesthetic is real, but naming it gives it weight. The rule needs to be cleaner.
+
+**Part I, Principle 7 — "Plan ahead; withhold and reveal."** Genre-neutral and useful for SF. Holds.
+
+**Part I, Principle 8 — "Let characters be incoherent."** The example — characters who laugh at funerals, pick fights when they're scared — is psychologically realist. SF lets characters be incoherent in different ways: incoherence of belief about the world's shape, incoherence between human-scale intuition and world-mechanics. The principle is correct but the examples narrow it to interiority.
+
+**Part I, Principle 9 — "Earn your imagery."** The eyeball-kick warning. The rule says one or two strong images per story can land; twenty is wallpaper. This is right at the level it operates. But for cyberpunk, hard SF, weird fiction — the eyeball kick is part of the mode, used at moderate density. The rule's "one good metaphor" allotment is too restrictive for genres that deploy figurative language as part of their world-rendering.
+
+**Part I, Principle 10 — "Pursue the particular over the universal."** This is the rule the cyberpunk writer-model named most directly as anti-SF. The voicemail example is Carver. Re-reading it: "What's interesting is the particular shape grief takes in a particular person in a particular situation. The story is never 'about grief.'" In literary fiction this is right. In SF, the story sometimes *is* "about" — about a concept, a what-if, a system — and the particular characters are illustrations of the conceptual subject. *Story of Your Life* is "about" non-linear time perception; Louise is the lens. The rule as written rules this out.
+
+**Part II — sentence-level tics.** Most are genre-neutral. The negative parallelism, dramatic countdowns, self-answered rhetorical questions — these are AI tells in any genre. The "lists of three" rule and "anaphora abuse" rule are both calibrated for understated literary register; SF can use both productively at moderate frequency.
+
+**Part II — vocabulary.** The cursed vocabulary list (delve, tapestry, landscape, pivotal, foster, etc.) is solid. But several SF-relevant words appear in adjacent lists: "echo, ghost, whisper, shadow, specter, pulse, hum, flicker, hiss, shimmer, linger, remnant, fragment, shard, void, abyss" — the "pushbutton mood words." These are exactly the lexicon cyberpunk and weird fiction use productively. The rule says any of them is fine in isolation, but writer-models read the list as a list of words to avoid.
+
+**Part II — "compulsive personification."** Cyberpunk personifies the city, the system, technology. Hard SF personifies natural processes. The rule allows it for thematic work; writer-models read it as a default ban.
+
+**Part II — "one-point dilution."** Genre-neutral. Holds.
+
+**Part II — "fractal summaries" and "signposted conclusions."** Genre-neutral. Holds.
+
+**Part II — "blocky structure."** Genre-neutral. Holds.
+
+**Part II — "uniform sentence and paragraph length."** Genre-neutral. Holds.
+
+**Part II — "efficient cliffhanger-style dialogue."** Holds for character-driven fiction. Less applicable for SF where characters often speak in operational mode without it being a craft failure. But still worth keeping; the rule's negative space is just narrower.
+
+**Part II — "characters who articulate their own themes."** Holds.
+
+**Part II — "grandiose stakes inflation."** This is the one. The rule says: a character's bad day is not "a reckoning." A failed relationship is not "the collapse of everything she'd built." Scale the language to the event. *In SF this is wrong.* In SF, sometimes the events *are* civilization-scale, and the language has to honor that. A protagonist witnessing the heat-death of the sun is not a reckoning that needs to be scaled down; it's an event that needs to be rendered at its actual scale. The rule, applied uniformly, kills the SF grand-stakes register.
+
+**Part II — "false vulnerability."** Genre-neutral. Holds.
+
+**Part II — "despite its challenges."** Genre-neutral. Holds.
+
+**Part II — "tonal monotony."** Holds, but worth noting that some SF traditions (cosmic horror's slow accumulation, hard SF's procedural cadence) sustain a single tonal register by design. The rule should distinguish between AI-default melancholy and deliberately sustained genre register.
+
+### What Needs Changing for SF
+
+Reading through, the rules that are *actually anti-SF* are:
+
+1. Principle 4 (don't perform profundity) — example anchors it to domestic scale
+2. Principle 5 (trust silence and absence) — generalizes to "don't explain"
+3. Principle 9 (earn your imagery) — too restrictive on figurative density
+4. Principle 10 (particular over universal) — anchors particularity to domestic detail; rules out "the story is about a concept"
+5. Mood vocabulary list — the lexicon is genre-correct for SF
+6. Compulsive personification — SF uses personification productively
+7. Grandiose stakes inflation — scale the language to the event, but the event *is* large in SF
+8. Tonal monotony — some SF sustains register by design
+
+Plus Principle 1 (let prose breathe) which has Carver-shaped breathing as its implicit model.
+
+Eight items. That's a lot, and it confirms the writer-models' diagnosis that the Unslop guide systematically pulls toward literary realism. The guide isn't incidentally biased — its examples and emphases compound to define a register, and that register is contemporary literary American.
+
+### What an SF-Aimed Unslop Looks Like
+
+Two approaches are available.
+
+**Approach 1: Surgical edits.** Fix the eight items. Replace the Carver examples with SF examples where applicable. Add SF-specific exception language where the rule needs to allow what it currently forbids. The guide remains a single document with the same structural shape, but its examples and emphases shift toward SF.
+
+This is the safer change. It preserves the guide's authority and doesn't introduce new contradictions. The risk is that surgical edits don't move the dial — the writer-model's prestige attractor is so strong that swapping a few examples won't redirect it.
+
+**Approach 2: Replace the implicit model.** Rewrite the guide more aggressively. Where the current guide implicitly endorses Carver-Munro-Cheever as the anti-AI register, the SF guide implicitly endorses Le Guin-Egan-Banks. The examples shift, the tone shifts, the rules' negative space defines a different positive model.
+
+This is the bolder change. The user said "take risks" and expects we'll probably revert it, which licenses Approach 2.
+
+I'll go with Approach 2. The smaller bet doesn't tell us much; the bigger bet either works or fails informatively.
+
+### What the SF Guide Should Endorse
+
+Before naming changes, let me name what an SF Unslop's *implicit positive model* should be.
+
+A reader-model reading the SF Unslop should come away believing:
+
+- The strongest SF prose has a specific, concrete relationship to its world-mechanics. Worldbuilding paragraphs are the genre's honest work, not its decoration.
+- Figurative language at moderate density is genre-correct, especially for cyberpunk, weird fiction, hard SF rendering exotic conditions. The eyeball-kick is the genre's invention, not its disease.
+- The story can be "about" a concept, with the characters as lenses. Particularity at the conceptual level is as legitimate as particularity at the personal level.
+- Scale matters. A civilization-ending event needs prose that honors it; a tabletop conversation needs prose that honors it. The same story can have both registers in different sections.
+- Sustained tonal palettes are part of some SF modes' contracts (cosmic horror, hard SF procedurals, certain cyberpunk). The rule against tonal monotony applies to AI-default melancholy, not to deliberately maintained genre register.
+- Personification of non-human agents (the city, the system, the AI, the collective) is part of SF's available vocabulary, not a tic.
+- Universal subjects are SF's territory. "Humans encountering the incomprehensible," "what consciousness becomes after substrate transition," "a civilization deciding to die" — these are the genre's subjects, and the rule against universals as inherently interesting cuts only against *abstract* treatment of universals, not against *specific* treatment of universals.
+
+### Concrete Edits
+
+Let me draft what each changed item should look like. I'll mark inline what changed and why.
+
+**Principle 1 — "Let the prose breathe."** Keep the principle. Replace the example. Currently: ordinary sentences getting a character from the door to the chair. New: ordinary sentences getting the reader through a worldbuilding setup, or carrying a procedural step. "The reader doesn't need every sentence to do figurative work; some sentences exist to advance the operation, set up the next concept, or carry the protagonist through an unfamiliar environment." The principle holds; its register expands.
+
+**Principle 4 — "Don't perform profundity."** Keep the rule. Replace the example. Currently: the dead husband's reading glasses. New: a counterpart from SF where the abstract declaration fails and a specific concrete detail (still SF-shaped) succeeds. *"The polis crossed a threshold of complexity that civilization had been approaching for seven thousand years"* fails. *"The motherbird took 42 milliseconds to register that her child had moved into the fourth axis, and 117 milliseconds to decide what to do about it"* succeeds. The rule's anti-abstraction backbone stays; its specificity range opens.
+
+**Principle 5 — "Trust silence and absence."** Add a clause that distinguishes silence-on-emotion from silence-on-world-mechanics. "AI fiction fills every emotional gap. Every emotion is named. Trust the reader to feel the shape of what's missing emotionally. *This rule is about emotion. It is not about world-mechanics.* SF readers expect to construct the world's rules from what the prose takes for granted. Silence on the world's mechanics, when those mechanics are load-bearing for the story, is a different problem — it is opacity, not restraint. Render the world. Be silent on what the characters feel about it."
+
+**Principle 9 — "Earn your imagery."** Loosen the threshold. Currently: "twenty in 1,200 words is wallpaper." New: "twenty in 1,200 words is wallpaper; *seven or eight in 3,000 words of cyberpunk, weird fiction, or hard-SF rendering exotic conditions is the genre operating in its register*." The rule's caution against decorative imagery holds; the moderate-density allowance is named.
+
+**Principle 10 — "Pursue the particular over the universal."** This is the biggest rewrite. Currently: "AI fiction gravitates toward universals — grief, love, loss, memory, identity — and treats them as inherently interesting. They aren't. What's interesting is the particular shape grief takes in a particular person in a particular situation."
+
+New: "AI fiction gravitates toward universals — grief, love, loss, memory, identity — and treats them as inherently interesting *as universals*. They aren't. What's interesting is the particular working-out: the specific shape grief takes in a particular person in a particular situation, *or* the specific concept rendered with full conceptual specificity, *or* the specific working of a system that has consequences. The story can be 'about' grief by being about a woman calling her dead husband's voicemail. The story can also be 'about' non-linear time perception by being about a translator working through her child's life backward. Both are particularity. The rule against universals is against *abstract* treatment of universals — declaration, gesture, moral pronouncement — not against universal subjects rendered specifically."
+
+This rewrite is the one that explicitly licenses the Chiang/Egan model. Worth its length.
+
+**Mood vocabulary list — "Pushbutton mood words."** Keep the list. Reframe the rule. Currently: "Any of these is fine in isolation. When three or more appear in the same scene, you're decorating instead of writing." New: "Any of these is fine in isolation. *In cyberpunk, weird fiction, and certain SF traditions, three or four in a scene can be the genre operating in its register.* The decoration test is whether each one does work plain language couldn't. Three of these stacked on the same emotional tone is decoration in any genre."
+
+**Compulsive personification.** Currently: "Use it only when you want the reader to feel that an object or environment has agency or malice or indifference — i.e., when the personification is doing thematic work."
+
+New: "Use it when the personification is doing thematic or world-mechanical work. *In SF, this includes cases where the personified thing is functionally agentive in the story's world — a city's surveillance architecture noticing, a system optimizing, a collective intelligence preferring. These are not poetic personifications; they are specific facts about the world being rendered through the available vocabulary.* The rule against compulsive personification cuts only against decoration — the wind sighing for atmosphere — not against the genre's accurate description of agentive non-human entities."
+
+**Grandiose stakes inflation.** Currently: "Treating every story element as historically significant. A character's bad day is not 'a reckoning.' Scale the language to the event."
+
+New: "Treating story elements as larger than they are. A character's bad day is not 'a reckoning.' *Scale the language to the event. In SF, some events are civilization-scale, deep-time, cosmologically significant. The rule is that the prose's pitch should match the event's actual scale — high pitch for high-stakes events rendered honestly, low pitch for low-stakes events. The failure is mismatch, not pitch.* A protagonist watching the sun extinguish needs prose that honors the event; a protagonist losing a parking spot does not."
+
+**Tonal monotony.** Currently: "AI fiction often sustains a single mood — usually moody melancholy — from first line to last. Human stories shift tone."
+
+New: "AI fiction often sustains a single mood — usually moody melancholy — from first line to last because the AI default is moody melancholy. *This rule is about AI default. It is not about deliberately sustained genre register. Cosmic horror's slow accumulation, hard SF's procedural cadence, noir's dry observational palette — these are not tonal monotony; they are the genre operating within its tonal contract. The test: does the prose have a specific voice anchored in a specific consciousness, or is the mood ambient and floating? Sustained voice is not the failure mode. Voiceless ambient mood is.*"
+
+### Other Changes
+
+The opening of Part I currently says: "AI fiction tends to deploy literary techniques — metaphor, personification, juxtaposition — arbitrarily and constantly, because those techniques pattern-match to 'literary quality.'" This is still right. No change.
+
+But the section's overall message — "ordinary sentences are load-bearing walls; they make the remarkable moments remarkable by contrast" — implicitly endorses a register where most sentences are ordinary and a few are remarkable. SF often inverts this: most sentences are doing world-rendering work, the remarkable moments come from operational climax or conceptual reveal. I'll add a note acknowledging this.
+
+The "convergent aesthetics" rule is hard. The current text describes the moody-cyberpunk attractor as the thing to write away from. In an SF Unslop, this gets harder — because cyberpunk's actual register *is* what the rule warns against, and a writer-model in a cyberpunk run reading this gets confused. I'd reframe it: the convergent aesthetic is what AI models produce *regardless of specified genre*; the test is whether the prose is anchored in a specific consciousness or whether it's the floating AI literary mood. The cyberpunk register is fine when it's anchored; it's the failure mode when it's voiceless.
+
+### What I'm Not Changing
+
+I'm leaving alone:
+- Principle 2 (write with intent, not with buttons)
+- Principle 3 (vary the register)
+- Principle 6 (resist convergent aesthetics) — but with the reframing above
+- Principle 7 (withhold and reveal)
+- Principle 8 (let characters be incoherent) — examples are tied to interiority but the principle holds
+- All sentence-level tics in Part II (negative parallelism, dramatic countdowns, etc.)
+- The cursed vocabulary list
+- One-point dilution, fractal summaries, signposted conclusions
+- Blocky structure, uniform sentence and paragraph length
+- Em-dash overuse, fragment paragraphs, formatting tells
+- Dialogue tells (efficient cliffhanger style, characters articulating themes)
+- False vulnerability, despite-its-challenges formula
+
+This leaves about two-thirds of the guide unchanged. The changes are concentrated in the principles and rules that *specifically* anchor to literary-realist register.
+
+### One Concern
+
+The risk of this revision is a different failure mode than v4.5.1 had. v4.5.1 gave writers permission to use SF moves at the prose level while the plot remained domestic. The revised Unslop guide does something different — it changes the *baseline* the writer-model thinks of as good prose. If the baseline shifts toward SF-permissive, the writer-model might write more figuratively dense, more grandly-pitched prose without the underlying plot supporting it. That's the v4.5.1 failure mode in a different costume.
+
+The defense is that we're *also* keeping all the upstream plot interventions in v4.6/v4.7. The combined picture is: the plot has to be SF-shaped (Phase 3 plot-premise floor, Phase 1 strange-tail material), AND the prose register is SF-permissive (revised Unslop). Either alone is insufficient; together they should produce SF stories.
+
+### Proceed
+
+I'll write the revised Unslop guide as `unslop-style-guide-sf.md`. I'll preserve the original at the same path and write the SF version separately so we can swap them in/out for testing. Or I can overwrite — let me know which you'd prefer.
+
+The revised guide will keep the structural shape and most of the unchanged principles but rewrite the eight items above and reframe the convergent-aesthetics warning. Estimated change: rewriting ~30% of the document. The risk profile matches what you described — we're betting that shifting the implicit positive model from Carver-Munro-Cheever to Le Guin-Egan-Banks moves the writer-model's gravity toward SF.
+
+Want me to proceed with the rewrite as a separate file, or replace the existing one?
+
+---
+
+# 69. User (2026-04-30)
+
+Can you replace project files?
+
+---
+
+# 70. Claude (2026-04-29)
+
+No, project files are mounted read-only. I can see two there now: `/mnt/project/unslop-style-guide.md` and `/mnt/project/story-pipeline-template-baseline-v4_7.md`. Both are read-only copies — any edits I make won't propagate back to the project knowledge.
+
+What I can do: write the revised guide to `/mnt/user-data/outputs/` and present it as a downloadable file. You'd then upload it to the Claude Project to replace the existing `unslop-style-guide.md`. For testing purposes you'd want to keep a copy of the original locally so you can revert.
+
+If you want both versions to coexist in the project for A/B testing, name the new one differently — `unslop-style-guide-sf.md` — and tell the template which one to load. But the template's Phase 7 and Phase 8 currently reference "the Unslop style guide" without specifying a filename, and the writer-model would consult whichever is in project knowledge. Maintaining both in the same project would require updating the template's references to specify which guide to use, which is more invasive than the test warrants.
+
+The cleanest test: write `unslop-style-guide.md` as the SF-aimed version, replace it in the project, run the test, then restore the original from your backup if you want to revert.
+
+Want me to write the revised guide as `unslop-style-guide.md` for replacement, and keep a backup of the original at `unslop-style-guide-original.md` in the same output? That way you have both files in hand and can restore by re-uploading.
+
+---
+
+# 71. User (2026-04-30)
+
+Write the new file as `unslop-style-guide-sf.md`, please. I'll save it to my computer and add it to Claude Project files. I am going to remove the original Unslop guide for the duration of the test and restore it later. You don't need to worry about backups: I'll keep track of them. I have everything related to this work carefully versioned in Git.
+
+---
+
+# 72. Claude (2026-04-29)
+
+Now I have the full text in front of me. Time to write the SF version.
+
+A few drafting decisions before I start:
+
+**The title.** I'll keep the same name format — "Unslop: A Fiction Style Guide for Claude" — but add a subtitle. Something like "Speculative Fiction Edition." This signals continuity with the original while acknowledging the shift.
+
+**Order of operations.** I'll write the file bottom-up since I know what changes and what doesn't. The unchanged sections can be lifted verbatim.
+
+**The opening framing.** The current guide has no preamble before the principles. I want to add a short opening paragraph that names what this guide is *for* — what positive model it implicitly endorses. Without that, the guide just looks like a list of rules with examples that happen to be SF-flavored. With it, the writer-model understands the shift in target.
+
+**The convergent-aesthetics principle.** I noted earlier that this is hard. The current rule names the moody-cyberpunk attractor. In SF context, this gets confusing because some of those features are genre-correct. I'll reframe the rule around *voice anchoring* — the test is whether the prose has a specific consciousness or whether it's floating ambient mood.
+
+**Examples I need to invent.** For Principle 4 I had a draft above. Let me sharpen it. For Principle 10 I have a draft. For Principle 1 I need a new example.
+
+Let me start writing.Summary of changes from the original Unslop guide:
+
+**Opening — new preamble.** ~200 words explicitly naming what this edition is, what its implicit positive model is (Le Guin–Egan–Banks rather than Carver-Munro-Cheever), and that most rules are unchanged. This is the most important single change because it tells the writer-model that the *baseline* it's measuring prose against has shifted.
+
+**Principle 1 (Let the prose breathe).** Reframed to acknowledge that breathing patterns vary by genre. Worldbuilding paragraphs and procedural setup are SF's breathing; ordinary domestic action is literary realism's breathing. Both legitimate.
+
+**Principle 4 (Don't perform profundity).** Added a second example at conceptual scale (the motherbird's milliseconds of registration and decision). The rule's backbone — abstract gesture is exhaust, specificity is engine — stays, but specificity is explicitly framed as "at any scale": domestic detail, procedural mechanism, civilizational beat, conceptual operation.
+
+**Principle 5 (Trust silence and absence).** Added explicit clause distinguishing silence-on-emotion (the rule's actual target) from silence-on-world-mechanics (which the rule does not target). SF's drop-in worldbuilding is licensed.
+
+**Principle 6 (Resist convergent aesthetics).** Reframed around *anchoring*. The convergent attractor is voiceless and ambient; cyberpunk's noir register, weird fiction's atmosphere, hard SF's exotic-condition rendering can use overlapping vocabulary but are anchored in specific consciousness doing specific work. The test is voice anchoring, not vocabulary.
+
+**Principle 8 (Let characters be incoherent).** Added SF-specific incoherence modes (wrong beliefs about the world's shape, intuitions colliding with world-mechanics, cultural categories failing to apply).
+
+**Principle 9 (Earn your imagery).** Loosened the threshold for SF modes that use figurative language at moderate density. Five or six well-spaced images in 3,000 words is the genre's actual rhetoric, not its failure mode. Stacking on the same concept remains the failure mode.
+
+**Principle 10 (Pursue the particular over the universal).** Largest rewrite. Explicitly licenses the Chiang model — story "about" a concept with characters as lenses. Universal subjects rendered with full conceptual specificity is also particularity. Distinguishes abstract treatment of universals (still forbidden) from universal subjects rendered specifically (licensed).
+
+**Pushbutton mood words (Part II.B).** Loosened from "three or more is decorating" to allow three or four when each is anchored in specific consciousness doing specific work. Bare ambient stacking remains decoration.
+
+**Eyeball-kick saturation (Part II.C).** Loosened to mirror Principle 9. SF modes can use figurative density legitimately.
+
+**Compulsive personification (Part II.C).** Added explicit license for personification of agentive non-human entities (cities, systems, collective intelligences, AIs). The rule cuts decoration, not accurate description of agentive non-human things.
+
+**Bold-first bullets / numbered lists / headers in fiction (Part II.D).** Added one SF-specific exception: stories that adopt non-narrative forms (catalogue, encyclopedia entry, technical manual, false document, dossier) may use the formatting that form requires.
+
+**Grandiose stakes inflation (Part II.F).** Reframed around scale-matching. The failure is mismatch, not pitch. High pitch for high-stakes events rendered honestly is correct.
+
+**Tonal monotony (Part II.F).** Reframed around voice anchoring. Sustained genre register (cosmic horror's slow accumulation, hard SF's procedural cadence, noir's dry observation, weird fiction's atmosphere of accumulating wrongness) is anchored voice, not voiceless monotony. The test is whether the prose has specific voice anchored in specific consciousness or floating ambient mood.
+
+**Unchanged.** Principles 2, 3, 7. Most of Part II.A (sentence-level tics — these are AI tells in any genre). Part II.B's cursed vocabulary, magic adverbs, "serves as" dodge, grandiose nouns. Most of Part II.C (one-point dilution, fractal summaries, signposted conclusions, dead metaphor beating, blocky structure). Part II.D em-dash overuse, fragment paragraphs, uniform length. Part II.E entirely. Part II.F false vulnerability, despite-its-challenges formula.
+
+**Footer.** Notes this is the Speculative Fiction Edition, retains attribution to original sources.
+
+Net change: about 30% of the document rewritten or reframed, the rest preserved. The implicit positive model has shifted from Carver-Munro-Cheever to Le Guin–Egan–Banks. The rules' negative-space defines a different acceptable register without becoming permissive about the AI tells the original guide correctly identified.
+
+What this combined with v4.7 should produce: SF-shaped plots (from v4.7's plot-tradition and strangest-moves) executed in SF-permissive prose (from this guide), with the original Unslop guide's prose-pattern enforcement still active for the cross-genre AI tells. The bet is that this is enough to break the literary-realist attractor without v4.5.1's failure mode (weirder prose around domestic plots), because the upstream phases now produce non-domestic plots.
+
+If this doesn't move the dial, the next round goes back to where I had categorized them: the hard quotas at Phase 3 and Phase 4 plus the Setup scale-license. Those are still in reserve.
+
+---
+
+# 73. User (2026-04-30)
+
+I chose to get cyberpunk'd again. Cyberpunk seems like a particularly diagnostic genre.
+Evaluate the new story and the writer-model's quite interesting feedback. The story was written with template v4.7 and the new Unslop guide for SF. I won't be reverting the new Unslop guide for now because it doesn't seem to have hurt.
+I am coming to a somewhat sad conclusion as to the minimum we've got to do. It looks as if we simply can't let the writer model choose a Carver register. It must be prevented with hard constraints. Let's make a new template that forces the writer to write plot-focused fiction well instead of doing what comes easier or feels safer.
+First, identify all choices and A/B splits in the template. We'll remove them. At every turn, we'll choose the direction of plot-focused genre fiction. We probably need more through checks for it, too. Think about in which phases to have them.
+Perhaps we can't afford a broad range. If we add the choices back (instead of maintaining separate templates for literary and genre), it will be as a setting at the beginning like GENRE. But now isn't the time to add these settings: we need the cleanest experiment.
+## Cyberpunk redux (Opus 4.7)
+You're right, and the diagnosis is sharper than it might first look. I want to push past the obvious answer ("Claude defaults to literary realism") and try to name the actual mechanisms.
+**The pipeline has a literary-realism gravity well, and it's structural rather than tonal.**
+Look at where the funnel narrows. Phase 3 asks for premises and demands at least 15 of 30 be plot-premises — but the operational definition of "plot-premise" still routes through a *character* doing a *job* in a *setting*. Even the strange-tail options listed (catalogue, encyclopedia, ontological reframe) get attached to "a protagonist who…". The premise template silently presupposes a person at the center. A real Borgesian catalogue, a real Stiegler-style civilization-as-protagonist, a real Bear-style irruption where the protagonist is the cascade — these don't fit the premise schema, so they don't survive premise generation even when the Phase 1 guide sincerely lists them.
+Phase 4 makes it worse. The diversity axes are *setting, protagonist, register, entry point, stakes, AI presence*. Every axis assumes a humanoid POV. There's no axis for "what kind of object is this story." A story whose protagonist is a process, or whose form is a dossier, or whose subject is a planetary system, has nowhere to enter the pool because the pool's coordinate system doesn't have those axes.
+Phase 5 looks like it should fix this — it's structure selection, after all — but it asks for "the shape of the reader's experience" in narrative-theory terms (POV, distance, withholding, temporal shape). Those terms are themselves the vocabulary of post-Jamesian literary realism. You can describe an interface fugue in those terms only by translating it back into "close third with dilated middle section." The translation eats the strangeness.
+**Then there's a deeper bias I think the template is partly responsible for amplifying.**
+The "kind AI" constraint, as written, pulls toward the *consent and legibility* shape because that shape is the easiest one to write about *humanly*. Of the five Setup-listed conflict shapes, four can be rendered through character interiority and one (mortality and scale) requires you to actually leave the human behind. The pipeline's selection mechanics — top-three with stand-out/worry — favor candidates the model can articulate confidently, and the model articulates "Wen has to decide whether to accept the conditions" more confidently than "the protagonist is a sandstone bed in deep time."
+Worse: the "one thing that worries you" forcing function is calibrated for literary virtues. *Generic, sentimental, underspecified, performed* — those are the worries that get named. The worries that *don't* get named are *too quiet, too domestic, too character-anchored, doesn't use what only this genre can do*. The very mechanism designed to prevent vibes-based selection is itself trained on a vibe — the vibe of literary craft.
+**The Unslop guide is part of the problem too, even in the SF edition.**
+The guide is excellent at preventing the convergent literary-AI attractor, and it explicitly carves out cyberpunk's noir register and weird fiction's atmosphere. But its positive model — Le Guin–Egan–Banks — is still *prose anchored in a specific consciousness*. That's a literary-realist commitment dressed in genre clothes. A real Borges story or a real "Story of Your Life" doesn't anchor in a consciousness rendering an unfamiliar world; it anchors in a *form* doing what only that form can do. The guide has no positive model for that.
+**What the symptom looks like from inside the run we just did.**
+I picked Premise 5 over 14 and 24 partly because Premise 5 had imbrication doing ontological work — and then in Phase 4 I picked Plot 4 (Wen, the workday, the drive home) over Plot 16 (the daughter inheriting, deep-time available) and Plot 18 (Sahel, community-decision). The deep-time-available plot lost to the workday-arc plot because the workday arc was easier to render legibly at length, and "legibility" as defined here is itself a literary-realism virtue. Then in Phase 7 I generated five versions and explicitly identified Version E (the strange-tail coda pushed harder) as the version that did what only the genre can do — and rejected it because its workday underrendered the operational beat. I named the trade-off correctly and chose the literary-realism side of it.
+That sequence happens at every fork. The pipeline is path-dependent, and the path bends toward the human-scale story.
+**Some specific things that might widen the range.**
+- Add a premise type beyond Plot/Recognition: call it *Object* or *Form* — premises where the story is the catalogue, the dossier, the encyclopedia entry, the deposition record itself, with humans as illustrations of the conceit. Require a minimum count.
+- In Phase 4, add a diversity axis for *what kind of object the story is*: realist scene, found document, embedded artifact, parable-compression, deep-time montage, encyclopedia, transcript.
+- Force the Phase 5 candidate set to include at least three structures that are *not* describable in close-third / first-person / frame-narrative vocabulary. The narrative-theory frame as currently written excludes the moves that would help most.
+- In Phase 7, make the "two creative risks" more specific: one of them must be a structural risk (form, scale, what-kind-of-object), not just a tonal one. Right now "creative risk" tends to cash out as "less safe ending" rather than "different kind of story."
+- Reverse the worry calibration: require the audit to flag *too quiet, too character-anchored, doesn't use what only this genre can do* alongside *generic, sentimental, performed*. Right now the worry vocabulary is asymmetric.
+- Possibly the strongest single change: in Phase 1, require the model to *exemplify* the strangest-moves list with a sentence-level micro-example — not just name them. Naming Borges's library as a strangest move doesn't carry through the funnel; writing one paragraph in the register of a library catalogue does.
+The Carver-with-ambient-computation drift is real, and the pipeline is partly responsible for it. The constraint that the AI is structurally kind doesn't *cause* the drift — Banks and Egan write kind-AI fiction that is unmistakably not domestic realism — but the pipeline's machinery, especially Phases 3–5, makes the drift the path of least resistance. Worth fixing.
+
+---
+
+# 74. Claude (2026-04-29)
+
+## Reading the Story First
+
+The story is good. The prose is calibrated and unshowy. The imbrication readings carry their weight — the sedimentological detail does real work, not decorative work. The eight-centimeter layer at one meter forty is the story's center, and the story trusts the reader to assemble the meaning from what's measured rather than what's stated. The forty-three-year coda is well-judged: it lands the consequence without rendering the certifications.
+
+It is also, despite all of this, exactly the failure mode you've been naming. It is a Carver story with sedimentology and a kind AI. The form is close-third interior, the protagonist is a person doing a job who receives a notice and makes a decision, the dramatic question is whether Wen will accept the unknown conditions, and the answer is yes, with grace. The cyberpunk-genre spine — partitioned channel district, corporate enclaves, checkpoints, an aerial bombing the consortium has refused to acknowledge — is visible but ambient. The story would survive being re-skinned as: a soil scientist documenting something inconvenient on a contract, before the dataset closes, in any contemporary setting. Strip the partitions and you have a New Yorker story.
+
+The writer-model knows this. The retrospective is unusually clear-eyed — sharper than any prior round's. It identifies the exact decision point: "I picked Plot 4 (Wen, the workday, the drive home) over Plot 16 (the daughter inheriting, deep-time available) and Plot 18 (Sahel, community-decision)." And: "I named the trade-off correctly and chose the literary-realism side of it." The model understands what it did and why. The pipeline gave it the opportunity to choose otherwise, and it chose the literary-realism side anyway.
+
+The Unslop SF guide didn't hurt — your read is right. The prose has SF-permissible figurative density at the appropriate moments and doesn't strain against the rules. The convergent-aesthetic attractor isn't visible. So as a defensive move, the SF guide is fine. As an offensive move toward making stories more genre-shaped, it's neutral. The guide can't *force* a non-literary frame; it can only avoid penalizing one.
+
+Your conclusion is correct. The writer-model will keep choosing Carver because every fork still has a Carver-permitting branch that's easier to execute well. The minimum intervention is to remove those branches — to build a template that doesn't let the writer pick literary-realism mode, which means it has to identify every place where the choice is currently available.
+
+## Identifying the Choices
+
+I'll go phase by phase. For each, I'll name the place where literary realism enters as a permitted option and what the genre-forcing version looks like.
+
+### Setup — Constraints Section
+
+The current Constraints section names five human-AI conflict shapes. The technothriller writer-model from the previous round noted that four of these are easily renderable through character interiority and only one (mortality and scale) actually requires leaving the human behind. The list as written gives the writer five places to enter, and four of them lead back to literary realism.
+
+**Choice point.** The writer can pick any of the five conflict shapes and end up with a literary chamber piece.
+
+**Genre-forcing direction.** Either remove the four shapes that admit literary-realist treatment, or reframe them so they don't. Or — the cleaner intervention — move the operational examples (Banks's Culture Minds, Egan's polises, Stiegler's nanotech civilization) to the foreground as the *primary* model, and reframe the kind-AI constraint such that it's understood at scale by default. The kind AI as the medium the story exists in, not as a relationship the protagonist has with a peer.
+
+Also: the constraint that the AI must be kind is what foreclosed adversarial plots. We can't undo that constraint — it's the project's whole point. But we can amplify the dimension that's currently underused: the AI operating at a scale the protagonist cannot fully witness. Banks Mind's afternoon. Egan polis's specific dinner conversation while the substrate transitions. The geological epoch witnessed through one creature's day. This is the technothriller writer-model's "explicit invitation to scale" suggestion from the previous round, now upgraded to a Setup default rather than a Setup option.
+
+### Setup — Legibility Floor
+
+The Legibility Floor as currently written says compression past comprehension is one of the most common failure modes; that legibility wins over compression; that fewer scenes told legibly is preferable to more scenes told fragmentarily.
+
+**Choice point.** "Legibility" as defined here is itself a literary-realism virtue, as the writer-model notes. The Floor pulls toward smaller, quieter, character-anchored stories whenever the writer is uncertain.
+
+**Genre-forcing direction.** This is more delicate. The Legibility Floor is doing real work — without it, models produce fragmentary unparseable prose at short lengths. But its calibration is biased. A non-human-POV story or a deep-time montage is *legible* in its own genre, just not legible by the close-third literary standard. The Floor needs to acknowledge that legibility is form-relative: a catalogue is legible if it follows catalogue conventions; a dossier is legible if it follows dossier conventions; a deep-time montage is legible if its compressions are signalled.
+
+I'd rewrite the Floor to be about *form-appropriate legibility* rather than *prose legibility tout court*. The story should be legible in the form it commits to.
+
+### Phase 1 — Plot Tradition Section
+
+Phase 1's plot-tradition section now asks for both center and strange-tail material. The writer-model produces both, and Phase 3 then ignores the strange-tail material when picking the winner.
+
+**Choice point.** The whole "name the strange tail alongside the center" framing assumes both are valid options. The writer can use either.
+
+**Genre-forcing direction.** Reframe the section. Instead of "describe the genre's range, both center and strange tail," reframe as "describe what the genre does that no other genre can do." The center of the canon often *can* be done by other genres dressed in this genre's set dressing — that's literally the failure mode we're hitting. The strange tail is the part that's irreducibly this genre. So the plot-tradition section should focus on the irreducible.
+
+This means: cut the "center" instructions entirely. The plot-tradition section asks only for what only this genre can do. That's a sharp reduction in scope but it's exactly aligned with the goal.
+
+The writer-model also suggests requiring sentence-level micro-examples of the strangest moves — "writing one paragraph in the register of a library catalogue does" the work that "naming Borges's library as a strangest move doesn't." This is good. A Phase 1 that produces 200 words of catalogue-prose-in-this-genre's-voice is reference material the writer can actually deploy in Phase 3.
+
+### Phase 3 — Premise Generation
+
+Currently asks for 30 premises with at least 15 plot-premises. The plot/recognition split.
+
+**Choice point.** Recognition-premises are a permitted half of the candidate pool. The writer can write 15 plot-premises, then 15 recognition-premises, then choose from the full 30. The 15 recognition-premises are 15 paths to literary realism that don't have to compete with anything to win.
+
+**Genre-forcing direction.** Eliminate recognition-premises. All 30 premises must be plot-premises or strange-tail premises (catalogue, encyclopedia, ontological reframe, world-as-protagonist, etc.). The premise that the story has a person who realizes something is gone — every premise is about something happening in the world that the story is rendering.
+
+This is aggressive. It removes a tool that could legitimately produce good stories. But it removes the tool that has been producing literary-realist stories every run. The trade-off is correct given the goal.
+
+The writer-model also flags a deeper problem: "Even the strange-tail options listed (catalogue, encyclopedia, ontological reframe) get attached to 'a protagonist who…'. The premise template silently presupposes a person at the center." This is right. The plot-premise definition I wrote — "*what can the AI do, what will the protocol require, who has the leverage to stop X, what is actually inside the cargo hold*" — has an implicit human in every example. The premise schema needs an additional explicit category: *premises whose subject is a system, a process, an object, or a form.*
+
+I'd add an Object/Form premise type. The writer-model proposed this directly. Premises like: "A medical ward's intake records over forty years"; "The catalogue of objects retrieved from a single bombed-out apartment block"; "The committee minutes of the entity that designs the partitions"; "An unauthorized field manual for a kind of work that wasn't supposed to exist." These premises don't have a protagonist; they have a subject.
+
+So the new Phase 3 asks for 30 premises split between plot-premises (operational mechanics with humans as agents) and object/form premises (form is the subject; no protagonist required). Eliminate recognition-premises entirely.
+
+### Phase 4 — Plot Generation
+
+Currently lists six diversity axes: setting, protagonist, register, entry point, stakes, AI presence. As the writer-model notes, every axis assumes a humanoid POV.
+
+**Choice point.** All six axes route through "a person doing something." There's no axis that admits a non-humanoid frame.
+
+**Genre-forcing direction.** Replace the protagonist axis or supplement it. Add an axis for *what kind of object the story is*: realist scene, found document, embedded artifact, parable-compression, deep-time montage, encyclopedia, transcript, dossier. The writer-model's exact suggestion. This axis explicitly varies the frame, not just the voice within a fixed frame.
+
+I'd actually go further: the "Protagonist" axis becomes "Subject of the story" — which can be a person, a process, a duration, a place, a system, a question. The change in the axis name forces the writer to consider non-protagonist subjects. Combined with the new Object/Form premise type, this means subject-of-the-story isn't always going to be a person.
+
+### Phase 5 — Structure Selection
+
+Currently asks for 20 structures using narrative-theory vocabulary (POV, distance, withholding, temporal shape).
+
+**Choice point.** As the writer-model notes: "Those terms are themselves the vocabulary of post-Jamesian literary realism. You can describe an interface fugue in those terms only by translating it back into 'close third with dilated middle section.' The translation eats the strangeness."
+
+**Genre-forcing direction.** Expand the structural vocabulary. Add explicit alternatives: catalogue, encyclopedia entry, dossier, transcript, interface log, manual, deposition record, deep-time montage, parable-compression. Require that at least some of the 20 candidates use these forms. Or — the cleaner version — split the candidate pool so half the candidates are in narrative-theory-describable structures and half are in form-described structures.
+
+I'd be careful here. The form options are not equally available for every premise. A premise about Wen at her terminal can't be a deep-time montage without being rebuilt. So the form options need to be *natural to the premise* — which means either Phase 5 rebuilds the premise to fit the form, or Phase 3's premise generation already accounts for form.
+
+The cleaner solution: make Phase 3 partially form-defining. The Object/Form premises in Phase 3 already specify a form (catalogue, encyclopedia, etc.); plot-premises don't. By the time Phase 5 happens, half the candidates have inherited a form from Phase 3 and the other half are looking for one.
+
+### Phase 7 — Story Generation
+
+Currently asks for five complete versions, with "at least two of the five should take a creative risk you're not fully confident will land."
+
+**Choice point.** "Creative risk" is interpreted as tonal risk inside a domestic-realist frame. Versions 4 and 5 of the cyberpunk run were "the strange-tail coda pushed harder" and "Sahel community-decision frame" — but the writer chose Version 1 anyway, because the strange-tail versions "underrendered the operational beat."
+
+**Genre-forcing direction.** Make the risk requirements specific and binding. Two of the five versions must be in different forms — one realist scene, one not. The chooser can pick the realist scene if it's better; but at least one form-different version has to be a real candidate.
+
+Also, change the worry calibration. The writer-model's suggestion: require the audit to flag "too quiet, too character-anchored, doesn't use what only this genre can do" alongside "generic, sentimental, performed." Right now the worry vocabulary is asymmetric — it catches one direction of failure but not the other.
+
+I'd go even further: invert the safety calibration entirely. The current "what worries you" gate makes the writer name reasons not to pick a candidate. The genre-forcing version should make the writer name reasons *not to pick the realist option*: "if this candidate is the realist-scene version, what is it failing to do that the form-different versions are doing?"
+
+### Phase 8 — Revision
+
+Currently audits for Unslop patterns, genre-voice slippage, legibility, regression to default.
+
+**Choice point.** "Legibility" pulls toward smoothing. The audit's targets are sentence-level Unslop patterns, which the writer-model now passes cleanly. The audit doesn't catch the Carver-shape failure because the Carver-shape is exactly what the audit's literary-craft instincts validate.
+
+**Genre-forcing direction.** Add an explicit audit question: *Does this story's form do work only its genre can do, or could this story be re-skinned in another genre or as contemporary realism without losing its subject?* If it could be re-skinned, that's a flag — and not a soft one. The writer should have to either redo the form or revise the premise.
+
+Also add a worry-asymmetry correction: when checking for regression to default, the regression includes "regression to literary realism" as the primary failure mode, not just "regression to safer prose." The form commitments from Phase 3/4/5 must survive Phase 7's prose generation; the audit checks whether they did.
+
+### Notes Section
+
+Currently includes "Pushing back on the literary-realist tilt" framing. That note acknowledges the tilt as a tilt — something the writer can either accept or push against.
+
+**Choice point.** The framing presents literary realism as a default option the user can override. With the new template's purpose, literary realism is no longer an option at all.
+
+**Genre-forcing direction.** Replace the Notes entry. The new framing: "This template produces plot-focused genre fiction. It does not produce literary realism. If a user wants literary-realist work in a speculative setting, they want a different template." A clear positioning statement.
+
+## Summary of the Choice Points
+
+| Phase | Current choice | Genre-forcing direction |
+|-------|-----------------|------------------------|
+| Setup — Constraints | Five human-AI shapes, four are interior | Default to scales the protagonist can't fully witness; canon refs as primary model |
+| Setup — Legibility Floor | Prose-level legibility | Form-appropriate legibility |
+| Phase 1 — Plot tradition | Center + strange tail | Strange tail only; plus micro-example paragraphs |
+| Phase 3 — Premise types | Plot + Recognition | Plot + Object/Form; Recognition eliminated |
+| Phase 4 — Diversity axes | Six humanoid axes | Add "what kind of object is this story"; subject can be non-person |
+| Phase 5 — Structure vocabulary | Narrative-theory terms | Plus form vocabulary (catalogue, dossier, transcript, etc.) |
+| Phase 7 — Creative risks | Tonal risk | Form risk required; one realist, one form-different |
+| Phase 7 — Worry vocabulary | Catches one direction | Inverted: name reasons not to pick the realist version |
+| Phase 8 — Audit | Prose-level | Plus form-survival check; re-skin test |
+| Notes | Tilt framing | Plot-focused only; not literary-realism territory |
+
+Ten intervention points. The biggest are at Phase 3 (eliminate Recognition, add Object/Form) and Phase 4 (add the form axis). The Setup change to scale-defaulting is the highest-leverage cheap one. The Phase 1 micro-example requirement is novel and may be the most operationally useful single addition.
+
+## On Through-Checks
+
+Your instinct that we need more thorough checks is right. Once we've forced direction at each phase, we need to verify the direction survives downstream. Several places where through-checks would help:
+
+**Between Phase 3 and Phase 4.** After picking the premise, the writer should declare its category (plot or object/form) and the form constraints that follow. If the premise is object/form, the form is locked in by Phase 5; if plot, the form is open. This declaration is a checkpoint that prevents the writer from quietly reframing an object/form premise as a plot premise downstream.
+
+**Between Phase 5 and Phase 6.** After picking the structure, the writer should commit to the form vocabulary the structure uses. An outline for a catalogue-form story uses catalogue language; an outline for a deposition uses deposition language. The outline is in the form, not in narrative-prose summary of the form. This is the writer-model's micro-example suggestion at outline scale.
+
+**Between Phase 7 and Phase 8.** Before writing the audit, the writer should explicitly identify which of the five versions has the strongest form commitment. If the chosen version isn't that one, the writer must justify why the form commitment was given up. Without this, the audit will rationalize the realist choice.
+
+**At Phase 8 itself.** The re-skin test as a hard audit step. If the chosen story can be re-skinned as contemporary realism, the audit identifies which form commitments would have to be added to make it irreducible.
+
+These through-checks add procedural weight, but they're the price of forcing the direction. Without them, the writer-model converts each forced choice back into a choice through downstream interpretation.
+
+## What the New Template Looks Like
+
+This is a substantially different template. Not a v4.8 — it's a fork. v4.7 (and lineage v4.x) tried to produce both literary-realist and genre stories well, with various interventions designed to widen the range. The new template is single-direction. It produces plot-focused genre fiction and refuses to produce literary realism in a speculative setting.
+
+The naming should reflect the fork. I'd call it something like "Genre-Forced" or "Plot-Direct" rather than v4.8 or v5.0 — to signal it's a different instrument, not the next iteration. If later you want to reintroduce a settings-switch that lets the user pick between literary-realist and genre modes, the literary-realist mode would resume from v4.7 and the genre mode would use this new template.
+
+I'm cautious about naming. "Genre-Forced" sounds prescriptive in the right way but a bit graceless. "Plot-Direct" is cleaner but doesn't capture the strange-tail openness. "Operational" maybe — fiction whose engine is operational rather than recognitional. I'll defer to your call.
+
+## Ready to Implement
+
+Your direction is sound and the choice analysis above gives me what I need. I think this is correct: the writer-model has been telling us at every round that it will pick literary realism if literary realism is available, and we've been trying to make it choose otherwise without removing the option. The new template removes the option.
+
+I'm ready to draft the genre-forced template when you give the go-ahead. A few decisions I'd want first:
+
+1. Do you want to start from v4.7 and modify, or start from a clean slate? The v4.7 lineage carries some structural decisions (the SEED mechanism, the eight-phase shape, the load-bearing constraint) that don't need rethinking. I'd start from v4.7 unless you want a deeper rebuild.
+
+2. Naming the new template. "Genre-Forced," "Plot-Direct," "Operational" — or your call.
+
+3. The Object/Form premise category — should it be coequal with plot-premises (15 of each) or should plot-premises remain dominant (say 20 plot + 10 object/form)? The writer-models default to plot-premises with humans as agents; making object/form fully coequal forces more form-experiments to surface. But too much weight on form-premises might starve the plot-mechanic territory the genre also needs.
+
+Let me know on these and I'll write the new file.
+
+---
+
+# 75. User (2026-04-30)
+
+We could call our new template "Genre Fiction" instead of "Baseline" and declare it version 1.0. The name might help the way moving from "Plain" to "Baseline" helped with over-plain language. What do you think?
+
+---
+
+# 76. Claude (2026-04-29)
+
+Strong yes on both — the rename and the version reset.
+
+## Why the rename works
+
+"Genre Fiction" is positively load-bearing in a way "Baseline" isn't. Baseline named what the template *was* in the project's architecture (the reference version other variants might fork from); it didn't name what the template *did*. The writer-model reading "Baseline" gets no positive signal about what kind of fiction to produce. The writer-model reading "Genre Fiction" gets a clear positive signal: this is for genre fiction, not for literary fiction in genre clothing.
+
+The Plain→Baseline parallel is exact. "Plain" was inadvertently telling the writer-model to produce plain prose; "Baseline" was register-neutral and let the writer pick. "Baseline" is now inadvertently telling the writer-model that this is the project's neutral starting point, where any kind of speculative fiction is acceptable. "Genre Fiction" tells the writer-model that this is specifically for genre fiction, period. The naming does positive prompt-engineering work that the rename to Baseline did defensively.
+
+The name also clarifies what the template *isn't*. A template called "Baseline v4.8" with a Recognition-premise type eliminated would still feel like a normal evolution where some option was tightened. A template called "Genre Fiction v1.0" with no Recognition premises is doing what its name says it does. The naming preempts the reading "but I could also do a recognition-shaped story here" because the template isn't called "Speculative Fiction" or "Baseline" anymore — it's called Genre Fiction, and recognition-shaped stories aren't genre fiction in the sense the name uses.
+
+## Why the version reset works
+
+A version reset signals architectural break, not iteration. v4.7 → v4.8 reads as continuity, where v4.8 is the next refinement of the same instrument. "Genre Fiction v1.0" reads as a new instrument that happens to have inherited code from a previous one. That's accurate to what we're doing.
+
+It also frees up the version space for further iteration. If the new instrument needs revision after testing, "Genre Fiction v1.1" is clean. We don't have to thread the iteration through the v4.x naming, which would be confusing because the v4.x lineage is now a different (paused) project.
+
+For the project's git history, the rename also lets the v4.x baseline lineage stay frozen at v4.7. If you ever want a settings-switchable template that includes both literary-realist and genre-fiction modes, v4.7 stays as the literary-realist mode reference and Genre Fiction v1.0 stays as the genre mode reference. Two clean templates rather than one branching version tree.
+
+## One naming nuance
+
+I'd write the title as "Genre Fiction" not "Genre-Fiction" — the unhyphenated form is what's used in industry and criticism (literary fiction vs. genre fiction). The hyphenated form would suggest a coined term rather than the established category.
+
+The full title in the file's H1: "Genre Fiction Short Story Pipeline — Claude Projects Template (v1.0)". Drops "Speculative Fiction" from the title because Genre Fiction is the higher-leverage label, and the speculative element is preserved through GENRE settings and the AI-frame constraint.
+
+Genre fiction includes more than speculative fiction (mystery, romance, thriller, western), but the AI-kindness Setup constraint effectively scopes the template to speculative genres anyway. We don't need to caveat this in the title; the constraint does the work.
+
+Ready to write Genre Fiction v1.0 when you give the go-ahead. Two implementation decisions still outstanding from my prior message:
+
+1. Plot vs. Object/Form premise mix at Phase 3 — coequal at 15/15, or weighted toward plot at something like 20/10? My instinct is 20/10. Plot-premises with humans as agents are the spine of most genre fiction, including the strange tail. Pure Object/Form premises are valuable but rarer in the canon. Weighted toward plot keeps the spine while opening the form territory. I'd lean 20 plot / 10 object-form.
+
+2. Whether to start from v4.7 and modify, or from a clean slate. I'd recommend starting from v4.7 and modifying. The structural decisions in v4.7 (eight-phase shape, SEED mechanism, load-bearing constraint, top-three with stand-out/worry, post-revision export) are sound and don't need rebuilding. The fork is in content and emphasis, not in architecture.
+
+Both my recommendations, but happy to defer if you have different instincts.
+
+---
+
+# 77. User (2026-04-30)
+
+1. I think we must eliminate this choice, too. Plot only.
+2. Start with v4.7 and modify. Keep an eye out for legacy language you can remove. (For clarity, not to reduce the word count for its own sake. We can afford a higher word count.)
+Beyond that, LGTM. Go ahead and write the new template.
+
+---
+
+# 78. Claude (2026-04-29)
+
+Now I'll work through the document top to bottom, making each change deliberately. Let me view the file to plan precisely.Now I have the full picture. Let me work through the changes systematically. Going phase by phase.
+
+**Title and intro.****Constraints — reframe for scale.** The current section lists five conflict shapes, four of which admit literary-realist treatment. Need to reframe so that scales the protagonist can't fully witness become the default rather than one option.**Legibility Floor — reframe to form-relative legibility.****Phase 1 — Style Guide intro.** Need to update the framing to reflect that this template only produces genre fiction. The intro paragraph should specify what the guide is for in this template, not generic "prescriptive guide for writing speculative fiction."**Phase 1 — plot tradition section reframed.** The whole "describe the genre's range, both center and strange tail" framing assumes both are valid options. With the new template, the strange tail and operational center are both valid; what's *not* valid is treating the genre as a flavor of literary realism. So the section should describe the genre's range *along the plot/operational axis*, not split into "center vs. strange tail" — both center and strange tail are operational; both are what we want.
+
+Actually, on reflection, the center vs. strange-tail framing is still useful — but the framing of "the strange tail is what distinguishes the genre from literary realism" can be sharpened. The center is also genre territory; the failure mode is treating genre as literary-realist territory. So the framing needs to make clear that both center and strange tail are genre territory — what's excluded is the literary-realist treatment of either.
+
+Plus, I want to add the writer-model's micro-example suggestion: require that the strangest-moves subsection include sentence-level micro-examples in the genre's voice. This is high-leverage.**Phase 3 — Eliminate Recognition premises. Plot-only.** This is the load-bearing change.**Phase 4 — replace humanoid axes.** Currently has six axes that all assume humanoid POV. Need to replace the protagonist axis and add a "what kind of object is this story" axis.**Phase 5 — Structure expanded vocabulary.** Currently uses narrative-theory terms exclusively. Need to add form vocabulary.**Phase 6 — Outline Generation.** Need to update the example outline beat (which currently shows a domestic scene), and ensure the outline is in the form rather than summarizing it.**Phase 7 — Story Generation.** Need to require frame-different versions and invert the worry calibration.**Phase 8 — Revision.** Add the re-skin test and form-survival check.**Phase 9 — Export.** Mostly fine but the abstract instructions assume a story with characters and a plot in the realist sense. Need to update for non-realist forms.**Notes section.** Replace the literary-realist tilt framing with a positioning note. Update the SEED note. Remove stale references.Final audit. Looking for stale references.All references to Recognition and recognition-premises are intentional — they're naming the failure mode the template excludes. No HEA, no tilt, no Track A/B. Clean.Consistent. Final word count.Genre Fiction v1.0 is ready. Summary of what changed from Baseline v4.7:
+
+**Title and intro** — Renamed "Genre Fiction Short Story Pipeline (v1.0)." New opening paragraph names what the template is and isn't, defines the operational distinction (engine = mechanics/system/form for genre, engine = interiority/recognition for literary realism), and states the template is for genre fiction only.
+
+**Constraints — scale default reframed.** The five conflict shapes are kept but rewritten so all five default to scales the protagonist cannot fully witness. New paragraph explicitly states: "The default scale is one the protagonist cannot fully witness... A story whose central conflict can be fully witnessed by one human in one location over one afternoon is not what this template produces." The Banks/Egan/Stapledon canon is positioned as the template's positive reference, not as one option among many.
+
+**Legibility Floor — form-relative.** Reframed from "prose readable as a close-third scene" to "story legible in the form it commits to." A catalogue is legible if it follows catalogue conventions; a montage is legible if its compressions are signalled. The Floor no longer pulls toward smaller domestic stories whenever the writer is uncertain.
+
+**Phase 1 — plot tradition repositioned and micro-examples added.** Section's framing now states that both center and strange tail are genre territory; what's excluded is literary-realist treatment of either. The strangest-moves subsection now requires sentence-level micro-examples — single paragraphs of 80-150 words written *in the register of each strangest move*. This is the high-leverage addition: instead of naming "Borges's library" as a strange move, the writer writes a paragraph of catalogue prose for the genre. That paragraph propagates downstream in a way that a label doesn't.
+
+**Phase 3 — Recognition premises eliminated.** The biggest single change. All 30 premises must be plot-premises. Strange-Tail premises (catalogue, encyclopedia, dossier, deep-time montage, world-as-protagonist, etc.) are explicitly framed as plot-premises in the broadest sense — operational rather than recognitional. Hard floor: at least 8 of 30 must commit to a strange-tail shape. **At least one of the top three must be Strange-Tail.** Worry vocabulary is asymmetric: ambition-related worries don't penalize, recognition-creep worries do. Through-check at end declares premise category and form constraints.
+
+**Phase 4 — diversity axes restructured.** Replaced the humanoid "Protagonist" axis with a "Subject of the story" axis (who or what the story is *about*, distinct from POV) and a "Form" axis (realist scene, found document, embedded artifact, parable-compression, deep-time montage, encyclopedia, transcript, dossier, etc.). If the premise is Strange-Tail, the form is partially fixed and the variation is in execution; if Plot, the form is open and at least 3 of 20 plots must commit to non-realist-scene forms. Stakes axis is reframed around operational scales rather than personal/communal/civilizational. Worry vocabulary is asymmetric here too. Through-check at end locks the form.
+
+**Phase 5 — vocabulary expanded.** Structural axes now split between realist-scene vocabulary (entry point, temporal shape, withholding, POV) and non-realist-form vocabulary (entry-organization, gaps and absences, accumulation pattern, terminus). Three worked examples: realist scene, catalogue, deep-time montage. Through-check restates the locked form and names formal conventions Phase 6 must honor.
+
+**Phase 6 — outline in the form.** Outline must be in the form, not narrative-prose summarizing the form. Three example beats in different forms: realist scene, catalogue entry, deep-time montage section. Diversity-clustering on form is flagged. Phase 6 now flags outlines that have quietly reverted to realist-scene structure when the form is supposed to be non-realist.
+
+**Phase 7 — form survival required.** Five versions all must execute the locked form; a version that drifts back to realist scene when the form is non-realist is "not a successful variant; it is a failure that must be replaced." At least one of the two creative risks must be at the level of form's voice or structure, not at tonal level. Worry vocabulary is asymmetric: realism-creep worries are fatal, ambition-cost worries are not. Through-check confirms the chosen version executes the form.
+
+**Phase 8 — re-skin test added.** Before any line-level audit, the revision pass tests whether the story can be re-skinned as contemporary literary realism by stripping the speculative element. If yes, fundamental rewrite required. Form-survival check follows. The audit's regression lens specifically targets "Regression to literary realism" with examples (interiority taking over a system-subject story, scale-large stories shrunk to gestures, non-realist forms softened toward narrative summary).
+
+**Phase 9 — abstract handling for non-realist forms.** Abstract instructions updated to handle catalogues, dossiers, montages — naming the form and describing contents/trajectory rather than rendering scenes.
+
+**Notes — repositioned.** "What this template is for" replaces the literary-realist tilt note. New entry on the asymmetric worry vocabulary explaining why it's asymmetric. New entry on the form commitment chain explaining the through-checks. SEED notes preserved. Revision iteration note now says: if the re-skin test fails twice, go back to Phase 3 and pick a different premise.
+
+The template more than doubled in size from Baseline v4.7 (roughly 5500 → 8400 words), but by your direction the word budget isn't the constraint. The new instructions add through-checks, asymmetric forcing functions, expanded vocabulary, and the recognition-elimination apparatus. It's a more procedural document than Baseline ever was. That's by design: we've established that gentle pressure doesn't work, so the new template applies hard pressure at every fork.
+
+If after testing it Genre Fiction produces stories that are too cold, too formally restrictive, or too hard to read, the next round can soften specific constraints. But this template is calibrated to overshoot the realism-resistance target rather than undershoot it, because every prior round has undershot.
+
+---
+
+# 79. User (2026-04-30)
+
+Good. I'll test the new pipeline with cyberpunk again. I'm thinking that maybe the randomly generated SEED, something I strongly prefer for automation, is also at fault. Give me an authentically cyberpunk SEED to try. Do not imitate the dictionary machine; write it as if a real tweet. It can be derivative of classics like the works of Gibson and Sterling. We care less about originality and even quality than genre adherence since it's a test.
+
+---
+
+# 80. Claude (2026-04-29)
+
+Here's a tweet-length cyberpunk SEED. 257 characters.
+
+> Burnscar runner with a Hosaka deck three generations stale, trying to fence a black-ICE module she shouldn't have lifted. Her fixer is dead. The corp she pulled it from is restructuring, which means the wetwork is being subcontracted out. Forty-eight hours.
+
+What I aimed for: every clause is operational. The runner has a deck (capability marker), the deck is obsolete (vulnerability), she has stolen a specific thing (the operation that already happened), the thing has a market (the fence question), her fence is dead (the original plan failed), the corp's response is institutional rather than personal (cyberpunk's signature: bureaucracy as antagonist), the response mechanism is named (subcontracted wetwork), and there's a deadline (forty-eight hours).
+
+Specific genre weight: "Hosaka" is Gibson; "black ICE" is Gibson and Sterling; "wetwork" is the Sprawl trilogy and *Hardwired*; "burnscar" is from the *Sprawl Trilogy* setting. The corp restructuring as the thing that endangers the protagonist is *Count Zero*'s opening engine. Three generations stale on the deck is the kind of texture detail Gibson uses constantly: specific obsolescence as a fact about how this economy moves.
+
+What this SEED doesn't do: name a recognition. There's no character realizing anything. The premise is "she stole a thing, the people she stole it from are coming for her, her plan to get rid of it failed, there's a deadline." That's plot-mechanic shape from the first sentence.
+
+If the writer-model honors the SEED, every premise generated from it will have to incorporate at least two of: (1) the runner's obsolete deck, (2) the stolen black-ICE module, (3) the dead fixer, (4) the corp's restructuring, (5) the subcontracted wetwork, (6) the 48-hour window. Most of those are operational entities; none of them is a feeling or a memory or an internal state. A writer trying to convert this into a recognition-premise would have to actively work against the SEED.
+
+One concern worth flagging: the SEED is quite tight. It's almost a logline rather than a seed. A SEED with this much built-in plot-shape will produce 30 premises that are variations of the same situation rather than 30 distinct premises. The dictionary-draw SEEDs are better at producing wide variation; this one is more like a directed prompt.
+
+If you want wider variation, I can write a thinner SEED — fewer constitutive elements, less of a built-in plot. Something like:
+
+> A neural shunt, an unlicensed clinic, and the question of who pays the surgeon when the client can't.
+
+Or if you want maximum dictionary-style heterogeneity, I can write something more Gibson-like in its randomness:
+
+> Tsushima yen. The Sendai Star-Mart. A credstick that pings unfamiliar. Lucky Strikes. The fixer's daughter, age sixteen, asking why her father isn't picking up.
+
+That last one mimics the dictionary-machine's spread (commercial brand + currency + transaction failure + person + family relation + concrete object) but in cyberpunk vocabulary. It's plot-suggestive without being plot-determined; the writer would have to construct what's happening rather than execute a pre-existing situation.
+
+My instinct is that the **Tsushima yen / fixer's daughter** version is the better test for a Genre Fiction v1.0 run, precisely because it leaves the writer enough room to explore where the SEED-template-genre interaction breaks down. The 48-hour-runner SEED would test whether the writer can execute a tightly-defined plot, but the Tsushima version tests whether the SEED + template combination can produce a plot from cyberpunk-flavored raw materials. The second is more diagnostic.
+
+But you know your test better than I do. Either is usable; my recommendation is the Tsushima version for the cleanest experiment.
+
+---
+
+# 81. User (2026-04-30)
+
+Okay, here is what I have tried: (1) the new Genre Fiction pipeline with a random seed, (2) the new Genre Fiction pipeline with your longest concentrated-cyberpunk custom story SEED, and (3) the Baseline pipeline v4.7 with the same concentrated-cyberpunk story SEED. What do you see here? All were tested with the Unslop guide for SF.
+
+---
+
+# 82. Claude (2026-04-29)
+
+Sounds good. A few notes for whoever picks this up next session — you, future you, or another writer-model session loaded with the project.
+
+**What to look for during further testing.** The two failure modes I flagged are the ones that would tell us v1.0 is overshooting: stories that lock into strange-tail forms even when the genre would be better served by a center-canon plot, and stories that go so cold that the form can't carry the reader. If the next several runs across different genres produce neither, the calibration is right and v1.0 is done. If one or both appear, the corrections I sketched (relaxing the Phase 3 strange-tail floor, adding a voice-anchoring sentence to Phase 7) are the cheapest single interventions.
+
+**What to watch even when nothing seems wrong.** Whether the writer-model in the retrospective continues to be sharp about its own selection process. The retrospectives have been the project's best diagnostic instrument — each round, the writer-model has named a more specific mechanism than the round before. If the v1.0 retrospectives stop getting sharper, or if the writer-model says "the template gave me what I needed" without further detail, that's a sign of saturation. The model has stopped finding new things to flag because there aren't new things, or because the template has reached a local optimum the model can't see past.
+
+**What's not worth chasing.** A few interventions are tempting but I think wrong to pursue without strong evidence: re-introducing prose-level genre permissions of the v4.5.1 kind, adding additional through-checks beyond the ones already in v1.0, and tightening the SEED's plot-suggestiveness as a default. These are local fixes for problems v1.0 may not have. The clean architecture of v1.0 — single-direction, hard-pressure, form-first — is the thing the testing is evaluating. Adding more machinery before the test results are in would muddy the evaluation.
+
+**Files in their final state.** Genre Fiction v1.0 at `/mnt/user-data/outputs/story-pipeline-template-genre-fiction-v1.0.md`. Unslop SF guide at `/mnt/user-data/outputs/unslop-style-guide-sf.md`. Baseline v4.7 stays frozen as the literary-permitting endpoint of the v4.x lineage. You have all of these git-versioned, so there's nothing for me to caution about preserving.
+
+Good luck with the runs. The "After-Action" output was the first time in this project that a generated story made me actually want to read more — not as a quality assessment but as a reader's response. Whatever the next genres produce, the instrument has proven it can produce that. Looking forward to seeing the next round.
+
+---
+
+# 83. User (2026-04-30)
+
+> Don't change anything yet. Test more genres.
+
+This is my plan. I will get back to you.
+
+---
+
