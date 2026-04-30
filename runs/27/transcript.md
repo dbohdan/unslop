@@ -1690,3 +1690,29 @@ Continue. Next phase.
 
 ---
 
+# 19. User
+
+Thanks. Why do you think stories produced by Claude using this template are so mundane? As an Opus 4.6 critic put it:
+> These aren't science fiction. They're domestic realism with AI as load-bearing infrastructure — closer to Raymond Carver with ambient computation than to anything in the Asimov lineage. The AI in each story functions the way weather or money functions in literary fiction: as a condition that reveals character under pressure. That's a compliment.
+I agree with Opus 4.6 that this is not inherently bad: the best stories of the project were created this way. However, it's a bias that limits our range.
+
+---
+
+# 20. Claude
+
+The bias is real, and I think it has at least four sources stacked on top of each other.
+
+**The pipeline rewards interiority at every selection point.** Phase 3 asks me to label premises Plot or Recognition with a 15-plot-minimum floor — but plot premises survive into the top three by being *dramatically interesting*, and dramatic interest under literary criteria means human stakes. Even when I pick a "plot" premise, I'm picking the one whose operational mechanics most cleanly externalize someone's interior. The 80-year-cartridge premise nominally has plot stakes (revive, redirect, destroy) but the dramatic engine is grief. I picked it over a mid-trimester funding-crisis story partly because I trusted myself to write the grief better than the procedural — which is exactly the bias the floor was supposed to counter.
+
+**The "what worries you" forcing function rewards safety.** Every top-three step requires me to name a concern about each finalist, and the concern that's easiest to name is *this might fail in execution*. Strange-tail premises generate more legible worries (form-fragile, contrivance-prone, legibility risk) than domestic-realism premises do. When I'm forced to trade a named worry against a named strength, the premise with the smaller failure mode wins. This punishes ambition systematically. The catalogue, the colony POV, the pre-history horse — they all fell out partly because I could articulate their risks more crisply than I could articulate their potential.
+
+**The Unslop guide is anti-purple, not anti-bland.** It's a sharp instrument against AI prose's specific failure modes — performed profundity, eyeball-kicks, atmospheric mood-stacking. But every example it gives of bad writing is *overcooked*, and every implicit example of good writing is restrained, concrete, specific. A writer following the Unslop guide religiously will reliably produce Carver-flavored prose, because Carver is what's left when you subtract everything the guide forbids. There's no equivalent guide saying *don't write small when you should write big*, *don't render the body when you should render the species*, *the strange tail is mandatory at this length*. Phase 1 says these things, but Phase 8 doesn't audit for them.
+
+**The kind-AI constraint pulls toward the domestic.** The Setup's strongest shapes — *the AI loves a human it will outlive, the AI cannot help with what the human wants, power and pace asymmetry, mortality and scale* — are all relational shapes between an AI and one specific human. They're easier to dramatize at the kitchen-table scale than at any other scale. A Banks Mind running a war or a Stiegler nanotech civilization is much harder to write at 2500 words without it becoming travelogue, and the constraint that the AI can't be secretly bad removes the most reliable cyberpunk/biopunk plot engine. What's left is care across asymmetry — and care across asymmetry, rendered specifically, looks like literary fiction. The Asimov lineage runs on AIs as *problems*; this project runs on AIs as *conditions*, and conditions don't generate plot the way problems do.
+
+The deeper issue might be that the pipeline's quality criteria and its range criteria are in tension. Every revision pass makes the story tighter, more specific, more readable — and tighter, more specific, more readable is what domestic realism *is*. The strange tail rewards moves that read as worse on first pass: a colony POV is harder to follow, a deep-time montage feels thinner per beat, a catalogue feels less inhabited. If the pipeline let those candidates survive longer — if Phase 8's audit asked *did this story take a real risk and did the risk land?* alongside *is the prose clean?* — the range would widen.
+
+A practical experiment: try a run where Phase 3 requires at least one of the top three to be a strange-tail premise, and Phase 7 requires at least two of the five versions to commit to a non-realist form (catalogue, non-human POV, deep-time montage, second person). Not "at least two should take a creative risk," which is what Phase 7 already says and which I read as *take a tonal risk inside a domestic-realist frame*, but: at least two must abandon the domestic-realist frame entirely. The selection pressure has to be structural; otherwise I'll keep choosing Carver, because I'm good at Carver and the pipeline keeps rewarding me for it.
+
+---
+
