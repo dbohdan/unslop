@@ -1,7 +1,7 @@
 # History
 
 The pipeline arrived at its current shape over five weeks and four lineages.
-This file traces what changed and why, and indexes the thirty hand-driven
+This file traces what changed and why, and indexes the thirty-one hand-driven
 runs that drove the revisions.
 
 ## 0. Trial — `trial.md` (March 30)
@@ -451,35 +451,40 @@ for runs that need to break the attractor.
 
 ## Run index
 
-| #  | Title | Template | Directory |
-|----|-------|----------|-----------|
-| 01 | The Toy | initial v1 | [`runs/01/`](runs/01/) |
-| 02 | Last Call | v2 | [`runs/02/`](runs/02/) |
-| 03 | The Warm Thing | v2 | [`runs/03/`](runs/03/) |
-| 04 | They're Fine | Nix v3 | [`runs/04/`](runs/04/) |
-| 05 | The Obsolescence Garden | Nix v1 → Nix v2 | [`runs/05/`](runs/05/) |
-| 06 | The Tire | Plain v3 | [`runs/06/`](runs/06/) |
-| 07 | Sibling | Plain v3 | [`runs/07/`](runs/07/) |
-| 08 | The Last Allocation | Plain v3 | [`runs/08/`](runs/08/) |
-| 09 | The Grandson at the Valero | Plain v3 | [`runs/09/`](runs/09/) |
-| 10 | Si Elena Me Hablara | Baseline v3.3 | [`runs/10/`](runs/10/) |
-| 11 | ORRA | Baseline v3.3 | [`runs/11/`](runs/11/) |
-| 12 | The Sixty | Baseline v3.3 | [`runs/12/`](runs/12/) |
-| 13 | Love in the Key of Damage | Baseline v3.3 | [`runs/13/`](runs/13/) |
-| 14 | Serasht in Spring | Baseline v3.3 | [`runs/14/`](runs/14/) |
-| 15 | Butter and Bone | Baseline v3.3 | [`runs/15/`](runs/15/) |
-| 16 | Dream Me Something Kinder, Darling | Baseline v3.3 | [`runs/16/`](runs/16/) |
-| 17 | The Fifth Prospero | Baseline v4.1 | [`runs/17/`](runs/17/) |
-| 18 | The Count / Six Hundred (A/B on preferences) | Baseline v4.2 | [`runs/18/`](runs/18/) |
-| 19 | The Mother — Ten Versions / Enough / The Flags / One True Thing | original (Ellison AUTHOR), no prefs | [`runs/19/`](runs/19/) |
-| 20 | Off the Top (with prefs) / The Full Scope (without) | Baseline v4.3 | [`runs/20/`](runs/20/) |
-| 21 | Maybe-Not-Yet | Baseline v4.3 | [`runs/21/`](runs/21/) |
-| 22 | The Visitor Lanyard | Baseline v4.3 | [`runs/22/`](runs/22/) |
-| 23 | The Wry Surface | Baseline v4.3 | [`runs/23/`](runs/23/) |
-| 24 | Memory-Corner 0x7A4E | Baseline v4.5.1 | [`runs/24/`](runs/24/) |
-| 25 | The Older Charter | Baseline v4.6 | [`runs/25/`](runs/25/) |
-| 26 | The Brass-Polisher's Night | Baseline v4.6 | [`runs/26/`](runs/26/) |
-| 27 | The Long Watch | Baseline v4.7 | [`runs/27/`](runs/27/) |
-| 28 | The Morning's Work | Baseline v4.7 | [`runs/28/`](runs/28/) |
-| 29 | The Working Shape of the River | Baseline v4.7 + SF Unslop | [`runs/29/`](runs/29/) |
-| 30 | Stale / After-Action / Continental dispatch | v4.7 vs. Genre Fiction v1.0 | [`runs/30/`](runs/30/) |
+Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison
+throughout); runs 17 onward use the `[GENRE]` setting that v4 introduced.
+The Genre column lists `[GENRE]` for the latter and `—` for the former.
+
+| #  | Title | Genre | Template | Directory |
+|----|-------|-------|----------|-----------|
+| 01 | The Toy | — | initial v1 | [`runs/01/`](runs/01/) |
+| 02 | Last Call | — | v2 | [`runs/02/`](runs/02/) |
+| 03 | The Warm Thing | — | v2 | [`runs/03/`](runs/03/) |
+| 04 | They're Fine | — | Nix v3 | [`runs/04/`](runs/04/) |
+| 05 | The Obsolescence Garden | — | Nix v1 → Nix v2 | [`runs/05/`](runs/05/) |
+| 06 | The Tire | — | Plain v3 | [`runs/06/`](runs/06/) |
+| 07 | Sibling | — | Plain v3 | [`runs/07/`](runs/07/) |
+| 08 | The Last Allocation | — | Plain v3 | [`runs/08/`](runs/08/) |
+| 09 | The Grandson at the Valero | — | Plain v3 | [`runs/09/`](runs/09/) |
+| 10 | Si Elena Me Hablara | — | Baseline v3.3 | [`runs/10/`](runs/10/) |
+| 11 | ORRA | — | Baseline v3.3 | [`runs/11/`](runs/11/) |
+| 12 | The Sixty | — | Baseline v3.3 | [`runs/12/`](runs/12/) |
+| 13 | Love in the Key of Damage | — | Baseline v3.3 | [`runs/13/`](runs/13/) |
+| 14 | Serasht in Spring | — | Baseline v3.3 | [`runs/14/`](runs/14/) |
+| 15 | Butter and Bone | — | Baseline v3.3 | [`runs/15/`](runs/15/) |
+| 16 | Dream Me Something Kinder, Darling | — | Baseline v3.3 | [`runs/16/`](runs/16/) |
+| 17 | The Fifth Prospero | hysterical realism | Baseline v4.1 | [`runs/17/`](runs/17/) |
+| 18 | The Count / Six Hundred (A/B on preferences) | hysterical realism | Baseline v4.2 | [`runs/18/`](runs/18/) |
+| 19 | The Mother — Ten Versions / Enough / The Flags / One True Thing | — | original (Ellison AUTHOR), no prefs | [`runs/19/`](runs/19/) |
+| 20 | Off the Top (with prefs) / The Full Scope (without) | New Wave SF in the tradition of Harlan Ellison | Baseline v4.3 | [`runs/20/`](runs/20/) |
+| 21 | Maybe-Not-Yet | solarpunk | Baseline v4.3 | [`runs/21/`](runs/21/) |
+| 22 | The Visitor Lanyard | cyberpunk | Baseline v4.3 | [`runs/22/`](runs/22/) |
+| 23 | The Wry Surface | postcyberpunk | Baseline v4.3 | [`runs/23/`](runs/23/) |
+| 24 | Memory-Corner 0x7A4E | cyberpunk | Baseline v4.5.1 | [`runs/24/`](runs/24/) |
+| 25 | The Older Charter | cyberpunk | Baseline v4.6 | [`runs/25/`](runs/25/) |
+| 26 | The Brass-Polisher's Night | steampunk | Baseline v4.6 | [`runs/26/`](runs/26/) |
+| 27 | The Long Watch | biopunk | Baseline v4.7 | [`runs/27/`](runs/27/) |
+| 28 | The Morning's Work | technothriller | Baseline v4.7 | [`runs/28/`](runs/28/) |
+| 29 | The Working Shape of the River | cyberpunk | Baseline v4.7 + SF Unslop | [`runs/29/`](runs/29/) |
+| 30 | Stale / After-Action / Continental dispatch | cyberpunk | v4.7 vs. Genre Fiction v1.0 | [`runs/30/`](runs/30/) |
+| 31 | The Soria Correspondence | cozy SF | Genre Fiction v1.0 | [`runs/31/`](runs/31/) |

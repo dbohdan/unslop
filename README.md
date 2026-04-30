@@ -62,7 +62,7 @@ The pipeline runs in three modes:
 - **Hand-driven through the Claude web app.** With the template loaded as
   project knowledge, the model looks up each phase from the template file
   rather than the user pasting prompts. Between phases the user reviews,
-  steers, or simply asks for the next phase. Runs 01–30 in [`runs/`](runs/)
+  steers, or simply asks for the next phase. Runs 01–31 in [`runs/`](runs/)
   were produced this way; each run preserves a transcript and the resulting
   story (or stories, for the A/B and multi-model runs).
 - **Autonomously through Claude Code on the web.** A `CLAUDE.md` at the
@@ -76,7 +76,7 @@ The pipeline runs in three modes:
   phases. Tested against Claude Sonnet 4.6 and Gemini 3 Flash Preview;
   outputs in [`api/test/`](api/test/). The script is much less tested than
   the hand-driven Claude.ai path and may produce worse stories — two
-  end-to-end runs to its name, against thirty hand-driven runs in
+  end-to-end runs to its name, against thirty-one hand-driven runs in
   [`runs/`](runs/). Use it for batch experiments and ablations; use the
   Claude.ai path for the runs you care about.
 
@@ -213,7 +213,7 @@ revision overhead).
       - [transcript.md](pipeline/3-baseline/transcript.md)
     - [4-genre-fiction/](pipeline/4-genre-fiction/) — Genre Fiction fork, plot-focused only
       - [story-pipeline-template-genre-fiction-v1.0.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md)
-  - [runs/](runs/) — 30 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`
+  - [runs/](runs/) — 31 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17 onward use `[GENRE]`. The genre parenthetical is given for the latter.
     - [01/](runs/01/) — *The Toy*
     - [02/](runs/02/) — *Last Call*
     - [03/](runs/03/) — *The Warm Thing*
@@ -230,10 +230,10 @@ revision overhead).
     - [14/](runs/14/) — *Serasht in Spring*
     - [15/](runs/15/) — *Butter and Bone*
     - [16/](runs/16/) — *Dream Me Something Kinder, Darling*
-    - [17/](runs/17/) — *The Fifth Prospero*
-    - [18/](runs/18/) — *Six Hundred* (with prefs) and *The Count* (without)
+    - [17/](runs/17/) — *The Fifth Prospero* (hysterical realism)
+    - [18/](runs/18/) — *Six Hundred* (with prefs) and *The Count* (without) (hysterical realism)
     - [19/](runs/19/) — original-template (Ellison-as-AUTHOR) replication on Opus 4.6 and Opus 4.7, two runs each, all without preferences; plus [`analysis.md`](runs/19/analysis.md) comparing AI depiction across runs/02, runs/18, and runs/19
-    - [20/](runs/20/) — *Off the Top* (with prefs) and *The Full Scope* (without); v4.3 with the *Last Call* SEED, second A/B on `claude-preferences.txt`
+    - [20/](runs/20/) — *Off the Top* (with prefs) and *The Full Scope* (without) (New Wave SF in the tradition of Harlan Ellison); v4.3 with the *Last Call* SEED, second A/B on `claude-preferences.txt`
     - [21/](runs/21/) — *Maybe-Not-Yet* (solarpunk, v4.3)
     - [22/](runs/22/) — *The Visitor Lanyard* (cyberpunk, v4.3)
     - [23/](runs/23/) — *The Wry Surface* (postcyberpunk, v4.3); these three runs were the prompt for the Carver-attractor diagnosis
@@ -244,6 +244,7 @@ revision overhead).
     - [28/](runs/28/) — *The Morning's Work* (technothriller, v4.7)
     - [29/](runs/29/) — *The Working Shape of the River* (cyberpunk, v4.7 + SF Unslop)
     - [30/](runs/30/) — three-way cyberpunk comparison: *Stale* (Baseline v4.7, custom SEED), *After-Action* (Genre Fiction v1.0, same custom SEED), *Continental dispatch* (Genre Fiction v1.0, random SEED)
+    - [31/](runs/31/) — *The Soria Correspondence* (cozy SF, Genre Fiction v1.0)
   - [review/](review/) — cross-model reviews of run sets
     - [01-with-abstracts.md](review/01-with-abstracts.md)
     - [02-without-abstracts.md](review/02-without-abstracts.md)
