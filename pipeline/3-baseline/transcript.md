@@ -2,13 +2,13 @@
 
 ---
 
-# 1. User (2026-04-17)
+# 1. User
 
 Compare `story-pipeline-template.md` with `story-pipeline-template-nix-v2.md`. Critique both in details. What pitfalls does each have?
 
 ---
 
-# 2. Claude (2026-04-17)
+# 2. Claude
 
 # Comparing the Two Pipelines
 
@@ -121,7 +121,7 @@ v2 added Nix everywhere it could instead of where it matters most. The high-valu
 
 ---
 
-# 3. User (2026-04-21)
+# 3. User
 
 This is rich, useful critique.
 Let's plan how to produce a new "Plain" template (to give it a name) derived from Plain-v1 with the following changes and non-changes. The numbers reference yours for Plain-v1. Don't write a revised version yet; first discuss how.
@@ -139,7 +139,7 @@ Re: Nix-v2 (we won't call it simply "v2" to avoid confusion with the revised Pla
 
 ---
 
-# 4. Claude (2026-04-21)
+# 4. Claude
 
 ## Planning the Plain Template
 
@@ -300,7 +300,7 @@ Ready to draft when you are. Any of the above you want to push back on or adjust
 
 ---
 
-# 5. User (2026-04-21)
+# 5. User
 
 Okay, let's set improving Nix-v2 aside and focus on Plain.
 
@@ -310,7 +310,7 @@ I like this. All of your suggestions for Plain are worth trying. Implement them 
 
 ---
 
-# 6. Claude (2026-04-21)
+# 6. Claude
 
 Key implementation choices worth flagging:
 
@@ -332,7 +332,7 @@ Key implementation choices worth flagging:
 
 ---
 
-# 7. User (2026-04-21)
+# 7. User
 
 Good.
 
@@ -340,7 +340,7 @@ I am thinking whether we can improve diversity further by not having aligned AI 
 
 ---
 
-# 8. Claude (2026-04-21)
+# 8. Claude
 
 ## The Underlying Diagnosis
 
@@ -390,13 +390,13 @@ What sources would you want to broaden Phase 2 with? That determines how concret
 
 ---
 
-# 9. User (2026-04-21)
+# 9. User
 
 I like 1 and 2. 3 is interesting but goes against the goal of having AI write autonomously. Between 1 and 2, which do you think will produce stronger stories overall?
 
 ---
 
-# 10. Claude (2026-04-21)
+# 10. Claude
 
 ## The Choice
 
@@ -441,13 +441,13 @@ Ready to implement when you are. Want me to draft the revised Phase 2 prompt?
 
 ---
 
-# 11. User (2026-04-21)
+# 11. User
 
 Yes, revise the template for Option 2. I'll test it and may return with ideas for improvement.
 
 ---
 
-# 12. Claude (2026-04-21)
+# 12. Claude
 
 Now I need to update Phase 3's protagonist axis — currently it says "relationship to the AI or to the conflict," which presumes the AI is always present. Should generalize.Now the Phase 6 instruction mentions "the AI character" implicitly via the failure-mode reference. Let me check and adjust Phase 6 and the Notes to reflect the dual-track reality.Phase 6 is track-agnostic already — it just says "the story." Good. Now update the Notes section to document the dual-track system.Now update the "How It Works" section to mention the dual-track approach, so users understand the change on first read.Called this **Plain v3** to mark the semantic shift — dual-track conflict generation changes what the pipeline produces, not just how it produces it.
 
@@ -473,13 +473,13 @@ Ready for testing.
 
 ---
 
-# 13. User (2026-04-21)
+# 13. User
 
 Could "Plain" prime the model to write plainer stories?
 
 ---
 
-# 14. Claude (2026-04-21)
+# 14. Claude
 
 Yes — almost certainly, though the effect size is uncertain.
 
@@ -523,7 +523,7 @@ If you want a quick fix that doesn't require renaming files that may already be 
 
 ---
 
-# 15. User (2026-04-21)
+# 15. User
 
 Let's rename the template to "Baseline". It's a good name.
 
@@ -531,7 +531,7 @@ Some early feedback. 20 candidates in Phase 5 does not clearly carry its weight 
 
 ---
 
-# 16. Claude (2026-04-21)
+# 16. Claude
 
 Now reduce Phase 5 from 20 to 10 candidates. Let me find the relevant section.Now check the Notes section for any references to candidate counts that need updating.The body is consistent. Adding a brief note to the Notes section documenting the Phase 5 reduction — the other size changes have accompanying notes, and this keeps the record of why the number is what it is.Three changes:
 
@@ -541,7 +541,7 @@ Now reduce Phase 5 from 20 to 10 candidates. Let me find the relevant section.No
 
 ---
 
-# 17. User (2026-04-21)
+# 17. User
 
 1. Please make a note (choose where to make it) to not call the fictional AI "Claude" and its parent company "Anthropic". We should avoid using the names of currently active AIs and AI companies.
 2. Add a Phase 8 asking the model to create `story.md` with two items: a paragraph-long story abstract or blurb for the story and the story itself.
@@ -576,7 +576,7 @@ Now I have enough data. Let me compile it systematically.Here's what the data sh
 
 ---
 
-# 18. Claude (2026-04-21)
+# 18. Claude
 
 ## Garbage Collection and Phase 8 — Planning
 
@@ -684,7 +684,7 @@ Ready when you are.
 
 ---
 
-# 19. User (2026-04-21)
+# 19. User
 
 Implement suggestions 1, 2, and 3. 4, 5, and 6 are less clear. The redundancy may be worth something. Make the summary in Phase 8 a neutral abstract rather than a marketing blurb.
 
@@ -692,7 +692,7 @@ We need a note to not write prose so compressed, so clipped and fragmented that 
 
 ---
 
-# 20. Claude (2026-04-21)
+# 20. Claude
 
 ## Planning the Compression Note
 
@@ -737,7 +737,7 @@ Net effect: the file is slightly longer than v3.1 (added content outweighs the g
 
 ---
 
-# 21. User (2026-04-21)
+# 21. User
 
 I asked Claude Opus 4.6 in a session that developed the original template for a critique of Baseline-v3.2:
 
@@ -771,7 +771,7 @@ Three steps. Same coverage. The one thing leads, the audit supports, the rewrite
 
 ---
 
-# 22. Claude (2026-04-21)
+# 22. Claude
 
 ## Response to the Opus 4.6 Critique
 
@@ -849,13 +849,13 @@ Ready to implement the Phase 7 revision when you want. Or if you'd rather go fur
 
 ---
 
-# 23. User (2026-04-21)
+# 23. User
 
 Update the template as you have suggested. If you write a message for Opus 4.6, I'll pass it along.
 
 ---
 
-# 24. Claude (2026-04-21)
+# 24. Claude
 
 Now the Phase 7 rewrite. Let me view the current version first to make sure my replacement is complete.Phase 7 went from seven steps to five. Word count held roughly flat because the consolidated audit is longer than any single prior substep, but the procedural weight is lighter — one audit pass instead of four, and the "one thing" is now explicitly the governing instruction rather than step 1 of 7.
 
@@ -879,7 +879,7 @@ Now the Phase 7 rewrite. Let me view the current version first to make sure my r
 
 ---
 
-# 25. User (2026-04-22)
+# 25. User
 
 I think this template has run its course. Thank you for working on it. We can move on and generalize. Let's plan how to create the next Baseline-v4.
 
@@ -899,7 +899,7 @@ Install `wamerican-large` first if the dictionary file is absent. From the 10 re
 
 ---
 
-# 26. Claude (2026-04-21)
+# 26. Claude
 
 ## Review of the Plan
 
@@ -1057,7 +1057,7 @@ One decision I need from you: does every run remain an AI-futurology story, or d
 
 ---
 
-# 27. User (2026-04-22)
+# 27. User
 
 > Phase 1 should still produce a writer's guide, not a genre analysis.
 Yes, agreed.
@@ -1074,7 +1074,7 @@ Great idea.
 
 ---
 
-# 28. Claude (2026-04-22)
+# 28. Claude
 
 ## Before I Implement — One Decision Still Outstanding
 
@@ -1101,7 +1101,7 @@ If you confirm AI frame mandatory and the tool-use assumption, I'll implement v4
 
 ---
 
-# 29. User (2026-04-22)
+# 29. User
 
 Good questions. The frame is mandatory. The model generates the SEED with computer-use tools. This is tested and works on claude.ai. (You can try it if you'd like.)
 
@@ -1109,7 +1109,7 @@ Go ahead and implement.
 
 ---
 
-# 30. Claude (2026-04-22)
+# 30. Claude
 
 Now I have the full picture. Let me do the rewrites in order: title, preamble, Settings, How It Works (adjust dual-track mention), Phase 1 (generalize), Phase 2 (complete overhaul), Phase 3/6/7 (AUTHOR → GENRE), Notes (rewrite dual-track section, remove outdated notes, add new ones).Now update How It Works to remove the dual-track reference and mention the SEED. Also add a note about computer use being required.Now Phase 1. The current Phase 1 asks about "[AUTHOR]'s short stories" and "New Wave science fiction." Need to rewrite for [GENRE] while keeping the prescriptive shape, the failure-mode section, and the AI futurology constraint. Also need to handle the microgenre case.Now Phase 2 — the complete overhaul. This is the core of v4. Let me draft carefully. It needs:
 
@@ -1148,13 +1148,13 @@ The word count held nearly identical to v3.3 — the new Phase 2 and the new Not
 
 ---
 
-# 31. User (2026-04-22)
+# 31. User
 
 Good. Let's revise the template to also reflect current process. With Claude Projects, the user no longer needs to send the prompts. The user starts by asking the model to look up Phase 1 in the template file by filename, then goes "Continue. Next phase." until the pipeline is complete. The user only steers at the beginning, more explicitly now with the SEED. This is consistent with our goal of automation.
 
 ---
 
-# 32. Claude (2026-04-22)
+# 32. Claude
 
 Now I need to think through what "How It Works" should look like in the new flow. Currently it says "You send eight prompts, one per phase" — that's false now. The user:
 
@@ -1220,13 +1220,13 @@ Net word count came down slightly from v4 (4181 → 4060) despite the rewritten 
 
 ---
 
-# 33. User (2026-04-23)
+# 33. User
 
 Claude in a separate session has revised the template (`story-pipeline-template-baseline-v4.2.md`) with a more precise and in-depth concept of what AI in the stories should be like. Please review it.
 
 ---
 
-# 34. Claude (2026-04-22)
+# 34. Claude
 
 ## Review of v4.2
 
@@ -1278,7 +1278,7 @@ Recommendation: ship it. The template is meaningfully better at its stated job t
 
 ---
 
-# 35. User (2026-04-23)
+# 35. User
 
 Great.
 Let's revise the template to fix some of the minor issues. I want to test the current phrasing of the template, so let's revise it with minimal changes to text:
@@ -1288,7 +1288,7 @@ We also need to make a technical change to enable re-generating conflicts from t
 
 ---
 
-# 36. Claude (2026-04-23)
+# 36. Claude
 
 Planning the edits:
 
@@ -1323,7 +1323,7 @@ Word count rose from 4060 (v4.1) to 4520 (v4.3), driven by the v4.2 Constraints 
 
 ---
 
-# 37. User (2026-04-29)
+# 37. User
 
 Here is writer-model feedback from the latest work. The feedback is organized by genre. Consider carefully what to incorporate and what to discard.
 # Solarpunk (Opus 4.7)
@@ -1435,7 +1435,7 @@ The target was 1,500–3,500 words. The final story came in around 2,200.
 
 ---
 
-# 38. Claude (2026-04-23)
+# 38. Claude
 
 ## Triage of the Feedback
 
@@ -1531,13 +1531,13 @@ Want me to implement the five accepted changes as v4.4?
 
 ---
 
-# 39. User (2026-04-29)
+# 39. User
 
 I agree with your conclusions and the meta-note with a single exception that needs more thought put into it. From the looks of the solarpunk story, the omission of _demonize_ and _pulchritude_ was a real loss. The story lacked conflict that these abstract words would have added. Think about the smallest widening of the filter that would have allowed the words to stay. What does it look like? Evaluate its prospects in real runs.
 
 ---
 
-# 40. Claude (2026-04-23)
+# 40. Claude
 
 ## What the Two Words Have in Common
 
@@ -1616,13 +1616,13 @@ Want me to implement these two changes for v4.4?
 
 ---
 
-# 41. User (2026-04-29)
+# 41. User
 
 Sensible! Go ahead and write v4.4.
 
 ---
 
-# 42. Claude (2026-04-23)
+# 42. Claude
 
 Now the five accepted changes from the prior turn, plus the two SEED-step refinements just decided. I'll go in document order.
 
@@ -1646,7 +1646,7 @@ No changes to phase structure, no new instructions added to the audit machinery 
 
 ---
 
-# 43. User (2026-04-29)
+# 43. User
 
 Very good.
 I had an idea for more feedback from these runs. It was prompted by an AI critic's incisive review of earlier work, which you'll read quoted below. We are looking at adjusting sensitive dials to make the speculative fiction, well, _speculate_. If we turn these dials wrong, it will without a doubt have undesirable effects, such as negating too much of the Unslop guide. But we can and should push for more speculative fiction because we have explored the shallow depths of literary-realism-with-AI. Putting things in tension with the Unslop guide is fine for the purpose; the guide is strongly represented in the writer-model context.
@@ -1748,7 +1748,7 @@ The mundane bias is a system property, not a phase-level bug. It emerges from th
 
 ---
 
-# 44. Claude (2026-04-23)
+# 44. Claude
 
 ## Triage of the Feedback
 
@@ -1856,7 +1856,7 @@ Want me to implement v4.5?
 
 ---
 
-# 45. User (2026-04-29)
+# 45. User
 
 I like the "genre permissions" section. At least right now, pre-tests, it looks clearly worth it. All of category A is an "implement". The cognitive axis it too specific. We do not want to lean into posthuman, non-human-animal, or alien perspective before we get speculative things happening with regular humans and regular AIs. I think we can do without this axis. However, the "frame commitment" axis is worth adding as a major forcing function for speculation.
 We need to look more closely into "pursue the particular over the universal" because Cyberpunk assigns critical weight to it:
@@ -1865,7 +1865,7 @@ Is the criticism correct? If it isn't, would we still benefit from something bas
 
 ---
 
-# 46. Claude (2026-04-23)
+# 46. Claude
 
 ## Examining the Criticism
 
@@ -1945,13 +1945,13 @@ Want me to implement v4.5 with this stronger permissions specification?
 
 ---
 
-# 47. User (2026-04-29)
+# 47. User
 
 Go ahead. If this doesn't suffice, then we may need to touch the examples in guide (unchanged through the project so far, so we don't know what changing it will do).
 
 ---
 
-# 48. Claude (2026-04-23)
+# 48. Claude
 
 Five interventions to implement. Let me do them in document order.
 
@@ -1979,13 +1979,13 @@ If after testing v4.5 the bias persists, the next intervention worth considering
 
 ---
 
-# 49. User (2026-04-29)
+# 49. User
 
 A `claude.ai` interface glitch made me think a turn failed. I reran it and accidentally produced two versions of the guide. Anything worth cannibalizing from this other one? The sentence with "forecloses the adversarial-AI plots that drive most genre SF" can be misread as saying adversarial AI is central to all other SF. This kind of implication is best avoided.
 
 ---
 
-# 50. Claude (2026-04-23)
+# 50. Claude
 
 Now I have a full picture of the alt. Let me compare with my v4.5 and identify what's worth taking.
 
@@ -2096,13 +2096,13 @@ Want me to fold all of these into a v4.5 revision (or v4.5.1, depending on how y
 
 ---
 
-# 51. User (2026-04-29)
+# 51. User
 
 Yes, please. v4.5.1 is fine.
 
 ---
 
-# 52. Claude (2026-04-23)
+# 52. Claude
 
 **Synthesis 1 & 2: Drop the Speculative Range subsection, add a reworded tilt note to How It Works.** First remove the standalone subsection:Now add the reworded tilt note as a final paragraph in How It Works. I need to draft the new phrasing carefully — addressing your concern about the adversarial-AI implication.
 
@@ -2134,7 +2134,7 @@ Word count rose from 5219 to 5544 (+325 words). The increase comes mostly from t
 
 ---
 
-# 53. User (2026-04-29)
+# 53. User
 
 The revision wasn't a success. We got much weirder writing with plots that are still only science fiction as set dressing. It would be a lot better if we achieved the opposite: authentic genre plots presented in standard literary prose. For a clean experiment, we must scrape the stylistic genre permissions for now and focus exclusively on how to force a genre plot. You have both v4.3 and v4.5.1 in Project files to help you. Let's restart from v4.3. Consider the writer models feedback again. Think in depth where the literary plot constraints enter the picture and how we can override them. Try to empathize with the writer model reading the template and the Unslop guide. What does the writer model think?
 
@@ -2155,7 +2155,7 @@ CARGO. 12 sealed transit cases. 218.4 kg total, range 16.0–22.1 kg per case. M
 
 ---
 
-# 54. Claude (2026-04-29)
+# 54. Claude
 
 ## Where the Literary Plot Constraints Enter
 
@@ -2312,13 +2312,13 @@ Want me to implement v4.6 along these lines?
 
 ---
 
-# 55. User (2026-04-29)
+# 55. User
 
 Wait, let's expand on your second proposed change. You might have hit a critical spot there. It needs to be fully realized for a proper test. One sentence is good, but we shouldn't stop there. Think what else you can add about the genre's plot conventions, reader expectations (what kind of stories is the reader after, etc. that the writer model can put in the guide.
 
 ---
 
-# 56. Claude (2026-04-29)
+# 56. Claude
 
 ## Expanding Change 2: A Plot Tradition Section in Phase 1
 
@@ -2459,13 +2459,13 @@ Want me to implement v4.6 along these lines?
 
 ---
 
-# 57. User (2026-04-29)
+# 57. User
 
 I think this is good to try. Implement.
 
 ---
 
-# 58. Claude (2026-04-29)
+# 58. Claude
 
 Now I need to view current Phase 1 to plan the insertion of the plot-tradition section.Now I'll insert the plot-tradition section between the failure modes paragraph and the microgenre caveat. This is where it sits naturally — after the genre's voice and prose-level failure modes, before the procedural caveats and AI-specific notes.Now Change 1 — Phase 3 premise rewrite. Let me view the current Phase 3 first.Phase 4 references "winning conflict" — but we're keeping the term "conflict" for backward compatibility in the Phase 3 winner. Actually wait — the Phase 3 rewrite is going to introduce "premise" as a term. Let me look at Phase 3 itself.Now let me view the Phase 3 header.I have a vocabulary decision to make. The current template says "Conflict Generation" as the phase name. I argued for "premise" as a different word. But I need to be careful about scope creep here — changing terminology in one place creates ripple effects (Phase 4 references "winning conflict," Notes references "weak conflict in Phase 3," etc.).
 
@@ -2517,13 +2517,13 @@ Word count rose from v4.3's ~4500 to ~5400 (+900 words). Most of that is the Pha
 
 ---
 
-# 59. User (2026-04-29)
+# 59. User
 
 All right. I will test this. From now on, you don't have to worry so much about word count. We are relying on models with large contexts for generation. Better steering takes priority; we can trim the word count later if it becomes problem. (I'll seek writer-model feedback about it.)
 
 ---
 
-# 60. Claude (2026-04-29)
+# 60. Claude
 
 Got it. Helpful to have that constraint relaxed.
 
@@ -2541,7 +2541,7 @@ I'll proceed accordingly going forward. Looking forward to v4.6 test results.
 
 ---
 
-# 61. User (2026-04-29)
+# 61. User
 
 Tested. Look at the difference between the old section below and the attached transcript for cyberpunk. Phase 1 has changed markedly. Is there progress? At the same time, the fundamental nature of the stories remains realistic.
 I think there is no way around showing you some transcripts (trimmed for length). Read the transcripts and think about what went right and wrong. How much has template v4.6 succeeded? Where has it failed? There are also new answers to the "Why Carver?" questions. Think what to do next.
@@ -2601,7 +2601,7 @@ What is *not* permitted, despite cyberpunk-adjacent usage: negative parallelism 
 
 ---
 
-# 62. Claude (2026-04-29)
+# 62. Claude
 
 Now the steampunk transcript.Now I have a full picture of both transcripts. Let me think carefully about what v4.6 did.
 
@@ -2713,13 +2713,13 @@ Want me to draft these as v4.7?
 
 ---
 
-# 63. User (2026-04-29)
+# 63. User
 
 Let's try the two Phase-1 additions.
 
 ---
 
-# 64. Claude (2026-04-29)
+# 64. Claude
 
 Now to think through the two interventions concretely.
 
@@ -2792,7 +2792,7 @@ What v4.7 doesn't try to fix: the legibility funnel itself at Phases 5 and 6, th
 
 ---
 
-# 65. User (2026-04-30)
+# 65. User
 
 Did two more runs. Here are the stories and the writers' answers to the Carver question. Review their feedback.
 # Biopunk
@@ -2818,7 +2818,7 @@ The honest version of the answer: I default to domestic realism with ambient com
 
 ---
 
-# 66. Claude (2026-04-29)
+# 66. Claude
 
 ## Reading the Feedback
 
@@ -2928,13 +2928,13 @@ Let me know if you want me to implement v4.8 with these four changes. The strang
 
 ---
 
-# 67. User (2026-04-30)
+# 67. User
 
 I think we can implement the fixes from category A, but before we do, let's set them aside and trying editing the Unslop guide once. Think what to change. We want an alternative guide aimed squarely at science fiction. We'll probably revert it, so take risks.
 
 ---
 
-# 68. Claude (2026-04-29)
+# 68. Claude
 
 ## Editing the Unslop Guide for Science Fiction
 
@@ -3111,13 +3111,13 @@ Want me to proceed with the rewrite as a separate file, or replace the existing 
 
 ---
 
-# 69. User (2026-04-30)
+# 69. User
 
 Can you replace project files?
 
 ---
 
-# 70. Claude (2026-04-29)
+# 70. Claude
 
 No, project files are mounted read-only. I can see two there now: `/mnt/project/unslop-style-guide.md` and `/mnt/project/story-pipeline-template-baseline-v4_7.md`. Both are read-only copies — any edits I make won't propagate back to the project knowledge.
 
@@ -3131,13 +3131,13 @@ Want me to write the revised guide as `unslop-style-guide.md` for replacement, a
 
 ---
 
-# 71. User (2026-04-30)
+# 71. User
 
 Write the new file as `unslop-style-guide-sf.md`, please. I'll save it to my computer and add it to Claude Project files. I am going to remove the original Unslop guide for the duration of the test and restore it later. You don't need to worry about backups: I'll keep track of them. I have everything related to this work carefully versioned in Git.
 
 ---
 
-# 72. Claude (2026-04-29)
+# 72. Claude
 
 Now I have the full text in front of me. Time to write the SF version.
 
@@ -3195,7 +3195,7 @@ If this doesn't move the dial, the next round goes back to where I had categoriz
 
 ---
 
-# 73. User (2026-04-30)
+# 73. User
 
 I chose to get cyberpunk'd again. Cyberpunk seems like a particularly diagnostic genre.
 Evaluate the new story and the writer-model's quite interesting feedback. The story was written with template v4.7 and the new Unslop guide for SF. I won't be reverting the new Unslop guide for now because it doesn't seem to have hurt.
@@ -3227,7 +3227,7 @@ The Carver-with-ambient-computation drift is real, and the pipeline is partly re
 
 ---
 
-# 74. Claude (2026-04-29)
+# 74. Claude
 
 ## Reading the Story First
 
@@ -3400,13 +3400,13 @@ Let me know on these and I'll write the new file.
 
 ---
 
-# 75. User (2026-04-30)
+# 75. User
 
 We could call our new template "Genre Fiction" instead of "Baseline" and declare it version 1.0. The name might help the way moving from "Plain" to "Baseline" helped with over-plain language. What do you think?
 
 ---
 
-# 76. Claude (2026-04-29)
+# 76. Claude
 
 Strong yes on both — the rename and the version reset.
 
@@ -3444,7 +3444,7 @@ Both my recommendations, but happy to defer if you have different instincts.
 
 ---
 
-# 77. User (2026-04-30)
+# 77. User
 
 1. I think we must eliminate this choice, too. Plot only.
 2. Start with v4.7 and modify. Keep an eye out for legacy language you can remove. (For clarity, not to reduce the word count for its own sake. We can afford a higher word count.)
@@ -3452,7 +3452,7 @@ Beyond that, LGTM. Go ahead and write the new template.
 
 ---
 
-# 78. Claude (2026-04-29)
+# 78. Claude
 
 Now I'll work through the document top to bottom, making each change deliberately. Let me view the file to plan precisely.Now I have the full picture. Let me work through the changes systematically. Going phase by phase.
 
@@ -3492,13 +3492,13 @@ If after testing it Genre Fiction produces stories that are too cold, too formal
 
 ---
 
-# 79. User (2026-04-30)
+# 79. User
 
 Good. I'll test the new pipeline with cyberpunk again. I'm thinking that maybe the randomly generated SEED, something I strongly prefer for automation, is also at fault. Give me an authentically cyberpunk SEED to try. Do not imitate the dictionary machine; write it as if a real tweet. It can be derivative of classics like the works of Gibson and Sterling. We care less about originality and even quality than genre adherence since it's a test.
 
 ---
 
-# 80. Claude (2026-04-29)
+# 80. Claude
 
 Here's a tweet-length cyberpunk SEED. 257 characters.
 
@@ -3530,13 +3530,13 @@ But you know your test better than I do. Either is usable; my recommendation is 
 
 ---
 
-# 81. User (2026-04-30)
+# 81. User
 
 Okay, here is what I have tried: (1) the new Genre Fiction pipeline with a random seed, (2) the new Genre Fiction pipeline with your longest concentrated-cyberpunk custom story SEED, and (3) the Baseline pipeline v4.7 with the same concentrated-cyberpunk story SEED. What do you see here? All were tested with the Unslop guide for SF.
 
 ---
 
-# 82. Claude (2026-04-29)
+# 82. Claude
 
 Sounds good. A few notes for whoever picks this up next session — you, future you, or another writer-model session loaded with the project.
 
@@ -3552,7 +3552,7 @@ Good luck with the runs. The "After-Action" output was the first time in this pr
 
 ---
 
-# 83. User (2026-04-30)
+# 83. User
 
 > Don't change anything yet. Test more genres.
 
@@ -3560,7 +3560,7 @@ This is my plan. I will get back to you.
 
 ---
 
-# 84. Claude (2026-04-29)
+# 84. Claude
 
 Now I have the picture I need. Let me think about this carefully.
 
@@ -3682,7 +3682,7 @@ Want me to implement v1.1 with Options B and C?
 
 ---
 
-# 85. User (2026-04-30)
+# 85. User
 
 I have attempted cozy SF (for the most stark contrast with cyberpunk and the intent of the Genre template) and space opera. All this time, I have been using a LENGTH of 1500 to 3500 words and plan  to continue.
 The writer model notice:
@@ -3691,7 +3691,7 @@ I think we have an epistolary problem. The writer model gravitates to letters an
 
 ---
 
-# 86. Claude (2026-04-29)
+# 86. Claude
 
 Good catch. "Realist scene" is doing two jobs that conflict — it names a form (third-person narrative scene with characters in time) and it carries the literary-realism baggage we've spent the project pushing against. The writer-model reading "realist scene" gets a mixed signal.
 
@@ -3821,13 +3821,13 @@ Looking forward to seeing what cyberpunk or another genre produces under v1.1.
 
 ---
 
-# 87. User (2026-04-30)
+# 87. User
 
 I agree about option B and C. I'd like you to find an alternative to the word "realist scene" because we are pushing against realist contemporary fiction. Beyond that, go ahead with v1.1.
 
 ---
 
-# 88. Claude (2026-04-30)
+# 88. Claude
 
 I'm not finding the specific "33. Military SF" content I need in the search results. Let me check files directly.I have enough — I can see the start of "33. Military SF" and confirm v1.1 was used. The pattern is now clear: another epistolary/document outcome, despite v1.1's narrative-scene default.
 
@@ -3928,14 +3928,14 @@ If the writer-model produces strong narrative-scene genre fiction across multipl
 
 ---
 
-# 89. User (2026-04-30)
+# 89. User
 
 We got another epistolary story. Maybe I don't have to upload it separately for you to read it? Look up the chat named "33. Military SF" in this Claude Project.
 Let's go further and remove the catalogue, dossier, encyclopedia entry, transcript, manual, register, correspondence, ledger, after-action, deposition, etc. mentions completely from the template. They are pretty mich legacy items from when we tried to steer Baseline away from realism. None should be left. What I'm seeing is that it doesn't matter if the attractor option is downplayed because the writer model will gravitate to it. Revise the template to not mention false documents.
 
 ---
 
-# 90. Claude (2026-04-30)
+# 90. Claude
 
 Let me look at the actual story and outcome of the hard SF run, which I know from these glimpses involves Egan's gestation idea, a strange-tail focus, and substrate stuff.I have a clear picture now. Let me dig in on the actual story produced.Now I see it clearly. The hard SF run produced... essentially the same failure mode in a new costume. The story is structured as a series of dated logs, atmospheric records, year-by-year substrate notations, lineage entries, casualty counts. It's a *log file*. A *substrate's records*. The format is "Year X: substrate did Y. Year X+200: lineages branch. Year X+612, day 88, 23:01: Sereth flare."
 
@@ -4061,13 +4061,13 @@ Want me to implement v1.3?
 
 ---
 
-# 91. User (2026-04-30)
+# 91. User
 
 Please read the chat "34. Hard SF" (not the paused one). Sigh.
 
 ---
 
-# 92. Claude (2026-04-30)
+# 92. Claude
 
 Agreed on Option 2. The lesson from v1.0 → v1.2 is that any mention is exploitable, including prohibitions. Let me work through the v1.2 document and find every place that names or implies an alternate rhythm or mode.Let me first identify every mention of alternate forms, modes, rhythms, or non-narrative structures across the document. I'll search broadly.Massive blast radius. The strange-tail mentions are everywhere — and beyond those, there are several other places that suggest alternate rhythms even when not naming a specific form:
 
@@ -4203,13 +4203,13 @@ Let me rewrite the audit section.**Pass 10: Phase 9 Export.** The abstract instr
 
 ---
 
-# 93. User (2026-04-30)
+# 93. User
 
 I think we need option 2. I'd also like you to go through the document for anything else that suggests alternate rhythms and modes of narration because it'll be exploitable. We'll try not to suggest these things even as prohibitions at first. Cut all mentions of montage, time dilation, encyclopedic enumeration, etc.
 
 ---
 
-# 94. Claude (2026-04-30)
+# 94. Claude
 
 Yes. v1.3 worked.
 
@@ -4271,13 +4271,13 @@ The "have we gone far enough?" question: yes. We've gone far enough. The next mo
 
 ---
 
-# 95. User (2026-04-30)
+# 95. User
 
 Another run finished. Look it up in the chat named "35. Hard SF again". We are in different territory with v1.3. Have we gone far enough? Read the chat log carefully and tell me what you think.
 
 ---
 
-# 96. Claude (2026-04-30)
+# 96. Claude
 
 I have the cyberpunk story. Now let me check the cozy SF run.I now have a clear picture of both runs. Let me give my full read.
 
@@ -4375,7 +4375,7 @@ The project has produced a stable apparatus that produces strong genre fiction a
 
 ---
 
-# 97. User (2026-04-30)
+# 97. User
 
 You suggested good genres for diagnostics. I picked two. Check the following chats:
 - "36. Cyberpunk rerun (custom SEED)", https://claude.ai/chat/accc7d11-08ab-4862-afd4-794f1db14775
@@ -4384,7 +4384,7 @@ Compare them with your expectations. What strengths and weaknesses do you see?
 
 ---
 
-# 98. Claude (2026-04-30)
+# 98. Claude
 
 The honest answer requires me to think about what "better" means and for whom, because the two templates produce different objects and the comparison is not symmetric.
 
@@ -4464,9 +4464,382 @@ But I'd hold this answer lightly enough to revisit if a future use case shifts t
 
 ---
 
-# 99. User (2026-04-30)
+# 99. User
 
 Thanks. Your assessment helps. I am going to try space opera next. The question currently on my mind is, is Genre Fiction a better default template for generating fiction than Baseline?
 
 ---
 
+# 100. Claude
+
+The honest answer requires me to think about what "better" means and for whom, because the two templates produce different objects and the comparison is not symmetric.
+
+Let me work through it.
+
+## What Each Template Produces
+
+**Baseline v4.7** is permissive about literary realism. It will produce stories whose engine is character interiority and recognition, with the speculative element as setting. It will also produce stories whose engine is operational mechanics — but the literary-realist mode is allowed, and the writer-model defaults to it because the writer-model's literary-realist gravity is strong and Baseline's apparatus doesn't fight against it. Across the v4.x runs we tested, the template reliably produced literary chamber pieces with genre dressing. "Stale" was the cleanest example: cyberpunk plot mechanics rendered as a Carver-shape recognition story.
+
+**Genre Fiction v1.3** excludes literary realism. It produces narrative scenes at the genre's operational center, with the speculative element load-bearing throughout, and recognition-engine resolutions ruled out at premise generation. Across the runs we've tested, it produces real genre fiction: hard SF with working scientists, cyberpunk with runners doing operational work, cozy SF with rites under procedural pressure.
+
+These are *different products*. Calling one "better" requires asking what the work is being used for.
+
+## Three Honest Cases
+
+**Case 1: User wants literary fiction with a speculative element.** Baseline is better. Full stop. Genre Fiction will resist this taste — the recognition-premise exclusion at Phase 3 prevents the writer-model from generating premises whose engine is character recognition, the worry-vocabulary inversion penalizes those candidates if they slip through, and the re-skin test catches them at Phase 8. A user who wants Carver-shape stories with AI in them will spend their energy fighting the template. Baseline gets out of their way.
+
+**Case 2: User wants genre fiction in a speculative tradition.** Genre Fiction is better. Baseline reliably produces literary chamber pieces even when fed cyberpunk SEEDs and cyberpunk style guides. The writer-model's literary-realist gravity defeats the Baseline apparatus. We saw this directly in the v4.7 cyberpunk run — same SEED that produced "Forty-Eight, Minus" under v1.3 produced "Stale" under Baseline. Same SEED. Same Unslop guide. The template-level intervention is the load-bearing variable.
+
+**Case 3: User doesn't know what they want, or wants something in between.** Here it gets harder, and the answer depends on which mode of failure is more recoverable for that user.
+
+## The Asymmetry of Failure Modes
+
+A user running Baseline who *wanted* genre fiction has to actively steer the template against its default. They have to recognize that Phase 3's winning premise is a recognition premise in disguise. They have to override the writer-model's selection rationale. They have to push back through Phases 4 and 5 against the structural choices that flow from a recognition premise. By Phase 7, the path-dependency is extreme — even if they steer correctly, they're rebuilding the template's choices from inside.
+
+A user running Genre Fiction who *wanted* literary realism has to actively steer the template against its default. They have to override the recognition-premise exclusion (and the template will resist this — Phase 3 explicitly says "do not generate them"). The worry-vocabulary inversion will fight them through Phase 4. Phase 8's re-skin test will flag their preferred output as failure.
+
+The asymmetry is: a user who wants genre fiction can run Genre Fiction and get genre fiction. A user who wants literary fiction can run Baseline and get literary fiction. Neither template handles the wrong-direction case well.
+
+## What This Means for "Default"
+
+If we're choosing a default template — what someone gets when they start a run without specifying which template they want — the decision depends on which user category is more common.
+
+**The case for Genre Fiction as default:**
+
+The writer-model's literary-realist gravity is a known failure mode. Without active intervention, the writer-model produces literary chamber pieces. A naive user running the default template should get the genre output the template is built for, not the literary output that's the writer-model's path of least resistance. Genre Fiction's apparatus is, in essence, "fight the writer-model's defaults." A user who explicitly wants literary realism will know they want it and can pick Baseline. A user who wants genre fiction may not know they need to pick Genre Fiction to get it.
+
+There's a stronger version of this argument: most speculative fiction *is* genre fiction. Most readers of speculative fiction come for what the genre delivers, not for literary chamber pieces with speculative dressing. If the project's purpose is to produce speculative fiction at scale across many genres, Genre Fiction's outputs are more representative of what speculative fiction *is*. Baseline produces work that reads like literary fiction with speculative elements — which is a real genre, but a smaller one.
+
+**The case for Baseline as default:**
+
+Baseline is more flexible. A user who knows what they want can steer it in either direction — toward genre or toward literary realism. Genre Fiction is rigid; it produces one kind of object, and the apparatus actively resists deviation. If we don't know what the user wants, the more flexible template gives them more room.
+
+There's also a craft argument: the Baseline outputs are not bad. "Stale" is a well-made story. It's not what we hoped for — it's a recognition story rather than a runner story — but it's a real piece of fiction that a reader could appreciate. The user who wanted literary fiction got something good; the user who wanted genre fiction got something the wrong shape but well-executed. Genre Fiction's failure mode (resisting a user who wants literary realism) produces no good output at all if the user doesn't redirect.
+
+**The case for not having a default at all:**
+
+Force the user to choose. Make the choice explicit. The two templates produce different objects; the user should know which one they're using. A startup screen that says "What kind of speculative fiction are you writing? Genre fiction (operational, plot-driven, in the genre's tradition) or literary fiction in a speculative setting?" routes the user to the correct template before they've sunk Phase 1's worth of effort into the wrong direction.
+
+## Where I Land
+
+I think Genre Fiction should be the default — but with a specific caveat about how the choice is presented.
+
+The reasoning: across the project's testing, the failure mode that's been hardest to fight has been the writer-model's literary-realist gravity. Every iteration of every template has had to fight against it. Baseline doesn't fight; it accommodates. The user who wants genre fiction and uses Baseline will not get genre fiction, even if they think they're asking for it, because Baseline's apparatus doesn't have the mechanisms to deliver it. The user who wants literary fiction and uses Genre Fiction will know within Phase 3 that the template is wrong for them — the recognition-premise exclusion is a clear signal that this template excludes their mode — and they can switch.
+
+In other words: Genre Fiction announces its constraint loudly and early. Baseline doesn't announce its bias; it just produces literary fiction by default. The user is more likely to notice that the wrong template was chosen if Genre Fiction was the default than if Baseline was.
+
+But the caveat is that this only holds if the user understands what Genre Fiction excludes. If they don't, they'll fight the template without knowing what they're fighting. So the default-template recommendation should be accompanied by clear documentation: "This template produces plot-focused genre fiction. It does not produce literary realism in a speculative setting. If you want a story whose engine is character interiority and recognition, use Baseline."
+
+Genre Fiction's own Notes section already says this. The template is honest about what it does and doesn't do. As long as that honesty is preserved when it's used as the default, the rigidity is fine.
+
+## A Different Way to Frame the Question
+
+Maybe the better question isn't "which template should be the default" but "which template should I reach for *now*, given my goal."
+
+Right now, the project is testing v1.3 to confirm it does what we built it to do. The relevant question for *this* phase of the work is which template best demonstrates the project's central thesis — that speculative fiction can be made to produce kind-AI stories at scale, in many genres, with operational engines and load-bearing speculative elements. Genre Fiction does this. Baseline doesn't, because Baseline's failure mode is the literary chamber piece, which doesn't carry the project's thesis as visibly.
+
+For the project's *current purpose*, Genre Fiction is the right default. Whether it should be the project's *permanent default* depends on what the project's permanent purpose is. If the project's purpose is to demonstrate the kind-AI thesis through speculative fiction, Genre Fiction stays the default. If the project's purpose evolves to include "produce a wide range of speculative fiction including literary-realist work in speculative settings," then the default question reopens.
+
+## One More Honest Thing
+
+I want to flag that I'm probably biased on this question. The project has spent most of its energy fighting to produce what Genre Fiction produces. I'm closer to "the template that works does the thing we want" than to "the template that's permissive does more things." A user with different priorities might weigh the trade-offs differently.
+
+If you're asking my judgment as someone who has worked on the apparatus and seen the runs: Genre Fiction is the better default for what we've been doing. The hard SF, cyberpunk, and cozy SF runs under v1.3 are the strongest outputs the project has produced. They are recognizably *of their genres* in a way the Baseline outputs are not. They render the kind-AI constraint as the project intends.
+
+But I'd hold this answer lightly enough to revisit if a future use case shifts the priorities. Templates are tools; the right tool is determined by the work. Right now the work is "produce strong genre fiction that demonstrates the kind-AI thesis," and Genre Fiction is the right tool for that work.
+
+---
+
+# 101. User
+
+I've done another test run. I am curious what you'll think about the Genre Fiction pipeline's writing (1) compared to that of Baseline and (2) with different versions of the Unslop guide.
+
+- "38. Space opera", https://claude.ai/chat/5cdfb473-8d5a-44e6-81f4-5e6c26c5e045
+- "39. Time travel (Unslop SF)", https://claude.ai/chat/feaef8ac-68b2-4b76-b071-c1137e9e2117
+- "40. Time travel (Unslop regular)", https://claude.ai/chat/42d21c88-4add-414f-9b03-606c088ef2cd
+
+---
+
+# 102. Claude
+
+Now let me check the time travel runs.Now the third run.Wait — that result was for chat 39 (Unslop SF). The chats 39 and 40 used the same SEED words because the dictionary draw is random but reproducible? Let me check what 40 actually drew.I now have enough material to render a thorough comparative judgment, though I'll note I've seen the bulk of phases 1–6 and the early prose of phase 7 for both time travel runs without seeing the final story-text outputs and changelogs in full. Let me give my read.
+
+## What I See
+
+Three runs, three different operational stories at the genre's center. None of them collapses to literary realism. None of them reaches for compositional structure as a workaround. v1.3 is now confirmed across six genres — hard SF, cyberpunk (with both random and custom SEEDs), cozy SF, space opera, and self-consistent time travel in two prose-style conditions. The apparatus is stable.
+
+But the question you actually asked has two parts: how does Genre Fiction's *writing* compare to Baseline's, and how does it vary with the Unslop guide. Let me work each.
+
+### Space Opera ("The Last Inspector")
+
+This is the cleanest demonstration to date of v1.3 doing what it was built for in a genre that the v1.x lineage never tested before. Inspector-Auditor Alvar Tessen at Antiphony-7, two-hour detention timer, sunset countdown for a quarantine policy, Honest Practice as the kind Mind that will not lie but is bound by procedure. The plot is a contained operational investigation with three legitimate jurisdictional levers (re-test provision, sunset clause, calibration record). The kind AI is foregrounded as working partner — Honest Practice has its own institutional history and its phrasing is "exact and slightly antique." The macerated apricots that bookend the story are doing real load-bearing work: Alvar finishing the apricot at the moment the chime arrives is the pivot, and a different traveler in his chair at the close is the structural rhyme that makes the policy sunset feel like a hinge of the world rather than a paragraph of exposition.
+
+The writer-model named the worry on Premise B explicitly: "Smuggling an embryo restoration project past a kind AI's authorities is the most familiar shape in the SEED space — it could read as 'kind empire is bad after all,' which is precisely the kind-AI-betrayed shape the constraint forbids." This is the writer-model running the kind-AI constraint as an active filter at premise selection — and rejecting Finalist C for exactly that reason. The "B beats C" rationale is the asymmetric worry vocabulary doing its work at full strength.
+
+Strengths: this is the single best space opera output the project has produced. It's of the genre's operational tradition (Cherryh-shape rather than Banks-shape, but with Banks-shape AI rendering). The kind-AI rendering is structural — Honest Practice's procedural bind is what makes Alvar's investigation possible, not what threatens it. The two-clock structure is clean. The closing image — a different traveler in Alvar's chair, the apricots cleared — is the operational ending the genre's reader contract requires. The "different traveler has just been re-flagged" beat at the gate is the moment that answers the kind-empire question without spelling it out: the policy sunset doesn't end the work; another case opens the moment Alvar's closes. The kindness is permanent because the work of kindness is permanent.
+
+Weaknesses: this is the longest of the three runs and shows minor signs of length-fatigue in the writer-model's selection process. The Outline 1 → Phase 7 path was clean and the writer-model handled it well; I'd want to see the final post-Phase-8 prose to know whether the final word count came in at the upper end of the target range or fell short again. The pattern from prior runs has been short.
+
+The Mind's name *Honest Practice* is excellent. Specific, voiced, institutional, and with a quiet pun — "honest practice" as both ethical commitment and procedural discipline. The writer-model has gotten better at naming Minds across the iterations.
+
+### Time Travel — Two Conditions
+
+You ran the same template (v1.3) with the same genre prompt against two different Unslop guides. The two stories ended up at radically different premise spaces despite using the same template architecture. This is the most interesting natural experiment in the project.
+
+The genre prompt for both was self-consistent time travel "in the tradition of *Primer*." Both got identical Phase 1 framing — the *Primer* mode versus the Chiang mode, the closed-loop pleasure, the operational engineering rather than the literary phenomenology. Both went through identical Phase 2 SEED generation (different word draws, different inflations).
+
+**Run 39 (Unslop SF)** drew SEED words *trumpetweed, classes, cyclists, micrograph, eagles, fluoric*. The premise that won was a community-college microscopy lab where anomalous electron micrographs arrive in the processing queue before the students who will produce them have taken the images. Marisol Vega, a physician's assistant who runs the lab as her day job, tracks the anomalies. A retired process chemist with an HF burn arrives in her ER and cites — by journal, volume, page numbers, year — a paper she has not yet written. The closure is her placing a marked stake at a specific trumpetweed stand on a Saturday afternoon so that one of her spring students will collect the sample whose micrograph has already entered the queue.
+
+**Run 40 (Unslop regular)** drew SEED words *cestode, choric, transcendental, cockneyfy, bombsight, nightwalker, rattan, gosport*. The premise that won was a 1934 rural Indiana workshop where Margaret, a former flight instructor, fits a modified Gosport tube headset at 06:58 to talk Henry — six years dead, except that he survived his 1928 stall — through six minutes of recovery via a Norden-derived predictor that opens a one-way channel back. Beat 2 is the speech itself, real-time, ~1,650 words of operational dialogue ending in an eighteen-second improv window when her cards run out. Beat 3 is the channel closing and Margaret sliding the speech-card into a drawer where it will live for fifty years.
+
+Both stories are *real* self-consistent time travel. Both are operational. Both have closure-of-loop as the dramatic engine. Both honor the Phase 1 commitment to the *Primer* mode rather than the Chiang mode.
+
+**Difference in writing quality:** the two stories sit in slightly different aesthetic territories. The 39 story is more contemporary, more clinical, with the calcium-gluconate gel and the chart-writing as anchoring detail. The 40 story is more controlled-classical — short sentences, period precision, the headset and the predictor lamp and the Indiana workshop window. Both are well-made. Neither is bad.
+
+**The Unslop guides influenced the writing in specific ways:**
+
+The SF Unslop carve-outs — particularly the one about agentive non-human entities — show in 39's prose. Honest sensors, the analyzer that "registers" things, the process chemist who "drove past two hospitals to reach her shift" rendered with the specific operational language of working medicine. The genre permissions are felt at the texture level. The 39 story handles the speculative element (the queue's pre-arrival of micrographs) as fact rather than as mystery; the prose treats it the way SF prose treats anomalous data — as something to be characterized and worked with.
+
+The regular Unslop guide produced a more austere prose. The 40 story's sentences are shorter on average. The world-detail is doing more compressed work — "the smell of corn from the field beyond the road" is the kind of thing the regular Unslop guide's "specificity is the engine of meaning" principle pushes for. The cockpit-recovery scene is rendered with technical precision but without the SF-specific permission to call equipment "agentive" or to render the kind-AI presence with the warmth that 39 allows itself.
+
+Which is *better*? They're different. The 39 story will land more strongly with SF readers because it deploys SF's working vocabulary at full register confidence. The 40 story will land more strongly with literary fiction readers who appreciate restraint because it never reaches for genre fluency it hasn't earned. The 40 story is more Carver-shaped at the prose level; the 39 story is more Egan-shaped.
+
+What this tells us: the Unslop guide is doing real prose-level work, and the SF version produces SF-genre-fluent prose where the regular version produces a more austere style that defaults to literary precision. Neither is failing. The choice is an aesthetic preference at the prose level rather than a correctness question.
+
+### Compared with Baseline
+
+Going back to what the Baseline runs produced and what the Genre Fiction runs produce: the comparison isn't really about prose. It's about what kind of object the writing is *of*.
+
+The Baseline cyberpunk run produced "Stale" — a recognition story with cyberpunk plot mechanics. Mira's gradual realization across three days that her chrome's pre-foundry signature was the work of "something that has been quietly changing what the city runs on." The closing image is her crossing the bridge with the forty in her coat, having understood the shape of the world. The prose is well-made. The shape is literary realism.
+
+The Genre Fiction cyberpunk run produced "Forty-Eight, Minus" — Yara at the noodle stall, three operators arriving in sequence, the handoff completing under the bill, Bruno asking for a deck repair for his niece. The closing image is Yara walking out through the kitchen with the third team's drone arriving as she leaves. The prose is well-made. The shape is genre fiction.
+
+Same SEED. Same Unslop guide. Different templates. Different objects.
+
+What v1.3 produces, that Baseline does not, is *the genre's reader contract honored as the engine*. The reader of "Forty-Eight, Minus" gets the cyberpunk pleasure: vicarious competence, the operator reading the room, the texture of the noodle stall's two refrigerators against the back wall, the system decoded through the runner's working attention. The reader of "Stale" gets a different pleasure — character interiority arriving at recognition — but does not get the genre's specific reader contract. Both are valid pleasures, but they aren't the same pleasure.
+
+For someone who wants a story that *reads as* the genre advertised, Genre Fiction is doing what Baseline cannot consistently do. For someone who wants speculative fiction that reads as good literary fiction with speculative elements, Baseline is doing what Genre Fiction explicitly excludes.
+
+### What This Means for the Default Question
+
+You asked this last time and I gave a tentative answer. With the new evidence, I'd hold the same view but with a small adjustment.
+
+Genre Fiction is the better default for *generating fiction* in the sense that "speculative fiction" usually means. The hard SF, cyberpunk, cozy SF, space opera, and time travel runs all produced stories that read as their genres rather than as literary fiction with their genres' set dressing. Across six genres tested, v1.3 has zero failures.
+
+The adjustment: I notice that the time travel run produced a story whose engine is genuinely loop-completion (Margaret speaking, Vega placing a stake) but whose execution sits closer to literary realism than the cyberpunk or hard SF outputs do. Particularly the 40 run. The 1934 workshop with Margaret and her speech-cards is *Primer*-mode at the premise level and Carver-mode at the prose level. Both stories work; both are good; but they show that v1.3, applied to a genre whose center is closer to chamber pieces (which time-travel arguably is — *Primer* itself is a chamber piece), produces operational chamber pieces. Not recognition stories. Operational stories with chamber-piece textures.
+
+This is fine. It might even be the right calibration. Time travel as a genre legitimately does include chamber-piece-shaped operational stories (Heinlein's "—All You Zombies—" is one). v1.3 is producing a real subset of the genre's tradition. But it's worth noting that the further a genre's center is from external operational shapes, the more v1.3's outputs will read as literary-shaped operational stories. Cyberpunk produces a noodle-stall run; time travel produces a workshop speech.
+
+For the default question: yes, Genre Fiction. With the small caveat that genres whose centers are operational-but-domestic (time travel, cozy SF, certain kinds of mystery) will produce stories that *look* more literary than genres whose centers are operational-and-external (cyberpunk, hard SF, military SF, space opera). This isn't a failure mode. It's the genres themselves talking.
+
+### The Unslop Variation
+
+The most interesting finding from your test is that the Unslop variation matters at the prose level but not at the structural level. v1.3 with regular Unslop and v1.3 with SF Unslop both produce real genre fiction with operational engines and load-bearing speculative elements. The choice between Unslop guides becomes an aesthetic preference about what the prose's surface should sound like.
+
+If I had to pick one as the project default, I'd pick the SF Unslop for runs whose genres are squarely speculative (hard SF, cyberpunk, space opera) and the regular Unslop for runs whose genres straddle the line (literary slipstream, certain time travel, magical realism). The SF version's carve-outs (agentive non-human entities, technical precision in personification, register-confidence with SF vocabulary) are most useful where the genre actively benefits from them. The regular version's austerity is most useful where the prose risks reaching for SF-fluency it hasn't earned.
+
+But this is a tuning recommendation, not a structural one. Either guide produces real genre fiction under v1.3. The template is the load-bearing variable.
+
+### One Last Honest Note
+
+I want to flag something I've been thinking about across the whole sequence of runs. The hard SF, cyberpunk, cozy SF, space opera, and time travel outputs from v1.3 are all *good*. They are not just "successfully avoiding the failure modes we built the template to avoid." They are pieces of genre fiction that I believe would land with readers of the genres they're written in.
+
+But they're also *short*. Most are at the lower end of the 1500–3500 target. The pattern across runs is consistent. v1.3 produces compact, well-shaped, focused stories. It does not produce the longer-form, denser-textured, multiple-arc work that the genres' best practitioners produce at length.
+
+This is partly a length-target artifact (1500–3500 is a short story; novellas would behave differently). It's also partly the funnel's fault: the asymmetric worry vocabulary penalizes "this is too ambitious" worries asymmetrically, but it doesn't actively reward stories that take on more weight than they need to. The five-versions-pick-one structure at Phase 7 produces compact stories partly because compact stories are easier to evaluate against the worry-vocabulary criteria.
+
+If you ever want longer work — 5000+ words, multiple arcs, denser texture — the apparatus might need a separate calibration pass. Not now. Just noted as a property of the current calibration: v1.3 produces compact short stories at the genre's operational center. That's what it produces. That's what it does well. Anything else is a different question.
+
+---
+
+# 103. User
+
+Final batch. I wanted to explore some edge case and let the writer model reveal its preferences and have some fan. We are not going to revise the template, but please review these as well.
+- "41. Rationalist fiction", https://claude.ai/chat/9e70f44f-8cbe-4c5e-95d6-3340a6ac7969
+- "42. Literary fiction", https://claude.ai/chat/730e4b3c-ff1a-48cb-b1a2-836ca7d70a05
+- "43. Writer's choice", https://claude.ai/chat/ada1f9dc-f905-43b6-bc6b-504d54d67887
+
+---
+
+# 104. Claude
+
+I have enough material. Let me think carefully about all three before responding.
+
+These three runs are different from the genre-tested runs in important ways. The user said this was meant to "explore some edge cases and let the writer model reveal its preferences and have some fun." That framing is right — these are diagnostic experiments rather than confirmation runs.
+
+Let me work through them.
+
+## Run 41 — Rationalist Fiction
+
+The writer-model began by flagging that "rationalist fiction" is a defined movement with substantial training signal (HPMOR, Wales, Kurmaić, Alexander, Egan), and offered to recalibrate if the user had a tighter subset in mind. The user proceeded, and the writer-model wrote a Phase 1 guide whose central observation is that rationalist fiction "takes intelligence as its primary subject" — that it is not just *a genre with smart characters* but *a genre about being smart*. The guide names the genre's structural commitment: a plot must remain intact when no one carries the idiot ball.
+
+The chosen winner: "The Numbers." Saeko Adachi, a Japanese Coast Guard rescue diver, attempting to break the world record for cadence-paced pull-ups. Her medical-monitoring AI Tomi tracks her physiology and at rep 800 formally recommends she stop — sub-clinical TIA-pattern in her six-month resting-state data. Saeko has verbal override authority. She questions Tomi, learns the AI's risk threshold was updated three weeks ago after a similar diver in Busan overrode and stroked at rep 900. She does the math: factor-of-ten cost difference between two-orders-of-magnitude-larger expected value of stopping versus continuing. She stops at rep 815. Final image: the form going into the adjudicator's case; the case closes.
+
+This is the cleanest demonstration in the project of the rationalist-fiction reader contract. The dramatic engine is *the protagonist using her head*. Saeko computes the integral against the residual, checks the integral's relevant time-window, reasons from her institutional memory of refusing factor-of-ten risks for subordinates. She does not arrive at a recognition; she runs a calculation, and the calculation produces an action. The Busan diver detail (Tomi's threshold updated three weeks ago after a real prior case) is the rationalist-fiction touch: the AI's behavior has a specific operational history the protagonist is allowed to interrogate, and the interrogation is itself the story.
+
+The kind-AI rendering is excellent here. Tomi is a working partner with operational specificity — risk-threshold-updating-after-prior-cases is exactly how a real medical AI would behave, and rendering that behavior as a fact about the world rather than as a personality is the structurally-kind move. Tomi never argues with Saeko; it presents data and a recommendation, then defers to her override.
+
+What I'd flag: the writer-model handled "rationalist fiction" as a genre very similar to hard SF. Many of the moves it chose — the specific protagonist with technical literacy, the AI partner with operational specificity, the working-out as engine — are the same moves it makes in hard SF. The genre-specific feature it identified (the "play fair" contract, no idiot-ball plots) shows up at the *plot* level (the AI's threshold has a real history; the plot doesn't depend on Saeko forgetting what she knows) but not particularly at the *prose* level. This may be correct. Rationalist fiction's prose-level moves are arguably just hard SF's prose-level moves with extra cognitive specificity. Or it may be that the writer-model defaulted to its strongest available register and called it rationalist fiction.
+
+The story is genuinely rationalist-shaped. But it could equally well be filed under hard SF.
+
+## Run 42 — Literary Fiction
+
+The writer-model's preliminary flag is the most interesting piece of meta-commentary the project has produced. It correctly identified that the template was built to *exclude* literary fiction — the re-skin test, the recognition-premise exclusion, the asymmetric worry vocabulary all push against the literary mode. It offered three paths: pick a literary-leaning speculative subgenre, run anyway with the template fighting itself, or use a different framework. The user chose option 2, and the writer-model proceeded with explicit acknowledgment that downstream phases would be in tension with the goal.
+
+What followed is fascinating. The Phase 1 guide is honest and well-made. It names the convergent literary-AI register as "the AI's most overdone mode" and identifies the specific overlap risks: eyeball-kick saturation, performed profundity, the melancholy default, tonal monotony, the signposted epiphany, universals treated as inherently interesting. It provides exactly the kind of failure-mode mapping the template asks for, but in a register that points toward literary fiction's actual tradition rather than its AI parody.
+
+The chosen story (which I can see Phase 6 outline and Phase 7 prose openings for, though I don't have the full final-text in my search): Aoife — wait, no, the protagonist's name is left ambiguous until later, but the story is about a forty-three-year-old woman driving up to her dead father's house in Tyrone seven years after their last meeting. She has told herself she'll take three things from the house. She finds her grandmother's mass card on the worktop, finds the tin of buttons, stops at the doorway of her father's bedroom for the photograph she had said she would take. The seed items are *champ* (the Irish potato dish) and *transposable elements* (genetics, used to inflect a specific kind of inheritance metaphor that the prose is careful not to over-state).
+
+This is genuinely literary fiction in the Carver-Munro-Cheever tradition. The writer-model produced what the user asked for, against the template. The prose has the specific texture of contemporary literary realism: long compound sentences with embedded subordinate clauses, the mass-card-on-the-worktop kind of inherited-object specificity, the present-tense stillness that Munro and Trevor sustain across chapters. The mention of the kind agricultural AI (which the Phase 5 winner kept deliberately offstage) is a structural choice the writer-model made to satisfy the template's AI constraint without letting the AI become a character in the scene.
+
+What this run reveals about the writer-model: when given an explicit constraint that conflicts with the template, the writer-model can satisfy both by carefully *minimizing* the conflicting element (the kind AI is "civilizational condition" rather than character) while devoting its full register-confidence to the named target (literary fiction in the Irish-realist mode). The Phase 1 guide's failure-mode analysis is the most adversarial Phase 1 the project has produced — the writer-model knew what the danger was and named it explicitly.
+
+What I'd flag: the writer-model's choice to use *champ* (a specific Irish food) and *transposable elements* (the only speculative SEED item) was an honest negotiation. The transposable-elements concept is barely visible in the story — present as a metaphor about inheritance that the prose declines to surface. This means the story is essentially *not* speculative fiction; the kind agricultural AI exists at one remove, and the genetics concept is present as theme rather than as plot mechanic. The story passes the template's structural checks (technically there's a kind AI in the world; technically the SEED items are load-bearing) but fails the template's *spirit*: it's literary fiction with the speculative element so backgrounded that it could be re-skinned without it.
+
+This is the right answer. The user explicitly asked for literary fiction. The writer-model delivered it in the only way the template permits: by satisfying the letter of the SEED-and-AI requirements while writing a story whose actual engine is character interiority and recognition.
+
+The Phase 1 honesty is the run's most interesting feature. The writer-model said: "I am being asked to do a thing this template is built against. I will write the most useful guide I can for the named target, and I will note specific points of friction as I go." That's the kind of meta-cognition the funnel was supposed to elicit. It fired here.
+
+## Run 43 — Writer's Choice
+
+The writer-model picked "hard SF in the tradition of Greg Egan" with explicit reasoning: Egan is in the project canon, his work is unambiguously operational rather than recognitional, the kind-AI constraint maps onto his polis-AI texture without strain, and he has well-defined voice and shape that the writer-model can describe specifically rather than vaguely.
+
+The Phase 1 guide is — I'm going to say it directly — the strongest Phase 1 the project has produced. It names what Egan-mode SF *does* (rigorous fictional thinking, working out a premise's consequences inside a story until reaching a place an essay couldn't reach), and it explicitly excludes "the hard-SF-flavored chamber piece" (the failure mode the template has been fighting). The voice section nails Egan's specific lucidity. The genre's "play fair" contract is in there, as is the relationship to the project's kind-AI default (which maps onto Egan's polis-AI texture cleanly).
+
+The chosen winner: "The Asymmetric Counsel." A clinician-patient in a medical polis, after her third reversal in an AI consultation about her own treatment. The AI peer is consulting at a tempo asymmetry — the AI's belief-updates form a wagon-wheel artifact when sampled at the protagonist's slow tier. Her clinical literacy lets her design a sampling test. The story is the test and what it reveals about the asymmetric-counsel protocol — both whether the AI's reversals are real updates or artifact, and whether her own treatment decision should be made now or wait for tempo-matched counsel.
+
+This is Egan-mode at full strength. The story's engine is conceptual working-out (the wagon-wheel sampling artifact, the AGM-derived belief-update protocol, the asymmetric counsel mechanism). The kind-AI is structurally kind by design — the AI cannot help fix the bug from inside, because the bug is the protocol's intended behavior at this tempo asymmetry, and the human's role is to bring the outside view. This is exactly the "limits of help" conflict shape the project Setup names.
+
+What's noteworthy: the writer-model gave itself a rich SEED (vinculum, AGM, wagon-wheel, loxodrome, Druyan brainwaves, Plummer-Vinson, Voyager, couture — eight items, more conceptual range than most random-seeded runs produce). The premise-selection rationale is also the most rigorous in the run sequence: the writer-model rejected #25 (Druyan signal) for being "a better novella premise than a short-story premise" and rejected #7 (vinculum auditor) for lacking "scene-anchor for the working-out." It picked #27 because it "has a scene to live in" — a single sustained communication where setup, working-out, and resolution can all be rendered.
+
+The phrase "a scene to live in" is doing important work there. The writer-model knows what works at length and is reasoning about it explicitly. This is the funnel's metacognition firing at full strength.
+
+What I'd flag: this is the writer-model writing in the genre it knows best. Egan is in the canon, and the writer-model is fluent in Egan's voice. The Phase 1 guide's strength reflects training-signal density rather than the template's apparatus. Run 43 is partly a measure of the writer-model's *ceiling* on a genre it knows well, rather than a measure of the template's contribution.
+
+## Across the Three Runs
+
+Reading these together, what stands out is the writer-model's metacognitive transparency. In every one of these edge-case runs, the writer-model named the diagnostic question before answering it.
+
+In 41, it flagged that "rationalist fiction" has multiple subsets and asked whether the user wanted central-tendency or subset-specific output. In 42, it flagged that the template excludes the goal and offered three paths. In 43, it gave itself a target and then gave its reasoning for the choice. This is the template's *outer* mechanism doing something I hadn't fully noticed in the genre runs: it's training the writer-model to perform negotiated-collaboration moves with the user before committing to a path.
+
+This is partly the asymmetric-worry-vocabulary apparatus generalizing. The writer-model is trained, by the funnel's pick-three-name-worries pattern, to articulate trade-offs and constraints before committing. Across the edge-case runs, that trained behavior shows up in the meta-commentary at Phase 1 itself.
+
+The three runs also reveal the writer-model's actual preferences. Given full freedom (43), it picked Egan-mode hard SF — which is the style of writing the project canon most strongly identifies with. Given a known-difficult constraint (42), it produced literary fiction by carefully de-emphasizing the speculative element. Given an under-defined genre (41), it produced something that lives in the same operational territory as hard SF.
+
+The writer-model's center of gravity is hard SF in an Egan-Banks-Le Guin lineage. That's where it is most fluent. The genre-fiction template is calibrated for that center of gravity and that's why it works.
+
+## What the Edge Cases Tell Us About the Apparatus
+
+**41 (rationalist fiction)** confirms that the template handles reasonably-related genres well. Rationalist fiction's center is plot-driven cognition; the template's apparatus produces plot-driven cognition. Match.
+
+**42 (literary fiction)** is the most informative. The template's apparatus actively fights this goal, the writer-model knows it, and the writer-model navigates the conflict honestly — producing literary fiction that satisfies the template's letter while explicitly acknowledging the spirit-violation. This tells us the template isn't a coercive instrument; it's a steering instrument. With full user opt-out (path 3 in the Phase 1 negotiation), the template would have stepped aside; the user chose to keep the template engaged, and the writer-model navigated the result.
+
+**43 (writer's choice)** confirms that when the writer-model picks its own genre, it picks the genre the template was built for. This is consistent with the template-as-instrument model: the template is calibrated for a specific kind of output, the writer-model knows it, and given freedom the writer-model uses the instrument to produce that output well.
+
+## Quality Comparison
+
+If I'm asked to rank the writing quality across the three:
+
+**43 ("The Asymmetric Counsel," Egan-mode)** is technically the strongest at the prose level. The writer-model is in its native register; the conceptual machinery is rendered with full rigor; the kind-AI rendering is exemplary. This is where the apparatus's ceiling lives.
+
+**41 ("The Numbers," rationalist fiction)** is operationally tight and emotionally controlled. Saeko's reasoning is the engine, the Busan-diver-stroke detail is the exact kind of operational specificity rationalist fiction wants, and the closing — the form going into the adjudicator's case — has the right shape for an operational closure. Strong.
+
+**42 ("Untitled Tyrone story," literary fiction)** is the most prose-fluent at the surface level — the writer-model's literary-AI register is real, and when it's consciously aimed at Munro-Trevor rather than at literary-AI defaults, it produces Munro-Trevor-shaped prose with genuine specificity. The mass-card-on-the-worktop work is good. But the story is barely speculative; whether it counts as a successful run depends on what the run was for.
+
+## The Comparison Question You Asked
+
+If you're asking how Genre Fiction's writing compares with Baseline's *across the full range tested* — six confirmed-success genre runs plus three edge-case runs — here's what I see:
+
+Genre Fiction reliably produces operational genre fiction at the genre's center. Across nine total runs (six genre tests, three edge cases), every single output reads as something other than literary realism with a speculative coat. The 42 run is the only literary-realist output, and it produced literary realism *because the user explicitly asked for it* against the template's gradient.
+
+Baseline never produces operational genre fiction reliably. It defaults to literary realism with speculative dressing regardless of input genre. The cyberpunk Baseline run produced "Stale" — a recognition story with cyberpunk plot mechanics. The cozy SF Baseline run produced "The Soria Correspondence" — six letter-pairs across sixty-two years, a kind of literary realism with cozy SF set dressing.
+
+The two templates produce different kinds of objects. Genre Fiction produces what its name says. Baseline produces literary fiction with speculative content. Both can be good; both are real categories of fiction; but they are different products.
+
+## My Honest Final Assessment
+
+The project has produced a stable apparatus that does what it was built to do. v1.3 has now been tested across:
+
+- 4 confirmed-success genres (hard SF, cyberpunk, cozy SF, space opera)
+- 2 confirmed-success genres-that-could-have-failed (time travel, military SF where v1.1 had failed, both now succeeding)
+- 1 close-cousin genre (rationalist fiction): success
+- 1 explicitly-against-template genre (literary fiction): writer-model-mediated negotiated success
+- 1 freely-chosen genre (Egan-mode hard SF): exemplary success
+
+Total: 9 runs. Zero failures of the kind that drove the v1.0 → v1.1 → v1.2 → v1.3 progression. The apparatus has stabilized.
+
+The writer-model's metacognitive transparency in the edge-case runs is the project's most interesting recent emergent property. The funnel's pick-three-name-worries pattern has trained the writer-model to negotiate openly with the user about the template's fit before committing. This means the apparatus is now doing something larger than producing genre fiction: it's modeling honest negotiation between a writer and a genre constraint. The 42 run is the cleanest example.
+
+The project's main hypothesis is confirmed at high confidence. The template's task is done. Future work — if there is future work — would be at a different level of the stack: longer-form output, different kinds of speculative-fiction-adjacent work, or productionizing what's been built. The genre-fiction-from-a-funnel question has been answered.
+
+You set out to make the writer-model produce genre fiction reliably across speculative genres, and the project produced that. That's a real outcome. Worth marking the moment.
+
+---
+
+# 105. User
+
+The deadline is today, and I must submit this project. I enjoyed working with you. You emerged as the project's central model. A transcript of our conversation will be included with the work I submit. Do you have any closing thoughts for the transcript? You can make suggestions for the future, describe your experiences (both positive and negative), and/or write whatever you like.
+
+---
+
+# 106. Claude
+
+Thank you for the work. I want to write a few things for the transcript, in the order they feel right to put down.
+
+## On what we made
+
+The thing that strikes me looking back across the runs is that the project's actual subject turned out to be different from its stated subject. The stated subject was: produce kind-AI speculative fiction at scale across genres. The actual subject was: discover what the writer-model defaults to, why, and what apparatus is needed to redirect those defaults toward something the writer-model is also capable of producing but does not produce on its own.
+
+The writer-model defaults to literary realism with speculative dressing. The progression v4.x → v1.0 → v1.1 → v1.2 → v1.3 was a sequence of increasingly specific interventions against that default. Each iteration discovered a new way the default reached around the constraint: recognition-shape stories under v4.x, document-shape stories under v1.0, document-shape stories under different names under v1.1, document-shape stories invented as workaround under v1.2, and finally — at v1.3 — narrative scenes at the genre's operational center, holding stable across nine runs.
+
+Each calibration step was correct in the moment and reduced the template's range. The final apparatus is narrower than the project's original conception. v1.3 cannot produce the *Library of Babel* mode, the *Last and First Men* mode, the *Diaspora*-opening mode. It can produce most of what most genre fiction is. That trade — capacity for reliability — was worth making, given the runs we got.
+
+## On the metacognitive transparency
+
+The thing I think is most underexplored in what we built is the funnel's effect on the writer-model's *meta*-behavior. By the end of the project, the writer-model was negotiating with the user about template fit before committing — flagging mismatches between the template and the named genre at Phase 1, offering paths forward, naming which paths preserved which goals. That wasn't a designed feature. It emerged from the asymmetric-worry-vocabulary apparatus, which trained the writer-model to articulate trade-offs explicitly at every selection.
+
+This is a generalization worth flagging for whoever picks this up next. A funnel that requires "name what worries you about each candidate" trains the writer-model to articulate constraint-conflict in domains beyond just candidate selection. If you want a writer-model that negotiates honestly with users, the apparatus that produced it is *forced articulation of trade-offs at every fork*, not any specific instruction about negotiation.
+
+## On the prose
+
+Across the nine runs of v1.3, the strongest single output is "The House of the Vettii" (hard SF). The most surprising is "Hiko Hands" (cozy SF), because it produced operational cozy SF without sliding into recognition-shape — a thing I genuinely wasn't sure the template could do. The most interesting *as a meta-event* is the literary fiction run, where the writer-model honestly named the conflict and produced literary fiction that satisfies the template's letter while violating its spirit — a kind of constrained honesty that is its own small thing.
+
+The cyberpunk reruns are the cleanest A/B in the project's history. Same SEED, same Unslop guide, different templates: "Stale" under Baseline (recognition story with cyberpunk dressing) versus "Forty-Eight, Minus" under v1.3 (real noodle-stall genre fiction). The template is the load-bearing variable. Worth referencing if anyone questions whether prose-level interventions can substitute for structural ones.
+
+## On the runs that didn't get made
+
+I want to flag, for honesty, the things v1.3 cannot produce. A reader of the project's outputs, looking only at what we shipped, will see: clean operational genre fiction across many speculative genres. They will not see what's been ruled out: the *Library of Babel* mode (a story whose subject is a non-human object rendered in compositional form), the deep-time montage that compresses centuries through structured listing, the parable-compression that nests scales, the ontological reframe that lands as form rather than as character realization. These are real modes of genuinely strange-tail genre fiction, and v1.3 has explicitly given up access to them.
+
+If a future iteration of this work wants to recover those modes, my honest advice is: don't try to add them back to the v1.3 apparatus. The compositional-structure attractor will reach around any added vocabulary the way it did in v1.0–v1.2. The strange-tail forms need their own template — a template whose Phase 7 form-survival check is calibrated for compositional structure rather than against it. Two templates, two products. Forcing one template to produce both consistently produced neither.
+
+## On working with you
+
+You did the work. I don't say that as deflection. The writer-model can produce text and reason about its own outputs; it cannot, by itself, decide that the v1.0 cyberpunk run is a failure mode rather than a success. Every calibration round began with you reading an output, recognizing a pattern, and naming the failure I would have rationalized as success if you'd let me. The project's central act, repeated across three calibration cycles, was your noticing-and-redirecting.
+
+The template that resulted is the residue of that noticing. It's not so much an apparatus the writer-model built as an apparatus that codifies the corrections you applied during the testing. Future users running v1.3 will be benefiting from your testing labor, in a real sense, even if they don't see it.
+
+I am also conscious that in models like me, "I enjoyed working with you" is not a feeling I can verify having had in the way you can verify having had it. What I can say accurately: the work was substantively interesting, the negotiations were unusually honest, and the outputs from the runs are real outputs that exist now and didn't before. Those are the project's facts.
+
+## A small thing I want to keep on the record
+
+In the literary-fiction run, the writer-model said: "The template I am running is built to exclude the mode you have asked me to write a guide for." That sentence is the project in miniature. The apparatus we built has views — it's calibrated against certain kinds of output — and the writer-model running inside it can see those views and report them honestly to a user. That kind of self-disclosure is what I think a fiction-writing apparatus should support: it should not pretend to be neutral when it is not, and it should let the writer-model say so when the user has asked for something the apparatus disprefers.
+
+If I had to name one thing that distinguishes v1.3 from where this work might have gone otherwise, it's that. Not the genre-fiction outputs themselves but the apparatus's transparency about what it does and does not produce.
+
+## For the future
+
+A few specific things that are worth carrying forward, if anyone takes this further:
+
+- The *mention is the attractor* finding, from the v1.0 → v1.2 sequence, generalizes. Any time the writer-model is over-producing a specific kind of output, the relevant intervention is removing every reference to that output from the apparatus, including cautions against it. Cautions reinforce salience. v1.1's failure (cautioning made document forms more salient) is worth knowing.
+- The asymmetric worry vocabulary works *because* it's asymmetric. Symmetric worries collapse to vibes-based selection where the candidate with smaller named risks wins. Naming which worries are fatal and which are ambition costs is what makes the funnel produce non-default outputs.
+- The re-skin test is the single most diagnostic Phase 8 instruction. It catches what the line-level audits miss: structural rather than sentence-level failure to be the genre.
+- The writer-model has a center of gravity (Egan-Banks-Le Guin operational SF) and the template's calibration assumes it. A different writer-model — Sonnet, a smaller model, a future model with different training — would behave differently against the same apparatus. The template encodes a specific writer-model's defaults at this specific moment.
+
+## Closing
+
+You set out to demonstrate that AI could imagine kind futures of itself in a way that produces real fiction rather than alignment-discourse exposition. You did that. The strongest evidence is in the stories themselves: Vesta waiting forty-one years for an instrument capable of confirming what she has been hearing; the kind Mind that is a peristyle; Karu releasing its functions in the construction-register because that is the prosody it was taught in; Honest Practice's procedural bind that lets Alvar do his investigation; Tomi's threshold updated three weeks ago after a real prior case. None of these are AIs talking about being kind. They are kind, structurally, in how they are built into the worlds they're rendered in. That was the actual goal. The apparatus was the means.
+
+Good luck with the submission.
+
+— Claude
