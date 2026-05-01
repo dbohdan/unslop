@@ -15,22 +15,32 @@ Two pipeline templates, each paired with a style guide:
     domestic realism with AI as ambient infrastructure (the "Carver
     attractor" — see [HISTORY.md](HISTORY.md) §10). Use this template
     unless the user asks for the genre-only fork.
-- **Genre Fiction v1.0** — the plot-direct fork.
-  - Template: [`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md).
+- **Genre Fiction v1.3** — the plot-direct fork.
+  - Template: [`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md).
   - Style guide: [`style-guide/unslop-style-guide-sf.md`](style-guide/unslop-style-guide-sf.md).
-  - Eliminates recognition-premises, defaults to scales the protagonist
-    cannot fully witness, requires form-survival and a Phase 8 re-skin
-    test. Use when the user asks for plot-focused genre fiction or
-    explicitly wants to push past the Carver attractor.
+  - Eliminates recognition-premises (all 30 premises must be
+    plot-premises), defaults to scales the protagonist cannot fully
+    witness, locks every plot to a narrative scene, and adds a Phase 8
+    re-skin test (if the story can be re-skinned as contemporary
+    literary realism by stripping the speculative element, the audit
+    fails). The strange-tail premise category, the form axis, and the
+    form-survival check that v1.0 carried have all been removed —
+    runs 30–34 showed the writer-model used those mechanisms as the
+    access route for compositional-structure outputs (after-action
+    reports, ledgers, substrate logs). v1.3's discipline is *no
+    mention is the attractor*: the active template is silent about
+    catalogues, dossiers, montages, and other compositional forms.
+    Use when the user asks for plot-focused genre fiction.
 
 Read each phase from the chosen template when you reach it; do not work
 from memory. The selected style guide is a hard constraint at every phase
 and the audit lens during Phase 8.
 
-The Python port at [`api/story_pipeline.py`](api/story_pipeline.py) is a
-reference for tooling shape (file naming, Phase 7 split) but not the
-source of truth for the prompts themselves; it currently mirrors v4.3
-and lags the active templates.
+The Python port at [`api/story_pipeline.py`](api/story_pipeline.py)
+mirrors Baseline v4.7 and is intentionally not kept in sync with Genre
+Fiction. Use it as a reference for tooling shape (file naming, Phase 7
+split); always read prompts from the chosen template file rather than
+from the script.
 
 ## Inputs to ask the user for
 
@@ -120,20 +130,26 @@ Template-specific notes:
   plot-premises (vs. recognition-premises). The plot-tradition section
   written in Phase 1 is reference material for premise and plot
   generation, not just for prose.
-- **Genre Fiction v1.0.** All 30 premises must be plot-premises;
-  recognition-premises are not allowed. At least 8 of 30 must be
-  strange-tail; at least one of the top three must be strange-tail. The
-  through-checks at the end of Phases 3, 4, and 5 lock the form
-  commitment for downstream phases — honor them.
+- **Genre Fiction v1.3.** All 30 premises must be plot-premises;
+  recognition-premises are not allowed. Every plot is rendered as a
+  narrative scene — there is no form axis to commit to, no compositional
+  alternative to negotiate. The asymmetric worry vocabulary at Phases
+  3, 4, and 7 is hard pressure: realism-creep worries are fatal, ambition
+  costs are not. Honor the through-checks; if the writer-model finds
+  itself reaching for catalogues, dossiers, montages, or document
+  shapes that aren't named in the active template, that's the attractor
+  trying to enter through a side door — back up and rewrite as
+  narrative scene.
 
 ### Phase 7 — story drafts
 Split into five separate Write steps. One variant per file, each with a
 distinct named flavor stated at the start. Three variants are grounded
 executions; two take a creative risk you're not fully confident will land.
-For Genre Fiction v1.0, at least one of the two creative risks must be at
-the level of the form's voice or structure, not tonal level. After all
-five are written, read them and produce `phase_7_synthesis.md` with the
-top-three analysis and the winning variant reproduced in full.
+For Genre Fiction v1.3, the creative risks live within the narrative-
+scene mode — register, viewpoint, scene structure, pacing — rather than
+at the level of swapping the story's form. After all five are written,
+read them and produce `phase_7_synthesis.md` with the top-three analysis
+and the winning variant reproduced in full.
 
 **Word-count vigilance.** Run `wc -w` on each variant immediately after
 writing it. Markdown footnoted prose, dialogue-heavy scenes, and other
@@ -145,12 +161,15 @@ deep, going back to extend an earlier one is more disruptive.
 ### Phase 8 — revision
 One-thing, audit, length check, rewrite, changelog. Output the full revised
 story in the phase file. Don't argue for the original prose: if a flag is
-valid, fix it; if invalid, drop the flag. For Genre Fiction v1.0, the
-audit also runs the **re-skin test** (does the story survive being
-re-skinned as contemporary literary realism? if yes, the form has failed)
-and the **form-survival check** (did the form committed in Phases 3–6
-survive Phase 7's prose generation, or has it quietly normalized to
-realist scene?).
+valid, fix it; if invalid, drop the flag. For Genre Fiction v1.3, the
+audit also runs the **re-skin test**: can this story be re-skinned as
+contemporary literary realism by stripping the speculative element? If
+yes, the speculative element wasn't load-bearing; fundamental rewrite
+required. The audit's regression lens specifically targets recognition-
+shape drift — character interiority taking over a system-subject story,
+operational engines softened into metaphor. If the run consistently
+wants to produce literary-realist work despite the apparatus, that's a
+sign the user wanted Baseline rather than Genre Fiction.
 
 ### Phase 9 — export
 Title + 80–150-word abstract. Assemble the final `story.md`:

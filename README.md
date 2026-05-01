@@ -45,40 +45,46 @@ Two artifacts get reused across every run:
 
 A third template is a Genre-Fiction-only alternative:
 
-3. **[`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md)**
+3. **[`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md)**
    — A fork of v4.7 that produces plot-focused genre fiction only.
-   Recognition-premises are eliminated; the Setup defaults to scales the
-   protagonist cannot fully witness; the Legibility Floor is form-relative
-   (a catalogue is legible if it follows catalogue conventions); Phase 1's
-   strangest-moves subsection requires sentence-level micro-examples in the
-   genre's voice; Phase 8 adds a *re-skin test* — if the story can be
-   re-skinned as contemporary literary realism by stripping the speculative
-   element, the audit fails. Use this template when the bias toward
-   domestic realism in Baseline is the thing you are trying to break.
-   Pairs naturally with the SF edition of the Unslop guide.
+   Recognition-premises are eliminated, all 30 premises must be plot-
+   premises, the Setup defaults to scales the protagonist cannot fully
+   witness, every plot is rendered as a narrative scene, and Phase 8
+   adds a *re-skin test* — if the story can be re-skinned as
+   contemporary literary realism by stripping the speculative element,
+   the audit fails. Use this template when you want fiction that reads
+   as the genre advertised rather than as literary fiction with the
+   genre's set dressing. Pairs naturally with the SF edition of the
+   Unslop guide. Genre Fiction's evolution from v1.0 (which let
+   compositional-structure outputs through as the workaround that
+   replaced literary realism) to v1.3 (every reference to compositional
+   structure removed, narrative scene the only form) is documented in
+   [HISTORY.md](HISTORY.md) §11.
 
 The pipeline runs in three modes:
 
 - **Hand-driven through the Claude web app.** With the template loaded as
   project knowledge, the model looks up each phase from the template file
   rather than the user pasting prompts. Between phases the user reviews,
-  steers, or simply asks for the next phase. Runs 01–31 in [`runs/`](runs/)
+  steers, or simply asks for the next phase. Runs 01–43 in [`runs/`](runs/)
   were produced this way; each run preserves a transcript and the resulting
   story (or stories, for the A/B and multi-model runs).
 - **Autonomously through Claude Code on the web.** A `CLAUDE.md` at the
-  repo root tells Claude Code how to drive the v4.3 template end-to-end.
-  Two test runs are committed in [`claude-code/test/`](claude-code/test/).
-  This path trades the steerability of the hand-driven mode for the
-  convenience of a single "write me a story in `[GENRE]`" instruction.
+  repo root tells Claude Code how to drive Baseline v4.7 (default) or
+  Genre Fiction v1.3 end-to-end. Two test runs are committed in
+  [`claude-code/test/`](claude-code/test/). This path trades the
+  steerability of the hand-driven mode for the convenience of a single
+  "write me a story in `[GENRE]`" instruction.
 - **End-to-end via [`api/story_pipeline.py`](api/story_pipeline.py).** A
-  Python port of v4.3 that calls Anthropic or OpenRouter directly, caches each
-  phase to disk, and can resume, regenerate, or run an arbitrary slice of
-  phases. Tested against Claude Sonnet 4.6 and Gemini 3 Flash Preview;
-  outputs in [`api/test/`](api/test/). The script is much less tested than
-  the hand-driven Claude.ai path and may produce worse stories — two
-  end-to-end runs to its name, against thirty-one hand-driven runs in
-  [`runs/`](runs/). Use it for batch experiments and ablations; use the
-  Claude.ai path for the runs you care about.
+  Python port of Baseline v4.7 that calls Anthropic or OpenRouter
+  directly, caches each phase to disk, and can resume, regenerate, or
+  run an arbitrary slice of phases. Tested against Claude Sonnet 4.6
+  and Gemini 3 Flash Preview; outputs in [`api/test/`](api/test/). The
+  script is much less tested than the hand-driven Claude.ai path and
+  may produce worse stories — two end-to-end runs to its name, against
+  forty-three hand-driven runs in [`runs/`](runs/). The Genre Fiction
+  fork is not ported. Use the script for batch experiments and
+  ablations; use the Claude.ai path for the runs you care about.
 
 For the project's evolution — the Ellison trial, the abandoned Nix critic
 persona, the Plain → Baseline lineage, the SEED mechanism that anchors
@@ -92,7 +98,7 @@ Genre Fiction fork — see [HISTORY.md](HISTORY.md).
 1. Open a [Claude project](https://claude.ai/projects). Add
    `style-guide/unslop-style-guide.md` and the v4.7 template to project
    knowledge. (For genre-only runs, swap in
-   `style-guide/unslop-style-guide-sf.md` and the Genre Fiction v1.0
+   `style-guide/unslop-style-guide-sf.md` and the Genre Fiction v1.3
    template instead.)
 2. Open a chat in the project and start the run with a prompt like:
 
@@ -213,7 +219,11 @@ revision overhead).
       - [transcript.md](pipeline/3-baseline/transcript.md)
     - [4-genre-fiction/](pipeline/4-genre-fiction/) — Genre Fiction fork, plot-focused only
       - [story-pipeline-template-genre-fiction-v1.0.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md)
-  - [runs/](runs/) — 31 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17 onward use `[GENRE]`. The genre parenthetical is given for the latter.
+      - [story-pipeline-template-genre-fiction-v1.1.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.1.md) — narrative-scene default, document-form caution
+      - [story-pipeline-template-genre-fiction-v1.2.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.2.md) — every mention of false-document forms removed
+      - [story-pipeline-template-genre-fiction-v1.3.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md) — current; strange-tail premise category eliminated, narrative scene the only form
+      - [transcript.md](pipeline/4-genre-fiction/transcript.md) — symlink to the Baseline transcript that walks through v1.0 → v1.3
+  - [runs/](runs/) — 43 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17 onward use `[GENRE]`. The genre parenthetical is given for the latter.
     - [01/](runs/01/) — *The Toy*
     - [02/](runs/02/) — *Last Call*
     - [03/](runs/03/) — *The Warm Thing*
@@ -245,6 +255,18 @@ revision overhead).
     - [29/](runs/29/) — *The Working Shape of the River* (cyberpunk, v4.7 + SF Unslop)
     - [30/](runs/30/) — three-way cyberpunk comparison: *Stale* (Baseline v4.7, custom SEED), *After-Action* (Genre Fiction v1.0, same custom SEED), *Continental dispatch* (Genre Fiction v1.0, random SEED)
     - [31/](runs/31/) — *The Soria Correspondence* (cozy SF, Genre Fiction v1.0)
+    - [32/](runs/32/) — *The Eleventh Refusal of Sefa-on-the-Slow* (space opera, Genre Fiction v1.0)
+    - [33/](runs/33/) — *Page Seventy-Three* (military SF, Genre Fiction v1.1)
+    - [34/](runs/34/) — *The Third Closeness* (hard SF, Genre Fiction v1.2)
+    - [35/](runs/35/) — *Independent Confirmation* (hard SF, Genre Fiction v1.3); first v1.3 run
+    - [36/](runs/36/) — *Forty-Eight, Minus* (cyberpunk, Genre Fiction v1.3); same SEED as run 30 *After-Action*
+    - [37/](runs/37/) — *The Long Watch* (cozy SF, Genre Fiction v1.3)
+    - [38/](runs/38/) — *The Last Inspector* (space opera, Genre Fiction v1.3)
+    - [39/](runs/39/) — *The Calcium Bath* (self-consistent time travel in the tradition of *Primer*, Genre Fiction v1.3 + SF Unslop)
+    - [40/](runs/40/) — *What Henry Will Remember* (self-consistent time travel in the tradition of *Primer*, Genre Fiction v1.3 + regular Unslop)
+    - [41/](runs/41/) — *The Numbers* (rationalist fiction, Genre Fiction v1.3)
+    - [42/](runs/42/) — *For Aoife* (literary fiction against the template, Genre Fiction v1.3)
+    - [43/](runs/43/) — *The Asymmetric Counsel* (hard SF in the tradition of Greg Egan, writer's choice, Genre Fiction v1.3)
   - [review/](review/) — cross-model reviews of run sets
     - [01-with-abstracts.md](review/01-with-abstracts.md)
     - [02-without-abstracts.md](review/02-without-abstracts.md)
@@ -254,7 +276,7 @@ revision overhead).
       - [comic-sf-1/](claude-code/test/comic-sf-1/) — end-to-end test, dictionary SEED
       - [comic-sf-2/](claude-code/test/comic-sf-2/) — phases 1–7, Wikipedia-sourced SEED
   - [api/](api/)
-    - [story_pipeline.py](api/story_pipeline.py) — v4.3 ported to Anthropic + OpenRouter
+    - [story_pipeline.py](api/story_pipeline.py) — Baseline v4.7 ported to Anthropic + OpenRouter; Genre Fiction is intentionally not ported
     - [test/](api/test/)
       - [claude-sonnet-4.6/](api/test/claude-sonnet-4.6/) — end-to-end test, story: *Wiwaxia*
       - [gemini-3-flash-preview/](api/test/gemini-3-flash-preview/) — end-to-end test, story: *The 300-Baud Handshake*

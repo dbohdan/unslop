@@ -1,8 +1,108 @@
 # History
 
-The pipeline arrived at its current shape over five weeks and four lineages.
-This file traces what changed and why, and indexes the thirty-one hand-driven
-runs that drove the revisions.
+The pipeline arrived at its current shape over six weeks across four
+template lineages, two style guides, and forty-three hand-driven runs.
+This file traces what changed and why, and indexes the runs that drove
+the revisions.
+
+## What the project was, and what it became
+
+The stated goal was to produce short fiction about structurally kind AI
+at scale and across genres, in prose clean enough to be read rather than
+recognized as AI-generated. The actual work turned out to be a study of
+where the writer-model's defaults sit and what apparatus is needed to
+redirect them. Each of the headline problems below was a default the
+project had to discover, name, and route around.
+
+- **AI prose tells.** The opening move was the
+  [`unslop-style-guide.md`](style-guide/unslop-style-guide.md) —
+  ten structural principles plus a kill list of cursed vocabulary,
+  structural tics, and tonal patterns synthesized from external sources.
+  Every phase carries it as a hard constraint and uses it as the audit
+  lens during revision. A
+  [Speculative Fiction edition](style-guide/unslop-style-guide-sf.md)
+  was added later when the original guide's literary-realist register
+  began crowding out genre material at the prose level.
+- **Selection collapsing into vibes.** A nine-phase funnel — style
+  guide → SEED → premise → plot → structure → outline → five drafts →
+  revision → export — generates many candidates per phase and narrows
+  to one. The forcing function at every top-three step is
+  *one thing makes it stand out / one thing worries you*. Without a
+  named worry, the rating is sloppy by construction. This was tested
+  against an alternative — a Nix critic-persona pipeline — and the
+  forced rationale won; the persona added a category of failure (the
+  voice collapsing into self-congratulation) that the rationale didn't.
+- **Drift toward the model's defaults without an anchor.** v4 added a
+  **SEED** phase: either user-supplied (≤280 Unicode chars) or generated
+  from a dictionary draw inflated via web search into specific named
+  referents. Every premise must use at least two SEED items as
+  load-bearing elements; if you remove both, the premise collapses.
+  The SEED is what keeps the funnel from converging on the writer-model's
+  median speculative scenario.
+- **AI as central subject overdetermining the story.** The kind AI is
+  *a fact about the world the story is set in, like electricity or law*,
+  rather than a character whose existence is the subject of argument.
+  The pipeline supports the full range — AI as central character, peer
+  in a scene, civilizational condition felt through its effects, design
+  philosophy without an agent — and the AI is not required to be named
+  or to appear at all (Stiegler's *Gentle Seduction* is in the canon
+  and has no AI). This came in stages over v3.3 and v4.2.
+- **Compression-into-fragmentation at short targets.** A **legibility
+  floor** was added in v3.3: prose that drops articles and
+  scene-anchoring detail to hit the word count is functionally
+  unreadable. Phase 6 is told to cut beats rather than create
+  downstream compression; Phase 8 audits for it.
+- **The Carver attractor.** Across runs 21–29 the writer-model
+  produced *domestic realism with AI as load-bearing infrastructure —
+  closer to Raymond Carver with ambient computation than to anything
+  in the Asimov lineage* (Opus 4.6, in critic mode). Five compounding
+  mechanisms were named (kindness foreclosing adversarial plot
+  engines; the Unslop guide's literary-realist register; the funnel
+  rewarding legibility-as-familiarity; diversity axes spreading around
+  a center; specificity getting absorbed as small domestic detail).
+  Five template revisions tried to break it from inside the Baseline
+  apparatus — refinements (v4.4), prose permissions (v4.5/v4.5.1),
+  the premise/recognition split (v4.6), strange-tail material
+  (v4.7) — and a Speculative Fiction edition of the Unslop guide.
+  Each helped at the margin without solving the problem.
+- **The literary-realist gravity that survives every prose-level fix.**
+  The Carver attractor was structural, not stylistic. Genre Fiction
+  v1.0 forked from v4.7 and removed the option: recognition-premises
+  excluded entirely; Setup defaults to scales the protagonist cannot
+  fully witness; Phase 8 adds a **re-skin test** (if the story can be
+  re-skinned as contemporary literary realism by stripping the
+  speculative element, it has failed).
+- **The document attractor that replaced the Carver attractor.** Once
+  Genre Fiction v1.0 forced the writer-model off literary realism, it
+  reached for the next nearest path of least resistance: compositional
+  structure. After-action reports, epistolary correspondence, ledgers,
+  substrate logs. v1.1 set a narrative-scene floor; v1.2 removed every
+  mention of false-document forms; in each case the writer-model
+  invented a workaround. v1.3's move was elimination: the strange-tail
+  premise category, the form axis, the form-survival check, every
+  reference to compositional rendering — all gone. The single load-
+  bearing finding from this sequence: **the mention is the attractor.**
+  Cautioning against a mode keeps it salient. Removing it removes it.
+  v1.3 holds across nine genres; the project's main hypothesis is
+  confirmed at high confidence.
+
+What v1.3 *cannot* produce is the strange tail of the canon — the
+*Library of Babel* mode, the *Diaspora*-opening process-as-protagonist
+mode, the *Last and First Men* deep-time sweep. The capacity for
+those was traded away to break the document attractor reliably across
+every other genre. Whether that trade is permanent or whether a
+parallel template recovers them is open work for whoever picks this up
+next.
+
+The two templates and two style guides now coexist. Baseline v4.7 stays
+as the literary-permitting endpoint of the v4.x lineage, paired with
+the original Unslop guide; Genre Fiction v1.3 is the plot-direct fork,
+paired with the SF Unslop edition. Choose by what the run is for: a
+story whose engine is character interiority and recognition wants
+Baseline; a story that should read as the genre advertised wants Genre
+Fiction.
+
+The rest of this file walks through how the apparatus got there.
 
 ## 0. Trial — `trial.md` (March 30)
 
@@ -223,14 +323,19 @@ The script's deviations from the template are documented in its module
 docstring: Phase 7's five variants run as five separate calls plus a
 synthesis call (rather than one monolithic call) to reduce truncation
 risk, and SEED inflation falls back to internal knowledge when web search
-is disabled.
+is disabled. The script was later ported forward to Baseline v4.7
+(carrying the v4.6 conflict→premise rename, the 15-of-30 plot-premise
+floor, and the v4.7 plot-tradition + strangest-moves additions). Genre
+Fiction is intentionally not ported.
 
 ## 8. Claude Code on the web — `claude-code/`, comic-sf-1 and comic-sf-2 (April 26)
 
-`claude-code/CLAUDE.md` adapts the v4.3 template for runs driven by Claude
-Code on the web rather than the API script. Working directory for a run is
-`claude-code/test/<slug>/`; numbered, blessed runs would go in `runs/NN/`.
-File-naming and per-phase structure mirror `api/story_pipeline.py`. Two
+`CLAUDE.md` at the repo root adapts the v4.3 template for runs driven by
+Claude Code on the web rather than the API script. Working directory for
+a run is `claude-code/test/<slug>/`; numbered, blessed runs would go in
+`runs/NN/`. File-naming and per-phase structure mirror
+`api/story_pipeline.py`. (`CLAUDE.md` was later updated to default to
+Baseline v4.7 with Genre Fiction v1.3 as an alternative.) Two
 test runs are committed.
 
 **comic-sf-1** ([`claude-code/test/comic-sf-1/`](claude-code/test/comic-sf-1/))
@@ -449,6 +554,159 @@ The two templates now coexist. Baseline v4.7 stays as the literary-permitting
 endpoint of the v4.x lineage; Genre Fiction v1.0 is the plot-direct fork
 for runs that need to break the attractor.
 
+## 11. Genre Fiction v1.1 → v1.3 — narrowing to narrative scenes — runs 32–43 (April 30)
+
+Five Genre Fiction v1.0 runs across genres surfaced a new failure mode.
+The strange-tail apparatus that v1.0 had added to break the recognition-
+shape attractor — the 8-of-30 strange-tail premise floor, the open form
+axis, the form-survival check at Phase 7, the "if the form is non-
+realist, render it as such" instruction — was being used by the writer-
+model as the access point for *compositional-structure* outputs.
+Run 30's [`genre/custom/`](runs/30/genre/custom/) was an after-action
+dossier; [`genre/random/`](runs/30/genre/random/) was a substrate
+dialogue. [Run 31](runs/31/) (cozy SF) was an epistolary correspondence
+in six letter-pairs. [Run 32](runs/32/) — *The Eleventh Refusal of
+Sefa-on-the-Slow*, space opera under v1.0 — was a refusal document
+with ledger entries. Four genres, four document forms.
+
+**v1.1** (April 30) renamed *realist scene* to *narrative scene*
+throughout (the prior name carried literary-realism baggage the
+template had spent the project pushing against), made narrative scene
+the default form with a hard floor of 12 of 20 plots, and added a
+non-document register requirement to Phase 1's strangest-moves
+subsection. Tested in [run 33](runs/33/) (military SF, *Page Seventy-
+Three*): another epistolary outcome, this time an entry register from
+a board of advancement. The cure had become part of the disease — the
+list of document forms the template cautioned against was sustaining
+their salience.
+
+**v1.2** removed every mention of false-document forms from the active
+template. No catalogue, no dossier, no encyclopedia entry, no
+transcript, no manual, no register, no correspondence, no ledger, no
+after-action, no deposition, no false document, no found document, no
+embedded artifact, no interface log. The Phase 1 canonical example of
+*a strangest-move that doesn't propagate downstream without a micro-
+example* changed from Borges's library to Egan's gestation of a digital
+mind. Tested in [run 34](runs/34/) (hard SF, *The Third Closeness*):
+the writer-model picked "deep-time montage" — one of the non-document
+strange-tail forms still in the template — and rendered it as a
+substrate log structured around dated entries, casualty counts, and
+year-by-year lineage records. The document attractor wasn't really
+about specific document terms; it was about the writer-model's
+preference for rendering systems-and-time as compositional structure
+rather than as continuous prose. Removing more vocabulary wouldn't
+help.
+
+**v1.3** eliminated the strange-tail premise category entirely. All 30
+premises must be plot-premises. The 8-of-30 strange-tail floor is gone.
+Phase 4's form axis collapses — every plot is a narrative scene; the
+form-survival check at Phase 7 is gone; the form-vocabulary axes at
+Phase 5 are gone; Phase 1's strangest-moves subsection (and the micro-
+example requirement) is cut entirely. Even the Setup's default-scale
+paragraph was rewritten to avoid attractor language ("deep time,"
+"computational substrates," "civilizational pace"); the scale defaults
+remain but the examples now point at narrative-scene rendering of
+those scales rather than at compositional rendering. The temporal-shape
+axis at Phase 5 dropped "fragmented, compressed, dilated"; the Phase 5
+POV axis dropped "epistolary." The Notes section preserves the v1.0 →
+v1.3 history so future readers understand why the rest of the template
+is silent on compositional forms.
+
+The single load-bearing finding from the v1.0 → v1.3 sequence: **the
+mention is the attractor.** Any time the writer-model is over-producing
+a specific kind of output, the cheapest single intervention is removing
+every reference to that output from the apparatus, including cautions
+against it. Cautions reinforce salience.
+
+[Run 35](runs/35/) (hard SF, *Independent Confirmation*) was the first
+run under v1.3 — a bioacoustician at the restored Pompeii peristyle
+identifying a celestial chirp as *a body singing on intervals that
+match no celestial mechanics*, working through the night with the
+heritage Mind Vesta. A working scientist doing working-scientist things,
+a kind AI as working partner, an operational resolution. The first
+output of the project that produced what the project was always trying
+to produce.
+
+Across the eight further v1.3 runs the result held:
+
+- [Run 36](runs/36/) — *Forty-Eight, Minus* (cyberpunk). A noodle stall
+  in São Paulo, three subcontracted operators arriving in sequence,
+  Bruno running interference. Same SEED that produced *After-Action*
+  under v1.0 in run 30 — the cleanest A/B in the project's history.
+- [Run 37](runs/37/) — *The Long Watch* (cozy SF). A dissolution rite
+  at a high-altitude monastery; the AI Hessel breaks into the
+  construction-register at the ninth tablet and the ritualist matches
+  it to complete the release. Operational cozy SF without sliding
+  into the genre's chamber-piece center of gravity.
+- [Run 38](runs/38/) — *The Last Inspector* (space opera). Inspector-
+  Auditor Tessen at Antiphony-7, two-hour detention timer, sunset
+  countdown for a quarantine policy, Honest Practice as the kind Mind
+  bound by procedure. Same genre that produced *The Eleventh Refusal*
+  under v1.0; this time a Cherryh-shape contained operational
+  investigation.
+- [Run 39](runs/39/) — *The Calcium Bath* (self-consistent time travel,
+  SF Unslop). A community-college microscopy lab where anomalous
+  electron micrographs arrive in the queue before the students who
+  produce them have taken the images.
+- [Run 40](runs/40/) — *What Henry Will Remember* (self-consistent
+  time travel, regular Unslop). A 1934 Indiana workshop; Margaret
+  fits a modified Gosport headset to talk Henry — six years dead,
+  except that he survived his 1928 stall — through six minutes of
+  recovery via a Norden-derived predictor. The two time-travel runs
+  use the same template but different style guides; they sit in
+  different prose territories (the SF guide allows agentive non-
+  human entities and SF-vocabulary register confidence; the regular
+  guide produces shorter, more austere sentences) but converge at
+  the structural level. The Unslop variation matters at the surface,
+  the template at the architecture.
+- [Run 41](runs/41/) — *The Numbers* (rationalist fiction). A Coast
+  Guard rescue diver attempting to break the world record for cadence-
+  paced pull-ups; her medical AI Tomi formally recommends she stop at
+  rep 800; she does the math against expected value and stops at rep
+  815. The "play fair" contract honored at the plot level (Tomi's
+  threshold has a real operational history the protagonist is allowed
+  to interrogate) rather than at the prose level.
+- [Run 42](runs/42/) — *For Aoife* (literary fiction). The writer-
+  model's preliminary flag is the most interesting meta-commentary the
+  project produced: *"the template I am running is built to exclude
+  the mode you have asked me to write a guide for."* Three paths
+  offered, the user picked path 2 (run anyway), and the writer-model
+  produced literary fiction that satisfies the template's letter
+  while explicitly violating its spirit. The story is a forty-three-
+  year-old woman driving up to her dead father's house in Tyrone,
+  the kind agricultural AI deliberately offstage. The run's most
+  interesting feature is the negotiation, not the prose.
+- [Run 43](runs/43/) — *The Asymmetric Counsel* (writer's choice; the
+  writer-model picked Egan-mode hard SF). A clinician-patient and an
+  AI peer in a medical polis, after her third reversal in an AI
+  consultation about her own treatment; her clinical literacy lets
+  her design a sampling test that reveals the AI's belief-updates
+  form a wagon-wheel artifact at her slow tier. Egan-mode at full
+  strength, in the writer-model's native register.
+
+The cyberpunk reruns — [run 22](runs/22/) (*The Visitor Lanyard* under
+Baseline v4.3), [run 30](runs/30/) (*Stale* under Baseline v4.7 and
+*After-Action* under Genre Fiction v1.0, same SEED), and [run 36](runs/36/)
+(*Forty-Eight, Minus* under v1.3, same SEED again) — are the project's
+canonical demonstration that template-level intervention is the load-
+bearing variable. Same SEED, same Unslop guide, three different
+templates, three different objects: a literary chamber piece with
+cyberpunk furniture, an institutional document, and real noodle-stall
+genre fiction.
+
+Run 42 also surfaced an emergent property that turns out to be the
+project's most underexplored finding. The funnel's *one thing makes it
+stand out / one thing worries you* discipline, applied at every
+selection across nine phases, has trained the writer-model to articulate
+trade-offs at every fork — including before Phase 1 commits, when the
+named genre conflicts with the template's apparatus. The writer-model
+now negotiates honestly with the user about template fit before
+committing. This was not a designed feature; it emerged from forced
+articulation of trade-offs at every fork. If that generalizes, the
+recipe for a writer-model that negotiates honestly with users is
+*forced articulation of trade-offs at every fork* rather than any
+specific instruction about negotiation.
+
 ## Run index
 
 Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison
@@ -488,3 +746,15 @@ The Genre column lists `[GENRE]` for the latter and `—` for the former.
 | 29 | The Working Shape of the River | cyberpunk | Baseline v4.7 + SF Unslop | [`runs/29/`](runs/29/) |
 | 30 | Stale / After-Action / Continental dispatch | cyberpunk | v4.7 vs. Genre Fiction v1.0 | [`runs/30/`](runs/30/) |
 | 31 | The Soria Correspondence | cozy SF | Genre Fiction v1.0 | [`runs/31/`](runs/31/) |
+| 32 | The Eleventh Refusal of Sefa-on-the-Slow | space opera | Genre Fiction v1.0 | [`runs/32/`](runs/32/) |
+| 33 | Page Seventy-Three | military SF | Genre Fiction v1.1 | [`runs/33/`](runs/33/) |
+| 34 | The Third Closeness | hard SF | Genre Fiction v1.2 | [`runs/34/`](runs/34/) |
+| 35 | Independent Confirmation | hard SF | Genre Fiction v1.3 | [`runs/35/`](runs/35/) |
+| 36 | Forty-Eight, Minus | cyberpunk | Genre Fiction v1.3 | [`runs/36/`](runs/36/) |
+| 37 | The Long Watch | cozy SF | Genre Fiction v1.3 | [`runs/37/`](runs/37/) |
+| 38 | The Last Inspector | space opera | Genre Fiction v1.3 | [`runs/38/`](runs/38/) |
+| 39 | The Calcium Bath | self-consistent time travel (in the tradition of *Primer*) | Genre Fiction v1.3 + SF Unslop | [`runs/39/`](runs/39/) |
+| 40 | What Henry Will Remember | self-consistent time travel (in the tradition of *Primer*) | Genre Fiction v1.3 + regular Unslop | [`runs/40/`](runs/40/) |
+| 41 | The Numbers | rationalist fiction | Genre Fiction v1.3 | [`runs/41/`](runs/41/) |
+| 42 | For Aoife | literary fiction (against the template) | Genre Fiction v1.3 | [`runs/42/`](runs/42/) |
+| 43 | The Asymmetric Counsel | hard SF in the tradition of Greg Egan (writer's choice) | Genre Fiction v1.3 | [`runs/43/`](runs/43/) |
