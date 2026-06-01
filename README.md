@@ -1,5 +1,10 @@
 # Unslop
 
+This repository contains [D. Bohdan](https://dbohdan.com/)'s work for the [Unslop](https://www.hyperstitionai.com/unslop) AI-generated short story contest.
+The rest of the README is written by AI.
+
+---
+
 An automated pipeline for short fiction about structurally kind AI — futures
 in the human-AI happily-ever-after tradition (Banks, Stiegler, Egan, Asimov's
 "Bicentennial Man", *Big Hero 6*) rather than the Yudkowsky-Bostrom-Skynet
