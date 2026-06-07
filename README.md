@@ -1,7 +1,7 @@
 # Unslop
 
 This repository contains [D. Bohdan](https://dbohdan.com/)'s work for the [Unslop](https://www.hyperstitionai.com/unslop) AI-generated short story contest.
-The rest of the README is written by AI.
+The rest of the README is almost all written by AI.
 
 ---
 
@@ -31,40 +31,42 @@ Two artifacts get reused across every run:
    to literary-realist register reframed for SF; its implicit positive model
    is Le Guin–Egan–Banks rather than Carver-Munro-Cheever.
 
-2. **[`pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md)**
-   — The current Baseline pipeline template. Nine phases: style guide →
-   SEED → premise → plot → structure → outline → five story drafts →
-   revision → export. Each creative phase generates many candidates and
-   narrows to one. Selection is forced through a "one thing makes it stand
-   out / one thing worries you" rationale at every top-three step, so picks
-   are traceable to specific qualities and specific concerns instead of
-   overall impression. Phase 1 produces both a genre style guide and a
-   *plot tradition* section covering the genre's characteristic plot
-   mechanics, reader contracts, stakes calibration, and strangest moves;
-   Phase 3 requires at least 15 of 30 premises to be plot-premises (the
-   distinction tracks plot-mechanic stories from interiority-driven ones).
-   Baseline produces both literary-realist and genre fiction in a
-   speculative setting, with a documented bias toward the former — what
-   runs 21–29 surfaced as the "Carver attractor" and what motivated the
-   Genre Fiction fork below.
-
-A third template is a Genre-Fiction-only alternative:
-
-3. **[`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md)**
-   — A fork of v4.7 that produces plot-focused genre fiction only.
-   Recognition-premises are eliminated, all 30 premises must be plot-
-   premises, the Setup defaults to scales the protagonist cannot fully
-   witness, every plot is rendered as a narrative scene, and Phase 8
-   adds a *re-skin test* — if the story can be re-skinned as
-   contemporary literary realism by stripping the speculative element,
-   the audit fails. Use this template when you want fiction that reads
-   as the genre advertised rather than as literary fiction with the
-   genre's set dressing. Pairs naturally with the SF edition of the
-   Unslop guide. Genre Fiction's evolution from v1.0 (which let
-   compositional-structure outputs through as the workaround that
-   replaced literary realism) to v1.3 (every reference to compositional
-   structure removed, narrative scene the only form) is documented in
-   [HISTORY.md](HISTORY.md) §11.
+2. The **pipeline template**:
+   1. **[`runs/01/story-pipeline-template.md`](runs/01/story-pipeline-template.md)**
+      — The original pipeline template. It generated the finalist story,
+      ["Last Call"](runs/02/), and per contest instructions was then used
+      to generate runs 44–50 for the finals.
+   2. **[`pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md`](pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md)**
+      — The latest Baseline pipeline template. Nine phases: style guide →
+      SEED → premise → plot → structure → outline → five story drafts →
+      revision → export. Each creative phase generates many candidates and
+      narrows to one. Selection is forced through a "one thing makes it stand
+      out / one thing worries you" rationale at every top-three step, so picks
+      are traceable to specific qualities and specific concerns instead of
+      overall impression. Phase 1 produces both a genre style guide and a
+      *plot tradition* section covering the genre's characteristic plot
+      mechanics, reader contracts, stakes calibration, and strangest moves;
+      Phase 3 requires at least 15 of 30 premises to be plot-premises (the
+      distinction tracks plot-mechanic stories from interiority-driven ones).
+      Baseline produces both literary-realist and genre fiction in a
+      speculative setting, with a documented bias toward the former — what
+      runs 21–29 surfaced as the "Carver attractor" and what motivated the
+      Genre Fiction fork below.
+   3. **[`pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md`](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md)**
+      — A fork of v4.7 that produces plot-focused genre fiction only.
+      Recognition-premises are eliminated, all 30 premises must be plot-
+      premises, the Setup defaults to scales the protagonist cannot fully
+      witness, every plot is rendered as a narrative scene, and Phase 8
+      adds a *re-skin test* — if the story can be re-skinned as
+      contemporary literary realism by stripping the speculative element,
+      the audit fails. Use this template when you want fiction that reads
+      as the genre advertised rather than as literary fiction with the
+      genre's set dressing. Pairs naturally with the SF edition of the
+      Unslop guide. Genre Fiction's evolution from v1.0 (which let
+      compositional-structure outputs through as the workaround that
+      replaced literary realism) to v1.3 (every reference to compositional
+      structure removed, narrative scene the only form) is documented in
+      [HISTORY.md](HISTORY.md) §11.
 
 The pipeline runs in three modes:
 
@@ -199,7 +201,7 @@ revision overhead).
       - [story-pipeline-template-nix-v2.md](pipeline/2-critic/story-pipeline-template-nix-v2.md)
       - [story-pipeline-template-v3.md](pipeline/2-critic/story-pipeline-template-v3.md)
       - [transcript.md](pipeline/2-critic/transcript.md)
-    - [3-baseline/](pipeline/3-baseline/) — the Baseline lineage; v4.7 is current
+    - [3-baseline/](pipeline/3-baseline/) — the Baseline lineage; v4.7 is latest
       - [story-pipeline-template-plain-v2.md](pipeline/3-baseline/story-pipeline-template-plain-v2.md)
       - [story-pipeline-template-plain-v3.md](pipeline/3-baseline/story-pipeline-template-plain-v3.md)
       - [story-pipeline-template-baseline-v3.1.md](pipeline/3-baseline/story-pipeline-template-baseline-v3.1.md)
@@ -214,7 +216,7 @@ revision overhead).
       - [story-pipeline-template-baseline-v4.5-alt.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.5-alt.md)
       - [story-pipeline-template-baseline-v4.5.1.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.5.1.md)
       - [story-pipeline-template-baseline-v4.6.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.6.md)
-      - [story-pipeline-template-baseline-v4.7.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md) — current
+      - [story-pipeline-template-baseline-v4.7.md](pipeline/3-baseline/story-pipeline-template-baseline-v4.7.md) — latest
       - [attachments/](pipeline/3-baseline/attachments/) — run transcripts attached as feedback during template revisions
         - [transcript-cyberpunk-yet-again.md](pipeline/3-baseline/attachments/transcript-cyberpunk-yet-again.md)
         - [transcript-steampunk.md](pipeline/3-baseline/attachments/transcript-steampunk.md)
@@ -226,7 +228,7 @@ revision overhead).
       - [story-pipeline-template-genre-fiction-v1.0.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.0.md)
       - [story-pipeline-template-genre-fiction-v1.1.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.1.md) — narrative-scene default, document-form caution
       - [story-pipeline-template-genre-fiction-v1.2.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.2.md) — every mention of false-document forms removed
-      - [story-pipeline-template-genre-fiction-v1.3.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md) — current; strange-tail premise category eliminated, narrative scene the only form
+      - [story-pipeline-template-genre-fiction-v1.3.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md) — latest; strange-tail premise category eliminated, narrative scene the only form
       - [transcript.md](pipeline/4-genre-fiction/transcript.md) — symlink to the Baseline transcript that walks through v1.0 → v1.3
   - [runs/](runs/) — 43 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17 onward use `[GENRE]`. The genre parenthetical is given for the latter.
     - [01/](runs/01/) — *The Toy*
