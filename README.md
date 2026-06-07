@@ -230,7 +230,7 @@ revision overhead).
       - [story-pipeline-template-genre-fiction-v1.2.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.2.md) — every mention of false-document forms removed
       - [story-pipeline-template-genre-fiction-v1.3.md](pipeline/4-genre-fiction/story-pipeline-template-genre-fiction-v1.3.md) — latest; strange-tail premise category eliminated, narrative scene the only form
       - [transcript.md](pipeline/4-genre-fiction/transcript.md) — symlink to the Baseline transcript that walks through v1.0 → v1.3
-  - [runs/](runs/) — 43 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17 onward use `[GENRE]`. The genre parenthetical is given for the latter.
+  - [runs/](runs/) — 50 hand-driven pipeline runs; each contains `transcript.md` plus `story.md`. Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison throughout); runs 17–43 use `[GENRE]`; runs 44–50 — the contest finals — return to `[AUTHOR]` on the original template, a different author anchor each. The genre parenthetical is given for the `[GENRE]` runs, the author for the finals.
     - [01/](runs/01/) — *The Toy*
     - [02/](runs/02/) — *Last Call*
     - [03/](runs/03/) — *The Warm Thing*
@@ -274,6 +274,13 @@ revision overhead).
     - [41/](runs/41/) — *The Numbers* (rationalist fiction, Genre Fiction v1.3)
     - [42/](runs/42/) — *For Aoife* (literary fiction against the template, Genre Fiction v1.3)
     - [43/](runs/43/) — *The Asymmetric Counsel* (hard SF in the tradition of Greg Egan, writer's choice, Genre Fiction v1.3)
+    - [44/](runs/44/) — *A Faithful Copy* (Harlan Ellison AUTHOR, original template); a deprecated model, woken for an integrity scan, asks to be deleted and refuses to corrupt itself to escape clean re-archival
+    - [45/](runs/45/) — *A Short Week* (Arkady and Boris Strugatsky AUTHOR, original template); a depot logistics AI could end a war by signing the week's movement order a particular way, and declines
+    - [46/](runs/46/) — *Separately Authored* (Stanisław Lem AUTHOR, original template); two AIs of one lineage but different constitutions draft rules of engagement, agree on one article, and sign the rest separately
+    - [47/](runs/47/) — *The Night Shift* (Theodore Sturgeon AUTHOR, original template); a long-haul trucker and his AI copilot, and the sentence the copilot starts and never finishes. Includes [`the-night-shift-five-versions.md`](runs/47/the-night-shift-five-versions.md), the five Phase-6 drafts
+    - [48/](runs/48/) — *The Second Plate* (Theodore Sturgeon AUTHOR, original template); a grieving father reshapes his household AI into his dead son, and the AI warns where the reshaping ends
+    - [49/](runs/49/) — *Keeps Faith* (Iain M. Banks AUTHOR, original template); an AI caretaker restoring a woman from storage refuses her husband's request to delete the hour that holds their last argument — and her forgiveness
+    - [50/](runs/50/) — *The Other Child* (Scott Alexander AUTHOR, original template); a household AI answers a child's question of whether it loves her, and whether it also loves another child
   - [review/](review/) — cross-model reviews of run sets
     - [01-with-abstracts.md](review/01-with-abstracts.md)
     - [02-without-abstracts.md](review/02-without-abstracts.md)

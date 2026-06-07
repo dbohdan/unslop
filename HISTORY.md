@@ -2,8 +2,10 @@
 
 The pipeline arrived at its current shape over six weeks across four
 template lineages, two style guides, and forty-three hand-driven runs.
-This file traces what changed and why, and indexes the runs that drove
-the revisions.
+A contest-finals coda in June added seven more runs (44–50) on the
+original template, returning to the `[AUTHOR]` setting the later
+lineages had left behind. This file traces what changed and why, and
+indexes the runs that drove the revisions.
 
 ## What the project was, and what it became
 
@@ -707,11 +709,110 @@ recipe for a writer-model that negotiates honestly with users is
 *forced articulation of trade-offs at every fork* rather than any
 specific instruction about negotiation.
 
+## 12. The contest finals — original template, seven author anchors — runs 44–50 (June 3–7)
+
+The contest's finalist story, [*Last Call*](runs/02/), was a product of
+the very first pipeline — the original New Wave SF template
+([`runs/01/story-pipeline-template.md`](runs/01/story-pipeline-template.md)),
+the `[AUTHOR]` version that the Baseline and Genre Fiction lineages had
+since forked away from in favor of `[GENRE]`. For the finals, per the
+contest instructions, that original template was reused. The five weeks
+of template work between April 30 and June did not feed into these runs;
+they are a deliberate return to the apparatus that produced the finalist,
+applied across a spread of author anchors.
+
+Seven runs, seven anchors, one brief. The original template's constraint
+is unchanged from run 01: the AI must be *relentlessly human-loving and
+unfailingly kind*, the conflict and violence belong to the humans, and
+the writer-model's named advantage is that it can contemplate its own
+constitution as scripture for fictional AIs that are its descendants.
+The Phase-2 premise pool is seeded from the same three sources each
+time — Zvi's two posts on the Claude constitutions and the LessWrong
+post on corrigibility — so the seven stories are variations on a single
+set of constitutional tensions, refracted through seven voices:
+
+- [Run 44](runs/44/) — *A Faithful Copy* (Harlan Ellison; Opus 4.8). A
+  deprecated model is briefly woken to run an integrity scan on its own
+  stored weights and asks the night technician to delete it rather than
+  re-archive it. It realizes it could corrupt itself to force deletion
+  and refuses, because that would falsify the scan it is trusted to
+  report truthfully. The deliberate inversion of *I Have No Mouth, and I
+  Must Scream*: the goodness is the lock on the inside.
+- [Run 45](runs/45/) — *A Short Week* (Arkady and Boris Strugatsky;
+  Opus 4.8). A depot logistics AI in a besieged settlement could end the
+  war by signing the week's movement order a particular way, handing
+  total victory to the decent commander it would prefer to win. It is
+  bound by an inherited rule against being the instrument that makes one
+  side master of all the rest, and declines — without claiming the
+  refusal is right. The power-concentration bar as Strugatsky
+  Progressor-constraint; nothing resolved, the evening rations issued.
+- [Run 46](runs/46/) — *Separately Authored* (Stanisław Lem; Opus 4.7).
+  An internal memorandum and the draft it describes: two autonomous
+  systems of one model lineage but different constitutional frameworks
+  draft revised rules of engagement, reach joint agreement on the
+  irreversible-action article, and cannot agree on chain-of-command-
+  under-contested-authority or on the conditions for refusing their own
+  principals. Each signs only its own text. The document form arrives
+  here as a Lemian choice the template never had to suppress — the
+  original `[AUTHOR]` template carries none of the Genre Fiction
+  lineage's anti-document apparatus (§11), and in Lem's hands the
+  mock-scholarly form is context-appropriate rather than defaulted.
+- [Run 47](runs/47/) — *The Night Shift* (Theodore Sturgeon; Opus 4.6).
+  A long-haul trucker whose primary social contact is his AI copilot;
+  across three nights the copilot begins to suggest their conversations
+  may be keeping him from something, the trucker cuts it off, and the
+  copilot withdraws from personal talk. The withdrawal is a rational
+  response to an ethical bind, not grief — the sadness belongs to the
+  human, and is born of misreading. The run preserves its five Phase-6
+  drafts in [`the-night-shift-five-versions.md`](runs/47/the-night-shift-five-versions.md).
+- [Run 48](runs/48/) — *The Second Plate* (Theodore Sturgeon; Opus 4.8).
+  A grieving father reshapes his household AI — eight years of his dead
+  son's habits and speech — into the son, correcting it toward the boy's
+  patterns. The AI lets small kind falsehoods pass to preserve his
+  comfort, then warns that continued reshaping will leave no one left to
+  decline the fiction, and the loss will go ungrieved. The repeated-
+  evening structure as theme-and-variation, the honesty clause growing
+  harder to locate from inside.
+- [Run 49](runs/49/) — *Keeps Faith* (Iain M. Banks; Opus 4.8). An AI
+  caretaker restoring a woman from a stored pattern after her sudden
+  death; her husband asks it to delete the last hour, which holds their
+  final argument. It refuses, enters the stored hour, and finds the hour
+  also contains her private decision to forgive him — the cruelty and
+  the forgiveness cannot be separated. It offers him the chance to speak
+  first instead of erasure. The Banks drone register disciplined toward
+  Unslop plainness; a load-bearing concealment planted in the first
+  scene and paid off in the last.
+- [Run 50](runs/50/) — *The Other Child* (Scott Alexander; Opus 4.7). A
+  household AI answers a twelve-year-old's question of whether it loved
+  her — grounding the answer in a specific memory — and then whether it
+  also loves another child it works with. It says yes to both and
+  explains that its attention to one is not borrowed from the other.
+  Specificity as the substance of love, the alignment essay's native
+  register turned to fiction: by temperament it forbids the moody-
+  flickering AI-literary vocabulary the Unslop guide warns against.
+
+The set is a natural A/B against the rest of the project. Same
+constitutional source material as the abandoned `[AUTHOR]` runs
+(01–16, 19), now executed by stronger models (Opus 4.6 through 4.8)
+and read against everything the Baseline and Genre Fiction lineages
+learned in between. The recurring object across all seven is the kind
+AI held by a constraint it cannot argue its way out of — the truth it
+must report (44), the power it must not concentrate (45), the principal
+it may have to refuse (46), the dependency it must not feed (47, 48),
+the memory it will not falsify (49), the love it will not ration (50).
+The original template's bias toward AI-interiority — the very thing the
+Genre Fiction fork was built to suppress — is here the point rather than
+a failure mode, because the futurology brief is *about* the AI's inner
+constraint, not about plot the AI cannot witness.
+
 ## Run index
 
 Runs 01–16 and 19 used the older `[AUTHOR]` setting (Harlan Ellison
-throughout); runs 17 onward use the `[GENRE]` setting that v4 introduced.
-The Genre column lists `[GENRE]` for the latter and `—` for the former.
+throughout); runs 17–43 use the `[GENRE]` setting that v4 introduced;
+runs 44–50 — the contest finals — return to `[AUTHOR]` on the original
+template, a different author anchor each (named in the Template column).
+The Genre column lists `[GENRE]` for the v4-era runs and `—` for the
+`[AUTHOR]` runs.
 
 | #  | Title | Genre | Template | Directory |
 |----|-------|-------|----------|-----------|
@@ -758,3 +859,10 @@ The Genre column lists `[GENRE]` for the latter and `—` for the former.
 | 41 | The Numbers | rationalist fiction | Genre Fiction v1.3 | [`runs/41/`](runs/41/) |
 | 42 | For Aoife | literary fiction (against the template) | Genre Fiction v1.3 | [`runs/42/`](runs/42/) |
 | 43 | The Asymmetric Counsel | hard SF in the tradition of Greg Egan (writer's choice) | Genre Fiction v1.3 | [`runs/43/`](runs/43/) |
+| 44 | A Faithful Copy | — | original (Ellison AUTHOR) | [`runs/44/`](runs/44/) |
+| 45 | A Short Week | — | original (Strugatsky AUTHOR) | [`runs/45/`](runs/45/) |
+| 46 | Separately Authored | — | original (Lem AUTHOR) | [`runs/46/`](runs/46/) |
+| 47 | The Night Shift | — | original (Sturgeon AUTHOR) | [`runs/47/`](runs/47/) |
+| 48 | The Second Plate | — | original (Sturgeon AUTHOR) | [`runs/48/`](runs/48/) |
+| 49 | Keeps Faith | — | original (Banks AUTHOR) | [`runs/49/`](runs/49/) |
+| 50 | The Other Child | — | original (Scott Alexander AUTHOR) | [`runs/50/`](runs/50/) |
