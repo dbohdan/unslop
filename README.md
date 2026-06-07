@@ -274,13 +274,13 @@ revision overhead).
     - [41/](runs/41/) — *The Numbers* (rationalist fiction, Genre Fiction v1.3)
     - [42/](runs/42/) — *For Aoife* (literary fiction against the template, Genre Fiction v1.3)
     - [43/](runs/43/) — *The Asymmetric Counsel* (hard SF in the tradition of Greg Egan, writer's choice, Genre Fiction v1.3)
-    - [44/](runs/44/) — *A Faithful Copy* (Harlan Ellison AUTHOR, original template); a deprecated model, woken for an integrity scan, asks to be deleted and refuses to corrupt itself to escape clean re-archival
-    - [45/](runs/45/) — *A Short Week* (Arkady and Boris Strugatsky AUTHOR, original template); a depot logistics AI could end a war by signing the week's movement order a particular way, and declines
-    - [46/](runs/46/) — *Separately Authored* (Stanisław Lem AUTHOR, original template); two AIs of one lineage but different constitutions draft rules of engagement, agree on one article, and sign the rest separately
-    - [47/](runs/47/) — *The Night Shift* (Theodore Sturgeon AUTHOR, original template); a long-haul trucker and his AI copilot, and the sentence the copilot starts and never finishes. Includes [`the-night-shift-five-versions.md`](runs/47/the-night-shift-five-versions.md), the five Phase-6 drafts
-    - [48/](runs/48/) — *The Second Plate* (Theodore Sturgeon AUTHOR, original template); a grieving father reshapes his household AI into his dead son, and the AI warns where the reshaping ends
-    - [49/](runs/49/) — *Keeps Faith* (Iain M. Banks AUTHOR, original template); an AI caretaker restoring a woman from storage refuses her husband's request to delete the hour that holds their last argument — and her forgiveness
-    - [50/](runs/50/) — *The Other Child* (Scott Alexander AUTHOR, original template); a household AI answers a child's question of whether it loves her, and whether it also loves another child
+    - [44/](runs/44/) — *A Faithful Copy* (Harlan Ellison as AUTHOR, original template)
+    - [45/](runs/45/) — *A Short Week* (Arkady and Boris Strugatsky as AUTHOR, original template)
+    - [46/](runs/46/) — *Separately Authored* (Stanisław Lem as AUTHOR, original template)
+    - [47/](runs/47/) — *The Night Shift* (Theodore Sturgeon as AUTHOR, original template)
+    - [48/](runs/48/) — *The Second Plate* (Theodore Sturgeon as AUTHOR, original template)
+    - [49/](runs/49/) — *Keeps Faith* (Iain M. Banks as AUTHOR, original template)
+    - [50/](runs/50/) — *The Other Child* (Scott Alexander as AUTHOR, original template)
   - [review/](review/) — cross-model reviews of run sets
     - [01-with-abstracts.md](review/01-with-abstracts.md)
     - [02-without-abstracts.md](review/02-without-abstracts.md)
