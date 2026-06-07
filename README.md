@@ -1,7 +1,8 @@
 # Unslop
 
 This repository contains [D. Bohdan](https://dbohdan.com/)'s work for the [Unslop](https://www.hyperstitionai.com/unslop) AI-generated short story contest.
-The rest of the README is almost all written by AI.
+It is available publicly on [GitHub](https://github.com/dbohdan/unslop).
+The rest of the README is almost entirely written by AI.
 
 ---
 
