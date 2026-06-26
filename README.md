@@ -308,3 +308,7 @@ revision overhead).
     - [test/](api/test/)
       - [claude-sonnet-4.6/](api/test/claude-sonnet-4.6/) — end-to-end test, story: *Wiwaxia*
       - [gemini-3-flash-preview/](api/test/gemini-3-flash-preview/) — end-to-end test, story: *The 300-Baud Handshake*
+
+## License
+
+[CC0](LICENSE).
