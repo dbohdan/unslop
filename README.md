@@ -1,7 +1,7 @@
 # Unslop
 
 This repository contains [D. Bohdan](https://dbohdan.com/)'s work for the [Unslop](https://www.hyperstitionai.com/unslop) AI-generated short story contest.
-It is publicly available on [GitHub](https://github.com/dbohdan/unslop).
+It is publicly available [on GitHub](https://github.com/dbohdan/unslop), and there is a [write-up on my site](https://dbohdan.com/unslop).
 
 > These aren't science fiction.
 > They're domestic realism with AI as load-bearing infrastructure — closer to Raymond Carver with ambient computation than to anything in the Asimov lineage.
